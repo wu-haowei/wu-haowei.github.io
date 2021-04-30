@@ -98,10 +98,10 @@
                 `${new Date(year, month, 1).getFullYear()}年 - ${new Date(year, month, 1).getMonth() + 1}月`
 
             let firstDay = new Date(year, month, 1).getDay();//第一天禮拜幾
-            let dayOfMonth = new Date(year, month + 1, 0).getDate(); //取這個月有幾天
+            let dayOfMonth = new Date(year, month + 1, 0).getDate(); //取這個月有幾周
 
             let day = 1;
-            let rows = Math.ceil((dayOfMonth + firstDay) / 7);  // 無條件進為(這隔月幾天+第一天星期幾/7 )
+            let rows = Math.ceil((dayOfMonth + firstDay) / 7);  // 無條件進為(這月有幾周+第一天星期幾/7)
             for (let row = 0; row < rows; row++) {             //一個月最多列 
                 let tr = document.createElement('tr');          //列
                 for (let col = 0; col < 7; col++) {             //一周最多行
@@ -126,7 +126,9 @@
                             td.addEventListener('click', function (e) {
                                 let target;
                                 if (e.target.localName == 'li' || e.target.localName == 'ul') {
+                                    //localName返回本地名稱的
                                     target = e.target.offsetParent;
+                                    //offsetParent返回一個指向最近的包含該元素的定位元素或者最近的table,td,th,body元素
                                 } else {
                                     target = e.target;
                                 }

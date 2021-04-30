@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Apple(Big_Love)</title>
+    <title>My Apple</title>
     <link rel=”icon” href="apple.png" type=”image/x-icon”>
 
     <link rel="shortcut icon" href="apple.png" type="image/x-icon">
@@ -291,6 +291,7 @@
                 { mode: 'iPhone 12 Pro Max', color: '太平洋藍色', SSD: 512, SSD_GB: 'GB', SSD_1: '1', $: '48,400起', color_imgsrc: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000' },
             ]
         // **********************************************************************************************************************
+
         let iphone_mode = document.querySelector("#iphone_mode");
         iphone_mode.classList.add("w-100")
         let set_iphone_mode = new Set();
@@ -422,6 +423,8 @@
             out.appendChild(out_C);
             iphone_SSD.appendChild(out);
         }
+
+
         // **********************************************************************************************************************
         let ipad_color_Picture = [
             { color: '太空灰色', color_imgsrc: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-space-gray-201508?wid=32&amp;hei=32&amp;fmt=png-alpha&amp;.v=0' },
@@ -903,12 +906,14 @@
             mac_Logic_Pro.appendChild(out);
         }
         //**********************************************************************************
-        //ipad按鈕
+        //iphone按鈕
         let btn1 = document.getElementById('button_A')
         btn1.addEventListener('click', function () {
             document.getElementById("iphone").style.display = "block";
             document.getElementById("ipad").style.display = "none";
             document.getElementById("mac").style.display = "none";
+
+
         })
         //ipad按鈕
         let btn2 = document.getElementById('button_B')
@@ -916,6 +921,9 @@
             document.getElementById("iphone").style.display = "none";
             document.getElementById("ipad").style.display = "block";
             document.getElementById("mac").style.display = "none";
+           let iphone = getElementById('iphone')
+           iphone.innerHTML=''
+
         })
         //mac按鈕
         let btn3 = document.getElementById('button_C')

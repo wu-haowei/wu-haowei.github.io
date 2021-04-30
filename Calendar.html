@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel=”icon” href="/calendar.png" type=”image/x-icon”>
+    <link rel="shortcut icon" href="/calendar.png" type="image/x-icon"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>My calendar</title>
+    <style>
+        ._line {
+            border-bottom: 1px solid #d6d6d6;
+        }
+
+        .table,.text-align-center{
+            text-align: center;
+        }
+
+        body {
+            width: 80%;
+            margin: auto;
+            height: 100VH;
+        }
+
+        td:hover {
+            background-color: aqua;
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        .button_up i {
+            position: relative;
+        }
+
+        .button_up:hover i {
+            bottom: 15px;
+            transition: 3s;
+        }
+
+        .button_down:hover i {
+            position: relative;
+        }
+
+        .button_down:hover i {
+            top: 15px;
+        }
+
+        .DeleteAll:hover i {
+            transform: rotateZ(45deg);
+            transition: 1s;
+
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: #fff;
+        }
+
+        td {
+            width: 14.2%;
+        }
+
+        li {
+            width: 100%;
+            margin-bottom: 1px;
+            background-color: silver;
+            word-break: break-all;
+            /* 強迫換行 */
+            overflow: hidden;
+            /* 溢出隱藏 */
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            /* 容器中的內容限制為指定的行數 */
+        }
+        #date{
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3 id="today_Minutes-Seconds" class="d-flex justify-content-center align-items-center">
+        現在時間</h3>
+    <h2 id="today_year-month" class="d-flex justify-content-center align-items-center">
+        今日日期</h2>
+    <div class="_line w-100 my-3"></div>
+    <div class="d-flex justify-content-around">
+        <button type="button" class="btn p-3 button_up" onclick="Leos()"><i class="fa fa-arrow-up fa-2x"
+                aria-hidden="true"></i></button>
+        <h1 id="year-month" class=" d-flex align-items-center m-0">0000年-00月</h1>
+        <button type="button" class="btn p-3 button_down" onclick="Add()"><i class="fa fa-arrow-down fa-2x"
+                aria-hidden="true"></i></button>
+    </div>
+    <!-- 網頁載入後 觸發startTime() -->
+
+    <body onload="startTime()">
+        <div class=" my-3"></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>SUN</th>
+                    <th>MON</th>
+                    <th>TUE</th>
+                    <th>WED</th>
+                    <th>THU</th>
+                    <th>FRI</th>
+                    <th>SAT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 動態生成日期 -->
+
+            </tbody>
+        </table>
+        <button type="button" class="btn DeleteAll" onclick="DeleteAllTodoItem()"><i class="fa fa-trash-o fa-4x"
+                aria-hidden="true"></i></button>
+        <button type="button" class="btn" onclick="today_return()">今天</button>
+
+        <!-- Modal Add -->
+        <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inputModalLabel">新增行程</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="input-area" class="modal-body d-flex flex-column ">
+                        <input readonly id="date" type="text" class="text-align-center w-50 m-auto">
+        <div class=" my-1"></div>
+
+                        <input id="todo-item" type="text" placeholder="Please input event title." class="text-align-center">
+        <div class=" my-1"></div>
+
+                     
+                        <textarea class="form-control text-align-center" id="todo-item2" rows="3" type="text" placeholder="Please input event description."></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                        <button type="button" class="btn btn-danger" id="delete">刪除行程</button>
+                        <button type="button" class="btn btn-primary" onclick="SaveTodoItem()">儲存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- // -->
+
+        <div class="modal fade" id="inputModal_2" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inputModalLabel">刪除全部行程</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-footer d-flex justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                同意
+                            </label>
+                        </div>
+                        <button type="button" id="determine" class="btn btn-primary">確定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            //今天
+            let today = new Date();
+
+            //年
+            let year = today.getFullYear();
+            console.log(year);
+            //月
+            let month = today.getMonth();
+            console.log(month + 1);
+            //日
+
+
+
+            let day = today.getDate();
+            console.log(day);
+            
+            function startTime() {
+                var today = new Date();
+                var hh = today.getHours();
+                var mm = today.getMinutes();
+                var ss = today.getSeconds();
+                mm = checkTime(mm);
+                ss = checkTime(ss);
+                document.getElementById('today_year-month').innerHTML =
+                today.getFullYear() + " 年 " + (today.getMonth() + 1) + " 月 " + today.getDate() + " 日"
+                document.getElementById('today_Minutes-Seconds').innerHTML = hh + ":" + mm + ":" + ss
+                setTimeout(startTime, 500);
+            }
+            // 分/秒數不足兩位數補0
+            function checkTime(x) {
+                if (x < 10) {
+                    x = "0" + x;
+                }
+                return x;
+            }
+            function Init() {
+                let tbody = document.getElementsByTagName('tbody')[0];
+                tbody.innerHTML = ''
+                document.getElementById('year-month').innerHTML =
+                `${new Date(year, month, 1).getUTCFullYear()} 年 ${new Date(year, month, 1).getMonth() + 1} 月 `
+                
+                //0星期日，1星期一，2星期二,3星期三，4星期四，5星期五,6星期六
+                let firstDay = new Date(year, month, 1).getDay();//這個月第一天星期幾
+                //console.log(firstDay);
+                let dayOfMonth = new Date(year, month + 1, 0).getDate();//這個月幾天
+                //console.log(dayOfMonth);
+                let day = 1;
+                let rows = Math.ceil((firstDay + dayOfMonth) / 7)
+                //console.log(rows)
+                for (let row = 0; row < rows; row++) {//列的迴圈
+                    let tr = document.createElement('tr');
+                    for (let col = 0; col < 7; col++) { //一周的迴圈
+                        let td = document.createElement('td');
+                        if (row == 0 && col < firstDay) {
+                            //上個月
+                        }
+                        else {
+                            if (day <= dayOfMonth) {
+                                td.innerText = day;
+                                if (localStorage.getItem(`${year}-${month + 1}-${day}`) != null) {
+                                    let ul = document.createElement('ul');
+                                    let todoList = JSON.parse(localStorage.getItem(`${year}-${month + 1}-${day}`));
+                                    todoList.forEach(item => {
+                                        let li = document.createElement('li');
+                                        li.innerText = item.title;
+                                        // console.warn(item)
+                                        
+                                        ul.appendChild(li)
+                                    });
+                                    td.appendChild(ul);
+                                }
+                                
+                                
+                                
+                                
+                                
+                                
+                                td.addEventListener('click', function (e) {
+                                    console.log(e)
+                              
+                                    let target;
+                                    if (e.target.localName == 'li' || e.target.localName == 'ul') {
+                                        //localName 只讀屬性返回元素的限定名稱的本地部分。
+                                        target = e.target.offsetParent;
+                                        //ffsetParent 是一个只读属性，返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素或者最近的 table,td,th,body元素
+                                    } else {
+                                        target = e.target;
+                                    }
+                                    $('#inputModal').modal('show');//開啟視窗
+                                    document.getElementById('date').value = `${year}-${month + 1}-${target.childNodes[0].data}`;
+                                    document.getElementById('inputModalLabel').innerText = `${year}-${month + 1}-${target.childNodes[0].data}`;
+                                    //輸入欄內日期
+                                })
+                            }
+                            else {
+                                //下個月
+                            }
+                            day++;
+                        }
+                        
+                        tr.appendChild(td);
+                    }
+                    tbody.appendChild(tr);
+                }
+                
+            }
+            
+            
+            Init();
+            
+            function Add() {
+                month++;
+                Init();
+                
+            }
+            function Leos() {
+                month--;
+                Init();
+
+            }
+
+            function SaveTodoItem() {
+                let date = document.getElementById('date').value            //取得輸入的ID 第一格
+                let todoItem = document.getElementById('todo-item').value;  //取得輸入的ID 第二格
+                let todoitem2 = document.getElementById('todo-item2').value;  //取得輸入的ID 第二格
+                let todoObj = {     //待辦事項
+                    title: todoItem,  //title標題:todoItem待辦事項
+                    description: todoitem2
+                }
+                let todoList = []
+                if (localStorage.getItem(date) == null) {
+                    todoList.push(todoObj);
+                    //今天沒有待辦事項
+                }
+                else {
+                    todoList = JSON.parse(localStorage.getItem(date));
+                    todoList.push(todoObj);
+                    //今天已有待辦事項
+                }
+                localStorage.setItem(date, JSON.stringify(todoList));//storage.setItem(keyName, keyValue);
+                Init();
+                $('#inputModal').modal('hide');//隱藏視窗
+            }
+            document.querySelector("#delete").onclick = function () {
+                localStorage.removeItem(date.value)
+                Init();
+                $('#inputModal').modal('hide');//隱藏視窗
+            }
+
+            function DeleteAllTodoItem() {
+                let determine = document.getElementById('determine')
+                determine.addEventListener('click', function () {
+                    let flexCheckDefault = document.getElementById('flexCheckDefault')
+                    if (flexCheckDefault.checked == true) {
+                        localStorage.clear();
+                        Init();
+                        $('#inputModal_2').modal('hide');
+
+                    }
+                    else {
+                        $('#inputModal_2').modal('hide');
+                    }
+                })
+                $('#inputModal_2').modal('show');
+            }
+
+            // let today_return = document.getElementsByClassName('today_return')
+            function today_return() {
+
+            }
+
+
+
+        </script>
+
+
+
+
+        <script src="https://use.fontawesome.com/fa7210dc77.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
