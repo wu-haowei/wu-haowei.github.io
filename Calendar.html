@@ -204,11 +204,15 @@
                 var ss = today.getSeconds();
                 mm = checkTime(mm);
                 ss = checkTime(ss);
-                document.getElementById('today_year-month').innerHTML =
-                    today.getFullYear() + " 年 " + (today.getMonth() + 1) + " 月 " + today.getDate() + " 日"
-                document.getElementById('today_Minutes-Seconds').innerHTML = hh + ":" + mm + ":" + ss
                 setTimeout(startTime, 500);
+                document.getElementById('today_Minutes-Seconds').innerHTML = hh + ":" + mm + ":" + ss
             }
+            let right_mmomth = today.getMonth() + 1;
+            let right_now_mmomth = checkTime(right_mmomth)
+            let right_mday = today.getDate()
+            let right_now_mday = checkTime(right_mday)
+            document.getElementById('today_year-month').innerHTML =
+                today.getFullYear() + " 年 " + right_now_mmomth + " 月 " + right_now_mday + " 日"
             // 分/秒數不足兩位數補0
             function checkTime(x) {
                 if (x < 10) {
@@ -219,8 +223,11 @@
             function Init() {
                 let tbody = document.getElementsByTagName('tbody')[0];
                 tbody.innerHTML = ''
+                let mmomth = new Date(year, month, 0).getMonth() + 1;       //讓月份都維持雙位數
+                let padStartmomth = mmomth.toString().padStart(2, '0');
+                //padStart() 會將用給定用於填充的字串，以重複的方式，插入到目標字串的起頭(左側)，直到目標字串到達指定長度。
                 document.getElementById('year-month').innerHTML =
-                    `${new Date(year, month, 1).getUTCFullYear()} 年 ${new Date(year, month , 0).getMonth() + 1} 月 `
+                    `${new Date(year, month, 1).getUTCFullYear()} 年 ${padStartmomth} 月 `
 
                 //0星期日，1星期一，2星期二,3星期三，4星期四，5星期五,6星期六
                 let firstDay = new Date(year, month, 1).getDay();//這個月第一天星期幾
@@ -350,9 +357,9 @@
             }
 
             // let today_return = document.getElementsByClassName('today_return')
-            function today_return() {
+            // function today_return() {
 
-            }
+            // }
 
 
 
