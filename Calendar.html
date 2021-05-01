@@ -220,7 +220,7 @@
                 let tbody = document.getElementsByTagName('tbody')[0];
                 tbody.innerHTML = ''
                 document.getElementById('year-month').innerHTML =
-                    `${new Date(year, month, 1).getUTCFullYear()} 年 ${new Date(year, month + 1, 0).getMonth() + 1} 月 `
+                    `${new Date(year, month, 1).getUTCFullYear()} 年 ${new Date(year, month , 0).getMonth() + 1} 月 `
 
                 //0星期日，1星期一，2星期二,3星期三，4星期四，5星期五,6星期六
                 let firstDay = new Date(year, month, 1).getDay();//這個月第一天星期幾
