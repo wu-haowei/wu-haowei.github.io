@@ -17,7 +17,8 @@
             border-bottom: 1px solid #d6d6d6;
         }
 
-        .table,.text-align-center{
+        .table,
+        .text-align-center {
             text-align: center;
         }
 
@@ -32,10 +33,12 @@
             transform: scale(1.1);
             transition: 1s;
         }
+
         .button_up:hover i {
             transform: translate(0px, -30%);
             transition: 0.5s;
         }
+
         .button_down:hover i {
             transform: translate(0px, 30%);
             transition: 0.5s;
@@ -45,15 +48,18 @@
             transform: rotateZ(45deg);
             transition: 1s;
         }
+
         ul {
             margin: 0;
             padding: 0;
             list-style: none;
             background-color: #fff;
         }
+
         td {
             width: 14.2%;
         }
+
         li {
             width: 100%;
             margin-bottom: 1px;
@@ -67,7 +73,8 @@
             -webkit-line-clamp: 1;
             /* 容器中的內容限制為指定的行數 */
         }
-        #date{
+
+        #date {
             border: none;
         }
     </style>
@@ -125,13 +132,16 @@
                     </div>
                     <div id="input-area" class="modal-body d-flex flex-column ">
                         <input readonly id="date" type="text" class="text-align-center w-50 m-auto">
-        <div class=" my-1"></div>
+                        <div class=" my-1"></div>
+                        <input type="date" class="form-control me-1 text-center" id="eventDateInput">
+                        <input type="time" class="form-control ms-1 text-center" id="eventTimeInput">
+                        <input id="todo-item" type="text" placeholder="Please input event title."
+                            class="text-align-center">
+                        <div class=" my-1"></div>
 
-                        <input id="todo-item" type="text" placeholder="Please input event title." class="text-align-center">
-        <div class=" my-1"></div>
 
-                     
-                        <textarea class="form-control text-align-center" id="todo-item2" rows="3" type="text" placeholder="Please input event description."></textarea>
+                        <textarea class="form-control text-align-center" id="todo-item2" rows="3" type="text"
+                            placeholder="Please input event description."></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
@@ -186,7 +196,7 @@
 
             let day = today.getDate();
             console.log(day);
-            
+
             function startTime() {
                 var today = new Date();
                 var hh = today.getHours();
@@ -195,7 +205,7 @@
                 mm = checkTime(mm);
                 ss = checkTime(ss);
                 document.getElementById('today_year-month').innerHTML =
-                today.getFullYear() + " 年 " + (today.getMonth() + 1) + " 月 " + today.getDate() + " 日"
+                    today.getFullYear() + " 年 " + (today.getMonth() + 1) + " 月 " + today.getDate() + " 日"
                 document.getElementById('today_Minutes-Seconds').innerHTML = hh + ":" + mm + ":" + ss
                 setTimeout(startTime, 500);
             }
@@ -210,8 +220,8 @@
                 let tbody = document.getElementsByTagName('tbody')[0];
                 tbody.innerHTML = ''
                 document.getElementById('year-month').innerHTML =
-                `${new Date(year, month, 1).getUTCFullYear()} 年 ${new Date(year, month, 1).getMonth() + 1} 月 `
-                
+                    `${new Date(year, month, 1).getUTCFullYear()} 年 ${new Date(year, month + 1, 0).getMonth() + 1} 月 `
+
                 //0星期日，1星期一，2星期二,3星期三，4星期四，5星期五,6星期六
                 let firstDay = new Date(year, month, 1).getDay();//這個月第一天星期幾
                 //console.log(firstDay);
@@ -237,20 +247,20 @@
                                         let li = document.createElement('li');
                                         li.innerText = item.title;
                                         // console.warn(item)
-                                        
+
                                         ul.appendChild(li)
                                     });
                                     td.appendChild(ul);
                                 }
-                                
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
+
                                 td.addEventListener('click', function (e) {
                                     console.log(e)
-                              
+
                                     let target;
                                     if (e.target.localName == 'li' || e.target.localName == 'ul') {
                                         //localName 只讀屬性返回元素的限定名稱的本地部分。
@@ -260,9 +270,11 @@
                                         target = e.target;
                                     }
                                     $('#inputModal').modal('show');//開啟視窗
+                                    // today.getFullYear() + " 年 " + (today.getMonth() + 1) + " 月 " + today.getDate() + " 日"
                                     document.getElementById('date').value = `${year}-${month + 1}-${target.childNodes[0].data}`;
                                     document.getElementById('inputModalLabel').innerText = `${year}-${month + 1}-${target.childNodes[0].data}`;
                                     //輸入欄內日期
+
                                 })
                             }
                             else {
@@ -270,21 +282,21 @@
                             }
                             day++;
                         }
-                        
+
                         tr.appendChild(td);
                     }
                     tbody.appendChild(tr);
                 }
-                
+
             }
-            
-            
+
+
             Init();
-            
+
             function Add() {
                 month++;
                 Init();
-                
+
             }
             function Leos() {
                 month--;
