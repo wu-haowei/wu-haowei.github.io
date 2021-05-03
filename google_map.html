@@ -32,7 +32,7 @@
 <body>
     <!-- <div> -->
     <select id='year' name='year'></select>
-    <!-- <select id='city' name='city'></select> -->
+    <select id='city' name='city'></select>
     <div id="map"></div>
     <!-- </div> -->
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
@@ -52,7 +52,7 @@
         // year_a = [{ value: 105 }, { value: 106 }, { value: 107 }, { value: 108 }, { value: 109 }]
         const coordinate = { lat: 24.760759896419373, lng: 120.9527718965576 };
         let city, water, map, resultData;
-        let infos = [];
+        let infos = [], markers = [];
 
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
@@ -71,7 +71,7 @@
         let Array1 = []            //存取第一個陣列城市資料
         let Array2 = []; //存取第二個陣列水的資料
 
-        window.onload = function MapResource() {
+        function MapResource() {
             fetch(url_1)
                 .then(response => response.text())
                 .then(cityResult => {
@@ -93,6 +93,7 @@
             year.length = "";
             let Per_year = new Set();
             let result_Per_year = Array2.filter(item => !Per_year.has(item.Year) ? Per_year.add(item.Year) : false);
+
             Per_year_Ans = result_Per_year;
             console.log(Per_year_Ans)
             result_Per_year.forEach((item, index) => {
@@ -124,8 +125,12 @@
 
             yearSelect.onchange = yearSelectedChange;
             function yearSelectedChange() {
-                // MarkAction()
+                markers.forEach(item => {
+                    item.setMap(null)
+                })
+
                 //更改陣列
+
                 let Array3 = Array1.map(m => {
                     //用水縣市County 城市縣市City && 用水鄉鎮Town 城市鄉鎮District &&年分Year指定
                     let temp = Array2.filter(f => f.County == m.City && f.Town == m.District && f.Year == yearSelect.selectedOptions[0].value)
@@ -146,6 +151,15 @@
 
                 let resultData = Array3.filter(f => f.Water.length > 0 && year.value.length < 4)
                 console.log(resultData)
+
+
+
+
+
+
+
+
+
                 resultData.forEach((item, index) => {
                     // console.log(item);
                     const marker = new google.maps.Marker({
@@ -153,6 +167,7 @@
                         map,
                         title: `${item.City} ${item.Town}`, //靠近標點會顯出地標
                     });
+                    // console.log(marker)
                     //點到會出現在裡面的文字
                     const infowindow = new google.maps.InfoWindow({
                         //資訊視窗 InfoWindow
@@ -169,6 +184,7 @@
                         });
                         infowindow.open(map, marker);
                     });
+                    markers.push(marker)
                 });
             }
         };
