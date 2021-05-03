@@ -10,7 +10,7 @@
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
         #map {
-            height: 86%;
+            height: 84%;
 
         }
 
@@ -22,7 +22,8 @@
             padding: 0;
         }
 
-        #year,#city {
+        #year,
+        #city {
             width: 100%;
             height: 8%;
         }
@@ -39,7 +40,7 @@
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUIzshuil2vxBR475q-mOhkWLqCk1RetI&callback=initMap&libraries=&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key=1AIzaSyBUIzshuil2vxBR475q-mOhkWLqCk1RetI&callback=initMap&libraries=&v=weekly"
         async></script>
 
     <script>
@@ -58,7 +59,7 @@
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
                 center: coordinate,
-                zoom: 15,
+                zoom: 10,
             });
 
             // new google.maps.Marker({
@@ -68,8 +69,7 @@
             // });
             MapResource();
         }
-
-        let Array1 = []            //存取第一個陣列城市資料
+        let Array1 = [];//存取第一個陣列城市資料
         let Array2 = []; //存取第二個陣列水的資料
 
         function MapResource() {
@@ -93,17 +93,14 @@
             year.length = "";
             let Per_year = new Set();
             let result_Per_year = Array2.filter(item => !Per_year.has(item.Year) ? Per_year.add(item.Year) : false);
-            // result_Per_year = result_Per_year.filter(f=>f.Year!=)
+            result_Per_year = result_Per_year.filter(y => y.Year != "麟洛鄉")
 
-            //
             Per_year_Ans = result_Per_year;
-            console.log(Per_year_Ans)
             result_Per_year.forEach((item, index) => {
                 let option = document.createElement('option');
                 option.value = item.Year;
                 option.text = item.Year;
                 year.add(option, null);
-                // console.log(option.text)
             })
             let option2 = document.createElement('option');
             option2.value = '';
@@ -119,7 +116,6 @@
             option4.setAttribute('selected', '');    //預設選項
             city.add(option4, 0);
             //*****************************************************************************************************
-
             yearSelect.onchange = yearSelectedChange;
             function yearSelectedChange() {
                 markers.forEach(item => {
@@ -130,108 +126,118 @@
 
                 if (yearValue == '') {
                     citySelect.disabled = true;
-                return;
-            }
-            citySelect.disabled = false;
-            citySelect.innerHTML = '';
-            let option0 = document.createElement('option')
-            option0.value = '';
-            option0.text = '---請選擇行政區---';
-            citySelect.add(option0)
-            
-            let Per_city = new Set();
-            let result_Per_city = Array2.filter(item => !Per_city.has(item.County) ? Per_city.add(item.County) : false);
-            result_Per_city = result_Per_city.filter(f => f.County != null)
-            Per_city_Ans = result_Per_city
-            console.dir(Per_city_Ans);
-            result_Per_city.forEach((item, index) => {
-                let option1 = document.createElement('option');
-                option1.value = item.County;
-                option1.text = item.County;
-                city.add(option1, null);
-            })
-            //更改陣列
-            console.log(citySelect.selectedOptions[0].value)
-                // 刪除不正確的資料
-                console.log(yearSelect.selectedOptions[0].value)
-                console.log(citySelect.selectedOptions[0].value)
+                    return;
+                }
+                citySelect.disabled = false;
+                citySelect.innerHTML = '';
+                let option0 = document.createElement('option')
+                option0.value = '';
+                option0.text = '---請選擇城市---';
+                citySelect.add(option0)
+
+                let Per_city = new Set();
+                let result_Per_city = Array2.filter(item => !Per_city.has(item.County) ? Per_city.add(item.County) : false);
+                result_Per_city = result_Per_city.filter(f => f.County != null)
+                Per_city_Ans = result_Per_city
+                console.log(Per_city_Ans);
+                result_Per_city.forEach((item, index) => {
+                    let option1 = document.createElement('option');
+                    option1.value = item.County;
+                    option1.text = item.County;
+                    city.add(option1, null);
+                })
+                // //更改陣列
+                // console.log(citySelect.selectedOptions[0].value)
+                // // 刪除不正確的資料
+                // console.log(yearSelect.selectedOptions[0].value)
+                // console.log(citySelect.selectedOptions[0].value)
             }
         };
 
         citySelect.addEventListener('change', function () {
-                let yearValue = yearSelect.selectedOptions[0].value;
-                let yearText = yearSelect.selectedOptions[0].text;
-                let cityValue = citySelect.selectedOptions[0].value;
-                let cityText = citySelect.selectedOptions[0].text;
-                
-                if (yearValue != '' && cityValue != '') {
-                    msg.innerText = yearSelect.selectedOptions[0].text + ':' + citySelect.selectedOptions[0].text;
-                    // console.log(yearText + ', ' + cityText);
-                }
-                else {
-                    msg.innerHTML = '';
-                }
-                MarkAction_A();
-            });
+            let yearValue = yearSelect.selectedOptions[0].value;
+            let yearText = yearSelect.selectedOptions[0].text;
+            let cityValue = citySelect.selectedOptions[0].value;
+            let cityText = citySelect.selectedOptions[0].text;
 
-
-           let Array3 =[]
-        function MarkAction_A() {
-             Array3 = Array1.map(m => {
-                //用水縣市County 城市縣市City && 用水鄉鎮Town 城市鄉鎮District &&年分Year指定
-                    let temp = Array2.filter(f => f.County == citySelect.selectedOptions[0].value && f.Town == m.District && f.Year == yearSelect.selectedOptions[0].value)
-                        .map(m => {
-                            return  `${m.Month}月的自來水用水量為${m.TheDailyDomesticConsumptionOfWaterPerPerson}`
-                            //人均每日生活用水量TheDailyDomesticConsumptionOfWaterPerPerson
-                        });
-                        console.warn(temp)
-                    return {
-                        City: citySelect.selectedOptions[0].value,
-                        Town: m.District,
-                        Lat: m.Lat,
-                        Lng: m.Lng,
-                        Water: temp,
-                        year: yearSelect.selectedOptions[0].value
-                    };
-                });
-               
-                MarkAction_B()
-            };
-
-
-            function MarkAction_B() {
-
-            let resultData = Array3.filter(f => f.Water.length > 0)
-                
-                resultData.forEach((item, index) => {
-                    // console.log(item);
-                    const marker = new google.maps.Marker({
-                        position: { lat: item.Lat, lng: item.Lng },
-                        map,
-                        title: `${item.City} ${item.Town}`, //靠近標點會顯出地標
-                    });
-                    // console.log(marker)
-                    //點到會出現在裡面的文字
-                    const infowindow = new google.maps.InfoWindow({
-                        //資訊視窗 InfoWindow
-                        content: `城市名稱:${item.City},<br>鄉鎮名稱:${item.Town},<br>民國:${item.year}用水量:<br>${item.Water.join("<br>")}`
-                    });
-                    // console.warn(infowindow)
-                    // 丟到空陣列裡
-                    infos.push(infowindow);
-                    // console.log(infos)
-                    marker.addListener("click", () => {
-                        infos.forEach((item) => {
-                            item.close();
-                            // console.warn(item); 
-                        });
-                        infowindow.open(map, marker);
-                    });
-                    markers.push(marker)
-                });
-        
+            if (yearValue != '' && cityValue != '') {
+                msg.innerText = yearSelect.selectedOptions[0].text + ':' + citySelect.selectedOptions[0].text;
             }
-        </script>
+            else {
+                msg.innerHTML = '';
+            }
+            MarkAction_A();
+        });
+
+
+        let Array3 = []
+        function MarkAction_A() {
+            Array3 = Array1.map(m => {
+                //用水縣市County 城市縣市City && 用水鄉鎮Town 城市鄉鎮District &&年分Year指定
+                let temp = Array2.filter(f => f.County == citySelect.selectedOptions[0].value && f.Town == m.District && f.Year == yearSelect.selectedOptions[0].value)
+                    .map(m => {
+                        return `${m.Month}月的自來水用水量為${m.TheDailyDomesticConsumptionOfWaterPerPerson}`
+                        //人均每日生活用水量TheDailyDomesticConsumptionOfWaterPerPerson
+                    });
+                // console.warn(temp)
+                return {
+                    City: citySelect.selectedOptions[0].value,
+                    Town: m.District,
+                    Lat: m.Lat,
+                    Lng: m.Lng,
+                    Water: temp,
+                    year: yearSelect.selectedOptions[0].value
+                };
+            });
+            MarkAction_B();
+
+        };
+
+        resultData = [];
+        function MarkAction_B() {
+            resultData = Array3.filter(f => f.Water.length > 0)
+            console.table(resultData[0].Lat)
+            console.table(resultData[0].Lng)
+            resultData.forEach((item, index) => {
+
+                const marker = new google.maps.Marker({
+                    position: { lat: item.Lat, lng: item.Lng },
+                    map,
+                    title: `${item.City} ${item.Town}`, //靠近標點會顯出地標
+                });
+                console.dir(marker)
+                //點到會出現在裡面的文字
+                const infowindow = new google.maps.InfoWindow({
+                    //資訊視窗 InfoWindow
+                    content: `城市名稱:${item.City},<br>鄉鎮名稱:${item.Town},<br>民國:${item.year}用水量:<br>${item.Water.join("<br>")}`
+                });
+                // console.warn(infowindow)
+                // 丟到空陣列裡
+                infos.push(infowindow);
+                // console.log(infos)
+                marker.addListener("click", () => {
+                    infos.forEach((item) => {
+                        item.close();
+                        // console.warn(item); 
+                    });
+                    infowindow.open(map, marker);
+                });
+                markers.push(marker)
+            });
+            initMap_a();
+        }
+        function initMap_a() {
+
+            map.setCenter({
+                lat: resultData[0].Lat,
+                lng: resultData[0].Lng
+            });
+            
+    
+
+        }
+
+    </script>
 </body>
 
 </html>
