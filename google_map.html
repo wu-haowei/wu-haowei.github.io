@@ -5,12 +5,13 @@
 
 <head>
     <title>Simple Map</title>
+    <script src="https://use.fontawesome.com/fa7210dc77.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style type="text/css">
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
         #map {
-            height: 84%;
+            height: 92%;
 
         }
 
@@ -21,10 +22,19 @@
             margin: 0;
             padding: 0;
         }
-
         #year,
-        #city {
-            width: 100%;
+        #city,#msg {
+            width: 30%;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+        }
+
+        .drop_down {
+            display: flex;
             height: 8%;
         }
     </style>
@@ -32,34 +42,37 @@
 
 <body>
     <!-- <div> -->
-    <select id='year' name='year'></select>
-    <select id='city' name='city'></select>
-    <div id="msg"></div>
+    <div class="drop_down">
+        <select id='year' name='year'></select>
+        <select id='city' name='city'></select>
+        <div id="msg"></div>
+    </div>
     <div id="map"></div>
     <!-- </div> -->
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=1AIzaSyBUIzshuil2vxBR475q-mOhkWLqCk1RetI&callback=initMap&libraries=&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUIzshuil2vxBR475q-mOhkWLqCk1RetI&callback=initMap&libraries=&v=weekly"
         async></script>
-
     <script>
         const url_1 = 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json';
-
         const url_2 = 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json';
         const yearSelect = document.getElementById('year');
         const citySelect = document.getElementById('city');
-
         // let map;
-        // year_a = [{ value: 105 }, { value: 106 }, { value: 107 }, { value: 108 }, { value: 109 }]
         const coordinate = { lat: 24.760759896419373, lng: 120.9527718965576 };
         let city, water, map, resultData;
         let infos = [], markers = [];
-
+        const iconPath = "/line.png"
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
                 center: coordinate,
-                zoom: 10,
+                zoom: 9,
+                // type: "info",
+                // mapTypeId: "terrain",//地形
+
+
+
             });
 
             // new google.maps.Marker({
@@ -71,7 +84,6 @@
         }
         let Array1 = [];//存取第一個陣列城市資料
         let Array2 = []; //存取第二個陣列水的資料
-
         function MapResource() {
             fetch(url_1)
                 .then(response => response.text())
@@ -86,15 +98,13 @@
                         });
                 });
         };
-
-        let Per_year_Ans = []
+        let Per_year_Ans = [] //不重復年分
         function MarkAction() {
             const year = document.getElementById('year');
             year.length = "";
             let Per_year = new Set();
             let result_Per_year = Array2.filter(item => !Per_year.has(item.Year) ? Per_year.add(item.Year) : false);
             result_Per_year = result_Per_year.filter(y => y.Year != "麟洛鄉")
-
             Per_year_Ans = result_Per_year;
             result_Per_year.forEach((item, index) => {
                 let option = document.createElement('option');
@@ -134,7 +144,6 @@
                 option0.value = '';
                 option0.text = '---請選擇城市---';
                 citySelect.add(option0)
-
                 let Per_city = new Set();
                 let result_Per_city = Array2.filter(item => !Per_city.has(item.County) ? Per_city.add(item.County) : false);
                 result_Per_city = result_Per_city.filter(f => f.County != null)
@@ -153,7 +162,7 @@
                 // console.log(citySelect.selectedOptions[0].value)
             }
         };
-
+        citySelect.onchange = citySelectedChange;
         citySelect.addEventListener('change', function () {
             let yearValue = yearSelect.selectedOptions[0].value;
             let yearText = yearSelect.selectedOptions[0].text;
@@ -168,8 +177,6 @@
             }
             MarkAction_A();
         });
-
-
         let Array3 = []
         function MarkAction_A() {
             Array3 = Array1.map(m => {
@@ -179,7 +186,6 @@
                         return `${m.Month}月的自來水用水量為${m.TheDailyDomesticConsumptionOfWaterPerPerson}`
                         //人均每日生活用水量TheDailyDomesticConsumptionOfWaterPerPerson
                     });
-                // console.warn(temp)
                 return {
                     City: citySelect.selectedOptions[0].value,
                     Town: m.District,
@@ -190,19 +196,16 @@
                 };
             });
             MarkAction_B();
-
         };
-
         resultData = [];
         function MarkAction_B() {
             resultData = Array3.filter(f => f.Water.length > 0)
-            console.table(resultData[0].Lat)
-            console.table(resultData[0].Lng)
+            // console.table(resultData[0].Lat)
+            // console.table(resultData[0].Lng)
             resultData.forEach((item, index) => {
-
                 const marker = new google.maps.Marker({
                     position: { lat: item.Lat, lng: item.Lng },
-                    map,
+                    map, iconPath,
                     title: `${item.City} ${item.Town}`, //靠近標點會顯出地標
                 });
                 console.dir(marker)
@@ -229,12 +232,17 @@
         function initMap_a() {
 
             map.setCenter({
-                lat: resultData[0].Lat,
-                lng: resultData[0].Lng
+                lat: resultData[1].Lat,
+                lng: resultData[1].Lng
             });
-            
-    
-
+            console.log(resultData[1].City)
+            console.log(resultData[1].Lat)
+            console.log(resultData[1].Lng)
+        }
+        function citySelectedChange() {
+            markers.forEach(item => {
+                item.setMap(null)
+            })
         }
 
     </script>
