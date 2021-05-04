@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/fa7210dc77.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .fa-5x {
+        font-size: 500px;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .bnt_group button {
+        padding: 20px;
+        margin: 5px;
+        font-size: 20px;
+    }
+
+    .box {
+        width: 600px;
+        height: 600px;
+        background-color: rgba(255, 0, 0, 0.3);
+        display: flex;
+        position: relative;
+    }
+
+    .block {
+        width: 200px;
+        height: 200px;
+        background-color: greenyellow;
+        position: absolute;
+    }
+</style>
+
+<body>
+
+    <!-- ******************************************************************************************************************************** -->
+    <!-- jQuery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <!-- ajax +  jQuery  -->
+    <!-- <script>
+        $.ajax({
+            url: 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json',
+            // url:'',來源路徑
+            method: 'GET',
+            dataType: 'json',//格式
+            success: function (res) {
+                console.log(res)// 成功
+            },
+            error: function (err) {
+                console.log(err)// 錯誤
+            }
+        })
+    </script> -->
+    <!-- ******************************************************************************************************************************** -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+        axios.get('https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json')
+            .then(function (res) {
+                console.table(res.data)// 成功
+            })
+            .catch(function (err) {
+                console.log(err)// 錯誤
+            })
+    </script> -->
+    <!-- ******************************************************************************************************************************** -->
+    <script>
+        //方法一
+        // A().then((res) => {
+        //     console.log(res)
+        //     return B()
+        // })
+        //     .catch((err) => {
+        //         console.log(err)
+        //     })
+        //方法二
+        // Promise.all([A(), B()])
+        //     .then((res) => {
+        //         let [res1, res2] = res;
+        //         console.log(res1);
+        //         console.log(res2);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     })
+        // function A() {
+        //     return new Promise(function (resolve, reject) {
+        //         // resolve 成功 reject失敗
+        //         console.log('執行A')
+        //         let isDone = true;
+        //         if (isDone = true) {
+        //             return resolve('A成功')
+        //         }
+        //         else {
+        //             return reject('A失敗')
+        //         }
+        //     })
+        // }
+
+        // function B() {
+        //     return new Promise(function (resolve, reject) {
+        //         console.log('執行B')
+        //         let isDone = true;
+        //         if (isDone = true) {
+        //             return resolve('B成功')
+        //         } else {
+        //             return reject('B失敗')
+        //         }
+        //     })
+        // }
+    </script>
+    <!-- ******************************************************************************************************************************** -->
+    <script>
+        // Promise.all([getArea(), getArea_A()])
+        //     .then((res) => {
+        //         let [res1, res2] = res;
+        //         console.log("res1成功")// 成功
+        //         console.log("res2成功")// 成功
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     })
+        // function getArea() {
+        //     return new Promise((resolve, reject) => {
+        //         $.ajax({
+        //             url: 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json',
+        //             method: 'GET',
+        //             dataType: 'json',//格式
+        //             success: function (res) {
+        //                 resolve(res)
+        //                 console.log(res)// 成功
+        //             },
+        //             error: function (err) {
+        //                 reject(err)
+        //                 console.log(err)// 錯誤
+        //             }
+        //         })
+        //     })
+        // }
+        // function getArea_A() {
+        //     return new Promise((resolve, reject) => {
+        //         $.ajax({
+        //             url: 'https://raw.githubusercontent.com/taihochan/JsonData/main%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json',
+        //             method: 'GET',
+        //             dataType: 'json',//格式
+        //             success: function (res) {
+        //                 resolve(res)
+        //                 console.log(res)// 成功
+        //             },
+        //             error: function (err) {
+        //                 reject(err)
+        //                 console.log(err)// 錯誤
+        //             }
+        //         })
+        //     })
+        // }
+        // function axiosGetArea(){
+        //     return axios.get('https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json')
+        // }
+    </script>
+    <!-- ******************************************************************************************************************************** -->
+    <!-- <i id="icon" class="fa fa-bullseye fa-5x" aria-hidden="true"></i>
+    <button onclick="doSomething1()">doSomething1</button>
+    <button onclick="doSomething2()">doSomething2</button>
+    <button onclick="doSomething3()">doSomething3</button> -->
+
+    <script>
+        // function doSomething1() {
+        //     let icon = document.getElementById('icon')
+        //     setTimeout(() => { icon.style.color = 'green'; }, 300)
+        //     setTimeout(() => { icon.style.color = 'black'; }, 600)
+        //     setTimeout(() => { icon.style.color = 'green'; }, 900)
+        //     setTimeout(() => { icon.style.color = 'black'; }, 1200)
+        // }
+        // function doSomething2() {
+        //     let icon = document.getElementById('icon')
+        //     let green = true;
+        //     for (let i = 0; i <= 2000; i++) {
+        //         //IIFE
+        //         (function (x) {
+        //             setTimeout(() => { icon.style.color = green ? "green" : "black"; green = !green; }, 300 * x)
+        //         })(i)
+        //     }
+        // }
+        // function doSomething3() {
+        //     let times = 0;
+        //     let icon = document.getElementById('icon')
+        //     let timer = setInterval(() => {
+        //         setTimeout(() => { icon.style.color = 'green' }, 100);
+        //         setTimeout(() => { icon.style.color = 'black'; times++ }, 200)
+        //         if (times >= 10) clearInterval(timer);//clearInterval停止
+        //     }, 200);
+        // }
+    </script>
+    <!-- ******************************************************************************************************************************** -->
+    <div class="container">
+        <div class="box">
+            <div id="b1" class="block" style="top: 0;left: 0;">
+            </div>
+        </div>
+        <div class="btn_group"></div>
+        <button id="x_btn">X移動</button>
+        <button id="y_btn">Y移動</button>
+    </div>
+    <script>
+        document.getElementById('x_btn').addEventListener('click', function () {
+            moveX('b1', 200)
+                .then(res => {
+                    console.log("1" + res)
+                })
+        })
+        document.getElementById('y_btn').addEventListener('click', function () {
+            moveY('b1', 200)
+                .then(res => {
+                    console.log(res)
+                })
+        })
+        function moveX(id, x) {
+            let box = document.getElementById(id)
+            let target = parseInt(box.style.left, 10) + x;
+            let start = parseInt(box.style.left, 10)
+            let aaa = 0
+            console.log("x" + x)
+            // parseInt() 函式能將輸入的字串轉成整數。
+
+            let time = 100;
+            let perMove = x / time;
+            return new Promise((resolve, reject) => {
+                for (let i = 1; i <= time; i++) {
+                    (function (t) {
+                        setTimeout(() => {
+                            // debugger
+                            // if (parseInt(box.style.left, 10) == 400) {
+                            //     perMove = -perMove
+                            // }
+                            // if (parseInt(box.style.left, 10) == 200) {
+
+                            //     if (perMove = perMove) {
+                            //         perMove = perMove
+                            //     }
+                            //     if (perMove = -perMove) {
+                            //         perMove = -perMove
+                            //     }
+                            // }
+                            // if (parseInt(box.style.left, 10) == 0) {
+                            //     perMove = perMove
+                            // }
+
+                            box.style.left = parseInt(box.style.left, 10) + perMove + 'px';
+                            console.log(parseInt(box.style.left, 10))
+                            if (parseInt(box.style.left, 10) == target) {
+                                resolve('X移動完成')
+                            }
+                        }, 10 * t);
+                    })(i)
+                }
+            })
+            first = false
+        }
+        function moveY(id, y) {
+            let box = document.getElementById(id)
+            let target = parseInt(box.style.top, 10) + y;
+            let time = 100;
+            let perMove = y / time;
+            return new Promise((resolve, reject) => {
+                for (let i = 1; i <= time; i++) {
+                    (function (t) {
+                        setTimeout(() => {
+                            box.style.top = parseInt(box.style.top, 10) + perMove + 'px';
+                            console.log(parseInt(box.style.top, 10))
+                            if (parseInt(box.style.top, 10) == target) {
+                                resolve('Y移動完成')
+                            }
+                        }, 10 * t);
+                    })(i)
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

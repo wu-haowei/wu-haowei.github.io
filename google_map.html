@@ -30,7 +30,6 @@
             justify-content: center;
             align-items: center;
             height: 100%;
-
         }
 
         .drop_down {
@@ -52,7 +51,7 @@
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUIzshuil2vxBR475q-mOhkWLqCk1RetI&callback=initMap&libraries=&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key=1AIzaSyBUIzshuil2vxBR475q-mOhkWLqCk1RetI&callback=initMap&libraries=&v=weekly"
         async></script>
     <script>
         const url_1 = 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json';
@@ -84,7 +83,7 @@
         }
         let Array1 = [];//存取第一個陣列城市資料
         let Array2 = []; //存取第二個陣列水的資料
-        function MapResource() {
+        function MapResource() {//資料寫入
             fetch(url_1)
                 .then(response => response.text())
                 .then(cityResult => {
@@ -98,8 +97,8 @@
                         });
                 });
         };
-        let Per_year_Ans = [] //不重復年分
-        function MarkAction() {
+        let Per_year_Ans = [] //不重復年份 儲存點
+        function MarkAction() {//年份選擇
             const year = document.getElementById('year');
             year.length = "";
             let Per_year = new Set();
@@ -126,9 +125,9 @@
             option4.setAttribute('selected', '');    //預設選項
             city.add(option4, 0);
             //*****************************************************************************************************
-            yearSelect.onchange = yearSelectedChange;
+            yearSelect.onchange = yearSelectedChange;//年份改變
             function yearSelectedChange() {
-                markers.forEach(item => {
+                markers.forEach(item => {//清除座標
                     item.setMap(null)
                 })
                 let yearValue = yearSelect.selectedOptions[0].value;//保留選取的值
@@ -155,14 +154,9 @@
                     option1.text = item.County;
                     city.add(option1, null);
                 })
-                // //更改陣列
-                // console.log(citySelect.selectedOptions[0].value)
-                // // 刪除不正確的資料
-                // console.log(yearSelect.selectedOptions[0].value)
-                // console.log(citySelect.selectedOptions[0].value)
             }
         };
-        citySelect.onchange = citySelectedChange;
+        citySelect.onchange = citySelectedChange;//城市改變清除座標
         citySelect.addEventListener('change', function () {
             let yearValue = yearSelect.selectedOptions[0].value;
             let yearText = yearSelect.selectedOptions[0].text;
@@ -175,10 +169,10 @@
             else {
                 msg.innerHTML = '';
             }
-            MarkAction_A();
+            Data_judgment();
         });
         let Array3 = []
-        function MarkAction_A() {
+        function Data_judgment() {//資料是否符合判斷
             Array3 = Array1.map(m => {
                 //用水縣市County 城市縣市City && 用水鄉鎮Town 城市鄉鎮District &&年分Year指定
                 let temp = Array2.filter(f => f.County == citySelect.selectedOptions[0].value && f.Town == m.District && f.Year == yearSelect.selectedOptions[0].value)
@@ -195,13 +189,11 @@
                     year: yearSelect.selectedOptions[0].value
                 };
             });
-            MarkAction_B();
+            Coordinate_position();
         };
         resultData = [];
-        function MarkAction_B() {
+        function Coordinate_position() {//產生座標
             resultData = Array3.filter(f => f.Water.length > 0)
-            // console.table(resultData[0].Lat)
-            // console.table(resultData[0].Lng)
             resultData.forEach((item, index) => {
                 const marker = new google.maps.Marker({
                     position: { lat: item.Lat, lng: item.Lng },
@@ -217,11 +209,9 @@
                 // console.warn(infowindow)
                 // 丟到空陣列裡
                 infos.push(infowindow);
-                // console.log(infos)
                 marker.addListener("click", () => {
                     infos.forEach((item) => {
                         item.close();
-                        // console.warn(item); 
                     });
                     infowindow.open(map, marker);
                 });
@@ -229,7 +219,7 @@
             });
             initMap_a();
         }
-        function initMap_a() {
+        function initMap_a() {                  //移動中心點
 
             map.setCenter({
                 lat: resultData[1].Lat,
@@ -239,7 +229,7 @@
             console.log(resultData[1].Lat)
             console.log(resultData[1].Lng)
         }
-        function citySelectedChange() {
+        function citySelectedChange() {         //城市改變清除座標
             markers.forEach(item => {
                 item.setMap(null)
             })

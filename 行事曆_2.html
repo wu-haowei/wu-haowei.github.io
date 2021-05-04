@@ -1,536 +1,1147 @@
-
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <link rel="stylesheet" href="./calendar.css">
-        <title>日曆</title>
-    </head>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body class="">
-    <h1 class="d-flex justify-content-center">日曆</h1>
-    <div class="d-flex justify-content-around">
-        <button id="prev" type="button" class="btn btn-dark mr-30px">上個月</button>
-        <button id="next" type="button" class="btn btn-dark mr-30px">下個月</button>
-    </div>
-    <div id="calendar">
-        <h2>2021年4月</h2>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>一</th>
-                    <th>二</th>
-                    <th>三</th>
-                    <th>四</th>
-                    <th>五</th>
-                    <th>六</th>
-                    <th>日</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td bgcolor="gray">29</td>
-                    <td bgcolor="gray">30</td>
-                    <td bgcolor="gray">31</td>
-                    <td class="button" data-toggle="modal" data-target="#exampleModal">1</td>
-                    <td class="button">2</td>
-                    <td class="button">3</td>
-                    <td class="button">4</td>
-                </tr>
-                <tr>
-                    <td class="button">5</td>
-                    <td class="button">6</td>
-                    <td class="button">7</td>
-                    <td class="button">8</td>
-                    <td class="button">9</td>
-                    <td class="button">10</td>
-                    <td class="button">11</td>
-                </tr>
-                <tr>
-                    <td class="button">12</td>
-                    <td class="button">13</td>
-                    <td class="button">14</td>
-                    <td class="button">15</td>
-                    <td class="button">16</td>
-                    <td class="button">17</td>
-                    <td class="button">18</td>
-                </tr>
-                <tr>
-                    <td class="button">19</td>
-                    <td class="button">20</td>
-                    <td class="button">21</td>
-                    <td class="button">22</td>
-                    <td class="button">23</td>
-                    <td class="button text-white bg-info">24</td>
-                    <td class="button">25</td>
-                </tr>
-                <tr>
-                    <td class="button">26</td>
-                    <td class="button">27</td>
-                    <td class="button">28</td>
-                    <td class="button">29</td>
-                    <td class="button">30</td>
-                    <td bgcolor="gray">1</td>
-                    <td bgcolor="gray">2</td>
-                </tr>
-                <tr>
-                    <td bgcolor="gray">3</td>
-                    <td bgcolor="gray">4</td>
-                    <td bgcolor="gray">5</td>
-                    <td bgcolor="gray">6</td>
-                    <td bgcolor="gray">7</td>
-                    <td bgcolor="gray">8</td>
-                    <td bgcolor="gray">9</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">2021年4月1日-記事本</h5>
-                    <button id="x" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+    <title>Calendar</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            font-family: "Noto Sans TC", sans-serif;
+        }
+
+        .container-fluid {
+            height: 100%;
+        }
+
+        .calendar {
+            padding-top: 10px;
+            text-decoration: none;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calendar-title {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .calendar-title .calendar-date {
+            margin: 0 10px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .calendar-btnPrev,
+        .calendar-btnNext {
+            font-size: 30px;
+        }
+
+        .calendar-date {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .calendar-date span {
+            padding: 0 5px;
+        }
+
+        .calendar-date span:first-child {
+            color: rgb(169, 157, 194);
+        }
+
+        .calendar-date span:last-child {
+            font-weight: bold;
+            color: rgb(155, 214, 5);
+        }
+
+        .calendar-title button {
+            outline: none;
+            border: none;
+            background-color: #fff;
+            box-sizing: border-box;
+            color: gray;
+            min-width: 1.5rem;
+            opacity: 0.5;
+        }
+
+        .calendar-title button:hover {
+            opacity: 1;
+        }
+
+        .calendar-title .calendar-btnPrev {
+            order: -1;
+        }
+
+        .calendar-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calendar-weeklabel div,
+        .calendar-days>div {
+            overflow: hidden;
+            width: 14.2857142%;
+            box-sizing: border-box;
+        }
+
+        .calendar-weeklabel {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        .calendar-weeklabel div {
+            text-align: center;
+            color: gray;
+            font-weight: bold;
+        }
+
+        .calendar-daysWrap {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendar-days {
+            /* flex-grow: 1; */
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            opacity: 1;
+        }
+
+        .calendar-days>div {
+            padding: 5px;
+            flex-grow: 1;
+            border-right: 1px solid #dadce0;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .calendar-days>div:nth-child(-n + 7) {
+            border-top: 1px solid #dadce0;
+        }
+
+        .calendar-days>div:nth-child(7n + 1) {
+            border-left: 1px solid #dadce0;
+        }
+
+        .currentDay.intarget .dayInfo-label span {
+            width: 26px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .currentDay.outtarget .dayInfo-label span {
+            border-radius: 5%;
+        }
+
+        .dayInfo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dayInfo-title {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: -100;
+        }
+
+        .dayInfo-label {
+            width: 100%;
+            margin-bottom: 2px;
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .dayInfo-toDo {
+            position: relative;
+            width: 100%;
+            flex-grow: 1;
+            /* background-color:red; */
+        }
+
+        .dayInfo-toDoBox {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            overflow: hidden;
+            z-index: 10;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dayInfo-toDoItem {
+            background-color: #039be5;
+            height: 20px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 3px;
+            margin-bottom: 2px;
+            display: flex;
+            border: none;
+            outline: none;
+            font-size: 12px;
+            padding: 0;
+        }
+
+        .dayInfo-toDoItem span {
+            border-radius: 3px;
+            text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            color: #fff;
+            padding: 0 5px;
+            height: 100%;
+        }
+
+        .dayInfo-toDoItem span:first-child {
+            background-color: green;
+            padding: 0 5px;
+            flex-shrink: 0;
+        }
+
+        .dayInfo-toDoItemMore {
+            background-color: #fff;
+            font-weight: bold;
+            height: 20px;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 2px;
+            border: none;
+            outline: none;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .addToDo {
+            position: fixed;
+            font-size: calc(2rem + 1vw);
+            border-radius: 50%;
+            right: 2%;
+            bottom: 5%;
+            color: #4294ef;
+            border: none;
+            background-color: #fff;
+            padding: 0;
+            z-index: 100;
+        }
+
+        .addToDo i {
+            display: block;
+        }
+
+        .iconBtn {
+            padding: 0;
+            outline: none;
+            border: none;
+            background-color: #fff;
+            font-size: 35px;
+            line-height: 1;
+        }
+
+        .modal-addBtn {
+            color: #0d6efd;
+        }
+
+        .modal-editBtn {
+            color: #0dcaf0;
+        }
+
+        .modal-delBtn {
+            color: #dc3545;
+            margin-right: auto;
+        }
+
+        .modal-savebtn {
+            color: #198754;
+        }
+
+        /* State */
+        .currentDay .dayInfo-label span {
+            line-height: 24px;
+            font-weight: bold;
+            background-color: #1a73e8;
+            color: #fff;
+        }
+
+        .outtarget {
+            color: #aab9d6de;
+        }
+
+        .saturday {
+            color: rgb(155, 214, 5);
+        }
+
+        .sunday {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="calendar">
+            <div class="calendar-title">
+                <h1 class="calendar-date">
+                    <span></span>
+                    <span></span>
+                </h1>
+                <button class="calendar-btnPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="calendar-btnNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+            <div class="calendar-body">
+                <div class="calendar-weeklabel">
+                    <div>SUN</div>
+                    <div>MON</div>
+                    <div>TUE</div>
+                    <div>WED</div>
+                    <div>THU</div>
+                    <div>FRI</div>
+                    <div>SAT</div>
                 </div>
-                <div class="modal-body">
-                    <h1 id="description" class="text-primary"></h1>
-                    <textarea id="textarea" cols="40" rows="5" placeholder="輸入記事本內容" aria-label="輸入記事本內容"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="save" type="button" class="btn btn-primary">Save</button>
-                    <button id="modify" type="button" class="btn btn-warning">Modify</button>
-                    <button id="delete" type="button" class="btn btn-danger">Delete</button>
-                    <button id="deleteall" type="button" class="btn btn-danger">DeleteAll</button>
+                <div class="calendar-daysWrap">
                 </div>
             </div>
         </div>
     </div>
+    <button type="button" class="addToDo" data-bs-toggle="modal" data-bs-target="#toDoModal">
+        <i class="fas fa-plus-circle"></i>
+    </button>
+    <!-- template -->
+    <template id="tpl-dayInfo">
+        <div class="dayInfo" data-bs-toggle="modal" data-bs-target="#toDoModal">
+            <h2 class="dayInfo-title"></h2>
+            <div class="dayInfo-label">
+                <span></span>
+            </div>
+            <div class="dayInfo-toDo">
+                <div class="dayInfo-toDoBox">
+                </div>
+            </div>
+        </div>
+    </template>
 
+    <!-- Modal -->
+    <div class="modal fade" id="toDoModal" tabindex="-1" aria-labelledby="toDoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="toDoModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="eventTitleInput"
+                            placeholder="Please input event title.">
+                    </div>
+                    <div class="mb-3 d-flex">
+                        <input type="date" class="form-control me-1 text-center" id="eventDateInput">
+                        <input type="time" class="form-control ms-1 text-center" id="eventTimeInput">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="eventDescriptInput" rows="3"
+                            placeholder="Please input event description."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="toDoListModal" tabindex="-1" aria-labelledby="toDoListModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="toDoListModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let todayDate, currentDate, currentCalendarData, schedules;
+        const daytoDoBoxResizeObs = new ResizeObserver(daytoDoBoxResizeAction);
+        const monuthNames = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "Septemper",
+            "October",
+            "November",
+            "December",
+        ];
+        const dayOfWeek = 7;
 
-    <script type="module">
-        import { $g, $c } from '/Modules/heipers.js';
-
-        let d = new Date();
-
-        let h2 = $c('h2');
-        h2.innerText = get_yyyy_mm(d);
-        let calendar = $g('#calendar');
-        calendar.append(h2);
-        create_table();
-
-        //點上一個月觸發換月
-        document.getElementById('prev').addEventListener("click", function () {
-            clickbutton(-1);
-        });
-
-        //點下一個月觸發換月
-        document.getElementById('next').addEventListener("click", function () {
-            clickbutton(1);
-        });
-
-        function clickbutton(AddOrMinus) {
-            d.setDate(15);
-            d.setMonth(d.getMonth() + AddOrMinus);
-            // console.log(d);
-            let calendar = $g('#calendar');
-            calendar.innerText = "";
-            let h2 = $c('h2');
-            h2.innerText = get_yyyy_mm(d);
-            calendar.append(h2);
-            create_table();
+        function dateInfo(year, month, date, day, toDoList) {
+            this.year = year,
+                this.month = month,
+                this.date = date,
+                this.day = day,
+                this.toDoList = toDoList
         }
 
-        function get_yyyy_mm(d) {
-            let yyyy = d.getFullYear();
-            let mm = d.getMonth() + 1;
-            return `${yyyy}年${mm}月`;
+        dateInfo.prototype.toDateObj = function () {
+            return new Date(this.year, this.month, this.date);
+        };
+
+        function WriteSchedulesFile(schedules) {
+            localStorage.setItem("schedules", JSON.stringify(schedules));
         }
 
-        function create_table() {
-            let calendar = $g('#calendar');
-            let table = $c('table');
-            table.setAttribute('class', 'table table-bordered');
-            create_thead(table);
-            create_tbody(table);
-
-            calendar.append(table);
-        }
-
-        function create_thead(table) {
-            let thead = $c('thead');
-            create_tr_th(thead);
-            table.append(thead);
-        }
-
-        function create_tbody(table) {
-            let tbody = $c('tbody');
-            create_tr_td(tbody);
-            table.append(tbody);
-        }
-
-        function create_tr_th(thead) {
-            let tr = $c('tr');
-            for (let j = 1; j <= 7; j++) {
-                let th = document.createElement('th');
-                if (j == 1) {
-                    th.innerText = "一";
-                }
-                else if (j == 2) {
-                    th.innerText = "二";
-                }
-                else if (j == 3) {
-                    th.innerText = "三";
-                }
-                else if (j == 4) {
-                    th.innerText = "四";
-                }
-                else if (j == 5) {
-                    th.innerText = "五";
-                }
-                else if (j == 6) {
-                    th.innerText = "六";
-                }
-                else {
-                    th.innerText = "日";
-                }
-                tr.append(th);
+        function ReadSchedulesFile() {
+            let raw = localStorage.getItem("schedules");
+            // console.log(raw);
+            if (raw !== null) {
+                return JSON.parse(raw);
             }
-            thead.append(tr);
-        }
-
-        //設定tbody內容
-        function create_tr_td(tbody) {
-            for (let i = 0; i < 6; i++) {
-                let dayArray = setday(d);
-                let tr = document.createElement('tr');
-
-                for (let j = 0; j < 7; j++) {
-                    let td = document.createElement('td');
-                    let yyyy = dayArray[i * 7 + j][0];
-                    let mm = dayArray[i * 7 + j][1];
-                    let dd = dayArray[i * 7 + j][2];
-                    td.innerText = dd;
-                    if (checkPreNext(yyyy, mm, dd, d) == true) {
-                        td.bgColor = "gray";
-                        tr.append(td);
-                    }
-                    else if (checkNotebook(`${yyyy}${mm}${dd}`) != null) {
-                        td.setAttribute("class", "button text-white bg-danger");
-                        //設定button Modal
-                        Notebook(yyyy, mm, dd, td);
-                        tr.append(td);
-                    }
-                    else if (checkToday(yyyy, mm, dd) == true) {
-                        td.setAttribute("class", "button text-white bg-info");
-                        //設定button Modal
-                        Notebook(yyyy, mm, dd, td);
-                        tr.append(td);
-                    }
-
-                    else {
-                        td.setAttribute("class", "button");
-                        //設定button Modal
-                        Notebook(yyyy, mm, dd, td);
-                        tr.append(td);
-                    }
-
-                }
-
-                tbody.append(tr);
-
+            else {
+                return [];
             }
         }
 
-        //設定新增button記事本內容
-        function Notebook(yyyy, mm, dd, td) {
-            //modal設定
-            td.addEventListener('click', function () {
-                this.setAttribute('data-toggle', 'modal');
-                this.setAttribute('data-target', '#exampleModal');
-                let modal = $g('#exampleModal');
-                modal.querySelector('h5').innerText = `${yyyy}年${mm}月${dd}日-記事本`;
-                // modal.querySelector('#description').innerText = `${yyyy}, ${mm}, ${dd}`;
 
-                let storage = window.localStorage;
-                let day = `${yyyy}${mm}${dd}`;
-                let note = localStorage.getItem(day);
-                modal.querySelector('#description').innerText = note;
-                modal.querySelector('#description').value = day;
+        window.onload = function () {
+
+            todayDate = new Date();
+            let temp = new Date();
+            currentDate = new Date(todayDate.getFullYear(), todayDate.getMonth());//當前的日期
+            schedules = ReadSchedulesFile();//時間表 =讀取時間表文件
+            currentCalendarData = CreateCalendarData(todayDate, schedules);//當前日曆數據 = 創建日曆數據(今天,時間表)
+            ApplyCalendarDays(currentCalendarData, true);//日曆天數(當前日曆數據,true)
+
+
+            // register btnPrev click event 註冊btnPrev點擊事件
+            document.querySelector(".calendar-btnPrev").addEventListener("click", function () { IncreaseCalendar(false) });
+
+            // register btnNext click event註冊btnNext點擊事件
+            document.querySelector(".calendar-btnNext").addEventListener("click", function () { IncreaseCalendar(true) });
+
+            // 
+            document.querySelector(".addToDo").addEventListener("click", function () { InitAddToDoModal(); });
+            //toDoListModal 待辦事項清單模式
+            let toDoListModal = document.querySelector("#toDoListModal");
+            toDoListModal.addEventListener("hidden.bs.modal", function () {
+                ClearToDoListModal();
+            })
+
+
+        };
+
+        // #region toDoListModal 地區待辦事項清單模式
+        function ClearToDoListModal() {//清除待辦事項清單模式
+            let toDoListModal = document.querySelector("#toDoListModal");
+            toDoListModal.querySelector("#toDoListModalLabel").innerText = "";
+            toDoListModal.querySelector(".modal-body").innerHTML = "";
+        }
+
+        function InitToDOListModal(toDoList) {//初始化待辦事項清單模態(待辦事項清單)
+            let toDoListModal = document.querySelector("#toDoListModal");
+            toDoListModal.querySelector("#toDoListModalLabel").innerText = CreateDateString(toDoList[0].year, toDoList[0].month + 1, toDoList[0].date);
+            toDoListModal.addEventListener("hidden.bs.modal", function () {
+                ClearToDoListModal();//清除待辦事項清單模式
+            });
+
+            let modalBody = toDoListModal.querySelector(".modal-body");
+            //toDoList 待辦事項清單模式
+            toDoList.forEach((scheduleItem) => {
+                modalBody.appendChild(CreateToDoItemOnList(scheduleItem, (event) => {//CreateToDoItemOnList在列表中創建待辦事項(時間表項目(event))
+                    OnClickToDoItemOfList(event, scheduleItem);//OnClick待辦事項清單(event,時間表項目)
+                }));
             });
         }
 
-        //判斷那天記事本是否有內容
-        function checkNotebook(yyyymmdd) {
-            let storage = window.localStorage;
-            let note = localStorage.getItem(yyyymmdd);
-            // console.log(note);
-            return note;
-        }
-        // console.log(checkNotebook(2021423));
 
 
-        //上個月最後一天的[月,日,星期]
-        function LastDayPrevMonth(d) {
-            let yyyy = d.getFullYear();
-            let mm = d.getMonth();
-            let FirstDay = new Date(yyyy, mm, 1);
-            let LastDayMonth = new Date(yyyy, mm, 0);
-            return [LastDayMonth.getFullYear(), LastDayMonth.getMonth() + 1, LastDayMonth.getDate(), LastDayMonth.getDay()];
+        // #region toDoModal
+
+        function ClearToDoModal() {
+            let toDoModal = document.querySelector("#toDoModal");
+            toDoModal.querySelector("#toDoModalLabel").innerText = "";
+
+            document.querySelectorAll(".form-control").forEach((el) => {
+                el.value = "";
+                el.removeAttribute("readonly");
+            });
+
+            let modalfooter = toDoModal.querySelector(".modal-footer");
+            modalfooter.innerHTML = "";
         }
 
-        //下個月最後一天的[月,日,星期]
-        function FirstDayNextMonth(d) {
-            let yyyy = d.getFullYear();
-            let mm = d.getMonth() + 1;
-            let FirstDay = new Date(yyyy, mm, 1);
-            return [FirstDay.getFullYear(), FirstDay.getMonth() + 1, FirstDay.getDate(), FirstDay.getDay()];
+        function InitAddToDoModal(date) {
+
+            date = date || todayDate;
+
+            let toDoModal = document.querySelector("#toDoModal");
+
+            toDoModal.addEventListener("hidden.bs.modal", function () {
+                ClearToDoModal();
+            });
+
+            toDoModal.querySelector("#toDoModalLabel").innerText = "Create Event";
+
+            let initContent = [
+                "",
+                CreateDateString(date.getFullYear(), date.getMonth() + 1, date.getDate()),
+                CreateTimeString(date.getHours(), date.getMinutes()),
+                ""
+            ];
+            let inputs = toDoModal.querySelectorAll(".form-control")
+            inputs.forEach((el, index) => {
+                el.value = initContent[index];
+            });
+
+            let modalfooter = toDoModal.querySelector(".modal-footer");
+            modalfooter.innerHTML = "";
+
+            let addbtnattrib = [{ key: "data-bs-dismiss", value: "modal" }];
+            let addbtn = CreateDOMElement(
+                "button",
+                ["iconBtn", "modal-addBtn"],
+                addbtnattrib
+            );
+
+            addbtn.innerHTML = '<i class="far fa-plus-square"></i>';
+            addbtn.addEventListener("click", () => {
+                let values = [];
+                inputs.forEach((item, index) => {
+
+                    values.push(item.value);
+                });
+
+
+                AddToDo(...values);
+            });
+            modalfooter.appendChild(addbtn);
+
         }
 
-        //這個月最後一天的[月,日,星期]
-        function LastDayThisMonth(d) {
-            let yyyy = d.getFullYear();
-            let mm = d.getMonth() + 1;
-            let FirstDay = new Date(yyyy, mm, 1);
-            let LastDayMonth = new Date(yyyy, mm, 0);
-            return [LastDayMonth.getFullYear(), LastDayMonth.getMonth() + 1, LastDayMonth.getDate(), LastDayMonth.getDay()];
+        function InitEditToDoModal(toDoItem, backModalId) {
+
+            // console.log(toDoItem);
+            backModalId = backModalId || "";
+            let toDoModal = document.querySelector("#toDoModal");
+            toDoModal.querySelector("#toDoModalLabel").innerText = "Edit Event";
+            toDoModal.addEventListener("hidden.bs.modal", function () {
+                ClearToDoModal();
+            });
+
+            let initContent = [
+                toDoItem.title,
+                CreateDateString(toDoItem.year, toDoItem.month + 1, toDoItem.date),
+                CreateTimeString(toDoItem.hour, toDoItem.minute),
+                toDoItem.description
+            ];
+            toDoModal.querySelectorAll(".form-control").forEach((el, index) => {
+                el.value = initContent[index];
+                el.setAttribute("readonly", "");
+            });
+            // console.log(backModalId);
+            let modalfooter = toDoModal.querySelector(".modal-footer");
+            modalfooter.innerHTML = "";
+            let delbtnattrib = [
+                // { key: "data-bs-target", value: "#toDoListModal" },
+                { key: "data-bs-dismiss", value: "modal" }, //modal
+                { key: "data-bs-target", value: `${backModalId}` }
+            ];
+            let delbtn = CreateDOMElement(
+                "button",
+                ["iconBtn", "modal-delBtn"],
+                delbtnattrib
+            );
+            delbtn.innerHTML = '<i class="far fa-trash-alt"></i>';
+            delbtn.addEventListener("click", () => { DeleteToDo(toDoItem) });
+            modalfooter.appendChild(delbtn);
+
+            let editbtn = CreateDOMElement(
+                "button",
+                ["iconBtn", "modal-editBtn"]
+            );
+
+            editbtn.innerHTML = '<i class="far fa-edit"></i>';
+            editbtn.addEventListener("click", () => { EditToDoModal(toDoItem, backModalId); });
+            modalfooter.appendChild(editbtn);
+
+
         }
 
-        //這個月第一天的[月,日,星期]
-        function FirstDayThisMonth(d) {
-            let yyyy = d.getFullYear();
-            let mm = d.getMonth();
-            let FirstDay = new Date(yyyy, mm, 1);
-            return [FirstDay.getFullYear(), FirstDay.getMonth() + 1, FirstDay.getDate(), FirstDay.getDay()];
+        function EditToDoModal(toDoItem, backModalId) {
+
+            let toDoModal = document.querySelector("#toDoModal");
+            let inputs = toDoModal.querySelectorAll(".form-control")
+            inputs.forEach((el, index) => {
+                el.removeAttribute("readonly");
+            });
+
+
+            let modalfooter = toDoModal.querySelector(".modal-footer");
+            let editBtn = modalfooter.querySelector(".modal-editBtn");
+            editBtn.classList.remove("btn-info", "modal-editBtn");
+
+            let savebtnattrib = [
+                { key: "data-bs-dismiss", value: "modal" },
+                { key: "data-bs-target", value: `${backModalId}` }
+            ];
+            let savebtn = CreateDOMElement(
+                "button",
+                ["iconBtn", "modal-savebtn"],
+                savebtnattrib
+            );
+            savebtn.innerHTML = '<i class="far fa-save"></i>';
+            savebtn.addEventListener("click", () => {
+                let values = [];
+                inputs.forEach((item, index) => {
+
+                    values.push(item.value);
+                });
+
+                SaveToDo(toDoItem, ...values);
+            });
+            editBtn.parentNode.replaceChild(savebtn, editBtn);
         }
 
-        // console.log(LastDayPrevMonth(d));
-        // console.log(FirstDayNextMonth(d));
-        // console.log(LastDayThisMonth(d));
-        // console.log(FirstDayThisMonth(d));
+        //#endregion
+
+        // function AddToDo(titleInput, dataInput, timeInput, descriptInput) {
+        function AddToDo(titleInput, dateInput, timeInput, descriptInput) {
+
+            let toDoBoxes = document.querySelectorAll(".calendar-days .dayInfo-toDoBox");
+            let date = dateInput.split("-");
+            let time = timeInput.split(":");
+
+            let newItem = {
+                id: _uuid(),
+                year: parseInt(date[0], 10),
+                month: parseInt(date[1], 10) - 1,
+                date: parseInt(date[2], 10),
+                hour: parseInt(time[0], 10),
+                minute: parseInt(time[1], 10),
+                title: titleInput,
+                description: descriptInput
+            };
+
+            schedules.push(newItem);
+            WriteSchedulesFile(schedules);
+
+            let dateindex = currentCalendarData.dates.findIndex((dateInfo) => {
+                return dateInfo.year === newItem.year && dateInfo.month === newItem.month && dateInfo.date === newItem.date;
+            });
+
+            if (dateindex >= 0) {
+                currentCalendarData.dates[dateindex].toDoList.push(newItem);
+                currentCalendarData.dates[dateindex].toDoList.sort(CompareScheduleOfDay);
+                CreateDayInfotoDoItems(toDoBoxes[dateindex], currentCalendarData.dates[dateindex].toDoList);
+            }
+        }
+
+        function SaveToDo(origin, titleInput, dateInput, timeInput, descriptInput) {
 
 
-        //設定日曆上面的日期
-        function setday(d) {
-            let dayArr = new Array();
-            let thisMonthFirstDay = FirstDayThisMonth(d);
-            let thisMonthLastDay = LastDayThisMonth(d);
-            let lastMonthLastDay = LastDayPrevMonth(d);
-            let nextMonthFirstDay = FirstDayNextMonth(d);
+            let toDoBoxes = document.querySelectorAll(".calendar-days .dayInfo-toDoBox");
+            let date = dateInput.split("-");
+            let time = timeInput.split(":");
+            let newItem = {
+                id: origin.id,
+                year: parseInt(date[0], 10),
+                month: parseInt(date[1], 10) - 1,
+                date: parseInt(date[2], 10),
+                hour: parseInt(time[0], 10),
+                minute: parseInt(time[1], 10),
+                title: titleInput,
+                description: descriptInput
+            };
+            let isdateOfChange = origin.year !== newItem.year || origin.month !== newItem.month || origin.date !== newItem.date;
 
-            if (thisMonthFirstDay[3] == 1)  //這個月第一天為星期一時
-            {
-                let count = 0;
-                for (let i = 1; i <= thisMonthLastDay[2]; i++) {
-                    dayArr.push([thisMonthLastDay[0], thisMonthLastDay[1], i]);
-                    count++;
+
+            // get index of origin date in dates
+            let originDateIndex = currentCalendarData.dates.findIndex((dateInfo) => {
+                return dateInfo.year === origin.year && dateInfo.month === origin.month && dateInfo.date === origin.date;
+            });
+
+            // get index of origin ToDoItem in toDoList
+            let originToDoIndex = currentCalendarData.dates[originDateIndex].toDoList.indexOf(origin);
+
+            // get index of new date in dates
+            let newDateIndex = currentCalendarData.dates.findIndex((dateInfo) => {
+                return dateInfo.year === newItem.year && dateInfo.month === newItem.month && dateInfo.date === newItem.date;
+            });
+
+            // get index of origin scheduleItem in schedules
+            let scheduleIndex = schedules.findIndex(item => item.id === newItem.id);
+
+            if (scheduleIndex >= 0) {
+                schedules.splice(scheduleIndex, 1, newItem);
+                WriteSchedulesFile(schedules);
+            }
+
+            //if origin date == new date , replace origin item
+            if (!isdateOfChange && originDateIndex >= 0 && originToDoIndex >= 0) {
+                currentCalendarData.dates[originDateIndex].toDoList.splice(originToDoIndex, 1, newItem);
+                currentCalendarData.dates[originDateIndex].toDoList.sort(CompareScheduleOfDay);
+            }
+
+            //if origin date != new date , remove origin item,then add newItem to correspond location.  
+            if (isdateOfChange && originDateIndex >= 0 && originToDoIndex >= 0 && newDateIndex >= 0) {
+                currentCalendarData.dates[originDateIndex].toDoList.splice(originToDoIndex, 1);
+                currentCalendarData.dates[newDateIndex].toDoList.push(newItem);
+                currentCalendarData.dates[newDateIndex].toDoList.sort(CompareScheduleOfDay);
+                CreateDayInfotoDoItems(toDoBoxes[newDateIndex], currentCalendarData.dates[newDateIndex].toDoList);
+            }
+            CreateDayInfotoDoItems(toDoBoxes[originDateIndex], currentCalendarData.dates[originDateIndex].toDoList);
+
+        }
+
+        function DeleteToDo(toDoItem) {
+            let toDoBoxes = document.querySelectorAll(".calendar-days .dayInfo-toDoBox");
+            let dateindex = currentCalendarData.dates.findIndex((dateInfo) => {
+                return dateInfo.year === toDoItem.year && dateInfo.month === toDoItem.month && dateInfo.date === toDoItem.date;
+            });
+
+            let toDoIndex = currentCalendarData.dates[dateindex].toDoList.indexOf(toDoItem);
+            currentCalendarData.dates[dateindex].toDoList.splice(toDoIndex, 1);
+            CreateDayInfotoDoItems(toDoBoxes[dateindex], currentCalendarData.dates[dateindex].toDoList);
+
+
+            let scheduleIndex = schedules.findIndex(item => item.id === toDoItem.id);
+
+            if (scheduleIndex >= 0) {
+                schedules.splice(scheduleIndex, 1);
+                WriteSchedulesFile(schedules);
+            }
+        }
+
+        // true : increase Calendar
+        // false : decrease Calendar
+        function IncreaseCalendar(increase) {
+            currentDate.setMonth(currentDate.getMonth() + (increase ? 1 : -1));
+            currentCalendarData = CreateCalendarData(currentDate, schedules);
+            ApplyCalendarDays(currentCalendarData, increase);
+        }
+
+
+        // Create dates of month ,according to year and month
+        function CreateDates(year, month) {
+            // get the first day of the month
+            let startDate = new Date(year, month);
+            // get the last day of the month
+            let endDate = new Date(year, month + 1, 0);
+            // get the day of week at the first day
+            let startDayOfWeek = startDate.getDay();
+
+            let dayCount = startDayOfWeek + endDate.getDate() - startDate.getDate() + 1;
+
+            let count = Math.floor(dayCount / dayOfWeek);
+            count = dayCount % dayOfWeek === 0 ? count : count + 1;
+            let loopCount = count * dayOfWeek;
+
+            let dates = [];
+            startDate.setDate(startDate.getDate() - startDayOfWeek);
+
+            // generate dates
+            for (let i = 0; i < loopCount; i++) {
+                if (i !== 0) {
+                    startDate.setDate(startDate.getDate() + 1);
+                }
+                dates.push(new Date(startDate));
+            }
+            return dates;
+        }
+
+        // Create CalendarData: 
+        // title : { year , month },
+        // dates : [datesInfo] 
+        function CreateCalendarData(srcdate, schedules) {
+
+            let srcYear = srcdate.getFullYear();
+            let srcMonuth = srcdate.getMonth();
+
+            let dates = CreateDates(srcYear, srcMonuth);
+            let datesInfo = [];
+
+            dates.forEach((item) => {
+                let year = item.getFullYear();
+                let month = item.getMonth();
+                let date = item.getDate();
+                let day = item.getDay();
+                let todo = schedules.filter(schedule => schedule.year === year && schedule.month === month && schedule.date === date)
+                    .sort(CompareScheduleOfDay);
+                datesInfo.push(new dateInfo(year, month, date, day, todo));
+            });
+
+            return {
+                title: { year: srcYear, month: srcMonuth },
+                dates: datesInfo,
+            }
+        }
+
+        // Apply calendarData to DOM tree
+        function ApplyCalendarDays(calendarData, isIncrease) {
+            let calendar = document.querySelector(".calendar");
+
+            calendar.querySelector(".calendar-date :first-child").innerText = calendarData.title.year;
+            calendar.querySelector(".calendar-date :last-child").innerText = monuthNames[calendarData.title.month];
+
+            let calendardaysWrap = document.querySelector(".calendar-daysWrap");
+
+            let existCalendarDays = calendardaysWrap.querySelector(".calendar-days");
+
+            let calendarDays = CreateCalendardays(calendarData);
+            calendarDays.style.opacity = 0;
+            calendardaysWrap.appendChild(calendarDays);
+            AddDaysToDoItem(calendarDays);
+
+            // calendarDays is not exist, add new calendardays
+            // calendarDays is exist,=> add new calendardays ,then remove previous calendarDays
+            if (existCalendarDays === null) {
+                calendarDays.style.opacity = 1;
+            } else {
+                if (isIncrease) {
+                    existCalendarDays.style.cssText =
+                        "opacity:0; transform:translate(-100%,0); transition: .2s;";
+                    calendarDays.style.cssText = "opacity:1; transform:translate(100%,0);";
+                } else {
+                    existCalendarDays.style.cssText =
+                        "opacity:0; transform:translate(100%,0); transition: .2s;";
+                    calendarDays.style.cssText = "opacity:1; transform:translate(-100%,0);";
                 }
 
-                let count2 = count;
-                for (let j = 1; j <= (42 - count2); j++) {
-                    dayArr.push([nextMonthFirstDay[0], nextMonthFirstDay[1], j]);
-                    count++;
-                }
+                setTimeout(() => {
+                    calendarDays.style.cssText = "opacity:1; transform:translate(0,0);";
+                    let calendardaysWrap = document.querySelector(".calendar-daysWrap");
+                    let calendarArray = calendardaysWrap.querySelectorAll(".calendar-days");
+                    if (calendarArray.length > 1) {
+                        calendardaysWrap.removeChild(calendarArray[0]);
+                    }
+                }, 50);
             }
-            else  //這個月第一天不為星期一時
-            {
-                let count = 0;
-                for (let i = 1; i <= lastMonthLastDay[3]; i++) {
-                    dayArr.push([lastMonthLastDay[0], lastMonthLastDay[1], lastMonthLastDay[2] - lastMonthLastDay[3] + i]);
-                    count++;
-                    // console.log(count);
-                }
-                for (let j = 1; j <= thisMonthLastDay[2]; j++) {
-                    dayArr.push([thisMonthLastDay[0], thisMonthLastDay[1], j]);
-                    count++;
-                    // console.log(count);
-                }
-
-                let count2 = count;
-                for (let k = 1; k <= (42 - count2); k++) {
-                    dayArr.push([nextMonthFirstDay[0], nextMonthFirstDay[1], k]);
-                    count++;
-                    // console.log(count);
-                }
-            }
-
-            return dayArr;
         }
 
-        //判斷是否為今天
-        function checkToday(yyyy, mm, dd) {
-            let d = new Date();
-            if (d.getFullYear() == yyyy && (d.getMonth() + 1) == mm && d.getDate() == dd) {
-                return true;
-            }
+        // Create DOM of Calendardays
+        function CreateCalendardays(calendarData) {
+            let calendarDays = document.createElement("div");
+            calendarDays.classList.add("calendar-days");
 
-            else return false;
+            let tpldayInfo = document.querySelector("#tpl-dayInfo");
+
+            calendarData.dates.forEach((item, index) => {
+                let clonedayInfo = tpldayInfo.content.cloneNode(true);
+                let dayinfo = clonedayInfo.querySelector(".dayInfo");
+                // let daytitle = clonedayInfo.querySelector(".dayTitle");
+
+                let istodayDate = YMD_Equal(item.toDateObj(), todayDate);
+                dayinfo.addEventListener("click", function () {
+                    InitAddToDoModal(new Date(item.year, item.month, item.date));
+                });
+                dayinfo.querySelector(".dayInfo-title").innerText = `${monuthNames[item.month]} ${item.date}`;
+                if (istodayDate) {
+                    dayinfo.classList.add("currentDay");
+                }
+
+                if (YM_Equal(item.toDateObj(), new Date(calendarData.title.year, calendarData.title.month))) {
+                    dayinfo.querySelector(".dayInfo-label>span").innerText = item.date;
+
+                    switch (item.day) {
+                        case 6:
+                            // item.day = 6 : saturday
+                            dayinfo.classList.add("saturday");
+                            break;
+
+                        case 0:
+                            // item.day = 0 : sunday
+                            dayinfo.classList.add("sunday");
+                            break;
+                    }
+
+                    if (istodayDate) {
+                        dayinfo.classList.add("intarget");
+                    }
+                } else {
+                    dayinfo.querySelector("span").innerText = `${monuthNames[item.month]
+                        } ${item.date}`;
+                    dayinfo.classList.add("outtarget");
+                }
+
+                calendarDays.appendChild(clonedayInfo);
+            });
+
+            return calendarDays;
         }
 
-        //判斷上下月份
-        function checkPreNext(yyyy, mm, dd, d) {
-            let nextMon = new Date(d);
-            let preMon = new Date(d);
-            nextMon.setMonth(nextMon.getMonth() + 1);
-            preMon.setMonth(preMon.getMonth() - 1);
+        // 
+        function AddDaysToDoItem(target) {
 
-            //判斷要加1因為月份從0開始
-            if (preMon.getFullYear() == yyyy && preMon.getMonth() + 1 == mm) {
-                // console.log(true);
-                return true;
+            // clear previous resizeobserve
+            daytoDoBoxResizeObs.disconnect();
+
+            let toDoBoxes = target.querySelectorAll(".dayInfo-toDoBox");
+
+            toDoBoxes.forEach((toDoBox) => {
+                // register resize event for each toDoBox 
+                daytoDoBoxResizeObs.observe(toDoBox);
+            });
+        }
+
+        // when size of dayToDoBox is changed
+        function daytoDoBoxResizeAction(entries) {
+            // console.log(entries);
+            entries.forEach((entry, index) => {
+                let toDoList = currentCalendarData.dates[index].toDoList;
+                CreateDayInfotoDoItems(entry.target, toDoList);
+            });
+        }
+
+
+        // Create todooitem of dayinfo  by todolist and size of entry 
+        function CreateDayInfotoDoItems(target, toDoList) {
+            let targetHeight = target.clientHeight;
+            let totaltoDoListHeight, toDoItem;
+            const toDoItemHeight = 22;
+            const moreInfoHeight = 22;
+            target.innerHTML = "";
+            if (toDoList.length !== 0) {
+
+                // height = resizeEntry.contentBoxSize[0].blockSize;
+                // assume the height of each toDoItem is 22px
+                totaltoDoListHeight = toDoList.length * toDoItemHeight;
+                // clear exist toDoItem
+
+                // 
+                if (totaltoDoListHeight <= targetHeight) {
+
+                    toDoList.forEach((scheduleItem) => {
+                        toDoItem = CreateToDoItemOnCalendar(scheduleItem, (event) => {
+                            OnClickToDoItemOfCalendar(event, scheduleItem);
+                        });
+                        target.appendChild(toDoItem);
+                    });
+                }
+                else {
+
+                    targetHeight -= moreInfoHeight;
+                    let index = 0;
+                    // create todoItem until the space is used up
+                    while ((targetHeight -= toDoItemHeight) > 0) {
+                        let scheduleItem = toDoList[index];
+                        toDoItem = CreateToDoItemOnCalendar(scheduleItem, (event) => {
+                            OnClickToDoItemOfCalendar(event, scheduleItem);
+                        });
+                        target.appendChild(toDoItem);
+                        index++
+                    }
+
+                    // if space is not enough space, use the text of button to indicate
+                    let classList = ["dayInfo-toDoItemMore"];
+                    let attrib = [
+                        { key: "data-bs-toggle", value: "modal" },
+                        { key: "data-bs-target", value: "#toDoListModal" }
+                    ];
+                    let content = `${toDoList.length - index} more `;
+                    let remain = CreateDOMElement("button", classList, attrib, content);
+                    remain.addEventListener("click", () => { InitToDOListModal(toDoList); });
+                    target.appendChild(remain);
+                }
             }
-            else if (nextMon.getFullYear() == yyyy && nextMon.getMonth() + 1 == mm) {
-                // console.log(true);
-                return true;
+        }
+
+        function OnClickToDoItemOfCalendar(event, scheduleItem) {
+            event.stopPropagation();
+            InitEditToDoModal(scheduleItem);
+        }
+
+        function OnClickToDoItemOfList(event, scheduleItem) {
+            event.stopPropagation();
+            InitEditToDoModal(scheduleItem, "#toDoListModal");
+        }
+
+        // Create ToDoItemOnList by object of ScheduleItem 
+        function CreateToDoItemOnList(scheduleItem, clickevent) {
+            let btn = CreateDOMElement(
+                "button",
+                ["dayInfo-toDoItem"],
+                [
+                    { key: "data-bs-toggle", value: "modal" },
+                    { key: "data-bs-target", value: "#toDoModal" },
+                    { key: "data-bs-dismiss", value: "modal" }
+                ]
+            );
+            if (typeof clickevent === "function") {
+                btn.addEventListener("click", clickevent);
             }
-            else {
-                // console.log(false);
+
+            let span = document.createElement("span");
+            span.innerText = `${CreateTimeString(scheduleItem.hour, scheduleItem.minute)}`;
+            btn.appendChild(span);
+            span = document.createElement("span");
+            span.innerText = `${scheduleItem.title}`;
+            btn.appendChild(span);
+            return btn;
+        }
+
+
+        // Create ToDoItemOnCalendar by object of ScheduleItem 
+        function CreateToDoItemOnCalendar(scheduleItem, clickevent) {
+
+            let btn = CreateDOMElement(
+                "button",
+                ["dayInfo-toDoItem"],
+                []
+            );
+            if (typeof clickevent === "function") {
+                btn.addEventListener("click", clickevent);
+            }
+
+            let span = document.createElement("span");
+            span.innerText = `${CreateTimeString(scheduleItem.hour, scheduleItem.minute)}`;
+            btn.appendChild(span);
+            span = document.createElement("span");
+            span.innerText = `${scheduleItem.title}`;
+            btn.appendChild(span);
+
+            return btn;
+        }
+
+        //CreateDOMElement by parameter
+        // tag : string of tag
+        // classList : CSS Classes
+        // attributes : HTML tag attributes
+        // content : innerText content
+        function CreateDOMElement(tag = "div", classList = [], attributes = [], content = "") {
+            let element = document.createElement(tag);
+
+            element.innerText = content;
+
+            if (classList.length !== 0) {
+                element.classList.add(...classList);
+            }
+
+            for (let i = 0; i < attributes.length; i++) {
+                element.setAttribute(attributes[i].key, attributes[i].value);
+            }
+
+            return element;
+        }
+
+        // Create UUID
+        // reference : pdf file of calendar  from TA
+        function _uuid() {
+            var d = Date.now();
+            if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
+                d += performance.now(); //use high-precision timer if available
+            }
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+        }
+
+
+        function CompareScheduleOfDay(a, b) {
+            let tmpA = a.hour * 100 + a.minute;
+            let tmpB = b.hour * 100 + b.minute;
+            return tmpA - tmpB;
+        }
+        // compare YMD
+        function YMD_Equal(dateA, dateB) {
+            // debugger;
+            if (!YM_Equal(dateA, dateB)) {
                 return false;
             }
+            if (dateA.getDate() !== dateB.getDate()) {
+                return false;
+            }
+            if (dateA.getDay() !== dateB.getDay()) {
+                return false;
+            }
+            return true;
         }
 
-        //設定按Close後清空textarea內容
-        let close = $g('#close');
-        close.addEventListener('click', function () {
-            let textarea = $g('#textarea');
-            textarea.value = "";
-        });
-
-        //設定按x後清空textarea內容
-        let x = $g('#x');
-        x.addEventListener('click', function () {
-            let textarea = $g('#textarea');
-            textarea.value = "";
-        });
-
-        //設定按Delete後清除當天資料
-        let del = $g('#delete');
-        del.addEventListener('click', function () {
-            let storage = window.localStorage;
-            let h1 = $g('#description');
-            let day = h1.value;
-            localStorage.removeItem(day);
-            let note2 = localStorage.getItem(day);
-            h1.innerText = note2;
-            clickbutton(0);
-        });
-
-        //設定save後儲存資料
-        let save = $g('#save');
-        save.addEventListener('click', function () {
-            let textarea = $g('#textarea');
-            let h1 = $g('#description');
-            let day = h1.value;
-            if (textarea.value == "") {
-                //沒資料儲存就不動作
+        // compare YM
+        function YM_Equal(dateA, dateB) {
+            if (dateA.getFullYear() !== dateB.getFullYear()) {
+                return false;
             }
-            // console.log(day);
+            if (dateA.getMonth() !== dateB.getMonth()) {
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+        function CreateDateString(year, month, date) {
+            return `${year}-${month.toString().padStart(2, "0")}-${date.toString().padStart(2, "0")}`;
+        }
+
+        function CreateTimeString(hour, minute) {
+            return `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`;
+        }
+
+
+        function StringCutOff(input, maxLength) {//
+            if (input.length < maxLength) {
+                return input
+            }
             else {
-                localStorage.setItem(day, textarea.value);
+                return input.substring(0, maxLength - 3) + "...";
             }
-            let note2 = localStorage.getItem(day);
-            h1.innerText = note2;
-            clickbutton(0);
-        });
+        }
 
-        //設定按DeleteAll後清除所有資料
-        let delall = $g('#deleteall');
-        delall.addEventListener('click', function () {
-            let storage = window.localStorage;
-            localStorage.clear();
-            let h1 = $g('#description');
-            let day = h1.value;
-            let note2 = localStorage.getItem(day);
-            h1.innerText = note2;
-            clickbutton(0);
-        });
 
-        //設定按Modify後取得資料
-        let modify = $g('#modify');
-        modify.addEventListener('click', function () {
-            let storage = window.localStorage;
-            let h1 = $g('#description');
-            let day = h1.value;
-            let note2 = localStorage.getItem(day);
-            let textarea = $g('#textarea');
-            textarea.value = note2;
-        });
 
 
     </script>
 
 
-
-
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    -->
-<!-- Code injected by live-server -->
-<script type="text/javascript">
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script></body>
+    <!-- <script src="/action-06.js"></script> -->
+</body>
 
 </html>
