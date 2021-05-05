@@ -147,6 +147,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modify">修改</button>
                         <button type="button" class="btn btn-danger" id="delete">刪除行程</button>
                         <button type="button" class="btn btn-primary" onclick="SaveTodoItem()">儲存</button>
                     </div>
@@ -183,7 +184,7 @@
 
 
         <script>
-     
+
             let clickItem = '';
             //今天
             let today = new Date();
@@ -228,9 +229,8 @@
                 let mmomth = new Date(year, month, 1).getMonth() + 1;       //讓月份都維持雙位數
                 let padStartmomth = mmomth.toString().padStart(2, '0');
                 //padStart() 會將用給定用於填充的字串，以重複的方式，插入到目標字串的起頭(左側)，直到目標字串到達指定長度。
-                document.getElementById('year-month').innerHTML =
-                    `${new Date(year, month, 1).getUTCFullYear()} 年 ${padStartmomth} 月`
-
+                let New_time = `${new Date(year, month, 1).getUTCFullYear()} 年 ${padStartmomth} 月`
+                document.getElementById('year-month').innerHTML = New_time;
                 //0星期日，1星期一，2星期二,3星期三，4星期四，5星期五,6星期六
                 let firstDay = new Date(year, month, 1).getDay();//這個月第一天星期幾
                 //console.log(firstDay);
@@ -248,20 +248,19 @@
                                 td.innerText = "上個月"
                                 console.log(td.innerText == "".length)
                             }
-
                             //上個月
                         }
                         else {
                             if (day <= dayOfMonth) {//建立資料
-
                                 td.innerText = day;
-                                if (day == today.getDate() && today.getFullYear() == year && month == today.getMonth()) {
+                                if (day == today.getDate() && today.getFullYear() == year && month == today.getMonth()) {//取得今天日期
                                     td.style.backgroundColor = 'red'
                                 }
                                 if (localStorage.getItem(`${year}-${month + 1}-${day}`) != null) {
                                     let ul = document.createElement('ul');
                                     let todoList = JSON.parse(localStorage.getItem(`${year}-${month + 1}-${day}`));
                                     todoList.forEach((item, index) => {
+                                        // console.warn(item.title);
                                         let li = document.createElement('li');
                                         li.innerText = item.title;
                                         li.setAttribute('index', index)//給每筆資料index
@@ -278,7 +277,8 @@
                                         target = e.target.offsetParent;
                                         let a = JSON.parse(localStorage.getItem(`${year}-${month + 1}-${target.childNodes[0].data}`))
                                         document.querySelector('#todo-item2').value = a[clickItem].description
-                                        //ffsetParent 是一个只读属性，返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素或者最近的 table,td,th,body元素
+                                        //ffsetParent 是一个只读属性，返回一个指向最近的（指包含层级上的最近）
+                                        //包含该元素的定位元素或者最近的 table,td,th,body元素
                                         document.querySelector('#TimeInput').value = a[clickItem].TimeInput
                                     } else {
                                         clickItem = '';
@@ -288,7 +288,8 @@
                                         document.querySelector('#TimeInput').value = "";
                                     }
                                     $('#inputModal').modal('show');//開啟視窗
-                                    document.getElementById('date').value = `${year}-${month + 1}-${target.childNodes[0].data}`;
+                                    document.getElementById('date').value =
+                                        `${new Date(year, month, 1).getUTCFullYear()}-${new Date(year, month + 1, 1).getMonth()}-${target.childNodes[0].data}`;
                                     document.getElementById('inputModalLabel').innerText = `${year}-${month + 1}-${target.childNodes[0].data}`;
                                     if (document.querySelector('#TimeInput').value == "") {
                                         document.querySelector('#TimeInput').value = document.querySelector('#today_Minutes-Seconds').innerText
@@ -298,11 +299,8 @@
                             else {
                                 //下個月
                                 if (td.innerText == "") {
-                                    // backgroundColor = 'green'
-                                    // td.backgroundColor = 'green'
                                     td.innerText = "下個月"
                                     console.log(td.innerText == "".length)
-
                                 }
                             }
                             day++;
@@ -314,42 +312,34 @@
             }
             Init();
             function Add() {
-
                 month++;
                 Init();
-
             }
             function Leos() {
-
                 month--;
                 Init();
-
             }
-
             function SaveTodoItem() {
                 if (document.getElementById('todo-item').value != "") {
                     let date = document.getElementById('date').value            //取得輸入的ID 第一格
                     let todoItem = document.getElementById('todo-item').value;  //取得輸入的ID 第二格
                     let todoitem2 = document.getElementById('todo-item2').value;  //取得輸入的ID 第二格
                     let TimeInput = document.getElementById('TimeInput').value
-
+                
                     let todoObj = {     //待辦事項
                         title: todoItem,  //title標題:todoItem待辦事項
                         description: todoitem2,
                         TimeInput: TimeInput
                     }
+                    
                     let todoList = []
 
                     if (localStorage.getItem(date) == null) {
-                        todoList.push(todoObj);
-
-
-                        //今天沒有待辦事項
+                        todoList.push(todoObj);//今天沒有待辦事項
                     }
                     else {
                         todoList = JSON.parse(localStorage.getItem(date));
-                        todoList.push(todoObj);
-                        //今天已有待辦事項
+                        todoList.push(todoObj);//今天已有待辦事項
                     }
                     localStorage.setItem(date, JSON.stringify(todoList));//storage.setItem(keyName, keyValue);
                     Init();
@@ -357,7 +347,6 @@
                 }
                 else {
                     $('#inputModal').modal('hide');//隱藏視窗
-
                 }
             }
             document.querySelector("#delete").onclick = function (e) {
@@ -368,11 +357,9 @@
                 } else {
                     localStorage.removeItem(date.value)//刪除日期全部資料
                 }
-
                 Init();
                 $('#inputModal').modal('hide');//隱藏視窗
             }
-
             function DeleteAllTodoItem() {
                 let determine = document.getElementById('determine')
                 determine.addEventListener('click', function () {
@@ -389,13 +376,22 @@
                 $('#inputModal_2').modal('show');
             }
             function today_button() {
-  
             }
 
+            document.querySelector("#modify").onclick = function (e) {
+                // if (clickItem != "") {
+                //     todoList = JSON.parse(localStorage.getItem(date.value));//讀取資料
+                //     console.log(todoList)
+                //     todoList.splice(clickItem, 1,1);//刪除指定資料
 
 
+              
+                //     localStorage.setItem(date.value, JSON.stringify(todoList))//未刪除的資料再放回去
+                // }
+                // Init();
+                $('#inputModal').modal('hide');//隱藏視窗
 
-
+            }
         </script>
 
 
