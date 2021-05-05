@@ -11,8 +11,9 @@
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
         #map {
-            height: 92%;
-
+            height: calc(100%-20px);
+            width: 70%;
+            border: 10px groove greenyellow;
         }
 
         /* Optional: Makes the sample page fill the window. */
@@ -22,31 +23,63 @@
             margin: 0;
             padding: 0;
         }
+
         #year,
-        #city,#msg {
-            width: 30%;
+        #city,
+        #msg {
+            width: 70%;
             font-size: 18px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100%;
         }
-
         .drop_down {
+            background-image: linear-gradient(0deg, #3381b0, #c2196c);
+            height: 100%;
+            width: 30%;
             display: flex;
-            height: 8%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .area {
+            display: flex;
+            height: 100vh;
+        }
+
+        .text-align-cente {
+            text-align: center;
+        }
+
+        .d-flex {
+            width: 60%;
+            display: flex;
+            margin: 10px;
+            font-size: 20px;
+            justify-content: space-around;
         }
     </style>
 </head>
 
 <body>
-    <!-- <div> -->
-    <div class="drop_down">
-        <select id='year' name='year'></select>
-        <select id='city' name='city'></select>
-        <div id="msg"></div>
+    <div class="area">
+        <div class="drop_down">
+            <h2>全台用水量</h2>
+            <div class="d-flex">
+                <span class="span">年分 : </span>
+                <select class="" id='year' name='year'></select>
+            </div>
+            <div class="d-flex">
+                <span class="span">城市 : </span>
+                <select id='city' name='city'></select>
+            </div>
+            <div class="d-flex">
+                <span class="span">選項 : </span>
+                <div id="msg"></div>
+            </div>
+        </div>
+        <div id="map"></div>
     </div>
-    <div id="map"></div>
+
     <!-- </div> -->
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 
