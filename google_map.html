@@ -97,19 +97,15 @@
         const image =
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
         const coordinate = { lat: 24.760759896419373, lng: 120.9527718965576 };
+        let range = 9.2;
         let city, water, map, resultData;
         let infos = [], markers = [];
-        const iconPath = "/line.png"
+        // const iconPath = "/line.png"
         function initMap() {
-
-
             map = new google.maps.Map(document.getElementById("map"), {
                 center: coordinate,
-                zoom: 9,
-
+                zoom: range,
             });
-
-
             // new google.maps.Marker({
             //     position: coordinate,
             //     map,
@@ -234,11 +230,13 @@
                 setTimeout(() => {
                     const marker = new google.maps.Marker({
                         position: { lat: item.Lat, lng: item.Lng },
-                        map, 
-                        iconPath,
-                        animation: google.maps.Animation.BOUNCE,//動畫DROP or BOUNCE
+                        map,
+                        // iconPath,
+                        animation: google.maps.Animation.DROP,//動畫DROP or BOUNCE
                         title: `${item.City} ${item.Town}`, //靠近標點會顯出地標
                         icon: image,
+
+
                     });
                     // console.dir(marker)
                     //點到會出現在裡面的文字
@@ -268,11 +266,18 @@
                 msg.innerText = '無資料'
             }
             else {
-
                 map.setCenter({
                     lat: resultData[1].Lat,
-                    lng: resultData[1].Lng
+                    lng: resultData[1].Lng,
                 });
+               
+                // map.setzoom({range:15})
+
+                // map.setzoom(
+                //     // range = 10
+                // );
+                console.log(range)
+
                 console.log(resultData[1].City)
                 console.log(resultData[1].Lat)
                 console.log(resultData[1].Lng)
