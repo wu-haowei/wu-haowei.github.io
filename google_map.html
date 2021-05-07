@@ -31,6 +31,7 @@
             font-size: 18px;
             height: 100%;
         }
+
         .drop_down {
             background-image: linear-gradient(0deg, #3381b0, #c2196c);
             height: 100%;
@@ -80,6 +81,7 @@
         <div id="map"></div>
     </div>
 
+
     <!-- </div> -->
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 
@@ -92,20 +94,21 @@
         const yearSelect = document.getElementById('year');
         const citySelect = document.getElementById('city');
         // let map;
+        const image =
+            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
         const coordinate = { lat: 24.760759896419373, lng: 120.9527718965576 };
         let city, water, map, resultData;
         let infos = [], markers = [];
         const iconPath = "/line.png"
         function initMap() {
+
+
             map = new google.maps.Map(document.getElementById("map"), {
                 center: coordinate,
                 zoom: 9,
-                // type: "info",
-                // mapTypeId: "terrain",//地形
-
-
 
             });
+
 
             // new google.maps.Marker({
             //     position: coordinate,
@@ -228,39 +231,52 @@
         function Coordinate_position() {//產生座標
             resultData = Array3.filter(f => f.Water.length > 0)
             resultData.forEach((item, index) => {
-                const marker = new google.maps.Marker({
-                    position: { lat: item.Lat, lng: item.Lng },
-                    map, iconPath,
-                    title: `${item.City} ${item.Town}`, //靠近標點會顯出地標
-                });
-                console.dir(marker)
-                //點到會出現在裡面的文字
-                const infowindow = new google.maps.InfoWindow({
-                    //資訊視窗 InfoWindow
-                    content: `城市名稱:${item.City},<br>鄉鎮名稱:${item.Town},<br>民國:${item.year}用水量:<br>${item.Water.join("<br>")}`
-                });
-                // console.warn(infowindow)
-                // 丟到空陣列裡
-                infos.push(infowindow);
-                marker.addListener("click", () => {
-                    infos.forEach((item) => {
-                        item.close();
+                setTimeout(() => {
+                    const marker = new google.maps.Marker({
+                        position: { lat: item.Lat, lng: item.Lng },
+                        map, 
+                        iconPath,
+                        animation: google.maps.Animation.BOUNCE,//動畫DROP or BOUNCE
+                        title: `${item.City} ${item.Town}`, //靠近標點會顯出地標
+                        icon: image,
                     });
-                    infowindow.open(map, marker);
-                });
-                markers.push(marker)
+                    // console.dir(marker)
+                    //點到會出現在裡面的文字
+                    const infowindow = new google.maps.InfoWindow({
+                        //資訊視窗 InfoWindow
+                        content: `城市名稱:${item.City},<br>鄉鎮名稱:${item.Town},<br>民國:${item.year}用水量:<br>${item.Water.join("<br>")}`
+                    });
+                    // console.warn(infowindow)
+                    // 丟到空陣列裡
+                    infos.push(infowindow);
+                    marker.addListener("click", () => {
+                        infos.forEach((item) => {
+                            item.close();
+                        });
+                        infowindow.open(map, marker);
+                    });
+                    markers.push(marker)
+                    console.log(markers.length)
+                }, 300 * index)
             });
             initMap_a();
         }
         function initMap_a() {                  //移動中心點
+            if (resultData[1] == undefined || resultData[1] == undefined) {
 
-            map.setCenter({
-                lat: resultData[1].Lat,
-                lng: resultData[1].Lng
-            });
-            console.log(resultData[1].City)
-            console.log(resultData[1].Lat)
-            console.log(resultData[1].Lng)
+                msg.style.backgroundColor = 'red'
+                msg.innerText = '無資料'
+            }
+            else {
+
+                map.setCenter({
+                    lat: resultData[1].Lat,
+                    lng: resultData[1].Lng
+                });
+                console.log(resultData[1].City)
+                console.log(resultData[1].Lat)
+                console.log(resultData[1].Lng)
+            }
         }
         function citySelectedChange() {         //城市改變清除座標
             markers.forEach(item => {

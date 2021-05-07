@@ -319,19 +319,21 @@
                 month--;
                 Init();
             }
+
+
             function SaveTodoItem() {
                 if (document.getElementById('todo-item').value != "") {
                     let date = document.getElementById('date').value            //取得輸入的ID 第一格
                     let todoItem = document.getElementById('todo-item').value;  //取得輸入的ID 第二格
                     let todoitem2 = document.getElementById('todo-item2').value;  //取得輸入的ID 第二格
                     let TimeInput = document.getElementById('TimeInput').value
-                
+
                     let todoObj = {     //待辦事項
                         title: todoItem,  //title標題:todoItem待辦事項
                         description: todoitem2,
                         TimeInput: TimeInput
                     }
-                    
+
                     let todoList = []
 
                     if (localStorage.getItem(date) == null) {
@@ -379,18 +381,13 @@
             }
 
             document.querySelector("#modify").onclick = function (e) {
-                // if (clickItem != "") {
-                //     todoList = JSON.parse(localStorage.getItem(date.value));//讀取資料
-                //     console.log(todoList)
-                //     todoList.splice(clickItem, 1,1);//刪除指定資料
-
-
-              
-                //     localStorage.setItem(date.value, JSON.stringify(todoList))//未刪除的資料再放回去
-                // }
-                // Init();
-                $('#inputModal').modal('hide');//隱藏視窗
-
+                let av = JSON.parse(localStorage.getItem(date.value))
+                av[clickItem].title = document.getElementById('todo-item').value
+                av[clickItem].description = document.getElementById('todo-item2').value
+                av[clickItem].TimeInput = document.getElementById('TimeInput').value
+                localStorage.setItem(date.value,JSON.stringify(av))   
+                location.reload()//更新
+                console.log(av)
             }
         </script>
 
