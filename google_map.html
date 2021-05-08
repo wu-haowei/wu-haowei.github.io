@@ -40,6 +40,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
         }
 
         .area {
@@ -96,16 +97,41 @@
         // let map;
         const image =
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-        const coordinate = { lat: 24.760759896419373, lng: 120.9527718965576 };
-        let range = 9.2;
+        const coordinate = { lat:25.103787119504712 , lng: 121.54863395412481 };//台北故宮
+        // let range = 9.2;
         let city, water, map, resultData;
         let infos = [], markers = [];
         // const iconPath = "/line.png"
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
                 center: coordinate,
-                zoom: range,
+                zoom: 15//初始值
             });
+
+
+            //************************************************//讀取位置
+            if (navigator.geolocation) {//地理位置定位
+                navigator.geolocation.getCurrentPosition(function (position) {//方法用來獲取設備當前的位置
+                    console.log(position); 
+                    let pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    let marker = new google.maps.Marker({
+                        center: pos,
+                        icon: image,
+                        map: map
+                    });
+                    map.setZoom(17);
+                    map.setCenter(pos);
+                });
+            }
+            else {
+                alert("未允許或遭遇錯誤！");
+                map.setCenter(coordinate)
+            }
+            //************************************************
+
             // new google.maps.Marker({
             //     position: coordinate,
             //     map,
@@ -262,21 +288,22 @@
         function initMap_a() {                  //移動中心點
             if (resultData[1] == undefined || resultData[1] == undefined) {
 
-                msg.style.backgroundColor = 'red'
+                msg.style.backgroundColor = 'red'//無資料換底色
                 msg.innerText = '無資料'
             }
             else {
+                msg.style.backgroundColor = "";//有資料無底色
                 map.setCenter({
                     lat: resultData[1].Lat,
                     lng: resultData[1].Lng,
                 });
-               
+                map.setZoom(9.2)//設定值
                 // map.setzoom({range:15})
 
                 // map.setzoom(
                 //     // range = 10
                 // );
-                console.log(range)
+                console.log(zoom)
 
                 console.log(resultData[1].City)
                 console.log(resultData[1].Lat)
