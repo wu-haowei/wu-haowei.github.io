@@ -6,323 +6,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
+
     <style>
         body {
-            width: 100%;
-        }
-
-        .aaa {
-            width: 80%;
+            width: 1200px;
             margin: auto;
         }
 
-        .logo {
-            height: 100vh;
-        }
-
-        .logo>img {
-            width: 100%;
-        }
-
-        .container {
-
+        .AAA {
+            overflow: hidden;
+            /* overflow: visible; */
             display: flex;
-            flex-wrap: wrap;
+            height: 100vh;
+            padding-top: 20px;
+            position: relative;
         }
 
-        .container {
+        .a {
+            width: 50%;
+            height: 560px;
+
+
+        }
+
+        .b img {
             width: 100%;
-            margin: auto;
         }
 
-        .item {
-            margin: auto;
-            width: 25%;
+        .b {
+            overflow: hidden;
+
+            width: 880px;
+            height: 560px;
+            position: absolute;
+            top: 20px;
+            right: -130px;
+
         }
 
-        .item>img {
-            width: 90%;
-            background-color: #000;
+        .a_1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 480px;
+
+            padding-left: 40px;
+            font-size: 18px;
         }
 
-        p {
-            width: 90%;
+        .a_1 img {
+            width: 10%;
+            border-radius: 10px;
+        }
+
+        .a {
+            display: flex;
+            align-items: center;
+        }
+
+        .LINE {
+            font-size: 40px;
+        }
+
+        .btn {
+            width: 161px;
+            height: 60px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border:1px solid rgb(192, 192, 184);
+            border-radius: 5px;
+
+        }
+        .btn:hover{
+            border-radius: 5px;
+            background-color: #07b53b;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
-    <div class="logo">
-        <img src="https://haoxiang16.github.io/bag/2600x%20(1).webp">
-    </div>
-    <h3>新品上市</h3>
-    <div class="aaa">
-        <div class="lines"></div>
-        <div class="container">
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>
-                    黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片
-                </p>
-                <span>NT270</span>
-                <del>NT765</del>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>
-                    黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片
-                </p>
-                <span>NT270</span>
-                <del>NT765</del>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>
-                    黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片
-                </p>
-                <span>NT270</span>
-                <del>NT765</del>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>
-                    黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片
-                </p>
-                <span>NT270</span>
-                <del>NT765</del>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>
-                    黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片
-                </p>
-                <span>NT270</span>
-                <del>NT765</del>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>
-                    黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片
-                </p>
-                <span>NT270</span>
-                <del>NT765</del>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>
-                    黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片
-                </p>
-                <span>NT270</span>
-                <del>NT765</del>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>
-                    黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片
-                </p>
-                <span>NT270</span>
-                <del>NT765</del>
-            </div>
 
-
-
+    <div class="AAA">
+        <div class="a">
+            <div class="a_1">
+                <img src="https://picsum.photos/80/80/?random1" alt="">
+                <p class="LINE">LINE TODAY</p>
+                <P>隨點隨看 生活快充</P>
+                <P>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</P>
+                <P class="btn">其他詳細資訊</P>
+            </div>
         </div>
-        <!-- <div class=" bookmark">
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">»</a>
-        </div>
-
-
-        <h1>不想運動運動會</h1>
-        <div class="lines"></div>
-
-        <div class="container">
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>後宮運動會三折運動錢包-黑</p>
-                <span>NT990</span>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>後宮運動會三折運動錢包-黑</p>
-                <span>NT990</span>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>後宮運動會三折運動錢包-黑</p>
-                <span>NT990</span>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>後宮運動會三折運動錢包-黑</p>
-                <span>NT990</span>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>後宮運動會三折運動錢包-黑</p>
-                <span>NT990</span>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>後宮運動會三折運動錢包-黑</p>
-                <span>NT990</span>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>後宮運動會三折運動錢包-黑</p>
-                <span>NT990</span>
-            </div>
-            <div class="item">
-                <img src="https://haoxiang16.github.io/bag/800x.webp">
-                <p>後宮運動會三折運動錢包-黑</p>
-                <span>NT990</span>
-            </div>
+        <div class="b">
+            <img src="https://line.me/static/fc6a34517fc06ee4b2c097f2de95cf17/af5ac/0386be561893eaf8b3f444a3b7206b7a.png"
+                alt="">
         </div>
     </div>
-    <div class="bookmark">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">»</a>
-    </div>
-    <h1>CreASEnse客製化手機殼</h1>
-    <div class="lines"></div>
-    <div class="container">
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <div>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</div>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <div>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</div>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <div>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</div>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <div>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</div>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <div>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</div>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <div>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</div>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <div>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</div>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <div>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</div>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-    </div>
-    <div class=" bookmark">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">»</a>
-    </div>
-    <h1>聯名寢具</h1>
-    <div class="lines"></div>
-    <div class="container">
-
-
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <p>【HOYACASA聯名系列】水洗枕運動系列-藍色</p>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <p>【HOYACASA聯名系列】水洗枕運動系列-藍色</p>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <p>【HOYACASA聯名系列】水洗枕運動系列-藍色</p>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-        <div class="item">
-            <img src="https://haoxiang16.github.io/bag/800x.webp">
-            <p>【HOYACASA聯名系列】水洗枕運動系列-藍色</p>
-            <span>NT270</span>
-            <del>NT765</del>
-        </div>
-
-    </div>
-    <div class="bookmark">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-
-        <a href="#">»</a>
-    </div>
-
-    <div class="line">
-
-    </div>
-    <div class="containertwo">
-        <div class="information">
-            <div>相關資訊</div>
-            <a href="#">品牌故事</a>
-            <a href="#">退貨退款須知</a>
-            <a href="#">會員招募</a>
-            <a href="#">常見問題</a>
-            <a href="#">反詐騙公告</a>
-        </div>
-
-        <div class="information">
-            <div>聯繫我們</div>
-            <p>服務時間：週一至週五 10:00-18:30</p>
-            <a href="#">LINE@閒聊區(只有阿瑪在，小幫手不在)</a>
-            <p>客服信箱 ：fumeanstore@gmail.com</p>
-            <p>授權合作信箱 ：fumeanstudio@gmail.com</p>
-            <p><strong>批發合作信箱 ：fumeancats@gmail.com</strong> </p>
-        </div>
-    </div>
-
-
-    </div>
-
-    <div class="bottomlabel">
-        <p>
-            黃阿瑪的後宮生活© 2019 FUMEANCATS .All Rights Reserved
-        </p>
-
-    </div> -->
-    </div>
-
 </body>
 
 </html>
