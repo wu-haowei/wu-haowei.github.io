@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"> -->
+
+
+    <title>拼圖</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-group {
+            text-align: center;
+        }
+
+
+        .btn-group button {
+            padding: 20px;
+            margin: 5px;
+            font-size: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 0, 0, 0.3);
+            display: flex;
+            position: relative;
+        }
+
+        .block {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            position: absolute;
+        }
+
+        #original_image {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 0, 0, 0.3);
+            margin-left: 100px;
+        }
+
+        #img_11 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(0px 100px 100px 0px);
+            width: 300px;
+            height: 300px;
+        }
+
+        #img_12 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(0px 200px 100px 100px);
+            width: 300px;
+            height: 300px;
+        }
+
+        #img_13 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(0px 300px 100px 200px);
+            width: 300px;
+            height: 300px;
+        }
+
+        #img_21 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(100px 100px 200px 0px);
+            width: 300px;
+            height: 300px;
+        }
+
+        #img_22 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(100px 200px 200px 100px);
+            width: 300px;
+            height: 300px;
+        }
+
+        #img_23 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(100px 300px 200px 200px);
+            width: 300px;
+            height: 300px;
+        }
+
+        #img_31 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(200px 100px 300px 0px);
+            width: 300px;
+            height: 300px;
+        }
+
+        #img_32 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(200px 200px 300px 100px);
+            width: 300px;
+            height: 300px;
+        }
+
+        #img_33 {
+            position: absolute;
+            /* 上右下左 */
+            clip: rect(200px 300px 300px 200px);
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn-group">
+        <button id="random">打亂拼圖</button>
+        <button id="reset">完成後重新開始</button>
+        <!-- <br> -->
+        <button id="newgame">重新新一局</button>
+        <button id="down-btn">無功能</button>
+    </div>
+    <div class="container">
+        <div class="box">
+            <!-- <div style="top:0; left:0;" id="b1" class="block"></div> -->
+            <img id="img_11" style="top:0; left:0;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo1">
+            <img id="img_12" style="top:0; left:0;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo2">
+            <img id="img_13" style="top:0; left:0;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo3">
+            <img id="img_21" style="top:0; left:0;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo4">
+            <img id="img_22" style="top:0; left:-2000px;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo5">
+            <img id="img_23" style="top:0; left:0;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo6">
+            <img id="img_31" style="top:0; left:0;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo7">
+            <img id="img_32" style="top:0; left:0;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo8">
+            <img id="img_33" style="top:0; left:0;"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo9">
+        </div>
+        <div>
+            <img id="original_image"
+                src="https://vm6vul3vup.github.io/JavaScript%E7%B7%B4%E7%BF%92/Homework/%E6%8B%BC%E5%9C%96/android_logo_small.png"
+                alt="logo">
+        </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script> -->
+
+    <script type="module">
+        import { $g, $c } from '/作業/helpers.js';
+        let Moving_Distance = 100;
+        let originalps = ['img_11', 'img_12', 'img_13', 'img_21', 'img_22', 'img_23', 'img_31', 'img_32', 'img_33'];
+        let ansps = ['img_11', 'img_12', 'img_13', 'img_21', '空', 'img_23', 'img_31', 'img_32', 'img_33'];
+        let nowps = ['img_11', 'img_12', 'img_13', 'img_21', '空', 'img_23', 'img_31', 'img_32', 'img_33'];
+        let empty_up = '牆';
+        let empty_down = '牆';
+        let empty_left = '牆';
+        let empty_right = '牆';
+        $g('#img_11').value = 'img_11';
+        $g('#img_12').value = 'img_12';
+        $g('#img_13').value = 'img_13';
+        $g('#img_21').value = 'img_21';
+        $g('#img_22').value = 'img_22';
+        $g('#img_23').value = 'img_23';
+        $g('#img_31').value = 'img_31';
+        $g('#img_32').value = 'img_32';
+        $g('#img_33').value = 'img_33';
+        let emptyps_ID = 'img_22';
+
+        checkEmptyPlace();
+
+        //打亂拼圖
+        document.getElementById('random').addEventListener('click', function () {
+            // alert("打亂");
+            for (let i = 0; i < 100; i++) {
+                RandomPs();
+                console.log(i);
+            }
+        })
+
+        document.getElementById('reset').addEventListener('click', function () {
+            for (let i = 0; i < 9; i++) {
+                let temp = originalps[i];
+                ansps[i] = temp;
+            }
+            let RandomNumber = getRandomInt(9);
+            emptyps_ID = nowps[RandomNumber];
+            let box = document.getElementById(nowps[RandomNumber]);
+            console.log(box.style.left);
+            box.style.left = '-2000px';
+            nowps[RandomNumber] = '空';
+            ansps[RandomNumber] = '空';
+            checkEmptyPlace();
+            for (let i = 0; i < 9; i++) {
+                console.log(`orps=${originalps[i]}`);
+            }
+            for (let j = 0; j < 9; j++) {
+                console.log(`ansps=${ansps[j]}`);
+            }
+            for (let k = 0; k < 9; k++) {
+                console.log(`nowps=${nowps[k]}`);
+            }
+        })
+
+        document.getElementById('newgame').addEventListener('click', function () {
+            for (let i = 0; i < 9; i++) {
+                let box = document.getElementById(originalps[i]);
+                box.style.left = 0;
+                box.style.top = 0;
+            }
+
+            for (let i = 0; i < 9; i++) {
+                let temp = originalps[i];
+                ansps[i] = temp;
+            }
+            for (let i = 0; i < 9; i++) {
+                let temp = originalps[i];
+                nowps[i] = temp;
+            }
+            let RandomNumber = getRandomInt(9);
+            emptyps_ID = nowps[RandomNumber];
+            let box = document.getElementById(nowps[RandomNumber]);
+            box.style.left = '-2000px';
+            nowps[RandomNumber] = '空';
+            ansps[RandomNumber] = '空';
+            checkEmptyPlace();
+            for (let i = 0; i < 9; i++) {
+                console.log(`orps=${originalps[i]}`);
+            }
+            for (let j = 0; j < 9; j++) {
+                console.log(`ansps=${ansps[j]}`);
+            }
+            for (let k = 0; k < 9; k++) {
+                console.log(`nowps=${nowps[k]}`);
+            }
+        })
+
+        document.getElementById('img_11').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+        document.getElementById('img_12').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+        document.getElementById('img_13').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+        document.getElementById('img_21').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+        document.getElementById('img_22').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+        document.getElementById('img_23').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+        document.getElementById('img_31').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+        document.getElementById('img_32').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+        document.getElementById('img_33').addEventListener('click', function () {
+            clickEvent(this.value);
+        })
+
+        function RandomPs() {
+            let empty_index = nowps.indexOf('空');
+            MovePs(empty_index, getRandomInt(9));
+            checkEmptyPlace();
+        }
+
+        function clickEvent(value) {
+            let empty_index = nowps.indexOf('空');
+            let index = nowps.indexOf(value);
+            MovePs(empty_index, index);
+            checkEmptyPlace();
+            checkWin()
+        }
+
+        function checkWin() {
+            let check_same_count = 0;
+            for (let i = 0; i < 9; i++) {
+                if (nowps[i] == ansps[i]) check_same_count++;
+            }
+            if (check_same_count == 9) {
+                alert('完成拼圖');
+                let box = document.getElementById(emptyps_ID);
+                console.log(box.style.left);
+                box.style.left = 0;
+                let empty_index = nowps.indexOf('空');
+                nowps[empty_index] = emptyps_ID;
+                checkEmptyPlace();
+                for (let i = 0; i < 9; i++) {
+                    console.log(`orps=${originalps[i]}`);
+                }
+                for (let j = 0; j < 9; j++) {
+                    console.log(`ansps=${ansps[j]}`);
+                }
+                for (let k = 0; k < 9; k++) {
+                    console.log(`nowps=${nowps[k]}`);
+                }
+            }
+        }
+
+        function MovePs(empty_index, index) {
+            let _empty_index = '空';
+            let _index = nowps[index];
+            console.log(_empty_index);
+            console.log(_index);
+            console.log(`上:${empty_up},下:${empty_down},左:${empty_left},右:${empty_right}`);
+            if (empty_up == nowps[index]) {
+                moveY(nowps[index], Moving_Distance);
+                console.log('up');
+                //移動完後陣列內容互換位置
+                nowps[empty_index] = _index;
+                nowps[index] = _empty_index;
+            }
+
+            if (empty_down == nowps[index]) {
+                moveY(nowps[index], -Moving_Distance);
+                console.log('down');
+                //移動完後陣列內容互換位置
+                nowps[empty_index] = _index;
+                nowps[index] = _empty_index;
+            }
+
+            if (empty_left == nowps[index]) {
+                moveX(nowps[index], Moving_Distance);
+                console.log('left');
+                //移動完後陣列內容互換位置
+                nowps[empty_index] = _index;
+                nowps[index] = _empty_index;
+            }
+
+            if (empty_right == nowps[index]) {
+                moveX(nowps[index], -Moving_Distance);
+                console.log('right');
+                //移動完後陣列內容互換位置
+                nowps[empty_index] = _index;
+                nowps[index] = _empty_index;
+            }
+        }
+
+        //修正目前'空'所在的位置
+        function checkEmptyPlace() {
+            let empty = nowps.indexOf('空');
+            if (empty == 0) {
+                empty_up = '牆';
+                empty_down = nowps[3];
+                empty_left = '牆';
+                empty_right = nowps[1];
+            }
+            else if (empty == 1) {
+                empty_up = '牆';
+                empty_down = nowps[4];
+                empty_left = nowps[0];
+                empty_right = nowps[2];
+            }
+            else if (empty == 2) {
+                empty_up = '牆';
+                empty_down = nowps[5];
+                empty_left = nowps[1];
+                empty_right = '牆';
+            }
+            else if (empty == 3) {
+                empty_up = nowps[0];
+                empty_down = nowps[6];
+                empty_left = '牆';
+                empty_right = nowps[4];
+            }
+            else if (empty == 4) {
+                empty_up = nowps[1];
+                empty_down = nowps[7];
+                empty_left = nowps[3];
+                empty_right = nowps[5];
+            }
+            else if (empty == 5) {
+                empty_up = nowps[2];
+                empty_down = nowps[8];
+                empty_left = nowps[4];
+                empty_right = '牆';
+            }
+            else if (empty == 6) {
+                empty_up = nowps[3];
+                empty_down = '牆';
+                empty_left = '牆';
+                empty_right = nowps[7];
+            }
+            else if (empty == 7) {
+                empty_up = nowps[4];
+                empty_down = '牆';
+                empty_left = nowps[6];
+                empty_right = nowps[8];
+            }
+            else if (empty == 8) {
+                empty_up = nowps[5];
+                empty_down = '牆';
+                empty_left = nowps[7];
+                empty_right = '牆';
+            }
+            else {
+                empty_up = '牆';
+                empty_down = '牆';
+                empty_left = '牆';
+                empty_right = '牆';
+            }
+        }
+        checkEmptyPlace();
+        console.log(`上:${empty_up},下:${empty_down},左:${empty_left},右:${empty_right}`);
+
+        function moveX(id, x) {
+            let box = document.getElementById(id);
+            let target = parseInt(box.style.left, 10) + x;
+            console.log(target)
+            let time = 100;
+            let perMove = x / time;
+
+            return new Promise((resolve, reject) => {
+                for (let i = 1; i <= time; i++) {
+                    (function (t) {
+                        setTimeout(() => {
+                            box.style.left = parseInt(box.style.left, 10) + perMove + 'px';
+                            // console.log(parseInt(box.style.left, 10));
+                            if (parseInt(box.style.left, 10) == target) {
+                                resolve('X移動完成');
+                            }
+                        }, 1 * t);
+                    })(i)
+                }
+            })
+        }
+
+
+        function moveY(id, y) {
+            let box = document.getElementById(id);
+            let target = parseInt(box.style.top, 10) + y;
+            // console.log(box.style.top);
+            let time = 100;
+            let perMove = y / time;
+
+            return new Promise((resolve, reject) => {
+                for (let i = 1; i <= time; i++) {
+                    (function (t) {
+                        setTimeout(() => {
+                            box.style.top = parseInt(box.style.top, 10) + perMove + 'px';
+                            // console.log(parseInt(box.style.top, 10));
+                            if (parseInt(box.style.top, 10) == target) {
+                                resolve('Y移動完成');
+                            }
+                        }, 1 * t);
+                    })(i)
+                }
+            })
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+    </script>
+</body>
+
+</html>
