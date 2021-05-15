@@ -1,109 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <title>Document</title>
-
+    <!-- <link rel="stylesheet" href="sty.scss">
+    <link rel="stylesheet" href="reset.css"> -->
     <style>
-        body {
-            width: 1200px;
-            margin: auto;
-        }
-
-        .AAA {
-            overflow: hidden;
-            /* overflow: visible; */
-            display: flex;
-            height: 100vh;
-            padding-top: 20px;
-            position: relative;
-        }
-
-        .a {
-            width: 50%;
-            height: 560px;
-
-
-        }
-
-        .b img {
+        .smallphoto {
             width: 100%;
         }
-
-        .b {
-            overflow: hidden;
-
-            width: 880px;
-            height: 560px;
-            position: absolute;
-            top: 20px;
-            right: -130px;
-
+        img{
+            width: 100%;
         }
-
-        .a_1 {
+        .item {
+            /* width: 50%; */
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            width: 480px;
-
-            padding-left: 40px;
-            font-size: 18px;
         }
-
-        .a_1 img {
-            width: 10%;
-            border-radius: 10px;
+        /* .aaa{
+width: 50%;
         }
+        .bbb{
+            width: 50%;
 
-        .a {
-            display: flex;
-            align-items: center;
-        }
-
-        .LINE {
-            font-size: 40px;
-        }
-
-        .btn {
-            width: 161px;
-            height: 60px;
-            font-size: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border:1px solid rgb(192, 192, 184);
-            border-radius: 5px;
-
-        }
-        .btn:hover{
-            border-radius: 5px;
-            background-color: #07b53b;
-            color: #fff;
+        } */
+        body{
+            width: 1200px;
+            margin: auto;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="AAA">
-        <div class="a">
-            <div class="a_1">
-                <img src="https://picsum.photos/80/80/?random1" alt="">
-                <p class="LINE">LINE TODAY</p>
-                <P>隨點隨看 生活快充</P>
-                <P>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</P>
-                <P class="btn">其他詳細資訊</P>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 aaa">
+                <div class="item">
+                    <div class="smallphoto">
+                        <img src="https://picsum.photos/300/200/?random1" alt="">
+                    </div>
+                    <div class="">
+                        <h2>LINE TODAY</h2>
+                        <h3>隨點隨看 生活快充</h3>
+                        <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</p>
+                        <div class="box">
+                            <a href="">
+                                <i class="fas fa-external-link-alt"></i>
+                                <div class="bottom">其他詳細資訊</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 bbb">
+                <div class="item">
+                    <div class="smallphoto">
+                        <img src="https://picsum.photos/300/200/?random1" alt="">
+                    </div>
+                    <div>
+                        <h2>LINE TODAY</h2>
+                        <h3>隨點隨看 生活快充</h3>
+                        <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</p>
+                        <div class="box">
+                            <a href="">
+                                <i class="fas fa-external-link-alt"></i>
+                                <div class="bottom">其他詳細資訊</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="b">
-            <img src="https://line.me/static/fc6a34517fc06ee4b2c097f2de95cf17/af5ac/0386be561893eaf8b3f444a3b7206b7a.png"
-                alt="">
-        </div>
     </div>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://use.fontawesome.com/fa7210dc77.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>kobo.com</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            max-width: 1200px;
+            margin: auto;
+            font-size: 14px;
+        }
+
+        .inner-top-pic img {
+            width: 100%;
+            max-width: 10rem;
+        }
+
+        .inner-top-pic {
+            display: flex;
+            justify-content: center;
+        }
+
+        .item-primary-metadata {
+            padding: 2rem 2rem 0 2.5rem;
+        }
+
+        .primary-right-container>h5 {
+            font-size: 28px;
+        }
+
+        .inner-top-score ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .inner-top-pic,
+        .inner-top-score {
+            padding: 0;
+
+        }
+
+        .inner-top-score ul:nth-child(1) button {
+            color: #bf0000;
+            background-color: transparent;
+            border: 0;
+            min-height: 35px;
+            font-size: 1.0rem;
+        }
+
+        .inner-top-score ul:nth-child(1) i {
+            padding-left: 2px;
+            color: #000;
+            background-position: center left;
+        }
+
+        .inner-top-score ul button span:hover {
+            text-decoration: underline;
+        }
+
+        .star {
+            color: #bf0000;
+            font-family: Georgia, Times, serif;
+            margin-top: 15px;
+        }
+
+        .star span {
+            color: #000;
+        }
+
+        .inner-top-score ul:nth-child(3) {
+            font-size: 1.0rem;
+            line-height: 2rem;
+            color: #595959;
+            margin-top: 2rem;
+        }
+
+        .inner-top-score ul a {
+            color: #595959;
+
+        }
+
+        .inner-top-score ul a:hover {
+            color: #bf0000;
+        }
+
+        /* ------ */
+
+
+
+
+
+        .item-info h2 {
+            font-size: 2.8rem;
+            line-height: 3.4rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .about {
+            margin: 2rem 0 1.5rem;
+        }
+
+        .about p {
+
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+        }
+
+        .about p span:nth-child(1) {
+            color: #000;
+        }
+
+        .about p span:nth-child(2) a {
+            color: #000;
+        }
+
+        .about p span:nth-child(2) a:hover {
+            color: #bf0000;
+        }
+
+
+
+        .synopsis-title {
+            border-top: 1px solid #e6e6e6;
+            padding-top: 2rem;
+        }
+
+        .synopsis-title h2 {
+            font-size: 1.2rem;
+            color: #000;
+            margin: 0 0 2rem;
+        }
+
+        .item-synopsis .collapsible-synopsis  {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e6e6e6;
+            visibility: visible;
+            /* max-height: 288px;
+            overflow: hidden; */
+        }
+
+        /* ---- */
+        .primary-left-container {
+            padding-right: 5%;
+        }
+
+        .primary-intermed-container {
+            padding-left: 5%;
+            padding-right: 0;
+        }
+.pricing-details{
+    min-width: 100%;
+}
+        .pricing-details .box {
+            padding: 2rem 1.5rem;
+            border: 1px solid #e6e6e6;
+        }
+
+        .pricing-details .pricing-title {
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            margin: 0 0 20px;
+            color: #0d0d0d;
+            font-style: normal;
+            margin: 0 0 20px;
+        }
+
+        .pricing-details .pricing-figures {
+            /* font-size: 1.4rem; */
+            color: #000;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-details .active-price {
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pricing-details .price {
+            font-size: 1.8rem;
+        }
+
+        .price-wrapper .currency {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 1px;
+
+        }
+
+        .pricing-details .action-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box {
+            -webkit-box-shadow: 0 0 7px #e6e6e6;
+            box-shadow: 0 0 7px #e6e6e6;
+    
+        }
+
+        .action-container .add-to-cart,
+        .action-container .buy-now,
+        .action-container .delete {
+            /* border-radius: 5px; */
+            min-height: 35px;
+            min-width: 70px;
+            font-size: 1.0rem;
+            color: #fff;
+            border-style: solid;
+            border-width: 3px;
+            padding: 5px 7px;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .action-container .add-to-cart {
+            background-color: #bf0000;
+            border-color: #bf0000;
+        }
+        .action-container .add-to-cart:hover{
+            background-color: #fff;
+            color: #bf0000;
+            border-color: #bf0000;
+            transition: 0.3s;
+        }
+        .action-container .buy-now,
+        .action-container .delete {
+            background-color: #595959;
+            border-color: #595959;
+        }
+        .action-container .buy-now:hover,
+        .action-container .delete:hover {
+            background-color: #fff;
+            color: #595959;
+            border-color: #595959;
+            transition: 0.3s;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="item-primary-metadata">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-lg-9 primary-left-container">
+                    <!-- -------------------------------------左中欄------------------------------------------------ -->
+
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-lg-4 inner-top-container ">
+                            <!-- -------------------------------------左邊欄------------------------------------------------ -->
+                            <div class="row">
+                                <!-- <div> -->
+                                <div class="col-12 col-sm-6 col-lg-12 inner-top-pic ">
+                                    <!-- -------------------------------------左圖片------------------------------------------------ -->
+                                    <img src="https://kbimages1-a.akamaihd.net/de6dbba7-2e25-4bb2-88b4-be6ab5224250/353/569/90/False/6qH-2GVPZTOvvptgjM-UsA.jpg"
+                                        alt="">
+                                </div>
+                                <!-- -------------------------------------左評分------------------------------------------------ -->
+                                <div class="col-12 col-sm-6 col-lg-12 inner-top-score">
+                                    <ul>
+                                        <li>
+                                            <button>
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                <span>立即預覽</span> </button>
+                                        </li>
+                                        <li>
+                                            <button>
+                                                <i class="fa fa-download" aria-hidden="true"></i>
+                                                <span>儲存預覽</span> </button>
+                                        </li>
+                                    </ul>
+                                    <div class="star">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <span>(99)</span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>#1</span> 在
+                                            <span>
+                                                <a href="#">企業與金融</a>
+                                            </span>
+                                            <span>, </span>
+                                            <span>
+                                                <a href="#">業務參考</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>#1</span> 在
+                                            <span>
+                                                <a href="#">企業與金融</a>
+                                            </span>
+                                            <span>, </span>
+                                            <span>
+                                                <a href="#">金融與投資</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>#1</span> 在
+                                            <span>
+                                                <a href="#">企業與金融</a>
+                                            </span>
+                                            <span>, </span>
+                                            <span>
+                                                <a href="#">個人財務</a>
+                                            </span>
+                                            <span>, </span>
+                                            <span>
+                                                <a href="#">投資</a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                        <!-- -------------------------------------中間欄------------------------------------------------ -->
+                        <div class="col-12 col-sm-12 col-lg-8 primary-intermed-container">
+                            <div class="item-info">
+                                <h2>灰階思考</h2>
+                                <div class="about">
+                                    <p><span>由</span> <span><a href="#">謝孟恭</a></span></p>
+                                    <p><span>series</span> <span><a href="#">財經企管</a></span></p>
+                                </div>
+                            </div>
+                            <div class="item-synopsis">
+                                <div class="synopsis-title">
+                                    <h2>簡介</h2>
+                                </div>
+                                <div class="collapsible-synopsis">
+                                    <p><strong>★獨家收錄-《股癌》謝孟恭致電子書讀者的一段超直白音檔</strong></p>
+                                    <p><strong>黑白之間都是灰，找到無限價值的所在。</strong></p>
+                                    <p><strong>Podcast冠軍節目股癌製作人謝孟恭首本力作！</strong></p>
+                                    <p><strong>零到一之間，有無限個數字，</strong></p>
+                                    <p><strong>黑與白之間，也有無限的色階。</strong></p>
+                                    <p><strong>面對多變的市場，跳脫黑白思維，</strong></p>
+                                    <p><strong>才能看見無限大的價值！</strong></p>
+                                    <p>這時代不缺資訊，而是判讀力！</p>
+                                    <p>想要在投資市場生存，你需要的是一整個工具箱，</p>
+                                    <p>以及跳脫黑白框架的灰階思考力！</p>
+                                    <p>Podcast 冠軍節目「股癌」製作人謝孟恭，</p>
+                                    <p>首度分享他的灰階思考力，幫助你從根本建立投資觀念，</p>
+                                    <p>找到價值的所在，靠自己成為理財專家！</p>
+                                    <p>窮人想賭博翻身，富豪想保本成長。</p>
+                                    <p>沒有判讀力，你可能可以賭中幾次，</p>
+                                    <p>但終究抗拒不了誘惑，</p>
+                                    <p>最終那些靠運氣贏來的，都會靠實力輸回去。</p>
+                                    <p>而錯誤認知就如同錯誤的飛行儀表版，</p>
+                                    <p>即便飛機性能再好，也很可能會讓你與目標背道而馳，</p>
+                                    <p>甚至墜落於茫茫大海。</p>
+                                    <p>投資理財不難，唯判讀力和克服人性而已。</p>
+                                    <p>不斷的閱讀、思考、回測，就是一種判讀力的鍛鍊，</p>
+                                    <p>讓我們大腦擁有新的作業系統。</p>
+                                    <p>而投資理財如同人生，沒有黑與白絕對的答案，</p>
+                                    <p>最佳的解答，往往存在帶狀的灰色色階中。</p>
+                                    <p>市場是任何人都可以輕鬆加入，</p>
+                                    <p>並把畢生積蓄賠光的地方，</p>
+                                    <p>不要急於幾天內就要拚個你死我活。</p>
+                                    <p>先蹲著才能跳更高，但也不要蹲到腳麻後來完全跳不起來，</p>
+                                    <p>實際進市場的磨練才是重點。但面對市場你要：</p>
+                                    <p><strong>樂觀，但不是傻天真；</strong></p>
+                                    <p><strong>耐心，要翻倍，但不要翻車；</strong></p>
+                                    <p><strong>行動，並樂於承擔風險！</strong></p>
+                                    <p><strong>作者簡介</strong></p>
+                                    <p><strong>謝孟恭</strong></p>
+                                    <p>現年28歲，興趣是投資，</p>
+                                    <p>2020年2月開始製作投資節目「股癌」，</p>
+                                    <p>數週內成為台灣Podcast各平台總排行榜第一名，</p>
+                                    <p>並蟬聯至今（滿一年了啦，但不知道什麼時候會日薄西山）。</p>
+                                    <p>之前為航空公司培訓機師，公司倒閉後從商，經營小生意。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- -------------------------------------右邊欄------------------------------------------------ -->
+                <div class="col-12 col-sm-4 col-lg-3 primary-right-container">
+                    <div class="pricing-details">
+                        <div class="box">
+                            <h2 class="pricing-title">購買電子書</h2>
+                            <div class="pricing-figures">
+                                <div class="active-price">
+                                    <span>您的價格</span>
+                                    <div class="price-wrapper">
+                                        <span>NT$264 </span>
+                                        <span>TWD</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="action-container">
+                                <button class="add-to-cart">新增至購物車</button>
+                                <button class="buy-now">立即購買</button>
+                                <button class="delete">移除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
