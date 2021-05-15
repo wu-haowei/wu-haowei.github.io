@@ -307,6 +307,68 @@
         .owl-carousel div>span {
             display: flex;
         }
+
+        /* ---- */
+        .ratings-and-reviews .container .header h2 {
+            color: #0d0d0d;
+            font-weight: 400;
+            margin-bottom: 20px;
+            padding-top: 40px;
+            font-size: 18px;
+        }
+
+        .overall-rating-container {
+            padding: 0;
+            /* padding: 0 0 0 40px; */
+            width: 55%;
+
+        }
+
+        .overall-rating-container h2 {
+            margin: 0 0 10px;
+            padding-top: 0;
+            font-size: 1.5rem;
+            color: #0d0d0d;
+            font-weight: 400;
+        }
+
+        .overall-rating-container-fraction span {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #0d0d0d;
+        }
+
+        .average-stars {
+            display: flex;
+        }
+
+        .average-stars i {
+            color: #bf0000;
+        }
+
+        .write-review-container h2 {
+            color: #0d0d0d;
+            margin: 0 0 15px;
+            padding: 0;
+            font-size: 1.5rem;
+        }
+
+        .write-review-container button {
+            background-color: #bf0000;
+            border-color: #bf0000;
+            color: #fff;
+            font-weight: 700;
+            padding: 5px 15px;
+            line-height: 20px;
+        }
+
+        .container-img {
+            width: 25%;
+        }
+
+        container img {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -660,40 +722,116 @@
                 </div>
             </div>
         </div>
-
     </div>
 
-    <script src="/Owl_Carousel/OwlCarousel2-2.3.4/docs_src/assets/vendors/jquery.min.js"></script>
-    <script src="/Owl_Carousel/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script>
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-            items: 6,/*顯示張數*/
-            loop: true,//環形
-            margin: 20,
-            autoplay: true,/*自動撥放true false */
-            autoplayTimeout: 3000,//自動播放超時
-            autoplayHoverPause: true//自動播放懸停暫停
-        });
-    </script>
 
 
 
-    <script src="jquery.min.js"></script>
-    <script src="owlcarousel/owl.carousel.min.js"></script>
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+    <div class="Rating-And-Review-Widget">
+        <!-- 評分加評論 -->
+        <div class="ratings-and-reviews">
+            <!-- 內 -->
+            <div class="container">
+                <div class="header">
+                    <h2>評分與書評 <span>(9)</span></h2>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <section class="overall-rating-container">
+                            <h2>整體評分</h2>
+                            <div class="overall-rating-container-fraction">
+                                <span>
+                                    <span>5</span>
+                                    分中的
+                                    <span>4.8</span>分
+                                </span>
+                            </div>
+                            <div class="overall-stars-wrapper">
+                                <span></span>
+                                <div class="average-stars">
+                                    <div class="rating-stars">
+                                        <div>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <span>(99)</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="container-img"><img src="https://picsum.photos/300/200/?random1" alt=""></div>
+
+
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <section class="write-review-container">
+                            <h2 class="title">分享您的想法</h2>
+                            <button>發表評論</button>
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <script src="/Owl_Carousel/OwlCarousel2-2.3.4/docs_src/assets/vendors/jquery.min.js"></script>
+        <script src="/Owl_Carousel/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+        <script>
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items: 6,/*顯示張數*/
+                loop: true,//環形
+                margin: 20,
+                autoplay: true,/*自動撥放true false */
+                autoplayTimeout: 3000,//自動播放超時
+                autoplayHoverPause: true//自動播放懸停暫停
+            });
+        </script>
+
+
+
+        <script src="jquery.min.js"></script>
+        <script src="owlcarousel/owl.carousel.min.js"></script>
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
-<!-- Code injected by live-server -->
+        <!-- Code injected by live-server -->
 </body>
 
 </html>
