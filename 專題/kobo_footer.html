@@ -12,11 +12,18 @@
 
     <title>kobo.com</title>
 </head>
+
 <style>
+    body {
+        max-width: 1200px;
+        margin: auto;
+    }
+
     .kobo-footer {
         margin-top: 40px;
         color: #fff;
     }
+
     .accordion {
         padding-top: 10px;
 
@@ -69,35 +76,199 @@
         font-weight: 700;
         margin: 0.5rem 0;
     }
+
+    /* ------nav */
+    /* ---摸到打開-- */
+    .dropdown-menu li:hover .sub-menu {
+        visibility: visible;
+
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+
+        background-color: transparent;
+    }
+
+    /* ---摸到打開-- */
+
+    .toggle {
+        color: #0d0d0d;
+        padding: 12px 13px 20px 8px;
+        margin-right: 5px;
+        overflow: hidden;
+        display: block;
+        min-height: 0;
+        font-size: inherit;
+        line-height: inherit;
+        -webkit-transition: none;
+        transition: none;
+        background-color: rgb(236, 42, 42);
+    }
+
+    .rich-header {
+        /* webkit-box-sizing: border-box; */
+        box-sizing: border-box;
+        -webkit-box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
+        box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
+        z-index: 700;
+        background: #fff;
+        height: 180px;
+        width: 100%;
+        top: 0;
+    }
+
+    .header-bottom {
+        padding: 0 20px;
+    }
+
+    .header-main-navigation {
+
+        display: flex;
+        vertical-align: bottom;
+    }
+
+    button {
+        z-index: 700;
+        border: solid #fff;
+    }
+
+    .dropdown ul {
+        border: solid rgb(236, 42, 42);
+        background-color: rgb(236, 42, 42);
+        padding: 0;
+        height: 335px;
+        padding: 40px;
+    }
+
+    .dropdown ul li {
+        background-color: rgb(236, 42, 42);
+    }
 </style>
 
 <body>
 
+    <header class="rich-header ">
+        <!-- 外全部NAV -->
+        <div class="side-menu">
+            <!-- 全部NAV -->
+            <div class="header-top">
+                <!-- 上方語言國家列 -->
+            </div>
+            <div class="rich-header-wrapper">
+                <!-- 搜尋+下拉選單 -->
+                <img src="https://picsum.photos/165/58/?random1" alt="kobo樂天Logo">
+                <div class="header-middle">
+                    <!-- 搜尋列 -->
+                </div>
 
-
-
-
-
-    <!-- <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-          <h5 class="text-white h4">Collapsed content</h5>
-          <span class="text-muted">Toggleable via the navbar brand.</span>
+                <div class="header-bottom">
+                    <nav class="header-main-navigation">
+                        <div class="dropdown">
+                            <button class="toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <a href="">電子書</a>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                <li><a class="dropdown-item" href="#">愛情</a></li>
+                                <li><a class="dropdown-item" href="#">非小說</a></li>
+                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                <li><a class="dropdown-item" href="#">兒童</a></li>
+                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                <div class="viewAllCategories">
+                                    <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                </div>
+                                <div class="linkWrapper">
+                                    <span class="linkItem">
+                                        <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                    </span>
+                                    <span class="linkItem">
+                                        <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                    </span>
+                                    <span class="featuredListLinkItem">
+                                        <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                    </span>
+                                </div>
+                                <div class=" groupLinkFooter">
+                                    <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                </div>
+                            </ul>
+                        </div>
+                        <!-- 有聲書 -->
+                        <div class=" dropdown">
+                            <button class="toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <a href="">有聲書</a>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                <li><a class="dropdown-item" href="#">愛情</a></li>
+                                <li><a class="dropdown-item" href="#">非小說</a></li>
+                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                <li><a class="dropdown-item" href="#">兒童</a></li>
+                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                <div class="viewAllCategories">
+                                    <a class="dropdown-item" href="#"> 瀏覽所有類別</a>
+                                </div>
+                                <div class="linkWrapper">
+                                    <span class="linkItem">
+                                        <a class="dropdown-item" href="#">流行趨勢</a>
+                                    </span>
+                                    <span class="linkItem">
+                                        <a class="dropdown-item" href="#">有聲書優惠</a>
+                                    </span>
+                                </div>
+                                <div class=" groupLinkFooter">
+                                    <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                </div>
+                            </ul>
+                        </div>
+                        <!-- 應用程式與 eReader -->
+                        <div class="dropdown">
+                            <button class="toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <a href="">應用程式與 eReader</a>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                        </div>
+                        <!-- 樂天超級點數 -->
+                        <div class="dropdown">
+                            <button class="toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <a href="">樂天超級點數</a>
+                            </button>
+                            <section class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div>
+                                    <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
+                                        alt="Rakuten Points logo">
+                                </div>
+                                <span>
+                                    <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，活動點數將於購買日次月15日新增至帳戶</p>
+                                </span>
+                                <div>
+                                    <a href="">查看您的超級點數記錄</a>
+                                    <a href="">樂天超級點數購書須知</a>
+                                </div>
+                            </section>
+                        </div>
+                    </nav>
+                </div>
+                <!-- 搜尋及下拉選單 -->
+            </div>
+            <!-- 全部NAV -->
         </div>
-      </div>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </nav> -->
-
-
-
-
-
-
-
+        <!-- 外全部NAV -->
+    </header>
 
 
 
@@ -115,7 +286,7 @@
                 </h2>
 
 
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" >
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
                     <div class="accordion-body">
                         <a href="#">關於 Rakuten Kobo</a>
                     </div>
