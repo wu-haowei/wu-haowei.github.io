@@ -9,8 +9,8 @@
     <script src="https://use.fontawesome.com/fa7210dc77.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="/專題/Owl_Carousel/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/專題/Owl_Carousel/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Owl_Carousel/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Owl_Carousel/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
 
     <title>kobo.com</title>
     <style>
@@ -21,15 +21,14 @@
 
         body {
             max-width: 1200px;
+            min-width: 300px;
             margin: auto;
             font-size: 14px;
         }
-
         /* ------------------------------------------- */
         .primary-metadata {
             padding: 2rem 2rem 0 2.5rem;
         }
-
         /* ------------------------------------------- */
         .primary-left-intermediate-container {
             padding-right: 5%;
@@ -42,6 +41,7 @@
         }
 
         .inner-left-pic {
+            padding: 0;
             max-width: 15rem;
             min-height: 17.44rem;
         }
@@ -55,6 +55,9 @@
         .inner-left-score ul {
             list-style-type: none;
             /* padding: 0; */
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
         }
 
         .inner-top-pic,
@@ -75,11 +78,6 @@
             color: #000;
             background-position: center left;
         }
-
-        .inner-left-score ul button span:hover {
-            text-decoration: underline;
-        }
-
         .inner-left-score ul:nth-child(3) {
             font-size: 1.0rem;
             line-height: 2rem;
@@ -91,11 +89,14 @@
             color: #595959;
         }
 
+        .inner-left-score ul button span:hover {
+            text-decoration: underline;
+        }
         .inner-left-score ul a:hover {
             color: #bf0000;
         }
 
-        .inner-left-score ul li:nth-child(2) {
+        .inner-left-score ul:nth-child(1) li:nth-child(2) {
             border-top: 1px solid #d8d8d8;
         }
 
@@ -104,7 +105,7 @@
             color: #bf0000;
             font-family: Georgia, Times, serif;
             margin-top: 15px;
-            padding-left: 30px;
+            padding-left: 10px;
         }
 
         .fivestar span {
@@ -189,7 +190,7 @@
 
         .pricing-details .box {
             padding: 2rem 1.5rem;
-            min-width: 15rem;
+            min-width: 13rem;
             border: 1px solid #e6e6e6;
             -webkit-box-shadow: 0 0 7px #e6e6e6;
             box-shadow: 0 0 7px #e6e6e6;
@@ -205,7 +206,6 @@
         }
 
         .pricing-details .pricing-figures {
-            /* font-size: 1.4rem; */
             color: #000;
             margin-bottom: 3rem;
         }
@@ -273,28 +273,6 @@
             border-color: #595959;
             transition: 0.3s;
         }
-
-        /* ------------------------------------------- */
-        .action-container .add-to-cart,
-        .action-container .buy-now,
-        .action-container .delete {
-            /* border-radius: 5px; */
-            min-height: 35px;
-            min-width: 70px;
-            font-size: 1.0rem;
-            color: #fff;
-            border-style: solid;
-            border-width: 3px;
-            padding: 5px 7px;
-            font-weight: 700;
-            margin: 0.5rem 0;
-        }
-
-        .action-container .add-to-cart {
-            background-color: #bf0000;
-            border-color: #bf0000;
-        }
-
         /* ------------------------------------------- */
         .action-container .buy-now,
         .action-container .delete {
@@ -334,7 +312,6 @@
         .kobo-widget .region .carousel-header-container h2>span {
             font-weight: 400;
             color: #000;
-            /* margin: 0 15px 20px 15px; */
         }
 
         /* ------------------------------------------- */
@@ -463,14 +440,14 @@
             <!-- 第一列全部外container-->
             <div class="row">
                 <!-- 第一列 row -->
-                <div class="col-12 col-sm-8 col-lg-9 primary-left-intermediate-container">
+                <div class="col-12 col-md-8 col-lg-9 primary-left-intermediate-container">
                     <!-- -------------------------------------左中欄列------------------------------------------------ -->
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-lg-4 inner-left-container">
+                        <div class="col-12 col-md-12 col-lg-4 inner-left-container">
                             <!-- -------------------------------------左邊欄列 ------------------------------------------------ -->
                             <div class="row">
                                 <!-- <div> -->
-                                <div class="col-12 col-sm-6 col-lg-12 inner-left-pic">
+                                <div class="col-12 col-md-6 col-lg-12 inner-left-pic">
                                     <!-- -------------------------------------左圖片------------------------------------------------ -->
                                     <div class="inner-left-pic_2">
                                         <img src="https://kbimages1-a.akamaihd.net/de6dbba7-2e25-4bb2-88b4-be6ab5224250/353/569/90/False/6qH-2GVPZTOvvptgjM-UsA.jpg"
@@ -478,7 +455,7 @@
                                     </div>
                                 </div>
                                 <!-- -------------------------------------左評分------------------------------------------------ -->
-                                <div class="col-12 col-sm-6 col-lg-12 inner-left-score">
+                                <div class="col-12 col-md-6 col-lg-12 inner-left-score">
                                     <ul>
                                         <li>
                                             <button>
@@ -540,7 +517,7 @@
                             </div>
                         </div>
                         <!-- -------------------------------------中間欄------------------------------------------------ -->
-                        <div class="col-12 col-sm-12 col-lg-8 primary-intermed-container">
+                        <div class="col-12 col-md-12 col-lg-8 primary-intermed-container">
                             <div class="book-title">
                                 <h2>灰階思考</h2>
                                 <div class="book-author">
@@ -600,7 +577,7 @@
                     </div>
                 </div>
                 <!-- -------------------------------------右邊欄------------------------------------------------ -->
-                <div class="col-12 col-sm-4 col-lg-3 primary-right-container">
+                <div class="col-12 col-md-4 col-lg-3 primary-right-container">
                     <div class="pricing-details">
                         <div class="box">
                             <h2 class="pricing-title">購買電子書</h2>
@@ -826,7 +803,7 @@
                 </div>
                 <div class="rating-review-summary-header">
                     <div class="row">
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-md-4">
                             <section class="overall-rating-container">
                                 <h2>整體評分</h2>
                                 <div class="overall-rating-container-fraction">
@@ -853,10 +830,10 @@
                                 </div>
                             </section>
                         </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-md-4">
                             <div class="container-img"><img src="https://picsum.photos/300/200/?random1" alt=""></div>
                         </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-md-4">
                             <section class="write-review-container">
                                 <h2 class="title">分享您的想法</h2>
                                 <button>發表評論</button>
@@ -869,8 +846,8 @@
     </div> -->
 
 
-    <script src="/專題/Owl_Carousel/OwlCarousel2-2.3.4/docs_src/assets/vendors/jquery.min.js"></script>
-    <script src="/專題/Owl_Carousel/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="/Owl_Carousel/OwlCarousel2-2.3.4/docs_src/assets/vendors/jquery.min.js"></script>
+    <script src="/Owl_Carousel/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script>
         var owl = $('.owl-carousel');
         owl.owlCarousel({
