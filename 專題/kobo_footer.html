@@ -166,7 +166,7 @@
 
     .header-top {
         display: flex;
-        height: 2.5rem;
+        height: 1.8rem;
         margin-bottom: 0;
         background-color: #f5f5f5;
     }
@@ -192,16 +192,23 @@
 
     .right-field {
         display: flex;
+    }
+
+    .right-field a,
+    .rich-header-secondary-link-bar a {
+        color: #595959;
+        text-decoration: none;
 
     }
 
-    .rich-header-icon-bay {
+    .rich-header-bay {
         display: flex;
 
     }
 
     .rich-header-secondary-link-bar {
         display: flex;
+        align-items: center;
         justify-content: flex-end;
     }
 
@@ -219,14 +226,57 @@
         display: flex;
         align-items: center;
     }
-    .rich-header-wishlist{
-      
-      padding: 0 5px;
+
+    .rich-header-wishlist {
+
+        padding: 0 5px;
     }
 
-    /* .rich-header-wishlist a>.icon-wishlist{
+    .text-wishlist,
+    .icon-wishlist,
+    .profile-icon {
+        text-align: center;
+    }
 
-    } */
+    .language-selector:hover,
+    .rich-header-secondary-link-bar>a:hover,
+    .rich-header-wishlist:hover a,
+    .rich-header-icon-bay:hover a,
+    .rich-header-user:hover a {
+        color: #bf0000;
+    }
+
+    .selected-language {
+        padding: 0 1rem;
+    }
+
+    .rich-header-link {
+        padding: 0 1.3rem;
+    }
+
+    .language-selector {
+        border: none;
+        background-color: #f5f5f5;
+        color: #595959;
+    }
+
+
+    .btn-secondary {
+        color: #595959;
+        background-color: #ffffff;
+        border-color: #ffffff;
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus,
+    .btn-secondary:active:hover,
+    .btn-secondary:hover .profile-icon i,
+    .btn-secondary:hover .my-account {
+        color: #bf0000;
+        background-color: #ffffff;
+        border-color: #ffffff;
+
+    }
 </style>
 
 <body>
@@ -245,9 +295,21 @@
                                 <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913//Images/country-flags/small/taiwan.png"
                                     alt="taiwan"></a>
                         </span>
-                        <button class="language-selector">
-                            <div class="selected-language">中文</div>
-                        </button>
+                        <!-- ----- -->
+                        <div class="selected_dropdown btn-group">
+                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
+                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                中文
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Bokmål</a></li>
+                                <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                                <li><a class="dropdown-item" href="#">Español</a></li>
+                                <li><a class="dropdown-item" href="#">日本語</a></li>
+                            </ul>
+                        </div>
+                        <!-- ----- -->
                         <a class="rich-header-link" href="#">說明</a>
                     </div>
                     <div class="sp-feedback-container">
@@ -273,7 +335,7 @@
                     </div>
 
                     <div class="right-field">
-                        <div class="rich-header-icon-bay">
+                        <div class="rich-header-bay">
                             <!-- 我的願望清單 -->
                             <div class="rich-header-wishlist">
                                 <a href="#">
@@ -297,16 +359,26 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="rich-header-user">
-                            <!-- 我的帳戶 -->
-                            <button class="profile-wrapper">
-                                <div class="profile-icon">
-                                    <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-                                </div>
-                                <div class="my-account">我的帳戶</div>
+                        <!-- --- -->
+                        <div class="header-user_dropdown">
+                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
+                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a href="#">
+                                    <div class="profile-icon">
+                                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="my-account">我的帳戶</span>
+                                </a>
                             </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">我的書籍</a></li>
+                                <li><a class="dropdown-item" href="#">我的願望清單</a></li>
+                                <li><a class="dropdown-item" href="#">購買記錄</a></li>
+                                <li><a class="dropdown-item" href="#">帳戶設定</a></li>
+                                <li><a class="dropdown-item" href="#">登出</a></li>
+                            </ul>
                         </div>
+                        <!-- --- -->
                     </div>
                 </div>
 
