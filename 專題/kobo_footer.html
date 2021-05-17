@@ -79,7 +79,7 @@
 
     /* ------nav */
     /* ---摸到打開-- */
-    .dropdown-menu li:hover .sub-menu {
+    .dropdown-menu button:hover .sub-menu {
         visibility: visible;
 
     }
@@ -123,17 +123,26 @@
     .dropdown section {
         border-radius: 0px;
         border: solid rgb(32, 173, 13);
-        background-color: rgb(32, 173, 13);
+        /* background-color: rgb(32, 173, 13); */
         padding: 0;
-        height: 335px;
+        /* height: 335px; */
         padding: 40px;
         margin-top: -4px;
         margin-left: 2.5px;
     }
-    .dropdown-menu {
-        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+
+    .dropdown-menu-left {
+        background-color: rgb(32, 173, 13);
     }
+
+    .dropdown-menu-right {
+        background-color: rgb(32, 173, 13);
+    }
+
     .dropdown ul li {
+        /* background-color: rgb(32, 173, 13); */
+    }
+    .dropdown-menu{
         background-color: rgb(32, 173, 13);
     }
 </style>
@@ -149,7 +158,9 @@
             </div>
             <div class="rich-header-wrapper">
                 <!-- 搜尋+下拉選單 -->
-                <img src="https://picsum.photos/165/58/?random1" alt="kobo樂天Logo">
+                <h1 class="kobo-rakuten">
+                    <a href="#"><img src="https://picsum.photos/165/58/?random1" alt="kobo樂天Logo"></a>
+                </h1>
                 <div class="header-middle">
                     <!-- 搜尋列 -->
                 </div>
@@ -161,34 +172,39 @@
                                 <a href="#">電子書</a>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                <li><a class="dropdown-item" href="#">愛情</a></li>
-                                <li><a class="dropdown-item" href="#">非小說</a></li>
-                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                <li><a class="dropdown-item" href="#">兒童</a></li>
-                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
-                                <div class="viewAllCategories">
-                                    <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                <div class="dropdown-menu-left">
+                                    <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                    <li><a class="dropdown-item" href="#">愛情</a></li>
+                                    <li><a class="dropdown-item" href="#">非小說</a></li>
+                                    <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                    <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                    <li><a class="dropdown-item" href="#">兒童</a></li>
+                                    <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                    <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                    <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                    <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                    <div class="viewAllCategories">
+                                        <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                    </div>
                                 </div>
-                                <div class="linkWrapper">
-                                    <span class="linkItem">
-                                        <a class="dropdown-item" href="#">專屬於您的推薦</a>
-                                    </span>
-                                    <span class="linkItem">
-                                        <a class="dropdown-item" href="#">今日前50名電子書</a>
-                                    </span>
-                                    <span class="featuredListLinkItem">
-                                        <a class="dropdown-item" href="#">最新熱門雜誌</a>
-                                    </span>
-                                </div>
-                                <div class=" groupLinkFooter">
-                                    <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                <div class="dropdown-menu-right">
+                                    <div class="linkWrapper">
+                                        <span class="linkItem">
+                                            <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                        </span>
+                                        <span class="linkItem">
+                                            <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                        </span>
+                                        <span class="featuredListLinkItem">
+                                            <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                        </span>
+                                    </div>
+                                    <div class=" groupLinkFooter">
+                                        <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                    </div>
                                 </div>
                             </ul>
+
                         </div>
                         <!-- 有聲書 -->
                         <div class=" dropdown">
@@ -196,29 +212,37 @@
                                 <a href="#">有聲書</a>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                <li><a class="dropdown-item" href="#">愛情</a></li>
-                                <li><a class="dropdown-item" href="#">非小說</a></li>
-                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                <li><a class="dropdown-item" href="#">兒童</a></li>
-                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                <div class="viewAllCategories">
-                                    <a class="dropdown-item" href="#"> 瀏覽所有類別</a>
+                                <div class="dropdown-menu-left">
+
+                                    <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                    <li><a class="dropdown-item" href="#">愛情</a></li>
+                                    <li><a class="dropdown-item" href="#">非小說</a></li>
+                                    <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                    <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                    <li><a class="dropdown-item" href="#">兒童</a></li>
+                                    <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                    <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                    <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                    <div class="viewAllCategories">
+                                        <a class="dropdown-item" href="#"> 瀏覽所有類別</a>
+                                    </div>
                                 </div>
-                                <div class="linkWrapper">
-                                    <span class="linkItem">
-                                        <a class="dropdown-item" href="#">流行趨勢</a>
-                                    </span>
-                                    <span class="linkItem">
-                                        <a class="dropdown-item" href="#">有聲書優惠</a>
-                                    </span>
+
+                                <div class="dropdown-menu-right">
+
+                                    <div class="linkWrapper">
+                                        <span class="linkItem">
+                                            <a class="dropdown-item" href="#">流行趨勢</a>
+                                        </span>
+                                        <span class="linkItem">
+                                            <a class="dropdown-item" href="#">有聲書優惠</a>
+                                        </span>
+                                    </div>
+                                    <div class=" groupLinkFooter">
+                                        <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                    </div>
                                 </div>
-                                <div class=" groupLinkFooter">
-                                    <a class="dropdown-item" href="#">瀏覽所有電子書</a>
-                                </div>
+
                             </ul>
                         </div>
                         <!-- 應用程式與 eReader -->
