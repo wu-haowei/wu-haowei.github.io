@@ -38,6 +38,7 @@
             max-height: 100%;
         }
         .inner-left-pic {
+            margin: auto;
             padding: 0;
             max-width: 15rem;
             min-height: 17.44rem;
@@ -70,6 +71,7 @@
         }
 
         .inner-left-score ul:nth-child(1) i {
+            
             padding-left: 2px;
             color: #000;
             background-position: center left;
@@ -82,6 +84,9 @@
         }
         .inner-left-score ul a {
             color: #595959;
+        }
+        .inner-left-score ul:nth-child(1)>li {
+         margin: auto;
         }
 
         .inner-left-score ul button span:hover {
@@ -101,10 +106,20 @@
             font-family: Georgia, Times, serif;
             margin-top: 15px;
             padding-left: 10px;
+
+            justify-content: center;
+    align-items: 0 100px;
+    width: 100%;
+    /* margin: auto; */
+    display: flex;
+    align-items: center;
         }
 
         .fivestar span {
             color: #000;
+        }
+        .fivestar i, .fivestar span{
+            margin: 0 5px;
         }
 
         /* ------------------------------------------- */
