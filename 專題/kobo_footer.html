@@ -14,6 +14,187 @@
 </head>
 
 <style>
+    .all-header {
+        box-sizing: border-box;
+        -webkit-box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
+        box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
+        height: 180px;
+        width: 100%;
+        top: 0;
+    }
+
+    /* ---------------------------------------------------------------- */
+    .header-top {
+        display: flex;
+        height: 1.8rem;
+        margin-bottom: 0;
+        background-color: #f5f5f5;
+    }
+
+    /* ---------------------------------------------------------------- */
+
+    .inner-header-top {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+        max-width: 1140px;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /* .right-field a,
+    .country_Language_Description a {
+        color: #595959;
+        text-decoration: none;
+    } */
+    .country_Language_Description {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .language-selector:hover,
+    .country_Language_Description>a:hover,
+    .My-wish-list:hover a,
+    .shopping-cart:hover a,
+    .shopping-cart:hover a,
+    .rich-header-user:hover a {
+        color: #bf0000;
+    }
+
+    /* -----------------------------語言表單----------------------------------- */
+    .Language-dropdown ul {
+        padding: 20px;
+        background-color: #fff;
+        border-bottom: 2px solid #d8d8d8;
+        border-left: 2px solid #d8d8d8;
+        border-right: 2px solid #d8d8d8;
+        border-top: 2px solid #d8d8d8;
+    }
+
+    .Language-dropdown ul li {
+        padding-top: 10px;
+    }
+
+    /* .Language-dropdown ul{
+        display: flex;
+        height: 335px;
+    width:  730px;
+
+    } */
+    /* ------------------------------搜尋列---------------------------------- */
+
+    .Search-bar {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.8rem;
+    }
+
+    .search_Drop-down-menu {
+        padding: 0 20px;
+        margin: 0 auto;
+        max-width: 1140px;
+    }
+
+    .Search-input {
+        height: 3.0rem;
+    }
+
+    .logo-Search {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.9rem;
+        width: 65%
+    }
+
+    .Search-input {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        width: 70%;
+    }
+
+
+    /* ---------------------------------------------------------------- */
+    .My-wish-list_shopping-cart_my-account {
+        display: flex;
+        justify-content: flex-end;
+        width: 35%;
+    }
+
+    .My-wish-list_shopping-cart {
+        display: flex;
+    }
+
+    .My-wish-list_shopping-cart_my-account a {
+        text-decoration: none;
+        color: #444444
+    }
+
+    .My-wish-list,
+    .shopping-cart {
+        display: flex;
+
+        align-items: center;
+    }
+
+    .shopping-cart {
+        padding: 0 10px;
+    }
+
+    .Search-input button {
+        background-color: #000;
+    }
+
+    /* -------------------------------按鈕更改顏色--------------------------------- */
+
+    .btn-secondary:hover,
+    .btn-secondary:focus,
+    .btn-secondary:active:hover,
+    .btn-secondary:hover .profile-icon i,
+    .btn-secondary:hover .my-account {
+        color: #bf0000;
+        background-color: #ffffff;
+        border-color: #ffffff;
+    }
+
+    /* --------------------------帳戶表單-------------------------------------- */
+
+    /* .header-user_dropdown ul {
+        padding: 20px;
+        background-color: #fff;
+        border-bottom: 2px solid #d8d8d8;
+        border-left: 2px solid #d8d8d8;
+        border-right: 2px solid #d8d8d8;
+        border-top: 2px solid #d8d8d8;
+    }
+
+    .header-user_dropdown ul li {
+        padding-top: 10px;
+    }
+
+    .header-user_dropdown ul li:nth-child(3) {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #d8d8d8;
+    } */
+    .header-user_dropdown {
+        display: flex;
+
+    }
+
+    /* -----------------------------待確認----------------------------------- */
+
+    .Feedback {
+        margin: 0 auto;
+        max-width: 1140px;
+    }
+
+    /* ---------------------------------------------------------------- */
+
+
+
+
+
     .kobo-footer {
         max-width: 1200px;
         margin: auto;
@@ -23,7 +204,6 @@
 
     .accordion {
         padding-top: 10px;
-
     }
 
     .accordion-item {
@@ -74,68 +254,87 @@
         margin: 0.5rem 0;
     }
 
-    /* ------nav */
-    /* ---摸到打開-- */
-    .dropdown-menu button:hover .sub-menu {
+
+
+
+    /* ----------------------------nav------------------------------------ */
+    /* ---------------------------摸到打開------------------------------------- */
+
+    .dropdown-menu button:hover ul {
         visibility: visible;
     }
 
     .dropdown:hover .dropdown-menu {
         display: block;
-        background-color: transparent;
+        padding: 30px;
     }
 
-    /* ---摸到打開-- */
-
-    /* .toggle {
-        padding: 12px 13px 20px 8px;
-    } */
-
-    .rich-header {
-        box-sizing: border-box;
-        -webkit-box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
-        box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
-        height: 180px;
-        width: 100%;
-        top: 0;
-    }
-
-    /* -------------------------------------- */
-    .header-bottom {
-        padding: 0 20px;
-    }
-
-    /* -------------------------------------- */
-
-    .header-main-navigation {
+    /* ---------------------------------------------------------------- */
+    .nav-Button {
         display: flex;
-        vertical-align: bottom;
     }
+
+    /* ---------------------------------------------------------------- */
+    /* ---------------------------------------------------------------- */
+    /* ---------------------------------------------------------------- */
+    /* ---------------------------------------------------------------- */
+    /* ---------------------------------------------------------------- */
+    /* ---------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* -------------------------------------- */
 
-    .rich-header-wrapper {
+    /* .Feedback {
         margin: 0 auto;
         max-width: 1140px;
-    }
+    } */
 
     /* -------------------------------------- */
 
-    /* button {
-        border: solid #fff;
-    } */
+
 
     .dropdown-menu {
         width: auto;
-
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
-    /* .selected_dropdown ul{
-        display: flex;
-        height: 335px;
-    width:  730px;
 
-    } */
 
     .dropdown-menu-left {
         width: 70%;
@@ -144,12 +343,10 @@
         justify-content: space-between;
     }
 
-    .linkWrapper_1 {
-        display: flex;
-        flex-wrap: wrap;
-    }
 
-    .dropdown-menu-right {
+
+    .ebook-menu-right,
+    .audiobook-menu-right {
         display: flex;
         width: 30%;
         flex-direction: column;
@@ -158,122 +355,26 @@
 
     }
 
-    /* .linkWrapper_2{
 
-    } */
-
-    /* .dropdown-menu {
-        padding: 40px;
-        background: antiquewhite;
-        border-radius: 0px;
-        border: solid rgb(32, 173, 13);
-        background: aqua;
-        margin-top: -4px;
-        margin-left: 2.5px;
-    } */
-
-    .dropdown-menu ul {
-        display: flex;
-        padding: 0px;
-    }
-
-    .dropdown-menu li {
-        list-style: none;
-    }
-
-    /* ---搜尋列-- */
-
-    .header-middle {
-        display: flex;
-    }
-
-    .header-top {
-        display: flex;
-        height: 1.8rem;
-        margin-bottom: 0;
-        background-color: #f5f5f5;
-    }
-
-    .inner-wrap {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 0 20px;
-        margin: 0 auto;
-        max-width: 1140px;
-    }
-
-    .header-middle {
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
-        padding: 0 20px;
-        max-width: 1140px;
-        margin-top: 0.8rem;
-
-
-    }
-
-    .right-field {
-        display: flex;
-    }
-
-    .right-field a,
-    .rich-header-secondary-link-bar a {
-        color: #595959;
-        text-decoration: none;
-
-    }
-
-    .rich-header-bay {
-        display: flex;
-
-    }
-
-    .rich-header-secondary-link-bar {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    .input-group {
-        height: 3.0rem;
-    }
-
-    .right-field:nth-child(1) {
-        width: 70%;
-        display: flex;
-        align-items: center;
-    }
-
-    .right-field:nth-child(2) {
-        display: flex;
-        align-items: center;
-    }
-
-    .rich-header-wishlist {
-
+    .My-wish-list {
         padding: 0 5px;
     }
 
-    .text-wishlist,
-    .icon-wishlist,
+    .shopping-cart-text,
+    .My-wish-list-text,
+    .My-wish-list-icon,
+    .shopping-cart-icon,
     .profile-icon {
         text-align: center;
     }
 
-    .language-selector:hover,
-    .rich-header-secondary-link-bar>a:hover,
-    .rich-header-wishlist:hover a,
-    .rich-header-icon-bay:hover a,
-    .rich-header-user:hover a {
-        color: #bf0000;
-    }
+
 
     .selected-language {
         padding: 0 1rem;
     }
 
-    .rich-header-link {
+    .Description_a {
         padding: 0 1.3rem;
     }
 
@@ -290,65 +391,98 @@
         border-color: #ffffff;
     }
 
-    /* ---------按鈕更改顏色----------- */
 
-    .btn-secondary:hover,
-    .btn-secondary:focus,
-    .btn-secondary:active:hover,
-    .btn-secondary:hover .profile-icon i,
-    .btn-secondary:hover .my-account {
+    .ebook-ul,
+    .audiobook-ul,
+    .set_point_ul,
+    .application_ul {
+        display: flex;
+        width: 800px;
+        flex-wrap: wrap;
+        line-height: 2.7rem;
+    }
+
+    .ebook-menu-left,
+    .audiobook-menu-left {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .ebook-classification,
+    .audiobook-classification {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .ebook-classification li,
+    .audiobook-classification li {
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        font-size: 10px;
+    }
+
+    .nav-Button a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .ebook-classification li a,
+    .audiobook-classification li a {
+        padding: 10px;
+        display: inline;
+    }
+
+    .ebook-recommend span {
+        color: #444444;
+        font-size: 1.0rem;
+    }
+
+    .ebook-menu-right,
+    .audiobook-menu-right {
+        border-left: 1px solid #d8d8d8;
+        padding-left: 30px;
+    }
+
+    .dropdown {
+        padding: 12px 13px 20px 8px;
+        margin-right: 5px;
+        font-size: inherit;
+    }
+
+    .dropdown:hover {
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+    }
+
+
+    .dropdown :hover {
         color: #bf0000;
-        background-color: #ffffff;
-        border-color: #ffffff;
-
     }
 
-    /* ---------帳戶表單----------- */
-    .header-user_dropdown ul {
-        padding: 20px;
-        background-color: #fff;
-        border-bottom: 2px solid #d8d8d8;
-        border-left: 2px solid #d8d8d8;
-        border-right: 2px solid #d8d8d8;
-        border-top: 2px solid #d8d8d8;
+    .h1 {
+        /* h1 標題 */
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 0px;
     }
-
-    .header-user_dropdown ul li {
-        padding-top: 10px;
-    }
-
-    .header-user_dropdown ul li:nth-child(3) {
-        padding-bottom: 10px;
-        border-bottom: 1px solid #d8d8d8;
-    }
-
-    /* --------語言表單----------- */
-    .selected_dropdown ul {
-        padding: 20px;
-        background-color: #fff;
-        border-bottom: 2px solid #d8d8d8;
-        border-left: 2px solid #d8d8d8;
-        border-right: 2px solid #d8d8d8;
-        border-top: 2px solid #d8d8d8;
-    }
-
-    .selected_dropdown ul li {
-        padding-top: 10px;
-    }
-
-    /* ------------------- */
 </style>
 
 <body>
 
-    <header class="rich-header ">
+    <header class="all-header ">
         <!-- 外全部NAV -->
-        <div class="side-menu">
+        <div class="Inside-header">
             <!-- 全部NAV -->
             <div class="header-top">
                 <!-- 上方語言國家列 -->
-                <div class="inner-wrap">
-                    <div class="rich-header-secondary-link-bar">
+                <div class="inner-header-top">
+                    <div class="country_Language_Description">
                         <!-- 語言國家列 -->
                         <span>
                             <a href="#">
@@ -356,12 +490,12 @@
                                     alt="taiwan"></a>
                         </span>
                         <!-- ----- -->
-                        <div class="selected_dropdown btn-group">
+                        <div class="Language-dropdown btn-group">
                             <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
-                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 中文
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="#">Bokmål</a></li>
                                 <li><a class="dropdown-item" href="#">Deutsch</a></li>
                                 <li><a class="dropdown-item" href="#">English</a></li>
@@ -370,53 +504,52 @@
                             </ul>
                         </div>
                         <!-- ----- -->
-                        <a class="rich-header-link" href="#">說明</a>
+                        <a class="Description_a" href="#">說明</a>
                     </div>
                     <div class="sp-feedback-container">
                         <!-- 意見反映 -->
                     </div>
                 </div>
             </div>
-            <div class="rich-header-wrapper">
-                <!-- 搜尋+下拉選單 -->
-                <div class="header-middle">
-                    <!-- 搜尋列 -->
 
+            <div class="search_Drop-down-menu">
+                <!-- 搜尋+下拉選單 -->
+                <div class="Search-bar">
+                    <!-- 搜尋列 -->
                     <!-- 右邊 願望清單 購物車 帳戶 -->
-                    <div class="right-field">
-                        <h1 class="kobo-rakuten">
+                    <div class="logo-Search">
+                        <h1>
                             <a href="#"><img src="https://picsum.photos/165/58/?random1" alt="kobo樂天Logo"></a>
+                            <p class="h1">Kobo 樂天</p>
                         </h1>
-                        <div class="input-group">
+                        <div class="Search-input">
                             <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
                                 aria-label="Recipient's username with two button addons">
                             <button class="btn btn-outline-secondary" type="button">Button</button>
                         </div>
                     </div>
 
-                    <div class="right-field">
-                        <div class="rich-header-bay">
+                    <div class="My-wish-list_shopping-cart_my-account">
+                        <div class="My-wish-list_shopping-cart">
                             <!-- 我的願望清單 -->
-                            <div class="rich-header-wishlist">
+                            <div class="My-wish-list">
                                 <a href="#">
-                                    <div class="icon-wishlist">
+                                    <div class="My-wish-list-icon">
                                         <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
 
                                     </div>
-                                    <span class="text-wishlist">我的願望清單</span>
+                                    <span class="My-wish-list-text">我的願望清單</span>
                                 </a>
                             </div>
 
-                            <div class="rich-header-icon-bay">
+                            <div class="shopping-cart">
                                 <!-- 我的購物車 -->
-                                <div class="rich-header-wishlist">
-                                    <a href="#">
-                                        <div class="icon-wishlist">
-                                            <i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i>
-                                        </div>
-                                        <span class="text-wishlist">購物車</span>
-                                    </a>
-                                </div>
+                                <a href="#">
+                                    <div class="shopping-cart-icon">
+                                        <i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="shopping-cart-text">購物車</span>
+                                </a>
                             </div>
                         </div>
                         <!-- --- -->
@@ -442,132 +575,130 @@
                     </div>
                 </div>
 
-
-                <div class="header-bottom">
-                    <nav class="header-main-navigation">
-                        <div class="ebook_dropdown btn-group">
-                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
-                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <a href="#">電子書</a>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <div class="dropdown-menu-left">
-                                    <div class="linkWrapper_1">
-                                        <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                        <li><a class="dropdown-item" href="#">愛情</a></li>
-                                        <li><a class="dropdown-item" href="#">非小說</a></li>
-                                        <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                        <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                        <li><a class="dropdown-item" href="#">兒童</a></li>
-                                        <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                        <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                        <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                        <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                <!-- -------------------------------------------------------------------------- -->
+                <!-- -------------------------------------------------------------------------- -->
+                <!-- -------------------------------------------------------------------------- -->
+                <div class="outer-nav">
+                    <nav class="nav-Button">
+                        <div class="ebook_dropdown">
+                            <span class="dropdown ">
+                                <a href="#" class="dropdown-toggle">電子書</a>
+                                <ul class="dropdown-menu">
+                                    <div class="ebook-ul">
+                                        <div class="ebook-menu-left">
+                                            <div class="ebook-classification">
+                                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                                <li><a class="dropdown-item" href="#">愛情</a></li>
+                                                <li><a class="dropdown-item" href="#">非小說</a></li>
+                                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                                <li><a class="dropdown-item" href="#">兒童</a></li>
+                                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                            </div>
+                                            <div class="ebook-Browse-All-classification">
+                                                <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                            </div>
+                                        </div>
+                                        <div class="ebook-menu-right">
+                                            <div class="ebook-recommend">
+                                                <span>
+                                                    <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                                </span>
+                                                <span>
+                                                    <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                                </span>
+                                                <span>
+                                                    <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                                </span>
+                                            </div>
+                                            <div class="ebook-Browse-All-recommend">
+                                                <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="viewAllCategories">
-                                        <a class="dropdown-item" href="#">瀏覽所有類別</a>
-                                    </div>
-                                </div>
-                                <div class="dropdown-menu-right">
-                                    <div class="linkWrapper_2">
-                                        <span class="linkItem">
-                                            <a class="dropdown-item" href="#">專屬於您的推薦</a>
-                                        </span>
-                                        <span class="linkItem">
-                                            <a class="dropdown-item" href="#">今日前50名電子書</a>
-                                        </span>
-                                        <span class="featuredListLinkItem">
-                                            <a class="dropdown-item" href="#">最新熱門雜誌</a>
-                                        </span>
-                                    </div>
-                                    <div class=" groupLinkFooter">
-                                        <a class="dropdown-item" href="#">瀏覽所有電子書</a>
-                                    </div>
-                                </div>
-                            </ul>
+                                </ul>
+                            </span>
                         </div>
                         <!-- 有聲書 -->
-                        <div class="audiobook_dropdown btn-group">
-                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
-                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <a href="#">有聲書</a>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                <li><a class="dropdown-item" href="#">愛情</a></li>
-                                <li><a class="dropdown-item" href="#">非小說</a></li>
-                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                <li><a class="dropdown-item" href="#">兒童</a></li>
-                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
-                                <div class="viewAllCategories">
-                                    <a class="dropdown-item" href="#">瀏覽所有類別</a>
-                                </div>
-                                <div class="dropdown-menu-right">
-                                    <div class="linkWrapper">
-                                        <span class="linkItem">
-                                            <a class="dropdown-item" href="#">專屬於您的推薦</a>
-                                        </span>
-                                        <span class="linkItem">
-                                            <a class="dropdown-item" href="#">今日前50名電子書</a>
-                                        </span>
-                                        <span class="featuredListLinkItem">
-                                            <a class="dropdown-item" href="#">最新熱門雜誌</a>
-                                        </span>
+                        <div class="audiobook_dropdown ">
+                            <span class="dropdown">
+                                <a href="#" class="dropdown-toggle">有聲書</a>
+                                <ul class="dropdown-menu">
+                                    <div class="audiobook-ul">
+                                        <div class="audiobook-menu-left">
+                                            <div class="audiobook-classification">
+                                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                                <li><a class="dropdown-item" href="#">愛情</a></li>
+                                                <li><a class="dropdown-item" href="#">非小說</a></li>
+                                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                                <li><a class="dropdown-item" href="#">兒童</a></li>
+                                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                            </div>
+                                            <div class="audiobook-Browse-All-classification">
+
+                                                <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="audiobook-menu-right">
+                                            <div class="audiobook-recommend">
+                                                <span>
+                                                    <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                                </span>
+                                                <span>
+                                                    <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                                </span>
+                                                <span>
+                                                    <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                                </span>
+                                            </div>
+                                            <div class="audiobook-Browse-All-recommend">
+                                                <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class=" groupLinkFooter">
-                                        <a class="dropdown-item" href="#">瀏覽所有電子書</a>
-                                    </div>
-                                </div>
-                            </ul>
+                                </ul>
+                            </span>
                         </div>
                         <!-- 應用程式與 eReader -->
-                        <div class="application_dropdown btn-group">
-                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
-                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <a href="#">應用程式與 eReader</a>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-
-                            </ul>
+                        <div class="application_dropdown">
+                            <span class="dropdown">
+                                <a href="#" class="dropdown-toggle">應用程式與 eReader</a>
+                                <ul class="dropdown-menu">
+                                    <div class="application_ul">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                    </div>
+                                </ul>
+                            </span>
                         </div>
                         <!-- 樂天超級點數 -->
-                        <!-- <div class="selected_dropdown btn-group">
-                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
-                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <a href="#">樂天超級點數</a>
-                            </button>
-                            <div class="dropdown-menu">
-                                <section class="dropdown-menu">
-                                    <div>
-                                        <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
-                                            alt="Rakuten Points logo">
-                                    </div>
-                                    <span>
-                                        <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，活動點數將於購買日次月15日新增至帳戶</p>
-                                    </span>
-                                    <div>
-                                        <a href="">查看您的超級點數記錄</a>
-                                        <a href="">樂天超級點數購書須知</a>
-                                    </div>
-                                </section>
-                            </div>
+                        <!-- <div class="set_point_dropdown">
+                            <span class="dropdown">
+                                <a href="#" class="dropdown-toggle">樂天超級點數</a>
+                                <div class="set_point_ul">
+                                    <section class="dropdown-menu set_point_">
+                                        <div>
+                                            <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
+                                                alt="Rakuten Points logo">
+                                        </div>
+                                        <span>
+                                            <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，活動點數將於購買日次月15日新增至帳戶</p>
+                                        </span>
+                                        <div>
+                                            <a href="">查看您的超級點數記錄</a>
+                                            <a href="">樂天超級點數購書須知</a>
+                                        </div>
+                                    </section>
+                                </div>
+                            </span>
                         </div> -->
-
-                        <div class=set_point_dropdown btn-group">
-                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
-                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <a href="#">樂天超級點數</a>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-
-                            </ul>
-                        </div>
                     </nav>
                 </div>
                 <!-- 搜尋及下拉選單 -->
@@ -576,9 +707,6 @@
         </div>
         <!-- 外全部NAV -->
     </header>
-
-
-
 
 
 
