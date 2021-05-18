@@ -196,6 +196,8 @@
 
         .primary-right-container {
             padding: 0;
+            /* max-width: 70%; */
+            /* margin: auto; */
         }
 
         /* ------------------------------------------- */
@@ -870,6 +872,7 @@
 
     <script>
         var owl = $('.owl-carousel');
+        console.warn(screen.width);
         owl.owlCarousel({
             items: 6,/*顯示張數*/
             loop: true,//環形
@@ -878,6 +881,7 @@
             autoplayTimeout: 3000,//自動播放超時
             autoplayHoverPause: true//自動播放懸停暫停
         });
+
     </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
