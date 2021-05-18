@@ -42,11 +42,6 @@
     }
 
     /* ---------------------------------------------------------------- */
-    /* .right-field a,
-    .country_Language_Description a {
-        color: #595959;
-        text-decoration: none;
-    } */
     .country_Language_Description {
         display: flex;
         align-items: center;
@@ -76,12 +71,6 @@
         padding-top: 10px;
     }
 
-    /* .Language-dropdown ul{
-        display: flex;
-        height: 335px;
-    width:  730px;
-
-    } */
     /* ------------------------------搜尋列---------------------------------- */
 
     .Search-bar {
@@ -191,10 +180,6 @@
 
     /* ---------------------------------------------------------------- */
 
-
-
-
-
     .kobo-footer {
         max-width: 1200px;
         margin: auto;
@@ -274,58 +259,44 @@
         display: flex;
     }
 
+    /* --------------------------意見反映-------------------------------------- */
+    .feedback {
+        position: fixed;
+        top: 350px;
+        right: -30px;
+        border: 3px solid #0065BD;
+        background-color: #0065BD;
+        border-radius: 5px 5px 0 0;
+        padding: 7px 16px;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+    }
+    .feedback a {
+        color: #fff;
+    }
+    .feedback:hover{
+        background-color: #fff;
+        transition: background-color 200ms;
+    }
+    .feedback:hover a{
+        color: #0065BD;
+        text-decoration: none;
+        transition: color 200ms;
+    }
+    /* ---------------------------h1標題------------------------------------- */
+    .h1 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 0px;
+    }
     /* ---------------------------------------------------------------- */
     /* ---------------------------------------------------------------- */
     /* ---------------------------------------------------------------- */
     /* ---------------------------------------------------------------- */
-    /* ---------------------------------------------------------------- */
-    /* ---------------------------------------------------------------- */
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* -------------------------------------- */
-
-    /* .Feedback {
-        margin: 0 auto;
-        max-width: 1140px;
-    } */
-
-    /* -------------------------------------- */
 
 
 
@@ -464,13 +435,8 @@
         color: #bf0000;
     } */
 
-    .h1 {
-        /* h1標題 */
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        font-size: 0px;
-    }
+
+
 </style>
 
 <body>
@@ -506,8 +472,9 @@
                         <!-- ----- -->
                         <a class="Description_a" href="#">說明</a>
                     </div>
-                    <div class="sp-feedback-container">
+                    <div class="feedback">
                         <!-- 意見反映 -->
+                        <a href="#">意見反映</a>
                     </div>
                 </div>
             </div>
@@ -683,19 +650,19 @@
                             <span class="dropdown">
                                 <a href="#" class="dropdown-toggle">樂天超級點數</a>
                                 <!-- <div class="set_point_ul"> -->
-                                    <section class="dropdown-menu">
-                                        <!-- <div> -->
-                                            <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
-                                                alt="Rakuten Points logo">
-                                        <!-- </div> -->
-                                        <span>
-                                            <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，活動點數將於購買日次月15日新增至帳戶</p>
-                                        </span>
-                                        <div>
-                                            <a href="">查看您的超級點數記錄</a>
-                                            <a href="">樂天超級點數購書須知</a>
-                                        </div>
-                                    </section>
+                                <section class="dropdown-menu">
+                                    <!-- <div> -->
+                                    <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
+                                        alt="Rakuten Points logo">
+                                    <!-- </div> -->
+                                    <span>
+                                        <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，活動點數將於購買日次月15日新增至帳戶</p>
+                                    </span>
+                                    <div>
+                                        <a href="">查看您的超級點數記錄</a>
+                                        <a href="">樂天超級點數購書須知</a>
+                                    </div>
+                                </section>
                                 <!-- </div> -->
                             </span>
                         </div>
