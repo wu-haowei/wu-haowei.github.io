@@ -431,7 +431,7 @@
         padding: 0 1.3rem;
     }
 
-    /* ---------------------------------------------------------------- */
+    /* ----------------------------螢幕查詢------------------------------------ */
     .header-in-phone,
     .footer-in-phone,
     .header-in-ipad,
@@ -457,7 +457,123 @@
         }
     }
 
-    /* Read more https: //0800happy.com/6455/ */
+
+    /* 
+    .aaa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    .rakuten-properties {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        font-size: 12.6px;
+        font-weight: 400;
+        background-color: #fff;
+    }
+
+    .rakuten-footer {
+        margin: 40px auto;
+        max-width: 1140px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-container {
+        width: 262px;
+        height: 104px;
+    }
+
+    .partner-links-container {
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .partner-links-container span {
+        padding: 3px 5px;
+    }
+
+    .partner-links-container a {
+        color: black;
+    }
+
+    /* ------------------------------------------ */
+
+    .footer_two {
+        background-color: #595959;
+        padding: 20px;
+        max-width: 1140px;
+        margin: auto;
+        color: #fff;
+    }
+
+    /* ------------------------------------------ */
+
+
+    .ipad-kobo-footer-all {
+        /* background-color: #595959; */
+        display: flex;
+        /* max-width: 1140px; */
+        /* margin: auto; */
+        /* padding: 20px; */
+        /* color: #fff; */
+        padding-bottom: 30px;
+    }
+
+    .one,
+    .two,
+    .there,
+    .five,
+    .fore {
+
+        width: 20%;
+    }
+
+
+    .fore ul>li>a {
+        display: flex;
+
+    }
+
+    .fore ul>li {
+
+        padding-bottom: 10px;
+    }
+
+    .fore ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .ipad-kobo-footer-all>div h4 {
+        padding-bottom: 10px;
+    }
+
+    .h4_text {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .payment_method{
+        padding: 20px;
+        padding: 20px;
+        border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+        display: flex;
+        justify-content: center;
+    }
+    .Change_country_privacy_policy{
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .payment_method img,.payment_method span{
+        padding: 0 10px;
+    }
 </style>
 
 <body>
@@ -705,250 +821,481 @@
 
 
     <footer class="kobo-footer">
+
+
         <div class="footer-in-ipad">
-            <p class="p-5">施工中</p>
-        </div>
+            <div class="ipad-kobo-footer">
+                <div class="footer_two">
+                    <div class="ipad-kobo-footer-all">
+                        <div class="one">
+                            <h4>關於 Rakuten Kobo 的一切資訊</h4>
+                            <div class="h4_text">
+                                <span>關於 Rakuten Kobo</span>
+                                <span>管理團隊</span>
+                                <span>Kobo in Conversation Podcast</span>
+                                <span>電子資源回收計畫</span>
+                                <span>免費應用程式</span>
+                                <span>取得說明</span>
+                                <span>Sitemap</span>
+                            </div>
+                        </div>
+                        <div class="two">
+                            <h4>機會</h4>
+                            <div class="h4_text">
+                                <span>自行出版</span>
+                                <span>關係企業</span>
+                                <span>職位空缺</span>
+                            </div>
+                        </div>
 
-        <div class="footer-in-phone">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            關於 Rakuten Kobo 的一切資訊
-                        </button>
-                    </h2>
+                        <div class="there">
+                            <h4>最新部落格貼文</h4>
+                            <div class="h4_text">
+
+                                <span>【本週精選書單】原來有些人的夜晚是這樣的啊！（5/17-5/23）</span>
+                                <span>想要在股市裡有很好的表現？當然要重讀經典—《漫步華爾街》</span>
+                                <span>聰明的人到處都有，關鍵在於他們是否具有創意和想像力—《創造與漫想》</span>
+                                <span>人們第一次興起「我是誰」的念頭，是在什麼時候呢？—《葉有慧》</span>
+                                <span>【一週99書單】你今天寫了沒？每天早上從寫作開始主動性的人生！(5/13~5/19)</span>
+                                <button>檢視所有貼文</button>
+                            </div>
+                        </div>
+                        <div class="fore">
+                            <h4>保持連線</h4>
+                            <div class="h4_text">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/social/Facebook.png"
+                                                    alt="Facebook">
+                                            </div>
+                                            <div>
+                                                <span>Facebook</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/social/Twitter.png"
+                                                    alt="Twitter">
+                                            </div>
+                                            <div>
+                                                <span>Twitter</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/social/Pinterest.png"
+                                                    alt="Pinterest">
+                                            </div>
+                                            <div>
+                                                <span>Pinterest</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/social/YouTube.png"
+                                                    alt="YouTube">
+                                            </div>
+                                            <div>
+                                                <span>YouTube</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/social/Instagram.png"
+                                                    alt="Instagram">
+                                            </div>
+
+                                            <div>
+                                                <span>Instagram</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/social/Line.png"
+                                                    alt="Line">
+                                            </div>
+
+                                            <div>
+                                                <span>Line</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="five">
+                            <h4>取得免費的應用程式</h4>
+                            <div class="h4_text">
+                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/appstore/googleplay_badge_zh.svg"
+                                    alt="googleplay">
+                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/appstore/appstore_badge_zh.svg"
+                                    alt="appstore">
+                            </div>
+                        </div>
+                    </div>
 
 
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                        <div class="accordion-body">
-                            <a href="#">關於 Rakuten Kobo</a>
-                        </div>
+
+
+                    <div class="payment_method">
+                        <span>付款方式</span>
+                        <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/Visa.png" alt="">
+                        <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/MasterCard.png"
+                            alt="">
+                        <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/JCB.png" alt="">
+                        <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/Kobo.png" alt="">
                     </div>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                        <div class="accordion-body">
-                            <a href="#">管理團隊</a>
+                    <div class="Change_country_privacy_policy">
+                        <div class="Change_country">
+                            <a href="#">現在購物：
+                                <img src="//kbstatic1-a.akamaihd.net/1.0.0.925//Images/country-flags/small/taiwan.png"
+                                    alt="taiwan">
+                                <span>台灣 (TWD)</span>
+                                <span> 變更國家/地區</span>
+                            </a>
                         </div>
-                    </div>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                        <div class="accordion-body">
-                            <a href="#">Kobo in Conversation Podcast</a>
-                        </div>
-                    </div>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                        <div class="accordion-body">
-                            <a href="#">電子資源回收計畫</a>
-                        </div>
-                    </div>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                        <div class="accordion-body">
-                            <a href="#"> 免費應用程式</a>
-                        </div>
-                    </div>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                        <div class="accordion-body">
-                            <a href="#">取得說明</a>
-                        </div>
-                    </div>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                        <div class="accordion-body">
-                            <a href="#">Sitemapa</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            機會
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                        <div class="accordion-body">
-                            <a href="#">自行出版</a>
-                        </div>
-                    </div>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                        <div class="accordion-body">
-                            <a href="#">關係企業</a>
-                        </div>
-                    </div>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                        <div class="accordion-body">
-                            <a href="#">職位空缺</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            最新部落格貼文
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#">人們第一次興起「我是誰」的念頭，是在什麼時候呢？—《葉有慧》</a>
-                        </div>
-                    </div>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#">【一週99書單】你今天寫了沒？每天早上從寫作開始主動性的人生！(5/13~5/19)</a>
-                        </div>
-                    </div>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#">不是批評或說教，意見回饋是促使成長的契機—《麥肯錫主管意見回饋術》</a>
-                        </div>
-                    </div>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#">究竟，童話世界是否真實存在？—《羊男的迷宮》</a>
-                        </div>
-                    </div>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#">【本週精選書單】在這個資訊飛速傳播的新時代，懶惰是最佳的投資模式。（5/10-5/16）</a>
-                        </div>
-                    </div>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body-button">
-                            <a href="#"><button>檢視所有貼文</button></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            保持連線
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"><img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Facebook.png"
-                                    alt="Facebook">Facebook</a>
-                        </div>
-                    </div>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Twitter.png"
-                                    alt="Twitter">Twitter</a>
-                        </div>
-                    </div>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"> <img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Pinterest.png"
-                                    alt="Pinterest">Pinterest</a>
-                        </div>
-                    </div>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/YouTube.png"
-                                    alt="YouTube">YouTube</a>
-                        </div>
-                    </div>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"> <img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Instagram.png"
-                                    alt="Instagram">Instagram</a>
-                        </div>
-                    </div>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Line.png"
-                                    alt="Line">Line</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFives" aria-expanded="false" aria-controls="collapseFives">
-                            取得免費的應用程式
-                        </button>
-                    </h2>
-                    <div id="collapseFives" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"><img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/googleplay_badge_zh.svg"
-                                    alt="googleplay"></a>
-                        </div>
-                    </div>
-                    <div id="collapseFives" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"><img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/appstore_badge_zh.svg"
-                                    alt="appstore"></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            付款方式
-                        </button>
-                    </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"><img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/Visa.png"
-                                    alt="Visa"></a>
-                            <a href="#"><img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/MasterCard.png"
-                                    alt="MasterCard"></a>
-                            <a href="#"><img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/JCB.png"
-                                    alt="JCB"></a>
-                            <a href="#"><img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/Kobo.png"
-                                    alt="Kobo"></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            現在購物：
-                        </button>
-                    </h2>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"><img
-                                    src="//kbstatic1-a.akamaihd.net/1.0.0.913//Images/country-flags/small/taiwan.png"
-                                    alt="台灣"></a>
-                            <span class="country-name">台灣 (TWD)</span>
-                            <div class="change-country">變更國家/地區</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            © 2021 Rakuten Kobo Inc.
-                        </button>
-                    </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
+                        <div class="privacy_policy">
+                            <span>© 2021 Rakuten Kobo Inc. </span>
                             <a href="#">使用條款</a>
                             <a href="#">隱私權政策</a>
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
+                <div class="rakuten-properties">
+                    <div class="rakuten-footer">
+                        <div class="logo-container">
+                            <a href="#">
+                                <img src="https://picsum.photos/262/104?random1" alt="footer-logl">
+                            </a>
+                        </div>
+                        <div class="partner-links-container">
+                            <span class="property-link">
+                                <a href="#">Rakuten Viki</a>
+                            </span>
+                            <span class="property-link">
+                                <a href="#">Rakuten Viber</a>
+                            </span>
+                            <span class="property-link">
+                                <a href="#">Rakuten Global Market</a>
+                            </span>
+                            <span class="property-link">
+                                <a href="#">Rakuten Travel</a>
+                            </span>
+                            <span class="property-link">
+                                <a href="#">更多服務</a>
+                            </span>
+                            <span class="property-link">
+                                <a href="#">關於 Rakuten</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="footer-in-phone">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                關於 Rakuten Kobo 的一切資訊
+                            </button>
+                        </h2>
+
+
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <a href="#">關於 Rakuten Kobo</a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <a href="#">管理團隊</a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <a href="#">Kobo in Conversation Podcast</a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <a href="#">電子資源回收計畫</a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <a href="#"> 免費應用程式</a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <a href="#">取得說明</a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <a href="#">Sitemapa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                機會
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                            <div class="accordion-body">
+                                <a href="#">自行出版</a>
+                            </div>
+                        </div>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                            <div class="accordion-body">
+                                <a href="#">關係企業</a>
+                            </div>
+                        </div>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                            <div class="accordion-body">
+                                <a href="#">職位空缺</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                最新部落格貼文
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#">人們第一次興起「我是誰」的念頭，是在什麼時候呢？—《葉有慧》</a>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#">【一週99書單】你今天寫了沒？每天早上從寫作開始主動性的人生！(5/13~5/19)</a>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#">不是批評或說教，意見回饋是促使成長的契機—《麥肯錫主管意見回饋術》</a>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#">究竟，童話世界是否真實存在？—《羊男的迷宮》</a>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#">【本週精選書單】在這個資訊飛速傳播的新時代，懶惰是最佳的投資模式。（5/10-5/16）</a>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body-button">
+                                <a href="#"><button>檢視所有貼文</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                保持連線
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Facebook.png"
+                                        alt="Facebook">Facebook</a>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"> <img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Twitter.png"
+                                        alt="Twitter">Twitter</a>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"> <img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Pinterest.png"
+                                        alt="Pinterest">Pinterest</a>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"> <img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/YouTube.png"
+                                        alt="YouTube">YouTube</a>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"> <img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Instagram.png"
+                                        alt="Instagram">Instagram</a>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"> <img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Line.png"
+                                        alt="Line">Line</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFives" aria-expanded="false" aria-controls="collapseFives">
+                                取得免費的應用程式
+                            </button>
+                        </h2>
+                        <div id="collapseFives" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/googleplay_badge_zh.svg"
+                                        alt="googleplay"></a>
+                            </div>
+                        </div>
+                        <div id="collapseFives" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/appstore_badge_zh.svg"
+                                        alt="appstore"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                付款方式
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/Visa.png"
+                                        alt="Visa"></a>
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/MasterCard.png"
+                                        alt="MasterCard"></a>
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/JCB.png"
+                                        alt="JCB"></a>
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/Kobo.png"
+                                        alt="Kobo"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                現在購物：
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"><img
+                                        src="//kbstatic1-a.akamaihd.net/1.0.0.913//Images/country-flags/small/taiwan.png"
+                                        alt="台灣"></a>
+                                <span class="country-name">台灣 (TWD)</span>
+                                <div class="change-country">變更國家/地區</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                © 2021 Rakuten Kobo Inc.
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#">使用條款</a>
+                                <a href="#">隱私權政策</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
     </footer>
 
