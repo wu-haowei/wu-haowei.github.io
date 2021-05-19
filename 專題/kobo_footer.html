@@ -14,7 +14,7 @@
 </head>
 
 <style>
-    .all-header {
+    .Inside-header {
         box-sizing: border-box;
         -webkit-box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
         box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
@@ -49,12 +49,22 @@
     }
 
     .language-selector:hover,
-    .country_Language_Description>a:hover,
+    .header-user_dropdown button:hover a,
     .My-wish-list:hover a,
     .shopping-cart:hover a,
-    .shopping-cart:hover a,
-    .rich-header-user:hover a {
+    .rich-header-user:hover a,
+    .Description_a:hover,
+    .Language-dropdown button:hover a {
         color: #bf0000;
+    }
+
+    .country_Language_Description div {
+        padding: 0 10px;
+    }
+
+    .Description_a {
+        color: #595959;
+        text-decoration: none;
     }
 
     /* -----------------------------語言表單----------------------------------- */
@@ -69,6 +79,12 @@
 
     .Language-dropdown ul li {
         padding-top: 10px;
+    }
+
+    .language-selector {
+        border: none;
+        background-color: #f5f5f5;
+        color: #595959;
     }
 
     /* ------------------------------搜尋列---------------------------------- */
@@ -171,16 +187,28 @@
 
     }
 
-    /* -----------------------------待確認----------------------------------- */
+    .header-user_dropdown button {
+        background-color: #fff;
+    }
 
+    .shopping-cart-text,
+    .My-wish-list-text,
+    .My-wish-list-icon,
+    .shopping-cart-icon,
+    .profile-icon {
+        text-align: center;
+    }
+
+    /* -----------------------------待確認----------------------------------- */
+    /* 
     .Feedback {
         margin: 0 auto;
         max-width: 1140px;
-    }
+    } */
 
     /* ---------------------------------------------------------------- */
 
-    .kobo-footer {
+    .footer-in-phone {
         max-width: 1200px;
         margin: auto;
         margin-top: 40px;
@@ -205,11 +233,11 @@
         padding: 0 30px;
     }
 
-    .kobo-footer .accordion .accordion-item:nth-child(4) img {
+    .accordion .accordion-item:nth-child(4) img {
         margin-right: 10px;
     }
 
-    .kobo-footer .accordion .accordion-item:nth-child(5) img {
+    .accordion .accordion-item:nth-child(5) img {
         width: 300px;
         height: 150px;
     }
@@ -259,6 +287,11 @@
         display: flex;
     }
 
+    .nav-Button a {
+        text-decoration: none;
+        color: #000;
+    }
+
     /* --------------------------意見反映-------------------------------------- */
     .feedback {
         position: fixed;
@@ -271,18 +304,22 @@
         transform: rotate(-90deg);
         -webkit-transform: rotate(-90deg);
     }
+
     .feedback a {
         color: #fff;
     }
-    .feedback:hover{
+
+    .feedback:hover {
         background-color: #fff;
         transition: background-color 200ms;
     }
-    .feedback:hover a{
+
+    .feedback:hover a {
         color: #0065BD;
         text-decoration: none;
         transition: color 200ms;
     }
+
     /* ---------------------------h1標題------------------------------------- */
     .h1 {
         position: absolute;
@@ -290,88 +327,8 @@
         left: 0px;
         font-size: 0px;
     }
-    /* ---------------------------------------------------------------- */
-    /* ---------------------------------------------------------------- */
-    /* ---------------------------------------------------------------- */
-    /* ---------------------------------------------------------------- */
 
-
-
-
-
-
-    .dropdown-menu {
-        width: auto;
-        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
-    }
-
-
-
-    .dropdown-menu-left {
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-
-
-    .ebook-menu-right,
-    .audiobook-menu-right {
-        display: flex;
-        width: 30%;
-        flex-direction: column;
-        justify-content: space-between;
-
-
-    }
-
-
-    .My-wish-list {
-        padding: 0 5px;
-    }
-
-    .shopping-cart-text,
-    .My-wish-list-text,
-    .My-wish-list-icon,
-    .shopping-cart-icon,
-    .profile-icon {
-        text-align: center;
-    }
-
-
-
-    .selected-language {
-        padding: 0 1rem;
-    }
-
-    .Description_a {
-        padding: 0 1.3rem;
-    }
-
-    .language-selector {
-        border: none;
-        background-color: #f5f5f5;
-        color: #595959;
-    }
-
-
-    .btn-secondary {
-        color: #595959;
-        background-color: #ffffff;
-        border-color: #ffffff;
-    }
-
-
-    .ebook-ul,
-    .audiobook-ul,
-    .set_point_ul,
-    .application_ul {
-        display: flex;
-        width: 800px;
-        flex-wrap: wrap;
-        line-height: 2.7rem;
-    }
+    /* ----------------------------ebook+audiobook------------------------------------- */
 
     .ebook-menu-left,
     .audiobook-menu-left {
@@ -398,10 +355,7 @@
         font-size: 10px;
     }
 
-    .nav-Button a {
-        text-decoration: none;
-        color: #000;
-    }
+
 
     .ebook-classification li a,
     .audiobook-classification li a {
@@ -409,9 +363,12 @@
         display: inline;
     }
 
-    .ebook-recommend span {
-        color: #444444;
-        font-size: 1.0rem;
+    .ebook-menu-right,
+    .audiobook-menu-right {
+        display: flex;
+        width: 30%;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .ebook-menu-right,
@@ -420,511 +377,580 @@
         padding-left: 30px;
     }
 
-    .dropdown {
-        padding: 12px 13px 20px 8px;
-        margin-right: 5px;
-        font-size: inherit;
+    .ebook-recommend span,
+    .audiobook-recommend span {
+        color: #444444;
+        font-size: 1.0rem;
+    }
+
+    /* -----------------------------共用----------------------------------- */
+
+    .ebook_dropdown>span,
+    .audiobook_dropdown>span,
+    .application_dropdown>span,
+    .set_point_dropdown>span {
+        display: inline-block;
+    }
+
+    .ebook-ul,
+    .audiobook-ul,
+    .set_point_ul,
+    .application_ul,
+    .set_point_section {
+        display: flex;
+        width: 750px;
+        flex-wrap: wrap;
+        line-height: 2.7rem;
+    }
+
+    .ebook_dropdown>span,
+    .audiobook_dropdown>span,
+    .application_dropdown>span,
+    .set_point_dropdown>span {
+        display: inline-block;
+    }
+
+    .dropdown-menu {
+        width: auto;
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
     .dropdown:hover {
         -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
+    .dropdown {
+        padding: 12px 13px 15px 8px;
+        margin-right: 5px;
+        font-size: inherit;
+    }
 
-    /* .dropdown a:hover {
-        color: #bf0000;
-    } */
 
 
+    .Description_a {
+        padding: 0 1.3rem;
+    }
 
+    /* ---------------------------------------------------------------- */
+    .header-in-phone,
+    .footer-in-phone,
+    .header-in-ipad,
+    .footer-in-ipad {
+        display: none
+    }
+
+    /* phone */
+    @media only screen and (max-width:881px) {
+
+        .header-in-phone,
+        .footer-in-phone {
+            display: block;
+        }
+    }
+
+    /* ipad */
+    @media only screen and (min-width:881px) {
+
+        .header-in-ipad,
+        .footer-in-ipad {
+            display: block;
+        }
+    }
+
+    /* Read more https: //0800happy.com/6455/ */
 </style>
 
 <body>
 
     <header class="all-header ">
-        <!-- 外全部NAV -->
-        <div class="Inside-header">
-            <!-- 全部NAV -->
-            <div class="header-top">
-                <!-- 上方語言國家列 -->
-                <div class="inner-header-top">
-                    <div class="country_Language_Description">
-                        <!-- 語言國家列 -->
-                        <span>
-                            <a href="#">
-                                <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913//Images/country-flags/small/taiwan.png"
-                                    alt="taiwan"></a>
-                        </span>
-                        <!-- ----- -->
-                        <div class="Language-dropdown btn-group">
-                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
-                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                中文
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Bokmål</a></li>
-                                <li><a class="dropdown-item" href="#">Deutsch</a></li>
-                                <li><a class="dropdown-item" href="#">English</a></li>
-                                <li><a class="dropdown-item" href="#">Español</a></li>
-                                <li><a class="dropdown-item" href="#">日本語</a></li>
-                            </ul>
-                        </div>
-                        <!-- ----- -->
-                        <a class="Description_a" href="#">說明</a>
-                    </div>
-                    <div class="feedback">
-                        <!-- 意見反映 -->
-                        <a href="#">意見反映</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="search_Drop-down-menu">
-                <!-- 搜尋+下拉選單 -->
-                <div class="Search-bar">
-                    <!-- 搜尋列 -->
-                    <!-- 右邊 願望清單 購物車 帳戶 -->
-                    <div class="logo-Search">
-                        <h1>
-                            <a href="#"><img src="https://picsum.photos/165/58/?random1" alt="kobo樂天Logo"></a>
-                            <p class="h1">Kobo 樂天</p>
-                        </h1>
-                        <div class="Search-input">
-                            <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
-                                aria-label="Recipient's username with two button addons">
-                            <button class="btn btn-outline-secondary" type="button">Button</button>
-                        </div>
-                    </div>
-
-                    <div class="My-wish-list_shopping-cart_my-account">
-                        <div class="My-wish-list_shopping-cart">
-                            <!-- 我的願望清單 -->
-                            <div class="My-wish-list">
-                                <a href="#">
-                                    <div class="My-wish-list-icon">
-                                        <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-
-                                    </div>
-                                    <span class="My-wish-list-text">我的願望清單</span>
-                                </a>
-                            </div>
-
-                            <div class="shopping-cart">
-                                <!-- 我的購物車 -->
-                                <a href="#">
-                                    <div class="shopping-cart-icon">
-                                        <i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="shopping-cart-text">購物車</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- --- -->
-                        <div class="header-user_dropdown">
-                            <button class="language-selector btn btn-secondary dropdown-toggle" type="button"
-                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <a href="#">
-                                    <div class="profile-icon">
-                                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="my-account">我的帳戶</span>
-                                </a>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">我的書籍</a></li>
-                                <li><a class="dropdown-item" href="#">我的願望清單</a></li>
-                                <li><a class="dropdown-item" href="#">購買記錄</a></li>
-                                <li><a class="dropdown-item" href="#">帳戶設定</a></li>
-                                <li><a class="dropdown-item" href="#">登出</a></li>
-                            </ul>
-                        </div>
-                        <!-- --- -->
-                    </div>
-                </div>
-
-                <!-- -------------------------------------------------------------------------- -->
-                <!-- -------------------------------------------------------------------------- -->
-                <!-- -------------------------------------------------------------------------- -->
-                <div class="outer-nav">
-                    <nav class="nav-Button">
-                        <div class="ebook_dropdown">
-                            <span class="dropdown ">
-                                <a href="#" class="dropdown-toggle">電子書</a>
-                                <ul class="dropdown-menu">
-                                    <div class="ebook-ul">
-                                        <div class="ebook-menu-left">
-                                            <div class="ebook-classification">
-                                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                                <li><a class="dropdown-item" href="#">愛情</a></li>
-                                                <li><a class="dropdown-item" href="#">非小說</a></li>
-                                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                                <li><a class="dropdown-item" href="#">兒童</a></li>
-                                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
-                                            </div>
-                                            <div class="ebook-Browse-All-classification">
-                                                <a class="dropdown-item" href="#">瀏覽所有類別</a>
-                                            </div>
-                                        </div>
-                                        <div class="ebook-menu-right">
-                                            <div class="ebook-recommend">
-                                                <span>
-                                                    <a class="dropdown-item" href="#">專屬於您的推薦</a>
-                                                </span>
-                                                <span>
-                                                    <a class="dropdown-item" href="#">今日前50名電子書</a>
-                                                </span>
-                                                <span>
-                                                    <a class="dropdown-item" href="#">最新熱門雜誌</a>
-                                                </span>
-                                            </div>
-                                            <div class="ebook-Browse-All-recommend">
-                                                <a class="dropdown-item" href="#">瀏覽所有電子書</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </span>
-                        </div>
-                        <!-- 有聲書 -->
-                        <div class="audiobook_dropdown ">
-                            <span class="dropdown">
-                                <a href="#" class="dropdown-toggle">有聲書</a>
-                                <ul class="dropdown-menu">
-                                    <div class="audiobook-ul">
-                                        <div class="audiobook-menu-left">
-                                            <div class="audiobook-classification">
-                                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                                <li><a class="dropdown-item" href="#">愛情</a></li>
-                                                <li><a class="dropdown-item" href="#">非小說</a></li>
-                                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                                <li><a class="dropdown-item" href="#">兒童</a></li>
-                                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
-                                            </div>
-                                            <div class="audiobook-Browse-All-classification">
-
-                                                <a class="dropdown-item" href="#">瀏覽所有類別</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="audiobook-menu-right">
-                                            <div class="audiobook-recommend">
-                                                <span>
-                                                    <a class="dropdown-item" href="#">專屬於您的推薦</a>
-                                                </span>
-                                                <span>
-                                                    <a class="dropdown-item" href="#">今日前50名電子書</a>
-                                                </span>
-                                                <span>
-                                                    <a class="dropdown-item" href="#">最新熱門雜誌</a>
-                                                </span>
-                                            </div>
-                                            <div class="audiobook-Browse-All-recommend">
-                                                <a class="dropdown-item" href="#">瀏覽所有電子書</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </span>
-                        </div>
-                        <!-- 應用程式與 eReader -->
-                        <div class="application_dropdown">
-                            <span class="dropdown">
-                                <a href="#" class="dropdown-toggle">應用程式與 eReader</a>
-                                <ul class="dropdown-menu">
-                                    <div class="application_ul">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                    </div>
-                                </ul>
-                            </span>
-                        </div>
-                        <!-- 樂天超級點數 -->
-                        <div class="set_point_dropdown">
-                            <span class="dropdown">
-                                <a href="#" class="dropdown-toggle">樂天超級點數</a>
-                                <!-- <div class="set_point_ul"> -->
-                                <section class="dropdown-menu">
-                                    <!-- <div> -->
-                                    <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
-                                        alt="Rakuten Points logo">
-                                    <!-- </div> -->
-                                    <span>
-                                        <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，活動點數將於購買日次月15日新增至帳戶</p>
-                                    </span>
-                                    <div>
-                                        <a href="">查看您的超級點數記錄</a>
-                                        <a href="">樂天超級點數購書須知</a>
-                                    </div>
-                                </section>
-                                <!-- </div> -->
-                            </span>
-                        </div>
-                    </nav>
-                </div>
-                <!-- 搜尋及下拉選單 -->
-            </div>
-            <!-- 全部NAV -->
+        <div class="header-in-phone">
+            <p class="p-5">施工中</p>
         </div>
-        <!-- 外全部NAV -->
+
+        <div class="header-in-ipad">
+            <!-- 外全部NAV -->
+            <div class="Inside-header">
+                <!-- 全部NAV -->
+                <div class="header-top">
+                    <!-- 上方語言國家列 -->
+                    <div class="inner-header-top">
+                        <div class="country_Language_Description">
+                            <!-- 語言國家列 -->
+                            <span>
+                                <a href="#">
+                                    <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913//Images/country-flags/small/taiwan.png"
+                                        alt="taiwan"></a>
+                            </span>
+                            <!-- ----- -->
+                            <div class="Language-dropdown btn-group">
+                                <button class="language-selector dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    中文
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Bokmål</a></li>
+                                    <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                                    <li><a class="dropdown-item" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">Español</a></li>
+                                    <li><a class="dropdown-item" href="#">日本語</a></li>
+                                </ul>
+                            </div>
+                            <!-- ----- -->
+                            <a class="Description_a" href="#">說明</a>
+                        </div>
+                        <div class="feedback">
+                            <!-- 意見反映 -->
+                            <a href="#">意見反映</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search_Drop-down-menu">
+                    <!-- 搜尋+下拉選單 -->
+                    <div class="Search-bar">
+                        <!-- 搜尋列 -->
+                        <!-- 右邊 願望清單 購物車 帳戶 -->
+                        <div class="logo-Search">
+                            <h1>
+                                <a href="#"><img
+                                        src="https://akimages.kobobooks.com/images/misc/Navigation/Top/rakuten-kobo-landscape.png"
+                                        alt="kobo樂天Logo"></a>
+                                <p class="h1">Kobo 樂天</p>
+                            </h1>
+                            <div class="Search-input">
+                                <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
+                                    aria-label="Recipient's username with two button addons">
+                                <button class="btn btn-outline-secondary" type="button">Button</button>
+                            </div>
+                        </div>
+
+                        <div class="My-wish-list_shopping-cart_my-account">
+                            <div class="My-wish-list_shopping-cart">
+                                <!-- 我的願望清單 -->
+                                <div class="My-wish-list">
+                                    <a href="#">
+                                        <div class="My-wish-list-icon">
+                                            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+
+                                        </div>
+                                        <span class="My-wish-list-text">我的願望清單</span>
+                                    </a>
+                                </div>
+
+                                <div class="shopping-cart">
+                                    <!-- 我的購物車 -->
+                                    <a href="#">
+                                        <div class="shopping-cart-icon">
+                                            <i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="shopping-cart-text">購物車</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- --- -->
+                            <div class="header-user_dropdown">
+                                <button class="language-selector dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a href="#">
+                                        <div class="profile-icon">
+                                            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="my-account">我的帳戶</span>
+                                    </a>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">我的書籍</a></li>
+                                    <li><a class="dropdown-item" href="#">我的願望清單</a></li>
+                                    <li><a class="dropdown-item" href="#">購買記錄</a></li>
+                                    <li><a class="dropdown-item" href="#">帳戶設定</a></li>
+                                    <li><a class="dropdown-item" href="#">登出</a></li>
+                                </ul>
+                            </div>
+                            <!-- --- -->
+                        </div>
+                    </div>
+
+                    <!-- -------------------------------------------------------------------------- -->
+                    <div class="outer-nav">
+                        <nav class="nav-Button">
+                            <div class="ebook_dropdown">
+                                <span class="dropdown ">
+                                    <a href="#" class="dropdown-toggle">電子書</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="ebook-ul">
+                                            <div class="ebook-menu-left">
+                                                <div class="ebook-classification">
+                                                    <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                                    <li><a class="dropdown-item" href="#">愛情</a></li>
+                                                    <li><a class="dropdown-item" href="#">非小說</a></li>
+                                                    <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                                    <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                                    <li><a class="dropdown-item" href="#">兒童</a></li>
+                                                    <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                                    <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                                    <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                                    <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                                </div>
+                                                <div class="ebook-Browse-All-classification">
+                                                    <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                                </div>
+                                            </div>
+                                            <div class="ebook-menu-right">
+                                                <div class="ebook-recommend">
+                                                    <span>
+                                                        <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                                    </span>
+                                                    <span>
+                                                        <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                                    </span>
+                                                    <span>
+                                                        <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                                    </span>
+                                                </div>
+                                                <div class="ebook-Browse-All-recommend">
+                                                    <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </span>
+                            </div>
+                            <!-- 有聲書 -->
+                            <div class="audiobook_dropdown ">
+                                <span class="dropdown">
+                                    <a href="#" class="dropdown-toggle">有聲書</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="audiobook-ul">
+                                            <div class="audiobook-menu-left">
+                                                <div class="audiobook-classification">
+                                                    <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                                    <li><a class="dropdown-item" href="#">愛情</a></li>
+                                                    <li><a class="dropdown-item" href="#">非小說</a></li>
+                                                    <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                                    <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                                    <li><a class="dropdown-item" href="#">兒童</a></li>
+                                                    <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                                    <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                                    <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                                    <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                                </div>
+                                                <div class="audiobook-Browse-All-classification">
+                                                    <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="audiobook-menu-right">
+                                                <div class="audiobook-recommend">
+                                                    <span>
+                                                        <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                                    </span>
+                                                    <span>
+                                                        <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                                    </span>
+                                                    <span>
+                                                        <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                                    </span>
+                                                </div>
+                                                <div class="audiobook-Browse-All-recommend">
+                                                    <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </span>
+                            </div>
+                            <!-- 應用程式與 eReader -->
+                            <div class="application_dropdown">
+                                <span class="dropdown">
+                                    <a href="#" class="dropdown-toggle">應用程式與 eReader</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="application_ul">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                        </div>
+                                    </ul>
+                                </span>
+                            </div>
+                            <!-- 樂天超級點數 -->
+                            <div class="set_point_dropdown">
+                                <span class="dropdown">
+                                    <a href="#" class="dropdown-toggle">樂天超級點數</a>
+                                    <!-- <div class="set_point_ul"> -->
+                                    <section class="dropdown-menu">
+                                        <div class="set_point_section">
+                                            <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
+                                                alt="Rakuten Points logo">
+                                            <div class="set_point_text">
+                                                <span>
+                                                    <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，
+                                                        活動點數將於購買日次月15日新增至帳戶</p>
+                                                </span>
+                                                <a href="">查看您的超級點數記錄</a>
+                                                <a href="">樂天超級點數購書須知</a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </span>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- 搜尋及下拉選單 -->
+                </div>
+                <!-- 全部NAV -->
+            </div>
+            <!-- 外全部NAV -->
+        </div>
     </header>
 
 
 
     <footer class="kobo-footer">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        關於 Rakuten Kobo 的一切資訊
-                    </button>
-                </h2>
+        <div class="footer-in-ipad">
+            <p class="p-5">施工中</p>
+        </div>
+
+        <div class="footer-in-phone">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            關於 Rakuten Kobo 的一切資訊
+                        </button>
+                    </h2>
 
 
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        <a href="#">關於 Rakuten Kobo</a>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a href="#">關於 Rakuten Kobo</a>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a href="#">管理團隊</a>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a href="#">Kobo in Conversation Podcast</a>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a href="#">電子資源回收計畫</a>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a href="#"> 免費應用程式</a>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a href="#">取得說明</a>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a href="#">Sitemapa</a>
+                        </div>
                     </div>
                 </div>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        <a href="#">管理團隊</a>
+                <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            機會
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            <a href="#">自行出版</a>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            <a href="#">關係企業</a>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            <a href="#">職位空缺</a>
+                        </div>
                     </div>
                 </div>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        <a href="#">Kobo in Conversation Podcast</a>
+                <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            最新部落格貼文
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#">人們第一次興起「我是誰」的念頭，是在什麼時候呢？—《葉有慧》</a>
+                        </div>
+                    </div>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#">【一週99書單】你今天寫了沒？每天早上從寫作開始主動性的人生！(5/13~5/19)</a>
+                        </div>
+                    </div>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#">不是批評或說教，意見回饋是促使成長的契機—《麥肯錫主管意見回饋術》</a>
+                        </div>
+                    </div>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#">究竟，童話世界是否真實存在？—《羊男的迷宮》</a>
+                        </div>
+                    </div>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#">【本週精選書單】在這個資訊飛速傳播的新時代，懶惰是最佳的投資模式。（5/10-5/16）</a>
+                        </div>
+                    </div>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body-button">
+                            <a href="#"><button>檢視所有貼文</button></a>
+                        </div>
                     </div>
                 </div>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        <a href="#">電子資源回收計畫</a>
+                <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            保持連線
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"><img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Facebook.png"
+                                    alt="Facebook">Facebook</a>
+                        </div>
+                    </div>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Twitter.png"
+                                    alt="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"> <img
+                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Pinterest.png"
+                                    alt="Pinterest">Pinterest</a>
+                        </div>
+                    </div>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/YouTube.png"
+                                    alt="YouTube">YouTube</a>
+                        </div>
+                    </div>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"> <img
+                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Instagram.png"
+                                    alt="Instagram">Instagram</a>
+                        </div>
+                    </div>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Line.png"
+                                    alt="Line">Line</a>
+                        </div>
                     </div>
                 </div>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        <a href="#"> 免費應用程式</a>
+                <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFives" aria-expanded="false" aria-controls="collapseFives">
+                            取得免費的應用程式
+                        </button>
+                    </h2>
+                    <div id="collapseFives" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"><img
+                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/googleplay_badge_zh.svg"
+                                    alt="googleplay"></a>
+                        </div>
+                    </div>
+                    <div id="collapseFives" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"><img
+                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/appstore_badge_zh.svg"
+                                    alt="appstore"></a>
+                        </div>
                     </div>
                 </div>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        <a href="#">取得說明</a>
+                <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            付款方式
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"><img
+                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/Visa.png"
+                                    alt="Visa"></a>
+                            <a href="#"><img
+                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/MasterCard.png"
+                                    alt="MasterCard"></a>
+                            <a href="#"><img
+                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/JCB.png"
+                                    alt="JCB"></a>
+                            <a href="#"><img
+                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/Kobo.png"
+                                    alt="Kobo"></a>
+                        </div>
                     </div>
                 </div>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        <a href="#">Sitemapa</a>
+                <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            現在購物：
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#"><img
+                                    src="//kbstatic1-a.akamaihd.net/1.0.0.913//Images/country-flags/small/taiwan.png"
+                                    alt="台灣"></a>
+                            <span class="country-name">台灣 (TWD)</span>
+                            <div class="change-country">變更國家/地區</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- ---------------------------------------------------------------------------------------------------------------- -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        機會
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                    <div class="accordion-body">
-                        <a href="#">自行出版</a>
-                    </div>
-                </div>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                    <div class="accordion-body">
-                        <a href="#">關係企業</a>
-                    </div>
-                </div>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                    <div class="accordion-body">
-                        <a href="#">職位空缺</a>
-                    </div>
-                </div>
-            </div>
-            <!-- ---------------------------------------------------------------------------------------------------------------- -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        最新部落格貼文
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#">人們第一次興起「我是誰」的念頭，是在什麼時候呢？—《葉有慧》</a>
-                    </div>
-                </div>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#">【一週99書單】你今天寫了沒？每天早上從寫作開始主動性的人生！(5/13~5/19)</a>
-                    </div>
-                </div>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#">不是批評或說教，意見回饋是促使成長的契機—《麥肯錫主管意見回饋術》</a>
-                    </div>
-                </div>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#">究竟，童話世界是否真實存在？—《羊男的迷宮》</a>
-                    </div>
-                </div>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#">【本週精選書單】在這個資訊飛速傳播的新時代，懶惰是最佳的投資模式。（5/10-5/16）</a>
-                    </div>
-                </div>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body-button">
-                        <a href="#"><button>檢視所有貼文</button></a>
-                    </div>
-                </div>
-            </div>
-            <!-- ---------------------------------------------------------------------------------------------------------------- -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        保持連線
-                    </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"><img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Facebook.png"
-                                alt="Facebook">Facebook</a>
-                    </div>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Twitter.png"
-                                alt="Twitter">Twitter</a>
-                    </div>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Pinterest.png"
-                                alt="Pinterest">Pinterest</a>
-                    </div>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/YouTube.png"
-                                alt="YouTube">YouTube</a>
-                    </div>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Instagram.png"
-                                alt="Instagram">Instagram</a>
-                    </div>
-                </div>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"> <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/social/Line.png"
-                                alt="Line">Line</a>
-                    </div>
-                </div>
-            </div>
-            <!-- ---------------------------------------------------------------------------------------------------------------- -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFives" aria-expanded="false" aria-controls="collapseFives">
-                        取得免費的應用程式
-                    </button>
-                </h2>
-                <div id="collapseFives" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"><img
-                                src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/googleplay_badge_zh.svg"
-                                alt="googleplay"></a>
-                    </div>
-                </div>
-                <div id="collapseFives" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"><img
-                                src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/appstore_badge_zh.svg"
-                                alt="appstore"></a>
-                    </div>
-                </div>
-            </div>
-            <!-- ---------------------------------------------------------------------------------------------------------------- -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        付款方式
-                    </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"><img
-                                src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/Visa.png"
-                                alt="Visa"></a>
-                        <a href="#"><img
-                                src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/MasterCard.png"
-                                alt="MasterCard"></a>
-                        <a href="#"><img src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/JCB.png"
-                                alt="JCB"></a>
-                        <a href="#"><img
-                                src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/payment-methods/Kobo.png"
-                                alt="Kobo"></a>
-                    </div>
-                </div>
-            </div>
-            <!-- ---------------------------------------------------------------------------------------------------------------- -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                        現在購物：
-                    </button>
-                </h2>
-                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#"><img
-                                src="//kbstatic1-a.akamaihd.net/1.0.0.913//Images/country-flags/small/taiwan.png"
-                                alt="台灣"></a>
-                        <span class="country-name">台灣 (TWD)</span>
-                        <div class="change-country">變更國家/地區</div>
-                    </div>
-                </div>
-            </div>
-            <!-- ---------------------------------------------------------------------------------------------------------------- -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                        © 2021 Rakuten Kobo Inc.
-                    </button>
-                </h2>
-                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                        <a href="#">使用條款</a>
-                        <a href="#">隱私權政策</a>
+                <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            © 2021 Rakuten Kobo Inc.
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a href="#">使用條款</a>
+                            <a href="#">隱私權政策</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
-
-
-
-
-
     </footer>
-
-
-
-
 
 
 
