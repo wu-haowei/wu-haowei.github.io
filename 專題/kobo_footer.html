@@ -483,74 +483,84 @@ iphone 手機
     /* ---------------------------手機頁首開始---------------------------------------------------------------- */
 
 
-        /* .iphone_all_nav>.collapsing {
+    /* .iphone_all_nav>.collapsing {
             width: 0;
             transition-property: width;
             height: 100%;
             white-space: nowrap;
         } */
 
-        .collapse {
-            /* width: 265px; */
-        }
+    .collapse {
+        /* width: 265px; */
+    }
 
-        .all_Menu_information {
-            /* height: 100vh; */
-            background-color: aquamarine;
-            width: 265px;
-            -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
-        }
+    .all_Menu_information {
+        /* height: 100vh; */
+        background-color: aquamarine;
+        width: 265px;
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+    }
 
-        .iphone_all_nav .container-fluid {
-            background-color: aquamarine;
-            -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
-            height: 60px;
-        }
+    .iphone_all_nav .container-fluid {
+        background-color: aquamarine;
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+        height: 60px;
+    }
 
-        .iphone_header_nav_img .bg-dark,
-        .iphone_all_nav .bg-dark {
-            padding: 0;
-            background-color: aquamarine !important;
-            /* 無法更改顏色 */
-        }
+    .iphone_header_nav_img .bg-dark,
+    .iphone_all_nav .bg-dark {
+        padding: 0;
+        background-color: aquamarine !important;
+        /* 無法更改顏色 */
+    }
 
-        .iphone_all_nav .container-fluid>button {
-            margin-left: 15px;
-        }
+    .iphone_all_nav .container-fluid>button {
+        margin-left: 15px;
+    }
 
-        .iphone_all_nav h1 {
-            position: absolute;
-            top: -99px;
-            left: -99px;
-            font-size: 0px;
-            padding: 0;
-            margin: 0;
-            z-index: -99;
-        }
+    .iphone_all_nav h1 {
+        position: absolute;
+        top: -99px;
+        left: -99px;
+        font-size: 0px;
+        padding: 0;
+        margin: 0;
+        z-index: -99;
+    }
 
-        .iphone_all_nav {
-            /* position: fixed; */
-            width: 100%;
-            z-index: 99;
+    .iphone_all_nav {
+        /* position: fixed; */
+        width: 100%;
+        /* z-index: 99; */
 
-        }
+    }
 
-        .iphone_header_img_text {
-            /* width: 70%; */
-            margin-left: 10px;
+    .iphone_header_img_text {
+        /* width: 70%; */
+        margin-left: 10px;
+        margin: auto;
 
-        }
+    }
 
-        .iphone_header_nav_img {
-            display: flex;
-        }
-.iphone_header_nav_img .accordion{
-    padding-top: 0;
-}
+    .iphone_header_nav_img {
+        display: flex;
+    }
+
+    .iphone_header_nav_img .accordion {
+        padding-top: 0;
+    }
 
 
 
+    .iphone_all_nav nav {
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+    }
 
+    .phone-in-header,.phone_in_footer{
+        min-width:  575px;
+    }
 
 
 
@@ -572,7 +582,6 @@ iphone 手機
     /* ---------------------------手機頁尾開始------------------------------------------------------------- */
 
     .phone_in_footer {
-        max-width: 1200px;
         margin: auto;
         margin-top: 40px;
         color: #fff;
@@ -675,11 +684,11 @@ iphone 手機
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-        
+
                         <a href="#"><img
                                 src="https://akimages.kobobooks.com/images/misc/Navigation/Top/rakuten-kobo-landscape.png"
                                 alt="kobo樂天Logo"></a>
-        
+
                         <div>
                             <img src="https://picsum.photos/48/60/?random1" alt="">
                             <img src="https://picsum.photos/48/60/?random1" alt="">
@@ -692,9 +701,9 @@ iphone 手機
                             <div class="accordion" id="accordionExample">
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_heading_One">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_collapse_One" aria-expanded="false"
-                                            aria-controls="iphone_collapse_One">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_collapse_One"
+                                            aria-expanded="false" aria-controls="iphone_collapse_One">
                                             我的帳戶
                                         </button>
                                     </h2>
@@ -732,9 +741,9 @@ iphone 手機
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_Two">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_header_collapse_Two" aria-expanded="false"
-                                            aria-controls="iphone_header_collapse_Two">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Two"
+                                            aria-expanded="false" aria-controls="iphone_header_collapse_Two">
                                             首頁
                                         </button>
                                     </h2>
@@ -742,9 +751,9 @@ iphone 手機
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_Three">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_header_collapse_Three" aria-expanded="false"
-                                            aria-controls="iphone_header_collapse_Three">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Three"
+                                            aria-expanded="false" aria-controls="iphone_header_collapse_Three">
                                             電子書
                                         </button>
                                     </h2>
@@ -779,9 +788,9 @@ iphone 手機
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_Four">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_header_collapse_Four" aria-expanded="false"
-                                            aria-controls="iphone_header_collapse_Four">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Four"
+                                            aria-expanded="false" aria-controls="iphone_header_collapse_Four">
                                             有聲書
                                         </button>
                                     </h2>
@@ -815,9 +824,9 @@ iphone 手機
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_Fives">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_header_collapse_Fives" aria-expanded="false"
-                                            aria-controls="iphone_header_collapse_Fives">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Fives"
+                                            aria-expanded="false" aria-controls="iphone_header_collapse_Fives">
                                             應用程式與 eReader
                                         </button>
                                     </h2>
@@ -834,9 +843,9 @@ iphone 手機
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_Six">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_header_collapse_Six" aria-expanded="false"
-                                            aria-controls="iphone_header_collapse_Six">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Six"
+                                            aria-expanded="false" aria-controls="iphone_header_collapse_Six">
                                             樂天超級點數
                                         </button>
                                     </h2>
@@ -855,9 +864,9 @@ iphone 手機
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_Seven">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_header_collapse_Seven" aria-expanded="false"
-                                            aria-controls="iphone_header_collapse_Seven">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Seven"
+                                            aria-expanded="false" aria-controls="iphone_header_collapse_Seven">
                                             我的願望清單
                                         </button>
                                     </h2>
@@ -865,9 +874,9 @@ iphone 手機
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_Eight">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_header_collapse_Eight" aria-expanded="false"
-                                            aria-controls="iphone_header_collapse_Eight">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Eight"
+                                            aria-expanded="false" aria-controls="iphone_header_collapse_Eight">
                                             現在購物:<img
                                                 src="//kbstatic1-a.akamaihd.net/1.0.0.930//Images/country-flags/small/taiwan.png"
                                                 alt="">
@@ -884,9 +893,9 @@ iphone 手機
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_nine">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#iphone_header_collapse_nine" aria-expanded="false"
-                                            aria-controls="iphone_header_collapse_nine">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_nine"
+                                            aria-expanded="false" aria-controls="iphone_header_collapse_nine">
                                             意見反映
                                         </button>
                                     </h2>
