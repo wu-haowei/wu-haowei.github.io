@@ -484,46 +484,50 @@ iphone 手機
 
 
     .all_nav>.collapsing {
-            width: 0;
-            transition-property: width;
-            height: 100%;
-            /* white-space: nowrap; */
-        }
+        width: 0;
+        transition-property: width;
+        height: 100%;
+        /* white-space: nowrap; */
+    }
 
-        .all_Menu_information {
-            /* height: 100vh; */
-            background-color: aquamarine;
-            width: 265px;
-            -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
-        }
+    .all_Menu_information {
+        /* height: 100vh; */
+        background-color: aquamarine;
+        width: 265px;
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+    }
 
-        .container-fluid {
-            background-color: aquamarine;
-            -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
-            height: 60px;
-        }
+    .container-fluid {
+        background-color: aquamarine;
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+        height: 60px;
+    }
 
-        .bg-dark {
-            padding: 0;
-            background-color: aquamarine !important;
-            /* 無法更改顏色 */
-        }
+    .bg-dark {
+        padding: 0;
+        background-color: aquamarine !important;
+        /* 無法更改顏色 */
+    }
 
-        .container-fluid>button {
-            margin-left: 15px;
-        }
+    .container-fluid>button {
+        margin-left: 15px;
+    }
 
-        h1 {
-            position: absolute;
-            top: -99px;
-            left: -99px;
-            font-size: 0px;
-            padding: 0;
-            margin: 0;
-            z-index: -99;
-        }
+    h1 {
+        position: absolute;
+        top: -99px;
+        left: -99px;
+        font-size: 0px;
+        padding: 0;
+        margin: 0;
+        z-index: -99;
+    }
 
-
+    .all_nav {
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+    }
 
 
 
@@ -647,9 +651,9 @@ iphone 手機
         <!-- 頁首 -->
         <div class="phone-in-header">
             <!-- 手機頁首 -->
-            <p class="p-5">施工中</p>
+            <!-- <p class="p-5">施工中</p> -->
 
-            <!-- <div class="all_nav">
+            <div class="all_nav">
                 <h1>Kobo 樂天</h1>
                 <nav class="navbar navbar-dark bg-dark ">
                     <div class="container-fluid">
@@ -658,11 +662,11 @@ iphone 手機
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-        
+
                         <a href="#"><img
                                 src="https://akimages.kobobooks.com/images/misc/Navigation/Top/rakuten-kobo-landscape.png"
                                 alt="kobo樂天Logo"></a>
-        
+
                         <div>
                             <img src="https://picsum.photos/48/60/?random1" alt="">
                             <img src="https://picsum.photos/48/60/?random1" alt="">
@@ -671,8 +675,8 @@ iphone 手機
                 </nav>
                 <div class="collapse width position-fixed" id="navbarToggleExternalContent">
                     <div class="bg-dark py-0 all_Menu_information">
-        
-        
+
+
                         <div class="accordion" id="accordionExample">
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -707,7 +711,7 @@ iphone 手機
                                     </div>
                                 </div>
                             </div>
-                         
+
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -716,30 +720,35 @@ iphone 手機
                                     </button>
                                 </h2>
                             </div>
-                        
+
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
                                         電子書
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion_collapse collapse" aria-labelledby="headingThree">
+                                <div id="collapseThree" class="accordion_collapse collapse"
+                                    aria-labelledby="headingThree">
                                     <div class="accordion-body">
                                         <a href="#">小說語文學</a>
                                     </div>
                                 </div>
-                                <div id="collapseThree" class="accordion_collapse collapse" aria-labelledby="headingThree">
+                                <div id="collapseThree" class="accordion_collapse collapse"
+                                    aria-labelledby="headingThree">
                                     <div class="accordion-body">
                                         <a href="#">愛情</a>
                                     </div>
                                 </div>
-                                <div id="collapseThree" class="accordion_collapse collapse" aria-labelledby="headingThree">
+                                <div id="collapseThree" class="accordion_collapse collapse"
+                                    aria-labelledby="headingThree">
                                     <div class="accordion-body">
                                         <a href="#">非小說</a>
                                     </div>
                                 </div>
-                                <div id="collapseThree" class="accordion_collapse collapse" aria-labelledby="headingThree">
+                                <div id="collapseThree" class="accordion_collapse collapse"
+                                    aria-labelledby="headingThree">
                                     <div class="accordion-body">
                                         <a href="#">專屬於您的推薦</a>
                                         <a href="#">今日前50名的電子書</a>
@@ -748,30 +757,35 @@ iphone 手機
                                     </div>
                                 </div>
                             </div>
-                          
+
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
                                         有聲書
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion_collapse collapse" aria-labelledby="headingFour">
+                                <div id="collapseFour" class="accordion_collapse collapse"
+                                    aria-labelledby="headingFour">
                                     <div class="accordion-body">
                                         <a href="#">小說語文學</a>
                                     </div>
                                 </div>
-                                <div id="collapseFour" class="accordion_collapse collapse" aria-labelledby="headingFour">
+                                <div id="collapseFour" class="accordion_collapse collapse"
+                                    aria-labelledby="headingFour">
                                     <div class="accordion-body">
                                         <a href="#">愛情</a>
                                     </div>
                                 </div>
-                                <div id="collapseFour" class="accordion_collapse collapse" aria-labelledby="headingFour">
+                                <div id="collapseFour" class="accordion_collapse collapse"
+                                    aria-labelledby="headingFour">
                                     <div class="accordion-body">
                                         <a href="#">非小說</a>
                                     </div>
                                 </div>
-                                <div id="collapseFour" class="accordion_collapse collapse" aria-labelledby="headingFour">
+                                <div id="collapseFour" class="accordion_collapse collapse"
+                                    aria-labelledby="headingFour">
                                     <div class="accordion-body">
                                         <a href="#">流行趨勢</a>
                                         <a href="#">有聲書優惠</a>
@@ -779,15 +793,17 @@ iphone 手機
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFives" aria-expanded="false" aria-controls="collapseFives">
+                                        data-bs-target="#collapseFives" aria-expanded="false"
+                                        aria-controls="collapseFives">
                                         應用程式與 eReader
                                     </button>
                                 </h2>
-                                <div id="collapseFives" class="accordion_collapse collapse" aria-labelledby="headingFives">
+                                <div id="collapseFives" class="accordion_collapse collapse"
+                                    aria-labelledby="headingFives">
                                     <div class="accordion-body">
                                         <p>應用程式</p>
                                         <p>Android</p>
@@ -796,7 +812,7 @@ iphone 手機
                                     </div>
                                 </div>
                             </div>
-                         
+
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -815,37 +831,41 @@ iphone 手機
                                     </div>
                                 </div>
                             </div>
-                          
+
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                        data-bs-target="#collapseSeven" aria-expanded="false"
+                                        aria-controls="collapseSeven">
                                         我的願望清單
                                     </button>
                                 </h2>
                             </div>
-                    
+
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        data-bs-target="#collapseEight" aria-expanded="false"
+                                        aria-controls="collapseEight">
                                         現在購物:<img
                                             src="//kbstatic1-a.akamaihd.net/1.0.0.930//Images/country-flags/small/taiwan.png"
                                             alt="">
                                         台灣 (TWD)
                                     </button>
                                 </h2>
-                                <div id="collapseEight" class="accordion_collapse collapse" aria-labelledby="headingEight">
+                                <div id="collapseEight" class="accordion_collapse collapse"
+                                    aria-labelledby="headingEight">
                                     <div class="accordion-body">
                                         <p>變更國家/地區</p>
                                     </div>
                                 </div>
                             </div>
-                     
+
                             <div class="accordion_item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
+                                        data-bs-target="#collapsenine" aria-expanded="false"
+                                        aria-controls="collapsenine">
                                         意見反映
                                     </button>
                                 </h2>
@@ -853,7 +873,7 @@ iphone 手機
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
 
 
