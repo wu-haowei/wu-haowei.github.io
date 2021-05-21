@@ -453,8 +453,8 @@ iphone 手機
 
     /* ------------------------------------平板頁尾結束-------------------------------------------------------- */
     /* -----------------------------------------------螢幕查詢------------------------------------------------------- */
-    .phone-in-header,
-    .phone_in_footer,
+    .iphone-in-header,
+    .iphone_in_footer,
     .flatbed-in-header,
     .flatbed-in-footer {
         display: none
@@ -463,8 +463,8 @@ iphone 手機
     /* phone */
     @media only screen and (max-width:881px) {
 
-        .phone-in-header,
-        .phone_in_footer {
+        .iphone-in-header,
+        .iphone_in_footer {
             display: block;
         }
     }
@@ -483,34 +483,27 @@ iphone 手機
     /* ---------------------------手機頁首開始---------------------------------------------------------------- */
 
 
-    /* .iphone_all_nav>.collapsing {
-            width: 0;
-            transition-property: width;
-            height: 100%;
-            white-space: nowrap;
-        } */
-
-    .collapse {
-        /* width: 265px; */
-    }
-
     .all_Menu_information {
-        /* height: 100vh; */
-        background-color: aquamarine;
+
+        /* background-color: #fff; */
         width: 265px;
+        height: 100%;
         -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
     .iphone_all_nav .container-fluid {
-        background-color: aquamarine;
-        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+        /* background-color: aquamarine; */
         height: 60px;
+    }
+
+    .iphone_all_nav nav .container-fluid button {
+        background-color: rosybrown;
     }
 
     .iphone_header_nav_img .bg-dark,
     .iphone_all_nav .bg-dark {
         padding: 0;
-        background-color: aquamarine !important;
+        background-color: #fff !important;
         /* 無法更改顏色 */
     }
 
@@ -520,25 +513,27 @@ iphone 手機
 
     .iphone_all_nav h1 {
         position: absolute;
-        top: -99px;
-        left: -99px;
+        top: -1px;
+        left: -1px;
         font-size: 0px;
         padding: 0;
         margin: 0;
-        z-index: -99;
+        z-index: -1;
+    }
+    .iphone_all_nav {
+        width: 100%;
     }
 
-    .iphone_all_nav {
-        /* position: fixed; */
-        width: 100%;
-        /* z-index: 99; */
-
+    .all_Menu_information {
+        margin-top: 98px;
     }
 
     .iphone_header_img_text {
-        /* width: 70%; */
+        width: 70%;
         margin-left: 10px;
-        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 98px;
 
     }
 
@@ -550,22 +545,127 @@ iphone 手機
         padding-top: 0;
     }
 
-
-
-    .iphone_all_nav nav {
+    .iphone_all_nav>nav {
         position: fixed;
+        background-color: aquamarine;
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
         width: 100%;
         z-index: 999;
     }
 
-    .phone-in-header,
-    .phone_in_footer {
+    .iphone-in-header,
+    .iphone_in_footer {
         min-width: 576px;
     }
 
     .iphone_all_nav nav i {
         margin: 5px;
     }
+
+    .iphone_header_accordion_item:nth-child(1) h2 button {
+
+        width: 70%;
+    }
+
+    .iphone_header_accordion_item:nth-child(1) h2 a {
+        width: 30%;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: 1px solid #d8d8d8;
+        border-bottom: 1px solid #d8d8d8;
+    }
+
+    .iphone_header_search_input {
+        display: flex;
+        width: 100%;
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7)>div p {
+        margin: 6px 0;
+        font-size: .9rem;
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7)>div a {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #0d0d0d;
+        display: block;
+
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7) div>.points_record>a:nth-child(1) {
+        border-bottom: 2px dotted #d8d8d8;
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9)>h2 button>img {
+        margin: 0 10px;
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(1) div>.accordion-body>a,
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(2) div>.accordion-body>a,
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(4) div>.accordion-body>a,
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(5) div>.accordion-body>a,
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(6) div>.accordion-body>a,
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9) div>.accordion-body>a {
+        display: block;
+        margin: 5px 0;
+        color: #0d0d0d;
+    }
+
+    .iphone_header_nav_img h2>button {
+        border-bottom: 1px solid #d8d8d8;
+
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(3),
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(8),
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(10) {
+        border-bottom: 1px solid #d8d8d8;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 1.25rem;
+        color: #212529;
+        text-align: left;
+        background-color: #fff;
+        border: 0;
+        border-radius: 0;
+        height: 53px;
+        border-bottom: 1px solid #d8d8d8;
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(3) a,
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(8) a,
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(10) a {
+        margin: 0;
+        font-size: 16px;
+        color: #0d0d0d;
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(2) #iphone_collapse_One button {
+        transition: background-color .2s;
+        display: block;
+        padding: 10px;
+        border: 3px solid #000;
+        font-weight: 700;
+        text-align: center;
+        width: 100%;
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(2) #iphone_collapse_One button:hover {
+        color: #fff;
+        background-color: #000;
+        transition: 1s;
+
+    }
+
+
+
+
+
 
 
 
@@ -584,7 +684,7 @@ iphone 手機
 
     /* ---------------------------手機頁尾開始------------------------------------------------------------- */
 
-    .phone_in_footer {
+    .iphone_in_footer {
         margin: auto;
         margin-top: 40px;
         color: #fff;
@@ -686,7 +786,7 @@ iphone 手機
 
     <header class="all-header ">
         <!-- 頁首 -->
-        <div class="phone-in-header">
+        <div class="iphone-in-header">
             <!-- 手機頁首 -->
             <!-- <p class="p-5">施工中</p> -->
 
@@ -703,64 +803,65 @@ iphone 手機
                         <a href="#"><img
                                 src="https://akimages.kobobooks.com/images/misc/Navigation/Top/rakuten-kobo-landscape.png"
                                 alt="kobo樂天Logo"></a>
-
                         <div>
-                            <i class="fa fa-search fa-2x" aria-hidden="true"></i>
                             <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
                         </div>
                     </div>
+                    <div class="iphone_header_search_input">
+                        <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
+                            aria-label="Recipient's username with two button addons">
+                        <button class="icon"><i class="fa fa-search"></i></button>
+                    </div>
+
                 </nav>
                 <div class="iphone_header_nav_img">
-                    <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="collapse " id="navbarToggleExternalContent">
                         <div class="bg-dark all_Menu_information">
                             <div class="accordion" id="accordionExample">
+                                <div class="iphone_header_accordion_item">
+                                    <h2 class="accordion-header d-flex" id="iphone_heading_Language">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#iphone_collapse_Language"
+                                            aria-expanded="false" aria-controls="iphone_collapse_Language">
+                                            中文
+                                        </button>
+                                        <a href="#">說明</a>
+                                    </h2>
+                                    <div id="iphone_collapse_Language" class="accordion-collapse collapse "
+                                        aria-labelledby="iphone_heading_Language" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <a href="#">Bokmål</a>
+                                            <a href="#">English</a>
+                                            <a href="#">Español</a>
+                                            <a href="#">日本語</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_heading_One">
                                         <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#iphone_collapse_One"
                                             aria-expanded="false" aria-controls="iphone_collapse_One">
+                                            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
                                             我的帳戶
                                         </button>
                                     </h2>
-                                    <div id="iphone_collapse_One" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_heading_One">
+                                    <div id="iphone_collapse_One" class="accordion-collapse collapse"
+                                        aria-labelledby="iphone_heading_One" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <a href="#">我的書籍</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_collapse_One" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_heading_One">
-                                        <div class="accordion-body">
                                             <a href="#">我的願望清單</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_collapse_One" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_heading_One">
-                                        <div class="accordion-body">
                                             <a href="#">購買紀錄</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_collapse_One" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_heading_One">
-                                        <div class="accordion-body">
                                             <a href="#">帳戶設定</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_collapse_One" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_heading_One">
-                                        <div class="accordion-body">
                                             <button>登出</button>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_header_heading_Two">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Two"
-                                            aria-expanded="false" aria-controls="iphone_header_collapse_Two">
-                                            首頁
-                                        </button>
+                                    <h2>
+                                        <a href="#">首頁</a>
                                     </h2>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
@@ -772,27 +873,13 @@ iphone 手機
                                             電子書
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Three" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Three">
+                                    <div id="iphone_header_collapse_Three" class="accordion-collapse collapse"
+                                        aria-labelledby="iphone_header_heading_Three"
+                                        data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <a href="#">小說語文學</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_header_collapse_Three" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Three">
-                                        <div class="accordion-body">
                                             <a href="#">愛情</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_header_collapse_Three" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Three">
-                                        <div class="accordion-body">
                                             <a href="#">非小說</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_header_collapse_Three" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Three">
-                                        <div class="accordion-body">
                                             <a href="#">專屬於您的推薦</a>
                                             <a href="#">今日前50名的電子書</a>
                                             <a href="#">最新熱門雜誌</a>
@@ -809,27 +896,12 @@ iphone 手機
                                             有聲書
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Four" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Four">
+                                    <div id="iphone_header_collapse_Four" class="accordion-collapse collapse"
+                                        aria-labelledby="iphone_header_heading_Four" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <a href="#">小說語文學</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_header_collapse_Four" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Four">
-                                        <div class="accordion-body">
                                             <a href="#">愛情</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_header_collapse_Four" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Four">
-                                        <div class="accordion-body">
                                             <a href="#">非小說</a>
-                                        </div>
-                                    </div>
-                                    <div id="iphone_header_collapse_Four" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Four">
-                                        <div class="accordion-body">
                                             <a href="#">流行趨勢</a>
                                             <a href="#">有聲書優惠</a>
                                             <a href="#">瀏覽所有有聲書</a>
@@ -845,12 +917,13 @@ iphone 手機
                                             應用程式與 eReader
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Fives" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Fives">
+                                    <div id="iphone_header_collapse_Fives" class="accordion-collapse collapse"
+                                        aria-labelledby="iphone_header_heading_Fives"
+                                        data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <p>應用程式</p>
-                                            <p>Android</p>
-                                            <p>Apple</p>
+                                            <a href="#"> Android</a>
+                                            <a href="#">Apple</a>
                                             <a href="#">了解更多</a>
                                         </div>
                                     </div>
@@ -864,26 +937,26 @@ iphone 手機
                                             樂天超級點數
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Six" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Six">
+                                    <div id="iphone_header_collapse_Six" class="accordion-collapse collapse"
+                                        aria-labelledby="iphone_header_heading_Six" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            <a href="#"><img
-                                                    src="//kbstatic1-a.akamaihd.net/1.0.0.930/Images/header-footer/rgi-super-points/rakuten-super-points.png"
-                                                    alt=""></a>
-                                            <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，活動點數將於購買日次月15日新增至帳戶</p>
-                                            <p>查看您的超級點數記錄</p>
-                                            <p>樂天超級點數購書須知</p>
+                                            <div>
+                                                <a href="#"><img
+                                                        src="//kbstatic1-a.akamaihd.net/1.0.0.930/Images/header-footer/rgi-super-points/rakuten-super-points.png"
+                                                        alt=""></a>
+                                                <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，活動點數將於購買日次月15日新增至帳戶</p>
+                                            </div>
+                                            <div class="points_record">
+                                                <a href="#">查看您的超級點數記錄</a>
+                                                <a href="#">樂天超級點數購書須知</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_header_heading_Seven">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Seven"
-                                            aria-expanded="false" aria-controls="iphone_header_collapse_Seven">
-                                            我的願望清單
-                                        </button>
+                                    <h2>
+                                        <a href="#">我的願望清單</a>
                                     </h2>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
@@ -895,37 +968,74 @@ iphone 手機
                                             現在購物:<img
                                                 src="//kbstatic1-a.akamaihd.net/1.0.0.930//Images/country-flags/small/taiwan.png"
                                                 alt="">
-                                            台灣 (TWD)
+                                            <span>台灣 (TWD)</span>
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Eight" class="accordion_collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Eight">
+                                    <div id="iphone_header_collapse_Eight" class="accordion-collapse collapse"
+                                        aria-labelledby="iphone_header_heading_Eight"
+                                        data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            <p>變更國家/地區</p>
+                                            <a href="#">變更國家/地區</a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_header_heading_nine">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_nine"
-                                            aria-expanded="false" aria-controls="iphone_header_collapse_nine">
-                                            意見反映
-                                        </button>
+                                    <h2>
+                                        <a href="#">意見反映</a>
                                     </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="iphone_header_img_text">
-                        <p>首頁文字</p>
-                        <img src="https://picsum.photos/300/200/?random1" alt="">
-                        <p>首屆商品內容</p>
-                        <img src="https://picsum.photos/300/200/?random1" alt="">
+                        <!-- 預設資料********************************************代移除 -->
+                        <div>
+                            <div>
+                                <nav aria-label="breadcrumb" class="預設資料">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">電子書</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div> <img src="https://picsum.photos/300/200/?random1" alt="預設資料">
+                                    <p>首頁商品內容</p>
+                                </div>
+                                <div> <img src="https://picsum.photos/300/200/?random1" alt="預設資料">
+                                    <p>首頁商品內容</p>
+                                </div>
+                                <div> <img src="https://picsum.photos/300/200/?random1" alt="預設資料">
+                                    <p>首頁商品內容</p>
+                                </div>
+                                <div> <img src="https://picsum.photos/300/200/?random1" alt="預設資料">
+                                    <p>首頁商品內容</p>
+                                </div>
+                                <div> <img src="https://picsum.photos/300/200/?random1" alt="預設資料">
+                                    <p>首頁商品內容</p>
+                                </div>
+                                <div> <img src="https://picsum.photos/300/200/?random1" alt="預設資料">
+                                    <p>首頁商品內容</p>
+                                </div>
+                                <div> <img src="https://picsum.photos/300/200/?random1" alt="預設資料">
+                                    <p>首頁商品內容</p>
+                                </div>
+                                <div> <img src="https://picsum.photos/300/200/?random1" alt="預設資料">
+                                    <p>首頁商品內容</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 預設資料********************************************代移除 -->
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
 
 
 
@@ -1316,7 +1426,7 @@ iphone 手機
         </div>
 
         <!-- 手機頁尾 -->
-        <div class="phone_in_footer">
+        <div class="iphone_in_footer">
             <!-- 手機頁尾 -->
             <div class="accordion" id="accordionExample">
                 <div class="accordion_item">
