@@ -16,15 +16,15 @@
 <style>
     /*
 
-flatbed 平板以上  881px為界線
-iphone 手機
+        Flatbed 平板以上  881px為界線
+        Phone 手機
 
-分號為 "-"平板
-分號為 "_"手機
+        分號為 "-"平板
+        分號為 "_"手機
 
 */
     /* ------------------------------------平板頁首開始-------------------------------------------------------- */
-    .flatbed-header-all-top {
+    .Flatbed-header-all-top {
         box-sizing: border-box;
         -webkit-box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
         box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
@@ -35,40 +35,40 @@ iphone 手機
 
     /* ---------------------------------------------------------------- */
 
-    .flatbed-header-country-Language-Description-feedback {
+    .Flatbed-header-country-Language-Description-feedback {
         width: 100%;
         padding: 0 20px;
         margin: 0 auto;
         max-width: 1140px;
         display: flex;
         height: 1.8rem;
-        background-color: #f5f5f5;
+        /* background-color: #f5f5f5; */
         justify-content: flex-end;
     }
 
     /* ---------------------------------------------------------------- */
-    .flatbed-header-country-Language-Description {
+    .Flatbed-header-country-Language-Description {
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
 
-    .language-selector:hover,
-    .flatbed-header-user button:hover a,
-    .flatbed-my-wish-list:hover a,
-    .flatbed-shopping-cart:hover a,
+    .Flatbed-header-all-top .language-selector:hover,
+    .Flatbed-header-user button:hover a,
+    .Flatbed-my-wish-list:hover a,
+    .Flatbed-shopping-cart:hover a,
     .rich-header-user:hover a,
-    .flatbed-header-Description:hover,
-    .Language-dropdown button:hover a {
+    .Flatbed-header-Description:hover,
+    .Flatbed-header-all-top.Language-dropdown button:hover a {
         color: #bf0000;
     }
 
-    .flatbed-header-country-Language-Description div {
+    .Flatbed-header-country-Language-Description div {
         padding: 0 10px;
     }
 
     /* -----------------------------語言表單----------------------------------- */
-    .Language-dropdown ul {
+    .Flatbed-header-all-top .Language-dropdown ul {
         padding: 20px;
         background-color: #fff;
         border-bottom: 2px solid #d8d8d8;
@@ -77,45 +77,51 @@ iphone 手機
         border-top: 2px solid #d8d8d8;
     }
 
-    .Language-dropdown ul li {
+    .Flatbed-header-all-top .Language-dropdown ul li {
         padding-top: 10px;
+        text-decoration: underline;
     }
 
-    .language-selector {
+    .Flatbed-header-all-top .Language-dropdown ul>li:hover a {
+        background-color: transparent;
+        color: #bf0000;
+    }
+
+    .Flatbed-header-all-top .language-selector {
         border: none;
-        background-color: #f5f5f5;
+        background-color: transparent;
         color: #595959;
     }
 
     /* ---------------------------摸到打開------------------------------------- */
 
-    .dropdown-menu button:hover ul {
+    .Flatbed-header-all-top .dropdown-menu button:hover ul {
         visibility: visible;
     }
 
-    .dropdown:hover .dropdown-menu {
+    .Flatbed-header-all-top .dropdown:hover .dropdown-menu {
         display: block;
         padding: 30px;
     }
 
-    .dropdown-menu {
+    .Flatbed-header-all-top .dropdown-menu {
         width: auto;
         -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
     /* ---------------------------------------------------------------- */
 
-    .flatbed-header-Description {
+    .Flatbed-header-Description {
         color: #595959;
         text-decoration: none;
     }
 
-    .flatbed-header-Description {
+    .Flatbed-header-Description {
         padding: 0 1.3rem;
     }
 
     /* --------------------------意見反映-------------------------------------- */
-    .flatbed-header-feedback {
+    .Flatbed-header-feedback {
         position: fixed;
         top: 350px;
         right: -30px;
@@ -127,37 +133,49 @@ iphone 手機
         -webkit-transform: rotate(-90deg);
     }
 
-    .flatbed-header-feedback a {
+    .Flatbed-header-feedback a {
         color: #fff;
     }
 
-    .flatbed-header-feedback:hover {
+    .Flatbed-header-feedback:hover {
         background-color: #fff;
         transition: background-color 200ms;
     }
 
-    .flatbed-header-feedback:hover a {
+    .Flatbed-header-feedback:hover a {
         color: #0065BD;
         text-decoration: none;
         transition: color 200ms;
     }
 
     /* --------------------------搜尋列-------------------------------------- */
-    .flatbed-header-search-Drop-down-menu {
+    .Flatbed-header-search-Drop-down-menu {
         padding: 0 20px;
         margin: 0 auto;
         max-width: 1140px;
     }
 
+    .Flatbed-header-search-input input {
+        border-radius: 2px;
+    }
+
+    .Flatbed-header-search-input button {
+        color: #fff;
+        background-color: #000;
+        padding: .375rem .75rem;
+        border: none;
+        height: 38px;
+    }
+
     /* ---------------------------------------------------------------- */
-    .flatbed-search-bar {
+    .Flatbed-search-bar {
         display: flex;
         justify-content: space-between;
         margin-top: 0.8rem;
     }
 
     /* ---------------------------------------------------------------- */
-    .flatbed-header-logo-search {
+    .Flatbed-header-logo-search {
         display: flex;
         align-items: center;
         margin-bottom: 1.9rem;
@@ -165,103 +183,148 @@ iphone 手機
     }
 
     /* ---------------------------h1標題------------------------------------- */
-    .flatbed-header-logo-h1 {
+    .Flatbed-header-logo-h1 {
         position: absolute;
         top: 0px;
         left: 0px;
         font-size: 0px;
     }
 
+    /* -----------------------------我的帳戶----------------------------------- */
+
+    .Flatbed-header-user ul {
+        padding: 10px;
+    }
+
+    .Flatbed-header-user ul>li {
+        margin: 10px 0;
+        text-decoration: underline;
+
+    }
+
+    .Flatbed-header-user ul>li:nth-child(4) {
+        padding-top: 10px;
+        border-top: 1px solid #000;
+    }
+
+    .Flatbed-header-user ul>li:hover a {
+        background-color: transparent;
+        color: #bf0000;
+    }
+
+    .Flatbed-header-user ul>button {
+        border: 1px solid #fff;
+        padding: .5rem;
+        font-size: 0.8rem;
+        color: #fff;
+        background-color: #000;
+        text-decoration: underline;
+        width: 100%;
+        border: 2px solid black;
+    }
+
+    .Flatbed-header-user ul>button:hover {
+        background-color: #fff;
+        color: #000;
+
+    }
+
     /* ---------------------------------------------------------------- */
-    .flatbed-header-search-input {
+    .Flatbed-header-search-input {
         height: 3.0rem;
     }
 
-    .flatbed-header-search-input {
+    .Flatbed-header-search-input {
         display: flex;
         align-items: center;
         padding-left: 20px;
         width: 70%;
     }
 
-    .flatbed-header-search-input button {
+    .Flatbed-header-search-input button {
         background-color: #000;
     }
 
     /* ---------------------------------------------------------------- */
-    .flatbed-my-wish-list-shopping-cart-my-account {
+    .Flatbed-my-wish-list-shopping-cart-my-account {
         display: flex;
         justify-content: flex-end;
         width: 35%;
     }
 
-    .flatbed-my-wish-list-shopping-cart-my-account a {
+    .Flatbed-my-wish-list-shopping-cart-my-account a {
         text-decoration: none;
         color: #444444
     }
 
-    .flatbed-my-wish-list-shopping-cart {
+    .Flatbed-my-wish-list-shopping-cart {
         display: flex;
     }
 
     /* ---------------------------------------------------------------- */
-    .flatbed-my-wish-list,
-    .flatbed-shopping-cart {
+    .Flatbed-my-wish-list,
+    .Flatbed-shopping-cart {
         display: flex;
         align-items: center;
     }
 
     /* ---------------------------------------------------------------- */
-    .flatbed-shopping-cart-text,
-    .flatbed-my-wish-list-text,
-    .flatbed-my-wish-list-icon,
-    .flatbed-shopping-cart-icon,
+    .Flatbed-shopping-cart-text,
+    .Flatbed-my-wish-list-text,
+    .Flatbed-my-wish-list-icon,
+    .Flatbed-shopping-cart-icon,
     .profile-icon {
         text-align: center;
     }
 
     /* ---------------------------------------------------------------- */
-    .flatbed-shopping-cart {
+    .Flatbed-shopping-cart {
         padding: 0 10px;
     }
 
     /* ---------------------------------------------------------------- */
-    .flatbed-header-user {
+    .Flatbed-header-user {
         display: flex;
     }
 
-    .flatbed-header-user button {
+    .Flatbed-header-user button {
         background-color: #fff;
     }
 
     /* ---------------------------平板下拉選單------------------------------------- */
-    .flatbed-nav-button {
+    .Flatbed-nav-button {
         display: flex;
     }
 
-    .flatbed-nav-button a {
+    .Flatbed-nav-button a {
         text-decoration: none;
         color: #000;
     }
 
+    .Flatbed-nav-button a:hover {
+        color: #bf0000;
+        background-color: transparent;
+
+    }
+
     /* ----------------------------ebook+audiobook------------------------------------- */
 
-    .flatbed-ebook-menu-left,
-    .flatbed-audiobook-menu-left {
+    .Flatbed-ebook-menu-left,
+    .Flatbed-audiobook-menu-left {
         width: 70%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    .flatbed-ebook-classification,
-    .flatbed-audiobook-classification {
+    .Flatbed-ebook-classification,
+    .Flatbed-audiobook-classification {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .flatbed-ebook-classification li,
-    .flatbed-audiobook-classification li {
+    .Flatbed-ebook-classification li,
+    .Flatbed-audiobook-classification li {
         color: #000;
         border: 1px solid #000;
         border-radius: 10px;
@@ -271,68 +334,63 @@ iphone 手機
         font-size: 10px;
     }
 
-    .flatbed-ebook-classification li a,
-    .flatbed-audiobook-classification li a {
+    .Flatbed-ebook-classification li a,
+    .Flatbed-audiobook-classification li a {
         padding: 10px;
         display: inline;
     }
 
-    .flatbed-ebook-menu-right,
-    .flatbed-audiobook-menu-right {
+    .Flatbed-ebook-menu-right,
+    .Flatbed-audiobook-menu-right {
         display: flex;
         width: 30%;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    .flatbed-ebook-menu-right,
-    .flatbed-audiobook-menu-right {
+    .Flatbed-ebook-menu-right,
+    .Flatbed-audiobook-menu-right {
         border-left: 1px solid #d8d8d8;
         padding-left: 30px;
     }
 
-    .flatbed-ebook-recommend span,
-    .flatbed-audiobook-recommend span {
+    .Flatbed-ebook-recommend span,
+    .Flatbed-audiobook-recommend span {
         color: #444444;
         font-size: 1.0rem;
     }
 
     /* -----------------------------共用----------------------------------- */
 
-    .flatbed-ebook-dropdown>span,
-    .flatbed-audiobook_dropdown>span,
-    .flatbed-application-dropdown>span,
-    .flatbed-set-point-dropdown>span {
+    .Flatbed-ebook-dropdown>span,
+    .Flatbed-audiobook_dropdown>span,
+    .Flatbed-application-dropdown>span,
+    .Flatbed-set-point-dropdown>span {
         display: inline-block;
     }
 
-    .flatbed-ebook-ul,
-    .flatbed-audiobook-ul,
-    .set_point_ul,
-    .flatbed-application-ul,
-    .flatbed-set-point-section {
+    .Flatbed-ebook-ul,
+    .Flatbed-audiobook-ul,
+    .Flatbed-header-all-top .set_point_ul,
+    .Flatbed-application-ul,
+    .Flatbed-set-point-section {
         display: flex;
-        width: 750px;
+        width: 650px;
         flex-wrap: wrap;
-        line-height: 2.7rem;
+        line-height: 2.8rem;
     }
 
-    .flatbed-ebook-dropdown>span,
-    .flatbed-audiobook_dropdown>span,
-    .flatbed-application-dropdown>span,
-    .flatbed-set-point-dropdown>span {
-        display: inline-block;
-    }
-
-    .dropdown:hover {
+    .Flatbed-nav-button .dropdown:hover {
         -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
-    .dropdown {
-        padding: 12px 13px 15px 8px;
+    .Flatbed-nav-button .dropdown {
+        padding: 20px 13px 16px 8px;
         margin-right: 5px;
         font-size: inherit;
     }
+
+
 
     /* ------------------------------------平板頁首結束-------------------------------------------------------- */
 
@@ -351,31 +409,40 @@ iphone 手機
     }
 
     .footer-About-everything-top>div h4 {
-        padding-bottom: 10px;
+        padding: 10px;
+        min-height: 100px;
     }
 
     /* -------------------------------- */
-    .regarding,
-    .opportunity,
-    .Latest-posts,
-    .Get-free-apps,
-    .Stay-connected {
+    .footer-About-everything .regarding,
+    .footer-About-everything .opportunity,
+    .footer-About-everything .Latest-posts,
+    .footer-About-everything .Get-free-apps,
+    .footer-About-everything .Stay-connected {
         width: 20%;
     }
 
     /* -------------------------------- */
-    .h4-text {
+    .footer-About-everything .h4-text {
         padding: 10px;
         display: flex;
         flex-direction: column;
     }
 
-    .h4-text span,
-    .h4-text ul li,
-    .h4-text img,
-    .h4-text button {
+    .footer-About-everything .h4-text span,
+    .footer-About-everything .h4-text a,
+    .footer-About-everything .h4-text ul li,
+    .footer-About-everything .h4-text img,
+    .footer-About-everything .h4-text button {
         margin-top: 10px;
         padding: 1px;
+        color: #fff;
+    }
+
+    .footer-About-everything .Stay-connected>ul,
+    .footer-About-everything .Stay-connected ul li a {
+        /* 重複 */
+        margin-top: -10px;
     }
 
     .footer-About-everything-top .Latest-posts button {
@@ -394,9 +461,19 @@ iphone 手機
 
     }
 
+    .footer-About-everything-top .regarding .h4-text a,
+    .footer-About-everything-top .opportunity .h4-text a {
+        text-decoration: none;
+    }
+
+    .footer-About-everything-top .regarding .h4-text a:hover,
+    .footer-About-everything-top .opportunity .h4-text a:hover {
+        text-decoration: underline;
+    }
+
     /* -------------------------------- */
 
-    .Stay-connected ul>li>a {
+    .footer-About-everything .Stay-connected ul>li>a {
         display: flex;
         text-decoration: none;
         color: #fff;
@@ -404,46 +481,46 @@ iphone 手機
 
     }
 
-    .Stay-connected ul>li>a>img {
+    .footer-About-everything .Stay-connected ul>li>a>img {
         margin-right: 10px;
 
     }
 
-    .Stay-connected ul {
+    .footer-About-everything .Stay-connected ul {
         list-style: none;
         padding-left: 0;
     }
 
-    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a {
+    .Flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a {
         color: #fff;
         text-decoration: none;
     }
 
-    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a>span {
+    .Flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a>span {
         padding: 0 10px;
     }
 
-    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a>span:nth-child(3) {
+    .Flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a>span:nth-child(3) {
         border-left: 2px solid #fff;
     }
 
-    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a span:nth-child(3):hover {
+    .Flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a span:nth-child(3):hover {
         text-decoration: underline;
 
     }
 
-    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .privacy-policy span {
+    .Flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .privacy-policy span {
         padding-right: 10px;
     }
 
-    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .privacy-policy a {
+    .Flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .privacy-policy a {
         color: #fff;
         padding: 0 10px;
         border-left: 2px solid #fff;
     }
 
     /* -------------------------------- */
-    .payment-method {
+    .footer-About-everything .payment-method {
         padding: 20px;
         padding: 20px;
         border-top: 1px solid #bbb;
@@ -452,13 +529,13 @@ iphone 手機
         justify-content: center;
     }
 
-    .payment-method img,
-    .payment-method span {
+    .footer-About-everything .payment-method img,
+    .footer-About-everything .payment-method span {
         padding: 0 10px;
     }
 
     /* -------------------------------- */
-    .Change-country-privacy-policy {
+    .footer-About-everything .Change-country-privacy-policy {
         padding-top: 20px;
         display: flex;
         justify-content: space-between;
@@ -502,22 +579,25 @@ iphone 手機
         color: black;
     }
 
+    .footer-About-everything-top .Get-free-apps .h4-text img:nth-child(2) {
+        padding: 15px;
+    }
 
 
     /* ------------------------------------平板頁尾結束-------------------------------------------------------- */
     /* -----------------------------------------------螢幕查詢------------------------------------------------------- */
-    .iphone-in-header,
-    .iphone_in_footer,
-    .flatbed-in-header,
-    .flatbed-in-footer {
+    .Phone-in-header,
+    .Phone_in_footer,
+    .Flatbed-in-header,
+    .Flatbed-in-footer {
         display: none
     }
 
     /* phone */
     @media only screen and (max-width:881px) {
 
-        .iphone-in-header,
-        .iphone_in_footer {
+        .Phone-in-header,
+        .Phone_in_footer {
             display: block;
         }
     }
@@ -525,8 +605,8 @@ iphone 手機
     /* ipad */
     @media only screen and (min-width:881px) {
 
-        .flatbed-in-header,
-        .flatbed-in-footer {
+        .Flatbed-in-header,
+        .Flatbed-in-footer {
             display: block;
         }
     }
@@ -544,27 +624,27 @@ iphone 手機
         -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
-    .iphone_all_nav .container-fluid {
+    .Phone_all_nav .container-fluid {
         /* background-color: aquamarine; */
         height: 60px;
     }
 
-    .iphone_all_nav nav .container-fluid button {
+    .Phone_all_nav nav .container-fluid button {
         background-color: rosybrown;
     }
 
-    .iphone_header_nav_img .bg-dark,
-    .iphone_all_nav .bg-dark {
+    .Phone_header_nav_img .bg-dark,
+    .Phone_all_nav .bg-dark {
         padding: 0;
         background-color: #fff !important;
         /* 無法更改顏色 */
     }
 
-    .iphone_all_nav .container-fluid>button {
+    .Phone_all_nav .container-fluid>button {
         margin-left: 15px;
     }
 
-    .iphone_all_nav h1 {
+    .Phone_all_nav h1 {
         position: absolute;
         top: -1px;
         left: -1px;
@@ -574,7 +654,7 @@ iphone 手機
         z-index: -1;
     }
 
-    .iphone_all_nav {
+    .Phone_all_nav {
         width: 100%;
     }
 
@@ -582,7 +662,7 @@ iphone 手機
         margin-top: 98px;
     }
 
-    .iphone_header_img_text {
+    .Phone_header_img_text {
         width: 70%;
         margin-left: 10px;
         display: flex;
@@ -591,15 +671,15 @@ iphone 手機
 
     }
 
-    .iphone_header_nav_img {
+    .Phone_header_nav_img {
         display: flex;
     }
 
-    .iphone_header_nav_img .accordion {
+    .Phone_header_nav_img .accordion {
         padding-top: 0;
     }
 
-    .iphone_all_nav>nav {
+    .Phone_all_nav>nav {
         position: fixed;
         background-color: aquamarine;
         -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
@@ -607,21 +687,21 @@ iphone 手機
         z-index: 999;
     }
 
-    .iphone-in-header,
-    .iphone_in_footer {
+    .Phone-in-header,
+    .Phone_in_footer {
         min-width: 576px;
     }
 
-    .iphone_all_nav nav i {
+    .Phone_all_nav nav i {
         margin: 5px;
     }
 
-    .iphone_header_accordion_item:nth-child(1) h2 button {
+    .Phone_header_accordion_item:nth-child(1) h2 button {
 
         width: 70%;
     }
 
-    .iphone_header_accordion_item:nth-child(1) h2 a {
+    .Phone_header_accordion_item:nth-child(1) h2 a {
         width: 30%;
         font-size: 14px;
         display: flex;
@@ -631,17 +711,34 @@ iphone 手機
         border-bottom: 1px solid #d8d8d8;
     }
 
-    .iphone_header_search_input {
+    .Phone_header_search_input {
         display: flex;
         width: 100%;
+        border-radius: 0px;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7)>div p {
+    .Phone_header_search_input input {
+        border-radius: 2px;
+    }
+
+    .Phone_header_search_input button {
+        color: #fff;
+        background-color: #000;
+        padding: .375rem .75rem;
+        border: none;
+        height: 38px;
+    }
+
+
+
+
+
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(7)>div p {
         margin: 6px 0;
         font-size: .9rem;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7)>div a {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(7)>div a {
         width: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -650,48 +747,53 @@ iphone 手機
 
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7) div>.points_record>a:nth-child(1) {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(7) div>.points_record>a:nth-child(1) {
         border-bottom: 2px dotted #d8d8d8;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7) .accordion-body {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(7) .accordion-body {
         border-bottom: 1px solid #d8d8d8;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9)>h2 button>img {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(9)>h2 button>img {
         margin: 0 10px;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(1) div>.accordion-body>a,
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(2) div>.accordion-body>a,
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(4) div>.accordion-body>a,
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(5) div>.accordion-body>a,
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(6) div>.accordion-body>a {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(1) div>.accordion-body>a,
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(2) div>.accordion-body>a,
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(4) div>.accordion-body>a,
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(5) div>.accordion-body>a,
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(6) div>.accordion-body>a {
         display: block;
         margin: 5px 0;
         color: #0d0d0d;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9) a {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(9) a {
         display: block;
         font-size: 14px;
         color: #0d0d0d;
 
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9) a div {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(9) a>span {
+        color: #bf0000;
+
+    }
+
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(9) a div {
         margin-bottom: 10px;
     }
 
-    .iphone_header_nav_img h2>button {
+    .Phone_header_nav_img h2>button {
         border-bottom: 1px solid #d8d8d8;
 
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(3),
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(8),
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(10),
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9) {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(3),
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(8),
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(10),
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(9) {
         border-bottom: 1px solid #d8d8d8;
         display: flex;
         align-items: center;
@@ -706,15 +808,15 @@ iphone 手機
         border-bottom: 1px solid #d8d8d8;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(3) a,
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(8) a,
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(10) a {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(3) a,
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(8) a,
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(10) a {
         margin: 0;
         font-size: 16px;
         color: #0d0d0d;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(2) #iphone_collapse_One button {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(2) #Phone_collapse_One button {
         transition: background-color .2s;
         display: block;
         padding: 10px;
@@ -724,7 +826,7 @@ iphone 手機
         width: 100%;
     }
 
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(2) #iphone_collapse_One button:hover {
+    .Phone_header_nav_img .Phone_header_accordion_item:nth-child(2) #Phone_collapse_One button:hover {
         color: #fff;
         background-color: #000;
         transition: 1s;
@@ -748,12 +850,11 @@ iphone 手機
 
 
 
-
     /* ---------------------------手機頁首到此------------------------------------------------------------- */
 
     /* ---------------------------手機頁尾開始------------------------------------------------------------- */
 
-    .iphone_in_footer {
+    .Phone_in_footer {
         margin: auto;
         margin-top: 40px;
         color: #fff;
@@ -855,11 +956,11 @@ iphone 手機
 
     <header class="all-header ">
         <!-- 頁首 -->
-        <div class="iphone-in-header">
+        <div class="Phone-in-header">
             <!-- 手機頁首 -->
             <!-- <p class="p-5">施工中</p> -->
 
-            <div class="iphone_all_nav">
+            <div class="Phone_all_nav">
                 <h1>Kobo 樂天</h1>
                 <nav class="navbar navbar-dark bg-dark ">
                     <div class="container-fluid">
@@ -876,28 +977,28 @@ iphone 手機
                             <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
                         </div>
                     </div>
-                    <div class="iphone_header_search_input">
+                    <div class="Phone_header_search_input">
                         <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
                             aria-label="Recipient's username with two button addons">
                         <button class="icon"><i class="fa fa-search"></i></button>
                     </div>
 
                 </nav>
-                <div class="iphone_header_nav_img">
+                <div class="Phone_header_nav_img">
                     <div class="collapse " id="navbarToggleExternalContent">
                         <div class="bg-dark all_Menu_information">
                             <div class="accordion" id="accordionExample">
-                                <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header d-flex" id="iphone_heading_Language">
+                                <div class="Phone_header_accordion_item">
+                                    <h2 class="accordion-header d-flex" id="Phone_heading_Language">
                                         <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_collapse_Language"
-                                            aria-expanded="false" aria-controls="iphone_collapse_Language">
+                                            data-bs-toggle="collapse" data-bs-target="#Phone_collapse_Language"
+                                            aria-expanded="false" aria-controls="Phone_collapse_Language">
                                             中文
                                         </button>
                                         <a href="#">說明</a>
                                     </h2>
-                                    <div id="iphone_collapse_Language" class="accordion-collapse collapse "
-                                        aria-labelledby="iphone_heading_Language" data-bs-parent="#accordionExample">
+                                    <div id="Phone_collapse_Language" class="accordion-collapse collapse "
+                                        aria-labelledby="Phone_heading_Language" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <a href="#">Bokmål</a>
                                             <a href="#">English</a>
@@ -907,17 +1008,17 @@ iphone 手機
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_heading_One">
+                                <div class="Phone_header_accordion_item">
+                                    <h2 class="accordion-header" id="Phone_heading_One">
                                         <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_collapse_One"
-                                            aria-expanded="false" aria-controls="iphone_collapse_One">
+                                            data-bs-toggle="collapse" data-bs-target="#Phone_collapse_One"
+                                            aria-expanded="false" aria-controls="Phone_collapse_One">
                                             <i class="fa fa-user fa-2x" aria-hidden="true"></i>
                                             我的帳戶
                                         </button>
                                     </h2>
-                                    <div id="iphone_collapse_One" class="accordion-collapse collapse"
-                                        aria-labelledby="iphone_heading_One" data-bs-parent="#accordionExample">
+                                    <div id="Phone_collapse_One" class="accordion-collapse collapse"
+                                        aria-labelledby="Phone_heading_One" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <a href="#">我的書籍</a>
                                             <a href="#">我的願望清單</a>
@@ -928,23 +1029,22 @@ iphone 手機
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
+                                <div class="Phone_header_accordion_item">
                                     <h2>
                                         <a href="#">首頁</a>
                                     </h2>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_header_heading_Three">
+                                <div class="Phone_header_accordion_item">
+                                    <h2 class="accordion-header" id="Phone_header_heading_Three">
                                         <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Three"
-                                            aria-expanded="false" aria-controls="iphone_header_collapse_Three">
+                                            data-bs-toggle="collapse" data-bs-target="#Phone_header_collapse_Three"
+                                            aria-expanded="false" aria-controls="Phone_header_collapse_Three">
                                             電子書
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Three" class="accordion-collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Three"
-                                        data-bs-parent="#accordionExample">
+                                    <div id="Phone_header_collapse_Three" class="accordion-collapse collapse"
+                                        aria-labelledby="Phone_header_heading_Three" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <a href="#">小說語文學</a>
                                             <a href="#">愛情</a>
@@ -957,16 +1057,16 @@ iphone 手機
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_header_heading_Four">
+                                <div class="Phone_header_accordion_item">
+                                    <h2 class="accordion-header" id="Phone_header_heading_Four">
                                         <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Four"
-                                            aria-expanded="false" aria-controls="iphone_header_collapse_Four">
+                                            data-bs-toggle="collapse" data-bs-target="#Phone_header_collapse_Four"
+                                            aria-expanded="false" aria-controls="Phone_header_collapse_Four">
                                             有聲書
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Four" class="accordion-collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Four" data-bs-parent="#accordionExample">
+                                    <div id="Phone_header_collapse_Four" class="accordion-collapse collapse"
+                                        aria-labelledby="Phone_header_heading_Four" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <a href="#">小說語文學</a>
                                             <a href="#">愛情</a>
@@ -978,17 +1078,16 @@ iphone 手機
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_header_heading_Fives">
+                                <div class="Phone_header_accordion_item">
+                                    <h2 class="accordion-header" id="Phone_header_heading_Fives">
                                         <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Fives"
-                                            aria-expanded="false" aria-controls="iphone_header_collapse_Fives">
+                                            data-bs-toggle="collapse" data-bs-target="#Phone_header_collapse_Fives"
+                                            aria-expanded="false" aria-controls="Phone_header_collapse_Fives">
                                             應用程式與 eReader
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Fives" class="accordion-collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Fives"
-                                        data-bs-parent="#accordionExample">
+                                    <div id="Phone_header_collapse_Fives" class="accordion-collapse collapse"
+                                        aria-labelledby="Phone_header_heading_Fives" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <p>應用程式</p>
                                             <a href="#"> Android</a>
@@ -998,16 +1097,16 @@ iphone 手機
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_header_heading_Six">
+                                <div class="Phone_header_accordion_item">
+                                    <h2 class="accordion-header" id="Phone_header_heading_Six">
                                         <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Six"
-                                            aria-expanded="false" aria-controls="iphone_header_collapse_Six">
+                                            data-bs-toggle="collapse" data-bs-target="#Phone_header_collapse_Six"
+                                            aria-expanded="false" aria-controls="Phone_header_collapse_Six">
                                             樂天超級點數
                                         </button>
                                     </h2>
-                                    <div id="iphone_header_collapse_Six" class="accordion-collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Six" data-bs-parent="#accordionExample">
+                                    <div id="Phone_header_collapse_Six" class="accordion-collapse collapse"
+                                        aria-labelledby="Phone_header_heading_Six" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <div>
                                                 <a href="#"><img
@@ -1023,33 +1122,13 @@ iphone 手機
                                     </div>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
+                                <div class="Phone_header_accordion_item">
                                     <h2>
                                         <a href="#">我的願望清單</a>
                                     </h2>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <!-- <div class="iphone_header_accordion_item">
-                                    <h2 class="accordion-header" id="iphone_header_heading_Eight">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Eight"
-                                            aria-expanded="false" aria-controls="iphone_header_collapse_Eight">
-                                            現在購物:<img
-                                                src="//kbstatic1-a.akamaihd.net/1.0.0.930//Images/country-flags/small/taiwan.png"
-                                                alt="">
-                                            <span>台灣 (TWD)</span>
-                                        </button>
-                                    </h2>
-                                    <div id="iphone_header_collapse_Eight" class="accordion-collapse collapse"
-                                        aria-labelledby="iphone_header_heading_Eight"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <a href="#">變更國家/地區</a>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                                <div class="iphone_header_accordion_item">
+                                <div class="Phone_header_accordion_item">
                                     <a href="#">
                                         <div>
                                             <span> 現在購物:</span>
@@ -1061,7 +1140,7 @@ iphone 手機
                                     </a>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
+                                <div class="Phone_header_accordion_item">
                                     <h2>
                                         <a href="#">意見反映</a>
                                     </h2>
@@ -1069,7 +1148,7 @@ iphone 手機
                             </div>
                         </div>
                     </div>
-                    <div class="iphone_header_img_text">
+                    <div class="Phone_header_img_text">
                         <!-- 預設資料********************************************代移除 -->
                         <div>
                             <div>
@@ -1124,10 +1203,10 @@ iphone 手機
 
         </div>
         <!-- -----------------平板頁首----------------------- -->
-        <div class="flatbed-in-header">
-            <div class="flatbed-header-all-top">
-                <div class="flatbed-header-country-Language-Description-feedback">
-                    <div class="flatbed-header-country-Language-Description">
+        <div class="Flatbed-in-header">
+            <div class="Flatbed-header-all-top">
+                <div class="Flatbed-header-country-Language-Description-feedback">
+                    <div class="Flatbed-header-country-Language-Description">
                         <span>
                             <a href="#">
                                 <img src="https://kbstatic1-a.akamaihd.net/1.0.0.913//Images/country-flags/small/taiwan.png"
@@ -1146,22 +1225,22 @@ iphone 手機
                                 <li><a class="dropdown-item" href="#">日本語</a></li>
                             </ul>
                         </div>
-                        <a class="flatbed-header-Description" href="#">說明</a>
+                        <a class="Flatbed-header-Description" href="#">說明</a>
                     </div>
-                    <div class="flatbed-header-feedback">
+                    <div class="Flatbed-header-feedback">
                         <!-- 意見反映 -->
                         <a href="#">意見反映</a>
                     </div>
                 </div>
 
-                <div class="flatbed-header-search-Drop-down-menu">
+                <div class="Flatbed-header-search-Drop-down-menu">
                     <!-- 搜尋+下拉選單 -->
-                    <div class="flatbed-search-bar">
+                    <div class="Flatbed-search-bar">
                         <!-- 搜尋列 -->
                         <!-- 右邊 願望清單 購物車 帳戶 -->
-                        <div class="flatbed-header-logo-search">
+                        <div class="Flatbed-header-logo-search">
                             <h1>
-                                <p class="flatbed-header-logo-h1">Kobo 樂天</p>
+                                <p class="Flatbed-header-logo-h1">Kobo 樂天</p>
                             </h1>
                             <a href="#">
                                 <img src="https://akimages.kobobooks.com/images/misc/Navigation/Top/rakuten-kobo-landscape.png"
@@ -1169,41 +1248,42 @@ iphone 手機
                             </a>
 
 
-                            <div class="flatbed-header-search-input">
+                            <div class="Flatbed-header-search-input">
                                 <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
                                     aria-label="Recipient's username with two button addons">
-                                <button class="btn btn-outline-secondary" type="button">Button</button>
+                                <!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
+                                <button class="icon"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
-                        <div class="flatbed-my-wish-list-shopping-cart-my-account">
-                            <div class="flatbed-my-wish-list-shopping-cart">
+                        <div class="Flatbed-my-wish-list-shopping-cart-my-account">
+                            <div class="Flatbed-my-wish-list-shopping-cart">
                                 <!-- 我的願望清單 -->
-                                <div class="flatbed-my-wish-list">
+                                <div class="Flatbed-my-wish-list">
                                     <a href="#">
-                                        <div class="flatbed-my-wish-list-icon">
+                                        <div class="Flatbed-my-wish-list-icon">
                                             <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
                                         </div>
-                                        <span class="flatbed-my-wish-list-text">我的願望清單</span>
+                                        <span class="Flatbed-my-wish-list-text">我的願望清單</span>
                                     </a>
                                 </div>
-                                <div class="flatbed-shopping-cart">
+                                <div class="Flatbed-shopping-cart">
                                     <!-- 我的購物車 -->
                                     <a href="#">
-                                        <div class="flatbed-shopping-cart-icon">
+                                        <div class="Flatbed-shopping-cart-icon">
                                             <i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i>
                                         </div>
-                                        <span class="flatbed-shopping-cart-text">購物車</span>
+                                        <span class="Flatbed-shopping-cart-text">購物車</span>
                                     </a>
                                 </div>
                             </div>
-                            <div class="flatbed-header-user">
+                            <div class="Flatbed-header-user">
                                 <button class="language-selector dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <a href="#">
                                         <div class="profile-icon">
                                             <i class="fa fa-user fa-2x" aria-hidden="true"></i>
                                         </div>
-                                        <span class="flatbed-my-account">我的帳戶</span>
+                                        <span class="Flatbed-my-account">我的帳戶</span>
                                     </a>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -1211,23 +1291,23 @@ iphone 手機
                                     <li><a class="dropdown-item" href="#">我的願望清單</a></li>
                                     <li><a class="dropdown-item" href="#">購買記錄</a></li>
                                     <li><a class="dropdown-item" href="#">帳戶設定</a></li>
-                                    <li><a class="dropdown-item" href="#">登出</a></li>
+                                    <button>登出</button>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
                     <!-- -------------------------------------------------------------------------- -->
-                    <div class="flatbed-outer-nav">
-                        <!-- flatbed-outer-nav -->
-                        <nav class="flatbed-nav-button">
-                            <div class="flatbed-ebook-dropdown">
-                                <span class="dropdown ">
+                    <div class="Flatbed-outer-nav">
+                        <!-- Flatbed-outer-nav -->
+                        <nav class="Flatbed-nav-button">
+                            <div class="Flatbed-ebook-dropdown">
+                                <span class="dropdown">
                                     <a href="#" class="dropdown-toggle">電子書</a>
                                     <ul class="dropdown-menu">
-                                        <div class="flatbed-ebook-ul">
-                                            <div class="flatbed-ebook-menu-left">
-                                                <div class="flatbed-ebook-classification">
+                                        <div class="Flatbed-ebook-ul">
+                                            <div class="Flatbed-ebook-menu-left">
+                                                <div class="Flatbed-ebook-classification">
                                                     <li><a class="dropdown-item" href="#">小說與文學</a></li>
                                                     <li><a class="dropdown-item" href="#">愛情</a></li>
                                                     <li><a class="dropdown-item" href="#">非小說</a></li>
@@ -1243,8 +1323,8 @@ iphone 手機
                                                     <a class="dropdown-item" href="#">瀏覽所有類別</a>
                                                 </div>
                                             </div>
-                                            <div class="flatbed-ebook-menu-right">
-                                                <div class="flatbed-ebook-recommend">
+                                            <div class="Flatbed-ebook-menu-right">
+                                                <div class="Flatbed-ebook-recommend">
                                                     <span>
                                                         <a class="dropdown-item" href="#">專屬於您的推薦</a>
                                                     </span>
@@ -1264,13 +1344,13 @@ iphone 手機
                                 </span>
                             </div>
                             <!-- 有聲書 -->
-                            <div class="flatbed-audiobook_dropdown">
+                            <div class="Flatbed-audiobook_dropdown">
                                 <span class="dropdown">
                                     <a href="#" class="dropdown-toggle">有聲書</a>
                                     <ul class="dropdown-menu">
-                                        <div class="flatbed-audiobook-ul">
-                                            <div class="flatbed-audiobook-menu-left">
-                                                <div class="flatbed-audiobook-classification">
+                                        <div class="Flatbed-audiobook-ul">
+                                            <div class="Flatbed-audiobook-menu-left">
+                                                <div class="Flatbed-audiobook-classification">
                                                     <li><a class="dropdown-item" href="#">小說與文學</a></li>
                                                     <li><a class="dropdown-item" href="#">愛情</a></li>
                                                     <li><a class="dropdown-item" href="#">非小說</a></li>
@@ -1286,8 +1366,8 @@ iphone 手機
                                                     <a class="dropdown-item" href="#">瀏覽所有類別</a>
                                                 </div>
                                             </div>
-                                            <div class="flatbed-audiobook-menu-right">
-                                                <div class="flatbed-audiobook-recommend">
+                                            <div class="Flatbed-audiobook-menu-right">
+                                                <div class="Flatbed-audiobook-recommend">
                                                     <span>
                                                         <a class="dropdown-item" href="#">專屬於您的推薦</a>
                                                     </span>
@@ -1307,33 +1387,34 @@ iphone 手機
                                 </span>
                             </div>
                             <!-- 應用程式與 eReader -->
-                            <div class="flatbed-application-dropdown">
+                            <div class="Flatbed-application-dropdown">
                                 <span class="dropdown">
                                     <a href="#" class="dropdown-toggle">應用程式與 eReader</a>
                                     <ul class="dropdown-menu">
-                                        <div class="flatbed-application-ul">
+                                        <div class="Flatbed-application-ul">
                                             <li><a class="dropdown-item" href="#">Action</a></li>
                                         </div>
                                     </ul>
                                 </span>
                             </div>
                             <!-- 樂天超級點數 -->
-                            <div class="flatbed-set-point-dropdown">
+                            <div class="Flatbed-set-point-dropdown">
                                 <span class="dropdown">
                                     <a href="#" class="dropdown-toggle">樂天超級點數</a>
                                     <!-- <div class="set_point_ul"> -->
                                     <section class="dropdown-menu">
-                                        <div class="flatbed-set-point-section">
+                                        <div class="Flatbed-set-point-section">
                                             <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
                                                 alt="Rakuten Points logo">
-                                            <div>
-                                                <span>
-                                                    <p>注意：您所獲得的一般點數將在30個工作天內新增至帳戶，
-                                                        活動點數將於購買日次月15日新增至帳戶</p>
-                                                </span>
-                                                <a href="">查看您的超級點數記錄</a>
-                                                <a href="">樂天超級點數購書須知</a>
-                                            </div>
+
+                                        </div>
+                                        <div>
+                                            <span>
+                                                注意：您所獲得的一般點數將在30個工作天內新增至帳戶，
+                                                活動點數將於購買日次月15日新增至帳戶
+                                            </span>
+                                            <a href="#">查看您的超級點數記錄</a>
+                                            <a href="#">樂天超級點數購書須知</a>
                                         </div>
                                     </section>
                                 </span>
@@ -1347,7 +1428,7 @@ iphone 手機
 
 
     <!-- 分界線頁首 -->
-    <div class="Demarcation">
+    <div class="Demarcation my-5">
         <img src="https://picsum.photos/1000/500/?random1" alt="">
     </div>
     <!-- 分界線頁尾 -->
@@ -1355,39 +1436,39 @@ iphone 手機
 
     <footer class="kobo-footer">
         <!-- 平板頁尾 -->
-        <div class="flatbed-in-footer">
+        <div class="Flatbed-in-footer">
             <!-- 平板頁尾 -->
             <div class="footer-About-everything">
                 <div class="footer-About-everything-top">
                     <div class="regarding">
                         <h4>關於 Rakuten Kobo 的一切資訊</h4>
                         <div class="h4-text">
-                            <span>關於 Rakuten Kobo</span>
-                            <span>管理團隊</span>
-                            <span>Kobo in Conversation Podcast</span>
-                            <span>電子資源回收計畫</span>
-                            <span>免費應用程式</span>
-                            <span>取得說明</span>
-                            <span>Sitemap</span>
+                            <a href="#">關於 Rakuten Kobo</a>
+                            <a href="#">管理團隊</a>
+                            <a href="#">Kobo in Conversation Podcast</a>
+                            <a href="#">電子資源回收計畫</a>
+                            <a href="#">免費應用程式</a>
+                            <a href="#">取得說明</a>
+                            <a href="#">Sitemap</a>
                         </div>
                     </div>
                     <div class="opportunity">
                         <h4>機會</h4>
                         <div class="h4-text">
-                            <span>自行出版</span>
-                            <span>關係企業</span>
-                            <span>職位空缺</span>
+                            <a href="#">自行出版</a>
+                            <a href="#">關係企業</a>
+                            <a href="#">職位空缺</a>
                         </div>
                     </div>
 
                     <div class="Latest-posts">
                         <h4>最新部落格貼文</h4>
                         <div class="h4-text">
-                            <span>【本週精選書單】原來有些人的夜晚是這樣的啊！（5/17-5/23）</span>
-                            <span>想要在股市裡有很好的表現？當然要重讀經典—《漫步華爾街》</span>
-                            <span>聰明的人到處都有，關鍵在於他們是否具有創意和想像力—《創造與漫想》</span>
-                            <span>人們第一次興起「我是誰」的念頭，是在什麼時候呢？—《葉有慧》</span>
-                            <span>【一週99書單】你今天寫了沒？每天早上從寫作開始主動性的人生！(5/13~5/19)</span>
+                            <a href="#">【本週精選書單】原來有些人的夜晚是這樣的啊！（5/17-5/23）</a>
+                            <a href="#">想要在股市裡有很好的表現？當然要重讀經典—《漫步華爾街》</a>
+                            <a href="#">聰明的人到處都有，關鍵在於他們是否具有創意和想像力—《創造與漫想》</a>
+                            <a href="#">人們第一次興起「我是誰」的念頭，是在什麼時候呢？—《葉有慧》</a>
+                            <a href="#">【一週99書單】你今天寫了沒？每天早上從寫作開始主動性的人生！(5/13~5/19)</a>
                             <button>檢視所有貼文</button>
                         </div>
                     </div>
@@ -1507,7 +1588,7 @@ iphone 手機
         </div>
 
         <!-- 手機頁尾 -->
-        <div class="iphone_in_footer">
+        <div class="Phone_in_footer">
             <!-- 手機頁尾 -->
             <div class="accordion" id="accordionExample">
                 <div class="accordion_item">
