@@ -372,23 +372,74 @@ iphone 手機
 
     .h4-text span,
     .h4-text ul li,
-    .h4-text img {
+    .h4-text img,
+    .h4-text button {
         margin-top: 10px;
+        padding: 1px;
+    }
+
+    .footer-About-everything-top .Latest-posts button {
+        border: 1px solid #fff;
+        padding: .5rem;
+        font-size: 0.8rem;
+        color: #fff;
+        background-color: transparent;
+        text-decoration: underline;
+        width: 50%;
+    }
+
+    .footer-About-everything-top .Latest-posts button:hover {
+        background-color: #fff;
+        color: #000;
+
     }
 
     /* -------------------------------- */
 
     .Stay-connected ul>li>a {
         display: flex;
+        text-decoration: none;
+        color: #fff;
+
+
     }
 
     .Stay-connected ul>li>a>img {
         margin-right: 10px;
+
     }
 
     .Stay-connected ul {
         list-style: none;
         padding-left: 0;
+    }
+
+    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a>span {
+        padding: 0 10px;
+    }
+
+    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a>span:nth-child(3) {
+        border-left: 2px solid #fff;
+    }
+
+    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .Change-country a span:nth-child(3):hover {
+        text-decoration: underline;
+
+    }
+
+    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .privacy-policy span {
+        padding-right: 10px;
+    }
+
+    .flatbed-in-footer .footer-About-everything .Change-country-privacy-policy .privacy-policy a {
+        color: #fff;
+        padding: 0 10px;
+        border-left: 2px solid #fff;
     }
 
     /* -------------------------------- */
@@ -451,6 +502,8 @@ iphone 手機
         color: black;
     }
 
+
+
     /* ------------------------------------平板頁尾結束-------------------------------------------------------- */
     /* -----------------------------------------------螢幕查詢------------------------------------------------------- */
     .iphone-in-header,
@@ -486,7 +539,7 @@ iphone 手機
     .all_Menu_information {
 
         /* background-color: #fff; */
-        width: 265px;
+        /* width: 265px; */
         height: 100%;
         -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
@@ -600,9 +653,10 @@ iphone 手機
     .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7) div>.points_record>a:nth-child(1) {
         border-bottom: 2px dotted #d8d8d8;
     }
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7) .accordion-body{
-            border-bottom: 1px solid #d8d8d8;
-        }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(7) .accordion-body {
+        border-bottom: 1px solid #d8d8d8;
+    }
 
     .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9)>h2 button>img {
         margin: 0 10px;
@@ -612,11 +666,21 @@ iphone 手機
     .iphone_header_nav_img .iphone_header_accordion_item:nth-child(2) div>.accordion-body>a,
     .iphone_header_nav_img .iphone_header_accordion_item:nth-child(4) div>.accordion-body>a,
     .iphone_header_nav_img .iphone_header_accordion_item:nth-child(5) div>.accordion-body>a,
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(6) div>.accordion-body>a,
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9) div>.accordion-body>a {
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(6) div>.accordion-body>a {
         display: block;
         margin: 5px 0;
         color: #0d0d0d;
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9) a {
+        display: block;
+        font-size: 14px;
+        color: #0d0d0d;
+
+    }
+
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9) a div {
+        margin-bottom: 10px;
     }
 
     .iphone_header_nav_img h2>button {
@@ -626,7 +690,8 @@ iphone 手機
 
     .iphone_header_nav_img .iphone_header_accordion_item:nth-child(3),
     .iphone_header_nav_img .iphone_header_accordion_item:nth-child(8),
-    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(10) {
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(10),
+    .iphone_header_nav_img .iphone_header_accordion_item:nth-child(9) {
         border-bottom: 1px solid #d8d8d8;
         display: flex;
         align-items: center;
@@ -637,7 +702,7 @@ iphone 手機
         background-color: #fff;
         border: 0;
         border-radius: 0;
-        height: 53px;
+        /* height: 53px; */
         border-bottom: 1px solid #d8d8d8;
     }
 
@@ -964,7 +1029,7 @@ iphone 手機
                                     </h2>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                                <div class="iphone_header_accordion_item">
+                                <!-- <div class="iphone_header_accordion_item">
                                     <h2 class="accordion-header" id="iphone_header_heading_Eight">
                                         <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#iphone_header_collapse_Eight"
@@ -982,6 +1047,18 @@ iphone 手機
                                             <a href="#">變更國家/地區</a>
                                         </div>
                                     </div>
+                                </div> -->
+
+                                <div class="iphone_header_accordion_item">
+                                    <a href="#">
+                                        <div>
+                                            <span> 現在購物:</span>
+                                            <img src="//kbstatic1-a.akamaihd.net/1.0.0.930//Images/country-flags/small/taiwan.png"
+                                                alt="">
+                                            <span>台灣 (TWD)</span>
+                                        </div>
+                                        <span>變更國家/地區 </span>
+                                    </a>
                                 </div>
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="iphone_header_accordion_item">
