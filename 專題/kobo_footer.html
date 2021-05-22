@@ -892,9 +892,12 @@
         height: 150px;
     }
 
-    .Phone_in_footer .accordion_item:nth-child(5)>div:nth-child(3) img {
+    .Phone_in_footer .accordion_item:nth-child(5) >div #collapseFives:nth-child(2) div img {
         /* apple store圖片調整 */
         padding: 20px;
+    }
+    .Phone_in_footer .accordion_item:nth-child(5)> div  {
+    display: flex;
     }
 
     .Phone_in_footer .accordion_body_button {
@@ -1778,18 +1781,20 @@
                             取得免費的應用程式
                         </button>
                     </h2>
-                    <div id="collapseFives" class="accordion_collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"><img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/googleplay_badge_zh.svg"
-                                    alt="googleplay"></a>
+                    <div>
+                        <div id="collapseFives" class="accordion_collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/googleplay_badge_zh.svg"
+                                        alt="googleplay"></a>
+                            </div>
                         </div>
-                    </div>
-                    <div id="collapseFives" class="accordion_collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body">
-                            <a href="#"><img
-                                    src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/appstore_badge_zh.svg"
-                                    alt="appstore"></a>
+                        <div id="collapseFives" class="accordion_collapse collapse" aria-labelledby="headingThree">
+                            <div class="accordion-body">
+                                <a href="#"><img
+                                        src="https://kbstatic1-a.akamaihd.net/1.0.0.913/Images/appstore/appstore_badge_zh.svg"
+                                        alt="appstore"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
