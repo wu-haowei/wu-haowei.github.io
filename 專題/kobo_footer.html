@@ -18,7 +18,6 @@
 
         Tablet 平板以上  881px為界線
         Phone 手機
-
         分號為 "-"平板
         分號為 "_"手機
 
@@ -95,6 +94,10 @@
 
     /* ---------------------------摸到打開------------------------------------- */
 
+    .Tablet-header-all-top .dropdown-menu {
+        left: 0px;
+    }
+
     .Tablet-header-all-top .dropdown-menu button:hover ul {
         visibility: visible;
     }
@@ -102,11 +105,6 @@
     .Tablet-header-all-top .dropdown:hover .dropdown-menu {
         display: block;
         padding: 30px;
-    }
-
-    .Tablet-header-all-top .dropdown-menu {
-        width: auto;
-        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
     /* ---------------------------------------------------------------- */
@@ -291,8 +289,153 @@
         background-color: #fff;
     }
 
+    /* ---------------------------texttexttexttext------------------------------------- */
+    .Tablet-outer-nav>nav>div>ul,
+    .Tablet-outer-nav>nav>div>section {
+        display: none;
+    }
+
+    .Tablet-outer-nav>nav>div:hover ul,
+    .Tablet-outer-nav>nav>div:hover section {
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+        display: block;
+    }
+
+    .Tablet-outer-nav nav {
+        display: flex;
+        position: relative;
+        border-bottom: 0 0 5px 2px rgb(0 0 0 / 15%);
+
+    }
+
+    .Tablet-outer-nav>nav>div:hover {
+        border-bottom: 5px solid #ffffff;
+        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+
+    }
+
+    .Tablet-outer-nav nav>div {
+        margin-right: 5px;
+        /* border: 1px solid red; */
+    }
+
+    .Tablet-outer-nav nav>div {
+        padding: 20px 13px 16px 8px;
+    }
+
+    .Tablet-outer-nav ul,
+    .Tablet-set-point-dropdown>section {
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 500px;
+        height: 335px;
+        left: 0px;
+        top: 62px;
+        max-width: 70%;
+    }
+
+    .Tablet-outer-nav ul>section,
+    .Tablet-set-point-dropdown section>div {
+        padding: 20px;
+        height: 100%;
+    }
+
+
+    .Tablet-ebook-menu-left,
+    .Tablet-audiobook-menu-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .Tablet-ebook-classification,
+    .Tablet-audiobook-classification {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Tablet-ebook-menu-right,
+    .Tablet-audiobook-menu-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-left: 1px solid #d8d8d8;
+    }
+
+    .Tablet-ebook-menu-right div,
+    .Tablet-audiobook-menu-right div {
+        margin-left: 40px;
+    }
+
+    .Tablet-set-point-dropdown section>div {
+        display: flex;
+        align-items: center;
+    }
+
+    .Tablet-set-point-section {
+
+        width: 33%;
+    }
+
+    .Tablet-set-point-dropdown section>div>div:nth-child(2) {
+        margin-left: 27px;
+    }
+
+    .Tablet-set-point-dropdown section>div>div:nth-child(2)>span {
+        font-family: Georgia, Times, times, serif;
+        font-size: 1.3rem;
+        white-space: normal;
+        color: #595959;
+    }
+
+    .Tablet-set-point-dropdown section>div>div:nth-child(2)>div {
+        margin-top: 35px;
+
+    }
+
+    .Tablet-set-point-dropdown section>div>div:nth-child(2)>div a:nth-child(1) {
+
+        border-bottom: 2px dotted #d8d8d8;
+    }
+
+    .Tablet-set-point-dropdown section>div>div:nth-child(2)>div a {
+        color: #bf0000;
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1.0rem;
+        line-height: 1.4;
+        white-space: normal;
+    }
+
+    .Tablet-outer-nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .Tablet-outer-nav ul li {
+        margin: 1px;
+    }
+
+    .Tablet-outer-nav ul li:hover a,
+    .Tablet-outer-nav span:hover a {
+        background-color: transparent;
+        color: #bf0000;
+    }
+
+    .Tablet-outer-nav nav>div>a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    /* ---------------------------texttexttexttext------------------------------------- */
+
+
+
+
+
     /* ---------------------------平板下拉選單------------------------------------- */
-    .Tablet-nav-button {
+    /* .Tablet-nav-button {
         display: flex;
     }
 
@@ -305,11 +448,11 @@
         color: #bf0000;
         background-color: transparent;
 
-    }
+    } */
 
     /* ----------------------------ebook+audiobook------------------------------------- */
 
-    .Tablet-ebook-menu-left,
+    /* .Tablet-ebook-menu-left,
     .Tablet-audiobook-menu-left {
         width: 70%;
         display: flex;
@@ -321,8 +464,8 @@
     .Tablet-audiobook-classification {
         display: flex;
         flex-wrap: wrap;
-    }
-
+    } */
+    /* 
     .Tablet-ebook-classification li,
     .Tablet-audiobook-classification li {
         color: #000;
@@ -332,15 +475,15 @@
         margin-bottom: 10px;
         background-color: #fff;
         font-size: 10px;
-    }
+    } */
 
-    .Tablet-ebook-classification li a,
+    /* .Tablet-ebook-classification li a,
     .Tablet-audiobook-classification li a {
         padding: 10px;
         display: inline;
-    }
+    } */
 
-    .Tablet-ebook-menu-right,
+    /* .Tablet-ebook-menu-right,
     .Tablet-audiobook-menu-right {
         display: flex;
         width: 30%;
@@ -358,11 +501,11 @@
     .Tablet-audiobook-recommend span {
         color: #444444;
         font-size: 1.0rem;
-    }
+    } */
 
     /* -----------------------------共用----------------------------------- */
 
-    .Tablet-ebook-dropdown>span,
+    /* .Tablet-ebook-dropdown>span,
     .Tablet-audiobook_dropdown>span,
     .Tablet-application-dropdown>span,
     .Tablet-set-point-dropdown>span {
@@ -389,7 +532,7 @@
         margin-right: 5px;
         font-size: inherit;
     }
-
+ */
 
 
     /* ------------------------------------平板頁首結束-------------------------------------------------------- */
@@ -1332,8 +1475,8 @@
                     </div>
 
                     <!-- -------------------------------------------------------------------------- -->
-                    <div class="Tablet-outer-nav">
-                        <!-- Tablet-outer-nav -->
+                    <!-- <div class="Tablet-outer-nav">
+                     
                         <nav class="Tablet-nav-button">
                             <div class="Tablet-ebook-dropdown">
                                 <span class="dropdown">
@@ -1376,9 +1519,9 @@
                                         </div>
                                     </ul>
                                 </span>
-                            </div>
-                            <!-- 有聲書 -->
-                            <div class="Tablet-audiobook_dropdown">
+                            </div> -->
+                    <!-- 有聲書 -->
+                    <!-- <div class="Tablet-audiobook_dropdown">
                                 <span class="dropdown">
                                     <a href="#" class="dropdown-toggle">有聲書</a>
                                     <ul class="dropdown-menu">
@@ -1419,9 +1562,9 @@
                                         </div>
                                     </ul>
                                 </span>
-                            </div>
-                            <!-- 應用程式與 eReader -->
-                            <div class="Tablet-application-dropdown">
+                            </div> -->
+                    <!-- 應用程式與 eReader -->
+                    <!-- <div class="Tablet-application-dropdown">
                                 <span class="dropdown">
                                     <a href="#" class="dropdown-toggle">應用程式與 eReader</a>
                                     <ul class="dropdown-menu">
@@ -1430,13 +1573,13 @@
                                         </div>
                                     </ul>
                                 </span>
-                            </div>
-                            <!-- 樂天超級點數 -->
-                            <div class="Tablet-set-point-dropdown">
+                            </div> -->
+                    <!-- 樂天超級點數 -->
+                    <!-- <div class="Tablet-set-point-dropdown">
                                 <span class="dropdown">
-                                    <a href="#" class="dropdown-toggle">樂天超級點數</a>
-                                    <!-- <div class="set_point_ul"> -->
-                                    <section class="dropdown-menu">
+                                    <a href="#" class="dropdown-toggle">樂天超級點數</a> -->
+                    <!-- <div class="set_point_ul"> -->
+                    <!-- <section class="dropdown-menu">
                                         <div class="Tablet-set-point-section">
                                             <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
                                                 alt="Rakuten Points logo">
@@ -1457,7 +1600,129 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+                    <!-- /* ---------------------------texttexttexttext------------------------------------- */ -->
+                    <div class="Tablet-outer-nav">
+                        <nav class="Tablet-nav-button">
+                            <!-- 有聲書 -->
+                            <div class="Tablet-ebook-dropdown">
+                                <a href="#" class="dropdown-toggle">電子書</a>
+                                <ul>
+                                    <section class="Tablet-ebook-ul d-flex">
+                                        <div class="Tablet-ebook-menu-left">
+                                            <div class="Tablet-ebook-classification">
+                                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                                <li><a class="dropdown-item" href="#">愛情</a></li>
+                                                <li><a class="dropdown-item" href="#">非小說</a></li>
+                                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                                <li><a class="dropdown-item" href="#">兒童</a></li>
+                                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                            </div>
+                                            <div>
+                                                <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                            </div>
+                                        </div>
+                                        <div class="Tablet-ebook-menu-right">
+                                            <div class="Tablet-ebook-recommend">
+                                                <span>
+                                                    <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                                </span>
+                                                <span>
+                                                    <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                                </span>
+                                                <span>
+                                                    <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </ul>
+                            </div>
+                            <!-- 有聲書 -->
+                            <div class="Tablet-audiobook_dropdown">
+                                <a href="#" class="dropdown-toggle">有聲書</a>
+                                <ul>
+                                    <section class="Tablet-audiobook-ul d-flex">
+                                        <div class="Tablet-audiobook-menu-left">
+                                            <div class="Tablet-audiobook-classification">
+                                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
+                                                <li><a class="dropdown-item" href="#">愛情</a></li>
+                                                <li><a class="dropdown-item" href="#">非小說</a></li>
+                                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
+                                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
+                                                <li><a class="dropdown-item" href="#">兒童</a></li>
+                                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
+                                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
+                                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
+                                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                            </div>
+                                            <div>
+                                                <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                            </div>
+                                        </div>
+                                        <div class="Tablet-audiobook-menu-right">
+                                            <div class="Tablet-audiobook-recommend">
+                                                <span>
+                                                    <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                                </span>
+                                                <span>
+                                                    <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                                </span>
+                                                <span>
+                                                    <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </ul>
+                            </div>
+                            <!-- 應用程式與 eReader -->
+                            <div class="Tablet-application-dropdown">
+                                <a href="#" class="dropdown-toggle">應用程式與 eReader</a>
+                                <ul>
+                                    <section class="Tablet-application-ul">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                    </section>
+                                </ul>
+                            </div>
+                            <!-- 樂天超級點數 -->
+                            <div class="Tablet-set-point-dropdown">
+                                <a href="#" class="dropdown-toggle">樂天超級點數</a>
+                                <!-- <div class="set_point_ul"> -->
+                                <section>
+                                    <div>
+                                        <div class="Tablet-set-point-section">
+                                            <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
+                                                alt="Rakuten Points logo">
+                                        </div>
+                                        <div>
+                                            <span>
+                                                注意：您所獲得的一般點數將在30個工作天內新增至帳戶，
+                                                活動點數將於購買日次月15日新增至帳戶
+                                            </span>
+                                            <div>
+                                                <a href="#">查看您的超級點數記錄</a>
+                                                <a href="#">樂天超級點數購書須知</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <!-- /* ---------------------------texttexttexttext------------------------------------- */ -->
     </header>
 
 
