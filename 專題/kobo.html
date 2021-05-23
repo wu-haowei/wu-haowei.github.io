@@ -449,6 +449,45 @@
             border-bottom: 30px solid #d9d9d9;
         }*/
 
+        /* ------------------------------電子書詳細資料-------------------------------------- */
+        .Details {
+            padding: 2rem;
+            /* min-width: 502px; */
+        }
+
+        .Details .row>div {
+            padding: 0;
+        }
+
+        .Details .row>div>ul {
+            list-style-type: none;
+            padding: 0;
+
+        }
+
+        .Details .row>div:nth-child(2)>ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .Details .row>div>ul>li {
+            margin-bottom: 10px;
+
+        }
+
+        .Details .row>div:nth-child(2)>ul>li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* ------------------------------電子書詳細資料-------------------------------------- */
+
+
+
 
         /* ----暫時------ */
         .Demarcation {
@@ -840,7 +879,7 @@
     <div class="Details">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-lg-6">
                     <h2>電子書詳細資料</h2>
                     <ul>
                         <li>天下文化出版社</li>
@@ -851,7 +890,7 @@
                         <li>下載選項：EPUB 3 (Adobe DRM)</li>
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-12 col-lg-6">
                     <span>您可以使用下列任一個 Kobo 應用程式及裝置來閱讀此項目：</span>
                     <ul>
                         <li><i class="fa fa-desktop fa-3x" aria-hidden="true"></i><span>桌面</span></li>
