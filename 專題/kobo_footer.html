@@ -297,20 +297,24 @@
 
     .Tablet-outer-nav>nav>div:hover ul,
     .Tablet-outer-nav>nav>div:hover section {
-        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+        -webkit-box-shadow: 0 0 3px 2px rgb(0 0 0 / 15%);
         display: block;
+        z-index: -1;
+ 
     }
 
     .Tablet-outer-nav nav {
         display: flex;
         position: relative;
         border-bottom: 0 0 5px 2px rgb(0 0 0 / 15%);
+        z-index: 1;
 
     }
 
     .Tablet-outer-nav>nav>div:hover {
-        border-bottom: 5px solid #ffffff;
-        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
+ 
+        border-bottom: 8px solid #ffffff;
+        -webkit-box-shadow: 0 -5px 3px 2px rgb(0 0 0 / 15%);
 
     }
 
@@ -320,7 +324,7 @@
     }
 
     .Tablet-outer-nav nav>div {
-        padding: 20px 13px 16px 8px;
+        padding: 20px 13px 12px 8px;
     }
 
     .Tablet-outer-nav ul,
