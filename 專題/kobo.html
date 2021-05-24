@@ -38,7 +38,8 @@
         /* ------------------------------------------- */
         .Product-main-page .inner-left-pic img {
             max-width: 100%;
-            max-height: 100%;
+            /* max-height: 100%; */
+            -webkit-box-shadow: 0 20px 10px -1px rgb(0 0 0 / 15%);
         }
 
         .Product-main-page .inner-left-pic {
@@ -58,7 +59,6 @@
             list-style-type: none;
             display: flex;
             flex-direction: column;
-            padding-left: 10px;
         }
 
         .Product-main-page .inner-left-score {
@@ -212,8 +212,8 @@
         }
 
         .Product-main-page .pricing-details .box {
-            padding: 2rem 1.5rem;
-            min-width: 13rem;
+            padding: 2rem 0.6rem;
+            /* min-width: 13rem; */
             border: 1px solid #e6e6e6;
             -webkit-box-shadow: 0 0 7px #e6e6e6;
             box-shadow: 0 0 7px #e6e6e6;
@@ -493,7 +493,7 @@
         /* -----------------------------------------------螢幕查詢------------------------------------------------------- */
 
         /* Classification-label */
-        @media only screen and (max-width:991px) and (min-width:768px) {
+        @media only screen and (max-width:992px) and (min-width:576px) {
             .Product-main-page .Classification-label {
                 display: none;
             }
@@ -542,14 +542,14 @@
                 <!-- 第一列全部外container-->
                 <div class="row">
                     <!-- 第一列 row -->
-                    <div class="col-12 col-md-8 col-lg-9 primary-left-intermediate-container">
+                    <div class="col-12 col-sm-8 col-md-9 primary-left-intermediate-container">
                         <!-- -------------------------------------左中欄列------------------------------------------------ -->
                         <div class="row">
                             <div class="col-12 col-md-12 col-lg-4 inner-left-container">
                                 <!-- -------------------------------------左邊欄列 ------------------------------------------------ -->
                                 <div class="row">
                                     <!-- <div> -->
-                                    <div class="col-12 col-md-6 col-lg-12 inner-left-pic">
+                                    <div class="col-12 col-sm-6 col-md-12 inner-left-pic">
                                         <!-- -------------------------------------左圖片------------------------------------------------ -->
                                         <div class="inner-left-pic_2">
                                             <img src="https://kbimages1-a.akamaihd.net/de6dbba7-2e25-4bb2-88b4-be6ab5224250/353/569/90/False/6qH-2GVPZTOvvptgjM-UsA.jpg"
@@ -557,7 +557,7 @@
                                         </div>
                                     </div>
                                     <!-- -------------------------------------左評分------------------------------------------------ -->
-                                    <div class="col-12 col-md-6 col-lg-12 inner-left-score">
+                                    <div class="col-12 col-sm-6 col-lg-12 inner-left-score">
                                         <ul>
                                             <li>
                                                 <button>
@@ -679,7 +679,7 @@
                         </div>
                     </div>
                     <!-- -------------------------------------右邊欄 結帳------------------------------------------------ -->
-                    <div class="col-12 col-md-4 col-lg-3 primary-right-container">
+                    <div class="col-12 col-sm-4 col-md-3 primary-right-container">
                         <div class="pricing-details">
                             <div class="box">
                                 <h2 class="pricing-title">購買電子書</h2>
