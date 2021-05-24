@@ -23,7 +23,7 @@
 
 */
     /* ------------------------------------平板頁首開始-------------------------------------------------------- */
-    .Tablet-header-all-top {
+    .Tablet-in-header .Tablet-header-all-top {
         box-sizing: border-box;
         -webkit-box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
         box-shadow: 0 2px 7px rgb(0 0 0 / 30%);
@@ -34,40 +34,39 @@
 
     /* ---------------------------------------------------------------- */
 
-    .Tablet-header-country-Language-Description-feedback {
+    .Tablet-in-header .Tablet-header-country-Language-Description-feedback {
         width: 100%;
         padding: 0 20px;
         margin: 0 auto;
         max-width: 1140px;
         display: flex;
         height: 1.8rem;
-        /* background-color: #f5f5f5; */
         justify-content: flex-end;
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-header-country-Language-Description {
+    .Tablet-in-header .Tablet-header-country-Language-Description {
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
 
-    .Tablet-header-all-top .language-selector:hover,
-    .Tablet-header-user button:hover a,
-    .Tablet-my-wish-list:hover a,
-    .Tablet-shopping-cart:hover a,
-    .rich-header-user:hover a,
-    .Tablet-header-Description:hover,
-    .Tablet-header-all-top.Language-dropdown button:hover a {
+    .Tablet-in-header .Tablet-header-all-top .language-selector:hover,
+    .Tablet-in-header .Tablet-header-user button:hover a,
+    .Tablet-in-header .Tablet-my-wish-list:hover a,
+    .Tablet-in-header .Tablet-shopping-cart:hover a,
+    .Tablet-in-header .rich-header-user:hover a,
+    .Tablet-in-header .Tablet-header-Description:hover,
+    .Tablet-in-header .Tablet-header-all-top.Language-dropdown button:hover a {
         color: #bf0000;
     }
 
-    .Tablet-header-country-Language-Description div {
+    .Tablet-in-header .Tablet-header-country-Language-Description div {
         padding: 0 10px;
     }
 
     /* -----------------------------語言表單----------------------------------- */
-    .Tablet-header-all-top .Language-dropdown ul {
+    .Tablet-in-header .Tablet-header-all-top .Language-dropdown ul {
         padding: 20px;
         background-color: #fff;
         border-bottom: 2px solid #d8d8d8;
@@ -76,17 +75,17 @@
         border-top: 2px solid #d8d8d8;
     }
 
-    .Tablet-header-all-top .Language-dropdown ul li {
+    .Tablet-in-header .Tablet-header-all-top .Language-dropdown ul li {
         padding-top: 10px;
         text-decoration: underline;
     }
 
-    .Tablet-header-all-top .Language-dropdown ul>li:hover a {
+    .Tablet-in-header .Tablet-header-all-top .Language-dropdown ul>li:hover a {
         background-color: transparent;
         color: #bf0000;
     }
 
-    .Tablet-header-all-top .language-selector {
+    .Tablet-in-header .Tablet-header-all-top .language-selector {
         border: none;
         background-color: transparent;
         color: #595959;
@@ -94,32 +93,32 @@
 
     /* ---------------------------摸到打開------------------------------------- */
 
-    .Tablet-header-all-top .dropdown-menu {
+    .Tablet-in-header .Tablet-header-all-top .dropdown-menu {
         left: 0px;
     }
 
-    .Tablet-header-all-top .dropdown-menu button:hover ul {
+    .Tablet-in-header .Tablet-header-all-top .dropdown-menu button:hover ul {
         visibility: visible;
     }
 
-    .Tablet-header-all-top .dropdown:hover .dropdown-menu {
+    .Tablet-in-header .Tablet-header-all-top .dropdown:hover .dropdown-menu {
         display: block;
         padding: 30px;
     }
 
     /* ---------------------------------------------------------------- */
 
-    .Tablet-header-Description {
+    .Tablet-in-header .Tablet-header-Description {
         color: #595959;
         text-decoration: none;
     }
 
-    .Tablet-header-Description {
+    .Tablet-in-header .Tablet-header-Description {
         padding: 0 1.3rem;
     }
 
     /* --------------------------意見反映-------------------------------------- */
-    .Tablet-header-feedback {
+    .Tablet-in-header .Tablet-header-feedback {
         position: fixed;
         top: 350px;
         right: -30px;
@@ -131,33 +130,33 @@
         -webkit-transform: rotate(-90deg);
     }
 
-    .Tablet-header-feedback a {
+    .Tablet-in-header .Tablet-header-feedback a {
         color: #fff;
     }
 
-    .Tablet-header-feedback:hover {
+    .Tablet-in-header .Tablet-header-feedback:hover {
         background-color: #fff;
         transition: background-color 200ms;
     }
 
-    .Tablet-header-feedback:hover a {
+    .Tablet-in-header .Tablet-header-feedback:hover a {
         color: #0065BD;
         text-decoration: none;
         transition: color 200ms;
     }
 
     /* --------------------------搜尋列-------------------------------------- */
-    .Tablet-header-search-Drop-down-menu {
+    .Tablet-in-header .Tablet-header-search-Drop-down-menu {
         padding: 0 20px;
         margin: 0 auto;
         max-width: 1140px;
     }
 
-    .Tablet-header-search-input input {
+    .Tablet-in-header .Tablet-header-search-input input {
         border-radius: 2px;
     }
 
-    .Tablet-header-search-input button {
+    .Tablet-in-header .Tablet-header-search-input button {
         color: #fff;
         background-color: #000;
         padding: .375rem .75rem;
@@ -166,14 +165,14 @@
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-search-bar {
+    .Tablet-in-header .Tablet-search-bar {
         display: flex;
         justify-content: space-between;
         margin-top: 0.8rem;
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-header-logo-search {
+    .Tablet-in-header .Tablet-header-logo-search {
         display: flex;
         align-items: center;
         margin-bottom: 1.9rem;
@@ -181,7 +180,7 @@
     }
 
     /* ---------------------------h1標題------------------------------------- */
-    .Tablet-header-logo-h1 {
+    .Tablet-in-header .Tablet-header-logo-h1 {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -190,27 +189,27 @@
 
     /* -----------------------------我的帳戶----------------------------------- */
 
-    .Tablet-header-user ul {
+    .Tablet-in-header .Tablet-header-user ul {
         padding: 10px;
     }
 
-    .Tablet-header-user ul>li {
+    .Tablet-in-header .Tablet-header-user ul>li {
         margin: 10px 0;
         text-decoration: underline;
 
     }
 
-    .Tablet-header-user ul>li:nth-child(4) {
+    .Tablet-in-header .Tablet-header-user ul>li:nth-child(4) {
         padding-top: 10px;
         border-top: 1px solid #000;
     }
 
-    .Tablet-header-user ul>li:hover a {
+    .Tablet-in-header .Tablet-header-user ul>li:hover a {
         background-color: transparent;
         color: #bf0000;
     }
 
-    .Tablet-header-user ul>button {
+    .Tablet-in-header .Tablet-header-user ul>button {
         border: 1px solid #fff;
         padding: .5rem;
         font-size: 0.8rem;
@@ -221,186 +220,185 @@
         border: 2px solid black;
     }
 
-    .Tablet-header-user ul>button:hover {
+    .Tablet-in-header .Tablet-header-user ul>button:hover {
         background-color: #fff;
         color: #000;
 
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-header-search-input {
+    .Tablet-in-header .Tablet-header-search-input {
         height: 3.0rem;
     }
 
-    .Tablet-header-search-input {
+    .Tablet-in-header .Tablet-header-search-input {
         display: flex;
         align-items: center;
         padding-left: 20px;
         width: 70%;
     }
 
-    .Tablet-header-search-input button {
+    .Tablet-in-header .Tablet-header-search-input button {
         background-color: #000;
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-my-wish-list-shopping-cart-my-account {
+    .Tablet-in-header .Tablet-my-wish-list-shopping-cart-my-account {
         display: flex;
         justify-content: flex-end;
         width: 35%;
     }
 
-    .Tablet-my-wish-list-shopping-cart-my-account a {
+    .Tablet-in-header .Tablet-my-wish-list-shopping-cart-my-account a {
         text-decoration: none;
         color: #444444
     }
 
-    .Tablet-my-wish-list-shopping-cart {
+    .Tablet-in-header .Tablet-my-wish-list-shopping-cart {
         display: flex;
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-my-wish-list,
-    .Tablet-shopping-cart {
+    .Tablet-in-header .Tablet-my-wish-list,
+    .Tablet-in-header .Tablet-shopping-cart {
         display: flex;
         align-items: center;
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-shopping-cart-text,
-    .Tablet-my-wish-list-text,
-    .Tablet-my-wish-list-icon,
-    .Tablet-shopping-cart-icon,
-    .profile-icon {
+    .Tablet-in-header .Tablet-shopping-cart-text,
+    .Tablet-in-header .Tablet-my-wish-list-text,
+    .Tablet-in-header .Tablet-my-wish-list-icon,
+    .Tablet-in-header .Tablet-shopping-cart-icon,
+    .Tablet-in-header .profile-icon {
         text-align: center;
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-shopping-cart {
+    .Tablet-in-header .Tablet-shopping-cart {
         padding: 0 10px;
     }
 
     /* ---------------------------------------------------------------- */
-    .Tablet-header-user {
+    .Tablet-in-header .Tablet-header-user {
         display: flex;
     }
 
-    .Tablet-header-user button {
+    .Tablet-in-header .Tablet-header-user button {
         background-color: #fff;
     }
 
-    /* ---------------------------texttexttexttext------------------------------------- */
-    .Tablet-outer-nav>nav>div>ul,
-    .Tablet-outer-nav>nav>div>section {
+    /* ---------------------------平板下拉選單------------------------------------- */
+    .Tablet-in-header .Tablet-ebook-ul {
+        display: flex;
+    }
+
+    .Tablet-in-header .Tablet-outer-nav>nav>div>ul,
+    .Tablet-in-header .Tablet-outer-nav>nav>div>section {
         display: none;
     }
 
-    .Tablet-outer-nav>nav>div:hover ul,
-    .Tablet-outer-nav>nav>div:hover section {
+    .Tablet-in-header .Tablet-outer-nav>nav>div:hover ul,
+    .Tablet-in-header .Tablet-outer-nav>nav>div:hover section {
         -webkit-box-shadow: 0 0 3px 2px rgb(0 0 0 / 15%);
         display: block;
         z-index: -1;
-
     }
 
-    .Tablet-outer-nav nav {
+    .Tablet-in-header .Tablet-outer-nav nav {
         display: flex;
         position: relative;
         border-bottom: 0 0 5px 2px rgb(0 0 0 / 15%);
         z-index: 1;
-
     }
 
-    .Tablet-outer-nav>nav>div:hover {
+    .Tablet-in-header .Tablet-outer-nav>nav>div:hover {
         border-bottom: 8px solid #ffffff;
         -webkit-box-shadow: 0 -5px 3px 2px rgb(0 0 0 / 15%);
-
     }
 
-    .Tablet-outer-nav nav>div {
+    .Tablet-in-header .Tablet-outer-nav nav>div {
         margin-right: 5px;
     }
 
-    .Tablet-outer-nav nav>div {
+    .Tablet-in-header .Tablet-outer-nav nav>div {
         padding: 20px 13px 12px 8px;
     }
 
-    .Tablet-outer-nav ul,
-    .Tablet-set-point-dropdown>section {
+    .Tablet-in-header .Tablet-outer-nav ul,
+    .Tablet-in-header .Tablet-set-point-dropdown>section {
         position: absolute;
         background-color: #ffffff;
         min-width: 500px;
         height: 335px;
         left: 0px;
         top: 62px;
-        max-width: 70%;
     }
 
-    .Tablet-outer-nav ul>section,
-    .Tablet-set-point-dropdown section>div {
+    .Tablet-in-header .Tablet-outer-nav ul>section,
+    .Tablet-in-header .Tablet-set-point-dropdown section>div {
         padding: 20px;
         height: 100%;
     }
 
-
-    .Tablet-ebook-menu-left,
-    .Tablet-audiobook-menu-left {
+    .Tablet-in-header .Tablet-ebook-menu-left,
+    .Tablet-in-header .Tablet-audiobook-menu-left {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 70%;
     }
 
-    .Tablet-ebook-classification,
-    .Tablet-audiobook-classification {
+    .Tablet-in-header .Tablet-ebook-classification,
+    .Tablet-in-header .Tablet-audiobook-classification {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .Tablet-ebook-menu-right,
-    .Tablet-audiobook-menu-right {
+    .Tablet-in-header .Tablet-ebook-menu-right,
+    .Tablet-in-header .Tablet-audiobook-menu-right {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         border-left: 1px solid #d8d8d8;
+        width: 30%;
     }
 
-    .Tablet-ebook-menu-right div,
-    .Tablet-audiobook-menu-right div {
+
+    .Tablet-in-header .Tablet-ebook-menu-right div,
+    .Tablet-in-header .Tablet-audiobook-menu-right div {
         margin-left: 40px;
     }
 
-    .Tablet-set-point-dropdown section>div {
+    .Tablet-in-header .Tablet-set-point-dropdown section>div {
         display: flex;
         align-items: center;
     }
 
-    .Tablet-set-point-section {
-
+    .Tablet-in-header .Tablet-set-point-section {
         width: 33%;
     }
 
-    .Tablet-set-point-dropdown section>div>div:nth-child(2) {
+    .Tablet-in-header .Tablet-set-point-dropdown section>div>div:nth-child(2) {
         margin-left: 27px;
     }
 
-    .Tablet-set-point-dropdown section>div>div:nth-child(2)>span {
+    .Tablet-in-header .Tablet-set-point-dropdown section>div>div:nth-child(2)>span {
         font-family: Georgia, Times, times, serif;
         font-size: 1.3rem;
         white-space: normal;
         color: #595959;
     }
 
-    .Tablet-set-point-dropdown section>div>div:nth-child(2)>div {
+    .Tablet-in-header .Tablet-set-point-dropdown section>div>div:nth-child(2)>div {
         margin-top: 35px;
-
     }
 
-    .Tablet-set-point-dropdown section>div>div:nth-child(2)>div a:nth-child(1) {
-
+    .Tablet-in-header .Tablet-set-point-dropdown section>div>div:nth-child(2)>div a:nth-child(1) {
         border-bottom: 2px dotted #d8d8d8;
     }
 
-    .Tablet-set-point-dropdown section>div>div:nth-child(2)>div a {
+    .Tablet-in-header .Tablet-set-point-dropdown section>div>div:nth-child(2)>div a {
         color: #bf0000;
         display: block;
         padding-top: 10px;
@@ -410,132 +408,44 @@
         white-space: normal;
     }
 
-    .Tablet-outer-nav ul {
+    .Tablet-in-header .Tablet-outer-nav ul {
         list-style-type: none;
         padding: 0;
     }
 
-    .Tablet-outer-nav ul li {
-        margin: 1px;
+    .Tablet-in-header .Tablet-outer-nav ul li {
+        margin: 6px;
     }
 
-    .Tablet-outer-nav ul li:hover a,
-    .Tablet-outer-nav span:hover a {
+    .Tablet-in-header .Tablet-ebook-menu-right>.Tablet-ebook-recommend>span,
+    .Tablet-in-header .Tablet-audiobook-menu-right>.Tablet-audiobook-recommend>span {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .Tablet-in-header .Tablet-outer-nav ul li a,
+    .Tablet-in-header .Tablet-ebook-menu-right>.Tablet-ebook-recommend>span a,
+    .Tablet-in-header .Tablet-audiobook-menu-right>.Tablet-audiobook-recommend>span a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .Tablet-in-header .Tablet-outer-nav>nav>div>ul>section>div div:nth-child(2) a {
+        color: black;
+    }
+
+    .Tablet-in-header .Tablet-outer-nav ul li:hover a,
+    .Tablet-in-header .Tablet-outer-nav span:hover a,
+    .Tablet-in-header .Tablet-outer-nav>nav>div>ul>section>div div:nth-child(2):hover a,
+    .Tablet-in-header .Tablet-nav-button>div:hover>a {
         background-color: transparent;
         color: #bf0000;
     }
 
-    .Tablet-outer-nav nav>div>a {
+    .Tablet-in-header .Tablet-outer-nav nav>div>a {
         color: #000;
         text-decoration: none;
     }
-
-    /* ---------------------------texttexttexttext------------------------------------- */
-
-
-
-
-
-    /* ---------------------------平板下拉選單------------------------------------- */
-    /* .Tablet-nav-button {
-        display: flex;
-    }
-
-    .Tablet-nav-button a {
-        text-decoration: none;
-        color: #000;
-    }
-
-    .Tablet-nav-button a:hover {
-        color: #bf0000;
-        background-color: transparent;
-
-    } */
-
-    /* ----------------------------ebook+audiobook------------------------------------- */
-
-    /* .Tablet-ebook-menu-left,
-    .Tablet-audiobook-menu-left {
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .Tablet-ebook-classification,
-    .Tablet-audiobook-classification {
-        display: flex;
-        flex-wrap: wrap;
-    } */
-    /* 
-    .Tablet-ebook-classification li,
-    .Tablet-audiobook-classification li {
-        color: #000;
-        border: 1px solid #000;
-        border-radius: 10px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        background-color: #fff;
-        font-size: 10px;
-    } */
-
-    /* .Tablet-ebook-classification li a,
-    .Tablet-audiobook-classification li a {
-        padding: 10px;
-        display: inline;
-    } */
-
-    /* .Tablet-ebook-menu-right,
-    .Tablet-audiobook-menu-right {
-        display: flex;
-        width: 30%;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .Tablet-ebook-menu-right,
-    .Tablet-audiobook-menu-right {
-        border-left: 1px solid #d8d8d8;
-        padding-left: 30px;
-    }
-
-    .Tablet-ebook-recommend span,
-    .Tablet-audiobook-recommend span {
-        color: #444444;
-        font-size: 1.0rem;
-    } */
-
-    /* -----------------------------共用----------------------------------- */
-
-    /* .Tablet-ebook-dropdown>span,
-    .Tablet-audiobook_dropdown>span,
-    .Tablet-application-dropdown>span,
-    .Tablet-set-point-dropdown>span {
-        display: inline-block;
-    }
-
-    .Tablet-ebook-ul,
-    .Tablet-audiobook-ul,
-    .Tablet-header-all-top .set_point_ul,
-    .Tablet-application-ul,
-    .Tablet-set-point-section {
-        display: flex;
-        width: 650px;
-        flex-wrap: wrap;
-        line-height: 2.8rem;
-    }
-
-    .Tablet-nav-button .dropdown:hover {
-        -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
-    }
-
-    .Tablet-nav-button .dropdown {
-        padding: 20px 13px 16px 8px;
-        margin-right: 5px;
-        font-size: inherit;
-    }
- */
-
 
     /* ------------------------------------平板頁首結束-------------------------------------------------------- */
 
@@ -543,7 +453,6 @@
     .Tablet-in-footer .footer-About-everything {
         background-color: #595959;
         padding: 20px 50px;
-        /* max-width: 1140px; */
         margin: auto;
         color: #fff;
     }
@@ -597,14 +506,11 @@
         color: #fff;
         background-color: transparent;
         text-decoration: underline;
-        /* width: 50%; */
-        /* min-width: 95px; */
     }
 
     .Tablet-in-footer .footer-About-everything-top .Latest-posts button:hover {
         background-color: #fff;
         color: #000;
-
     }
 
     .Tablet-in-footer .footer-About-everything-top .regarding .h4-text a,
@@ -623,13 +529,10 @@
         display: flex;
         text-decoration: none;
         color: #fff;
-
-
     }
 
     .Tablet-in-footer .footer-About-everything .Stay-connected ul>li>a>img {
         margin-right: 10px;
-
     }
 
     .Tablet-in-footer .footer-About-everything .Stay-connected ul {
@@ -763,22 +666,17 @@
 
 
     .Phone_in_header .all_Menu_information {
-
-        /* background-color: #fff; */
-        /* width: 265px; */
         height: 100%;
         -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 15%);
     }
 
     .Phone_in_header .Phone_header_nav_img>div {
-        /* width: 265px; */
         width: 30%;
         min-width: 200px;
     }
 
 
     .Phone_in_header .Phone_all_nav .container-fluid {
-        /* background-color: aquamarine; */
         height: 60px;
     }
 
@@ -850,7 +748,6 @@
     }
 
     .Phone_in_header .Phone_header_accordion_item:nth-child(1) h2 button {
-
         width: 70%;
     }
 
@@ -893,7 +790,6 @@
     .Phone_in_header .Phone_header_nav_img .Phone_header_accordion_item:nth-child(7)>div p {
         margin: 6px 0;
         font-size: .9rem;
-
     }
 
     .Phone_in_header .Phone_header_nav_img .Phone_header_accordion_item:nth-child(7)>div a {
@@ -935,12 +831,10 @@
         display: block;
         font-size: 14px;
         color: #0d0d0d;
-
     }
 
     .Phone_in_header .Phone_header_nav_img .Phone_header_accordion_item:nth-child(9) a>span {
         color: #bf0000;
-
     }
 
     .Phone_in_header .Phone_header_nav_img .Phone_header_accordion_item:nth-child(9) a div {
@@ -949,7 +843,6 @@
 
     .Phone_in_header .Phone_header_nav_img h2>button {
         border-bottom: 1px solid #d8d8d8;
-
     }
 
     .Phone_in_header .Phone_header_nav_img .Phone_header_accordion_item:nth-child(3),
@@ -1073,7 +966,6 @@
     .Phone_in_footer .accordion_item .accordion-body a {
         color: #fff;
         text-decoration: none;
-
     }
 
     /* ------------------手機更多服務---------------------- */
@@ -1144,6 +1036,7 @@
 
     <header class="ALL-header">
         <!-- 頁首 -->
+        <!-- 手機頁首 -->
         <div class="Phone_in_header">
             <!-- 手機頁首 -->
             <div class="Phone_all_nav">
@@ -1377,7 +1270,7 @@
                 </div>
             </div>
         </div>
-        <!-- -----------------平板頁首----------------------- -->
+        <!-- 平板頁首 -->
         <div class="Tablet-in-header">
             <div class="Tablet-header-all-top">
                 <div class="Tablet-header-country-Language-Description-feedback">
@@ -1425,7 +1318,6 @@
                             <div class="Tablet-header-search-input">
                                 <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
                                     aria-label="Recipient's username with two button addons">
-                                <!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
                                 <button class="icon"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
@@ -1471,135 +1363,6 @@
                         </div>
                     </div>
 
-                    <!-- -------------------------------------------------------------------------- -->
-                    <!-- <div class="Tablet-outer-nav">
-                     
-                        <nav class="Tablet-nav-button">
-                            <div class="Tablet-ebook-dropdown">
-                                <span class="dropdown">
-                                    <a href="#" class="dropdown-toggle">電子書</a>
-                                    <ul class="dropdown-menu">
-                                        <div class="Tablet-ebook-ul">
-                                            <div class="Tablet-ebook-menu-left">
-                                                <div class="Tablet-ebook-classification">
-                                                    <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                                    <li><a class="dropdown-item" href="#">愛情</a></li>
-                                                    <li><a class="dropdown-item" href="#">非小說</a></li>
-                                                    <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                                    <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                                    <li><a class="dropdown-item" href="#">兒童</a></li>
-                                                    <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                                    <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                                    <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                                    <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
-                                                </div>
-                                                <div>
-                                                    <a class="dropdown-item" href="#">瀏覽所有類別</a>
-                                                </div>
-                                            </div>
-                                            <div class="Tablet-ebook-menu-right">
-                                                <div class="Tablet-ebook-recommend">
-                                                    <span>
-                                                        <a class="dropdown-item" href="#">專屬於您的推薦</a>
-                                                    </span>
-                                                    <span>
-                                                        <a class="dropdown-item" href="#">今日前50名電子書</a>
-                                                    </span>
-                                                    <span>
-                                                        <a class="dropdown-item" href="#">最新熱門雜誌</a>
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <a class="dropdown-item" href="#">瀏覽所有電子書</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </span>
-                            </div> -->
-                    <!-- 有聲書 -->
-                    <!-- <div class="Tablet-audiobook_dropdown">
-                                <span class="dropdown">
-                                    <a href="#" class="dropdown-toggle">有聲書</a>
-                                    <ul class="dropdown-menu">
-                                        <div class="Tablet-audiobook-ul">
-                                            <div class="Tablet-audiobook-menu-left">
-                                                <div class="Tablet-audiobook-classification">
-                                                    <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                                    <li><a class="dropdown-item" href="#">愛情</a></li>
-                                                    <li><a class="dropdown-item" href="#">非小說</a></li>
-                                                    <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                                    <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                                    <li><a class="dropdown-item" href="#">兒童</a></li>
-                                                    <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                                    <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                                    <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                                    <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
-                                                </div>
-                                                <div>
-                                                    <a class="dropdown-item" href="#">瀏覽所有類別</a>
-                                                </div>
-                                            </div>
-                                            <div class="Tablet-audiobook-menu-right">
-                                                <div class="Tablet-audiobook-recommend">
-                                                    <span>
-                                                        <a class="dropdown-item" href="#">專屬於您的推薦</a>
-                                                    </span>
-                                                    <span>
-                                                        <a class="dropdown-item" href="#">今日前50名電子書</a>
-                                                    </span>
-                                                    <span>
-                                                        <a class="dropdown-item" href="#">最新熱門雜誌</a>
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <a class="dropdown-item" href="#">瀏覽所有電子書</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </span>
-                            </div> -->
-                    <!-- 應用程式與 eReader -->
-                    <!-- <div class="Tablet-application-dropdown">
-                                <span class="dropdown">
-                                    <a href="#" class="dropdown-toggle">應用程式與 eReader</a>
-                                    <ul class="dropdown-menu">
-                                        <div class="Tablet-application-ul">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                        </div>
-                                    </ul>
-                                </span>
-                            </div> -->
-                    <!-- 樂天超級點數 -->
-                    <!-- <div class="Tablet-set-point-dropdown">
-                                <span class="dropdown">
-                                    <a href="#" class="dropdown-toggle">樂天超級點數</a> -->
-                    <!-- <div class="set_point_ul"> -->
-                    <!-- <section class="dropdown-menu">
-                                        <div class="Tablet-set-point-section">
-                                            <img src="//kbstatic1-a.akamaihd.net/1.0.0.913/Images/header-footer/rgi-super-points/rakuten-super-points.png"
-                                                alt="Rakuten Points logo">
-
-                                        </div>
-                                        <div>
-                                            <span>
-                                                注意：您所獲得的一般點數將在30個工作天內新增至帳戶，
-                                                活動點數將於購買日次月15日新增至帳戶
-                                            </span>
-                                            <a href="#">查看您的超級點數記錄</a>
-                                            <a href="#">樂天超級點數購書須知</a>
-                                        </div>
-                                    </section>
-                                </span>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-                    <!-- /* ---------------------------texttexttexttext------------------------------------- */ -->
                     <div class="Tablet-outer-nav">
                         <nav class="Tablet-nav-button">
                             <!-- 有聲書 -->
@@ -1609,35 +1372,35 @@
                                     <section class="Tablet-ebook-ul d-flex">
                                         <div class="Tablet-ebook-menu-left">
                                             <div class="Tablet-ebook-classification">
-                                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                                <li><a class="dropdown-item" href="#">愛情</a></li>
-                                                <li><a class="dropdown-item" href="#">非小說</a></li>
-                                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                                <li><a class="dropdown-item" href="#">兒童</a></li>
-                                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                                <li><a href="#">小說與文學</a></li>
+                                                <li><a href="#">愛情</a></li>
+                                                <li><a href="#">非小說</a></li>
+                                                <li><a href="#">小說 - 青少年</a></li>
+                                                <li><a href="#">神秘與懸疑</a></li>
+                                                <li><a href="#">兒童</a></li>
+                                                <li><a href="#">科幻小說與奇幻小說</a></li>
+                                                <li><a href="#">傳記與回憶錄</a></li>
+                                                <li><a href="#">企業與金融</a></li>
+                                                <li><a href="#">漫畫與圖像小說</a></li>
                                             </div>
                                             <div>
-                                                <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                                <a href="#">瀏覽所有類別</a>
                                             </div>
                                         </div>
                                         <div class="Tablet-ebook-menu-right">
                                             <div class="Tablet-ebook-recommend">
                                                 <span>
-                                                    <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                                    <a href="#">專屬於您的推薦</a>
                                                 </span>
                                                 <span>
-                                                    <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                                    <a href="#">今日前50名電子書</a>
                                                 </span>
                                                 <span>
-                                                    <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                                    <a href="#">最新熱門雜誌</a>
                                                 </span>
                                             </div>
                                             <div>
-                                                <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                                <a href="#">瀏覽所有電子書</a>
                                             </div>
                                         </div>
                                     </section>
@@ -1650,35 +1413,35 @@
                                     <section class="Tablet-audiobook-ul d-flex">
                                         <div class="Tablet-audiobook-menu-left">
                                             <div class="Tablet-audiobook-classification">
-                                                <li><a class="dropdown-item" href="#">小說與文學</a></li>
-                                                <li><a class="dropdown-item" href="#">愛情</a></li>
-                                                <li><a class="dropdown-item" href="#">非小說</a></li>
-                                                <li><a class="dropdown-item" href="#">小說 - 青少年</a></li>
-                                                <li><a class="dropdown-item" href="#">神秘與懸疑</a></li>
-                                                <li><a class="dropdown-item" href="#">兒童</a></li>
-                                                <li><a class="dropdown-item" href="#">科幻小說與奇幻小說</a></li>
-                                                <li><a class="dropdown-item" href="#">傳記與回憶錄</a></li>
-                                                <li><a class="dropdown-item" href="#">企業與金融</a></li>
-                                                <li><a class="dropdown-item" href="#">漫畫與圖像小說</a></li>
+                                                <li><a href="#">小說與文學</a></li>
+                                                <li><a href="#">愛情</a></li>
+                                                <li><a href="#">非小說</a></li>
+                                                <li><a href="#">小說 - 青少年</a></li>
+                                                <li><a href="#">神秘與懸疑</a></li>
+                                                <li><a href="#">兒童</a></li>
+                                                <li><a href="#">科幻小說與奇幻小說</a></li>
+                                                <li><a href="#">傳記與回憶錄</a></li>
+                                                <li><a href="#">企業與金融</a></li>
+                                                <li><a href="#">漫畫與圖像小說</a></li>
                                             </div>
                                             <div>
-                                                <a class="dropdown-item" href="#">瀏覽所有類別</a>
+                                                <a href="#">瀏覽所有類別</a>
                                             </div>
                                         </div>
                                         <div class="Tablet-audiobook-menu-right">
                                             <div class="Tablet-audiobook-recommend">
                                                 <span>
-                                                    <a class="dropdown-item" href="#">專屬於您的推薦</a>
+                                                    <a href="#">專屬於您的推薦</a>
                                                 </span>
                                                 <span>
-                                                    <a class="dropdown-item" href="#">今日前50名電子書</a>
+                                                    <a href="#">今日前50名電子書</a>
                                                 </span>
                                                 <span>
-                                                    <a class="dropdown-item" href="#">最新熱門雜誌</a>
+                                                    <a href="#">最新熱門雜誌</a>
                                                 </span>
                                             </div>
                                             <div>
-                                                <a class="dropdown-item" href="#">瀏覽所有電子書</a>
+                                                <a href="#">瀏覽所有電子書</a>
                                             </div>
                                         </div>
                                     </section>
@@ -1696,7 +1459,6 @@
                             <!-- 樂天超級點數 -->
                             <div class="Tablet-set-point-dropdown">
                                 <a href="#" class="dropdown-toggle">樂天超級點數</a>
-                                <!-- <div class="set_point_ul"> -->
                                 <section>
                                     <div>
                                         <div class="Tablet-set-point-section">
@@ -1721,8 +1483,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- /* ---------------------------texttexttexttext------------------------------------- */ -->
     </header>
 
     <!-- 分界線頁首 -->
