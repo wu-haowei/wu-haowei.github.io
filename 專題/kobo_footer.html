@@ -1030,6 +1030,50 @@
     }
 
     /* ----暫時------ */
+
+    /* ------------------Tablet-header-signup-or-in-----------------------------------------------------------------*/
+
+    .Tablet-header-signup-or-in {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .Tablet-header-create-account {
+        height: 3.0rem;
+        background-color: #bf0000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Tablet-header-signup-or-in .Tablet-header-create-account>a {
+        border-color: #bf0000;
+        color: #fff;
+    }
+
+    .Tablet-header-sign-in {
+        color: #bf0000;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .Tablet-header-sign-in span:nth-child(1) {
+        color: #595959;
+    }
+
+    .Tablet-header-sign-in span:nth-child(2) {
+        color: #bf0000;
+        font-weight: 700;
+
+    }
+
+    .Tablet-header-create-account:hover a,
+    .Tablet-header-sign-in:hover a {
+        text-decoration: underline;
+    }
+
+    /* ------------------Tablet-header-signup-or-in-----------------------------------------------------------------*/
 </style>
 
 <body>
@@ -1107,6 +1151,26 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+                                <!-- <div class="Phone_header_no_user">
+                                    <div class="signup-or-in" data-kobo-gizmo="RichHeaderNewUserOptions" data-gid="g_5">
+                                        <div class="create-account">
+                                            <a>
+                                                <span class="sidebar">建立帳戶</span>
+                                                <span class="fullbar">建立帳戶</span>
+                                            </a>
+                                        </div>
+                                                <div class="sign-in-button">
+                                            <a aria-label="有帳戶了嗎？ 登入" class="buttonish unbordered" href="https://authorize.kobo.com/tw/zh/Signin?returnUrl=https://www.kobo.com/tw/zh" rel="nofollow" data-track-info="{&quot;description&quot;:&quot;登入&quot;}">
+                                
+                                                <span class="have-account">有帳戶了嗎？</span>
+                                                <span class="sign-in">登入</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div> -->
+
                                 <!-- ---------------------------------------------------------------------------------------------------------------- -->
                                 <div class="Phone_header_accordion_item">
                                     <h2>
@@ -1342,7 +1406,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="Tablet-header-user">
+                            <!-- <div class="Tablet-header-user">
                                 <button class="language-selector dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <a href="#">
@@ -1359,7 +1423,21 @@
                                     <li><a class="dropdown-item" href="#">帳戶設定</a></li>
                                     <button>登出</button>
                                 </ul>
+                            </div> -->
+                            <!-- ------------------------------------Tablet-header-signup-or-in-------------------------------------------------------- -->
+                            <div class="Tablet-header-signup-or-in">
+                                <div class="Tablet-header-create-account">
+                                    <a href="https://authorize.kobo.com/tw/zh/signin/register/kobo?workflowId=d0b118ed-6198-46b5-99cf-a1eea4a21b08">建立帳戶</a>
+                                </div>
+                                <div class="Tablet-header-sign-in">
+                                    <a href="https://authorize.kobo.com/tw/zh/Signin?returnUrl=https://www.kobo.com/tw/zh">
+                                        <span class="have-account">有帳戶了嗎？</span>
+                                        <span class="sign-in">登入</span>
+                                    </a>
+                                </div>
                             </div>
+                            <!-- ------------------------------------Tablet-header-signup-or-in-------------------------------------------------------- -->
+
                         </div>
                     </div>
 
