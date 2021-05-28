@@ -1015,7 +1015,7 @@
 
     /* ----暫時------ */
     .Demarcation {
-        min-width: auto;
+        min-width: 576px;
     }
 
     .Demarcation img {
@@ -1169,9 +1169,6 @@
 
     }
 
-
-
-
     /* 第二個區塊的大圖片箱子   */
     .Phone_in_header .Phone_header_img_text .title-imgbox-two {
         width: 33.3%;
@@ -1182,9 +1179,6 @@
     .Phone_in_header .Phone_header_img_text .title-imgbox-two img {
         width: 99%;
     }
-
-
-
 
     /* 幻燈片區塊 */
     .Phone_in_header .Phone_header_img_text .home-page {
@@ -1320,8 +1314,6 @@
         box-sizing: border-box;
         background-color: #ffffff;
         padding: 2rem;
-        /* position: relative; */
-
     }
 
     .Phone_in_header .Phone_header_img_text .home-page-today-box {
@@ -1341,8 +1333,6 @@
         color: black;
         text-decoration: underline;
     }
-
-
 
     .Phone_in_header .Phone_header_img_text .home-page-today-graphic {
         padding-right: 35px;
@@ -1499,127 +1489,117 @@
         position: absolute;
     }
 
-    
-        @media only screen and (max-width: 960px) {
-            .Phone_in_header .Phone_header_img_text    .big-box {
-                width: 100%;
 
-                display: flex;
-                margin: auto;
-            }
+    @media only screen and (max-width: 960px) {
+        .Phone_in_header .Phone_header_img_text .big-box {
+            width: 100%;
+            display: flex;
+            margin: auto;
+        }
 
-            .Phone_in_header .Phone_header_img_text    .title-imgbox {
-                width: 100%;
-                height: 50%;
-                display: flex;
+        .Phone_in_header .Phone_header_img_text .title-imgbox {
+            width: 100%;
+            height: 50%;
+            display: flex;
+        }
 
-            }
+        /* 控制整個區塊 */
 
-    /* 控制整個區塊 */
+        .Phone_in_header .Phone_header_img_text .title-imgbox {
+            background-size: 100% 99%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto auto auto;
+        }
 
-    .Phone_in_header .Phone_header_img_text .title-imgbox {
-        background-size: 100% 99%;
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 auto auto auto;
-    }
+        /* 第一個區塊的大圖片箱子   */
+        .Phone_in_header .Phone_header_img_text .title-imgbox-one {
+            margin: auto;
+            width: 100%;
+            background-size: cover;
 
-    /* 第一個區塊的大圖片箱子   */
-    .Phone_in_header .Phone_header_img_text .title-imgbox-one {
-        margin: auto;
-        width: 100%;
-        background-size: cover;
+        }
 
-    }
+        .Phone_in_header .Phone_header_img_text .title-imgbox-one img {
+            width: 100%;
+            cursor: pointer;
+            margin: auto;
+        }
 
-    .Phone_in_header .Phone_header_img_text .title-imgbox-one img {
-        width: 100%;
-        cursor: pointer;
-        margin: auto;
-    }
+        /* 第二個區塊的大圖片箱子   */
+        .Phone_in_header .Phone_header_img_text .title-imgbox-two {
+            display: flex;
+            width: 100%;
+            background-size: cover;
+            margin: auto;
+        }
 
-    /* 第二個區塊的大圖片箱子   */
-    .Phone_in_header .Phone_header_img_text .title-imgbox-two {
-        display: flex;
-        width: 100%;
-        background-size: cover;
-        margin: auto;
-    }
-
-    .Phone_in_header .Phone_header_img_text .title-imgbox-two img {
-        width: 100%;
-        cursor: pointer;
-        box-sizing: border-box;
-        padding: 0.5%;
-    }
+        .Phone_in_header .Phone_header_img_text .title-imgbox-two img {
+            width: 100%;
+            cursor: pointer;
+            box-sizing: border-box;
+            padding: 0.5%;
+        }
 
 
-    /*即時熱門榜 檢視全部  */
-    .Phone_in_header .Phone_header_img_text .home-page .region .Slideshow-header-box {
-        display: block;
-        width: 100%;
-    }
+        /*即時熱門榜 檢視全部  */
+        .Phone_in_header .Phone_header_img_text .home-page .region .Slideshow-header-box {
+            display: block;
+            width: 100%;
+        }
 
-    .Phone_in_header .Phone_header_img_text .home-page .region .Slideshow-header-box h2 {
-        font-size: 1.5rem;
-        margin: 2rem 0;
-        vertical-align: baseline;
+        .Phone_in_header .Phone_header_img_text .home-page .region .Slideshow-header-box h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            vertical-align: baseline;
 
-    }
+        }
 
-    .Phone_in_header .Phone_header_img_text .home-page .region .Slideshow-header-box a {
-        font-size: 1.2rem;
-        vertical-align: baseline;
-        color: #000;
-        margin-left: 74%;
-    }
+        .Phone_in_header .Phone_header_img_text .home-page .region .Slideshow-header-box a {
+            font-size: 1.2rem;
+            vertical-align: baseline;
+            color: #000;
+            margin-left: 74%;
+        }
 
-    .Phone_in_header .Phone_header_img_text .home-page .region .Slideshow-header-box h2>span {
-        font-weight: 400;
-        color: #000;
-    }
+        .Phone_in_header .Phone_header_img_text .home-page .region .Slideshow-header-box h2>span {
+            font-weight: 400;
+            color: #000;
+        }
 
+        /* 今日推薦區塊 */
+        .Phone_in_header .Phone_header_img_text .home-page-today-shop {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-top: 20px;
+            padding-left: 0px;
+            justify-content: center;
+            border-left: none;
+        }
 
+        .Phone_in_header .Phone_header_img_text .home-page-today-shop-box-top {
+            display: none;
+        }
 
-    /* 今日推薦區塊 */
+        .Phone_in_header .Phone_header_img_text .home-page-today-shop-box-bottom {
 
-    .Phone_in_header .Phone_header_img_text .home-page-today-shop {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding-top: 20px;
-        padding-left: 0px;
-        justify-content: center;
-        border-left: none;
-        /* border-top: 1px solid #ccc; */
+            bottom: -50%;
+            width: 100%;
+        }
 
-    }
+        .Phone_in_header .Phone_header_img_text .home-page-today-Snippet p {
+            font-size: 1.5rem;
+            word-break: break-all;
+        }
 
-    .Phone_in_header .Phone_header_img_text .home-page-today-shop-box-top {
-        display: none;
-    }
+        .Phone_in_header .Phone_header_img_text .home-page-today-img img {
+            width: 100%;
+        }
 
-    .Phone_in_header .Phone_header_img_text .home-page-today-shop-box-bottom {
-
-        bottom: -50%;
-        width: 100%;
-    }
-
-    .Phone_in_header .Phone_header_img_text .home-page-today-Snippet p {
-        font-size: 1.5rem;
-        word-break: break-all;
-    }
-
-    .Phone_in_header .Phone_header_img_text .home-page-today-img img {
-        width: 100%;
-    }
-
-    .Phone_in_header .Phone_header_img_text .shopadd {
-        width: 40%;
-    }
-
-
-
+        .Phone_in_header .Phone_header_img_text .shopadd {
+            width: 40%;
+        }
     }
 
     @media only screen and (max-width: 576px) {
@@ -1638,7 +1618,7 @@
 
         .Phone_in_header .Phone_header_img_text .big-box {
             width: 100%;
-            height: 100%;
+            /* height: 100%; */
             display: flex;
         }
 
@@ -2623,7 +2603,7 @@
                             </div>
                         </div>
 
-        
+
 
 
 
@@ -2865,11 +2845,11 @@
 
 
 
-<!-- ------------------------------------------------首頁資料-------------------------------------------------------------- -->
+        <!-- ------------------------------------------------首頁資料-------------------------------------------------------------- -->
 
 
 
-<!-- ------------------------------------------------首頁資料-------------------------------------------------------------- -->
+        <!-- ------------------------------------------------首頁資料-------------------------------------------------------------- -->
 
 
 
@@ -2902,29 +2882,23 @@
 
 
     <!-- 分界線頁首 -->
-  
-    <div class="Demarcation my-5">
-         <!-- 貼底廣告 -->
-    <div class="home-page-ad container-xl">
-        <!-- 1140 -->
-        <div class="home-page-ad-box">
 
-            <!-- 框框 -->
-            <a href="">
-                <div class="home-page-ad-box-img">
-                    <!-- <span>大國思維，你catch沒?</span>
+    <div class="Demarcation">
+        <!-- 貼底廣告 -->
+                <a href="">
+                    <div class="">
+                        <!-- <span>大國思維，你catch沒?</span>
                 <span>美國書展 單本85折 至5/31止</span> -->
 
-                    <img src="http://kbmerch1-a.akamaihd.net/magento/Banners/2021/TW/20210501-MayThemePromo1-K10505/hma-desktop.jpg"
-                        alt="">
-                    <img src="http://kbmerch1-a.akamaihd.net/magento/Banners/2021/TW/20210501-MayThemePromo1-K10505/hma-desktop.svg"
-                        alt="">
-                </div>
-            </a>
-        </div>
-    </div>
+                        <img src="http://kbmerch1-a.akamaihd.net/magento/Banners/2021/TW/20210501-MayThemePromo1-K10505/hma-desktop.jpg"
+                            alt="">
+                        <img src="http://kbmerch1-a.akamaihd.net/magento/Banners/2021/TW/20210501-MayThemePromo1-K10505/hma-desktop.svg"
+                            alt="">
+                    </div>
+                </a>
         <!-- <img src="https://picsum.photos/1000/500/?random1" alt=""> -->
     </div>
+
     <!-- 分界線頁尾 -->
 
     <footer class="ALL-footer">
@@ -3365,7 +3339,8 @@
                     </div>
                     <div class="phone_More_information_logo">
                         <a href="#">
-                            <img src="https://picsum.photos/262/104?random1" alt="footer-logl">
+                            
+                            <img src="https://picsum.photos/300/200/?random1" alt="footer-logl">
                         </a>
                     </div>
                 </div>
@@ -3374,8 +3349,8 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="/專題/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/專題/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 
     <script>
         // 輪播用 owl.carousel 組件
@@ -3393,10 +3368,10 @@
                     items: 2
                 },
                 576: {
-                    items: 4
+                    items: 3
                 },
                 960: {
-                    items: 6
+                    items: 5
                 }
 
             }
