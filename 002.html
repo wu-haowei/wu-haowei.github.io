@@ -1,48 +1,989 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
-.papa{
-  width: 960px;
-  
-}
-  
-
-
-
-
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
 </head>
+<style>
+    /* ----導覽列------ */
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .bg-gray {
+        background-color: rgb(248, 248, 248);
+    }
+
+    .grow-0 {
+        flex-grow: 0;
+    }
+
+    #Homepage-logo {
+        width: 135px;
+        height: 33px;
+    }
+
+    #Recruit-logo {
+        width: 65px;
+        height: 43px;
+    }
+
+    #nav-space {
+        width: 200px;
+    }
+
+    #user-menu {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        /* background-color: khaki; */
+
+    }
+
+    #user-logo {
+        border-radius: 30px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .user-logo-content {
+        left: -100px
+    }
+
+    .user-notice {
+        left: -50px
+    }
+
+    /* ----導覽列------ */
+    /* 頁尾 */
+    .footer {
+
+        padding: 50px;
+        background-color: rgba(0, 0, 0, 6.5%);
+
+    }
+
+    .footer-block {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .footer-h3 {
+        font-size: 16px;
+        color: #00bea4;
+    }
+
+    .footer-content {
+        font-size: 12px;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .footer-btn {
+        width: 100%;
+        text-align: start;
+        background-color: white;
+        color: #000000;
+    }
+
+    #footer-space {
+        width: 130px;
+        display: inline-block;
+    }
+
+    /* 頁尾 */
+    /* 第一塊 */
+    .search-content {
+        font-size: 28px;
+        font-family: sans-serif;
+    }
+
+    .search-half {
+        position: relative;
+        color: rgb(0, 190, 164);
+
+    }
+
+    .search-half::before {
+        content: "";
+        background-color: rgb(255, 238, 88);
+        z-index: -1;
+        position: absolute;
+        height: 20px;
+        width: 100%;
+        top: 15px;
+        left: 0;
+    }
+
+    .search-input {
+        height: 40px;
+        width: 85%;
+        position: relative;
+    }
+
+    .search-input:focus-visible {
+        outline: none;
+    }
+
+    .search-btn {
+        height: 40px;
+        width: 15%;
+    }
+
+    .search-3 {
+        max-width: 23%;
+    }
+
+    .search-a {
+        text-decoration: none;
+        font-size: 8px;
+        color: #00bea4;
+        padding: 2px 2px;
+        background-color: rgba(46, 225, 179, 0.1);
+        border-radius: 16px;
+        margin: 6px 0;
+    }
+
+    #ug-pic {
+        display: block;
+        width: 270px;
+        height: 244;
+    }
+
+    .search-right {
+        position: relative;
+    }
+
+
+
+    #search-right-leftbottom-pic {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    #search-right-a-pic {
+        position: absolute;
+        left: 80px;
+        top: 50px;
+        width: 30%;
+        height: 40%;
+        z-index: 0;
+    }
+
+    #mascot {
+        position: absolute;
+        left: 200px;
+        top: 100px;
+        width: 30%;
+        height: 40%;
+        z-index: 1;
+    }
+
+    #play {
+        position: absolute;
+        left: 350px;
+        top: 200px;
+        width: 20%;
+        height: 20%;
+        z-index: 1;
+    }
+
+    /* 第一塊 */
+    /* 第二塊 */
+    .advertising-text {
+        font-size: 18px;
+    }
+
+    #advertising-span {
+        color: #00bea4;
+    }
+
+    /* 第二塊 */
+    /* 延伸閱讀 */
+    .reading {
+        background-color: #f3f3f1;
+    }
+
+    .reading-h4 {
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.65);
+        ;
+    }
+
+    .reading-8 {
+        max-width: 64%;
+    }
+
+    .reading-pic {
+        width: 100%;
+    }
+
+    .reading-h5 {
+        font-size: 17px;
+    }
+
+    .reading-date {
+        color: rgba(0, 0, 0, 0.43);
+        font-size: 12px;
+    }
+
+    .reading-more {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.63);
+        font-size: 10px;
+        padding: 4px 8px;
+        border-radius: 16px;
+        background-color: white;
+    }
+
+
+    /* 延伸閱讀 */
+    /* 第一塊輪盤 */
+    .item {
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .item>img {
+        height: 350px;
+    }
+
+    /* 第一塊輪盤 */
+    /* 第三塊 */
+    #try-watch {
+        background-color: rgb(243, 243, 241);
+    }
+
+    .trywatch-h2 {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    .trywatch-text {
+        font-size: 14px;
+    }
+
+    #trywatch-span {
+        color: #00bea4;
+    }
+
+    /* 第三塊 */
+    /* 好學生評論 */
+    #studentsay-span {
+        font-size: 18px;
+        color: #00bea4;
+    }
+
+    .comment {
+        font-size: 14px;
+        height: 300px;
+        background-color: white;
+        position: relative;
+        width: 100%;
+
+
+    }
+
+    #student-say {
+        background-color: #e6eff0;
+    }
+
+    .comment-p {
+        
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+    }
+
+    .comment-top-img {
+        height: 15px;
+        position: absolute;
+        top: 5px;
+        left: 24px;
+    }
+
+    .comment-bot-img {
+        height: 15px;
+        position: absolute;
+        bottom: 5px;
+        right: 24px;
+    }
+
+    .comment-a {
+
+        position: absolute;
+        bottom: 5px;
+        right: 50px;
+        text-decoration: none;
+        color: #00bea4;
+    }
+
+    /* 好學生評論 */
+    /* 貓頭鷹 */
+    .item {
+
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+    }
+
+    .owl-carousel .owl-item,
+    .owl-carousel .owl-wrapper {
+        -webkit-transform: none
+    }
+
+    .owl-nav {
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .owl-prev {
+        font-size: 50px !important;
+
+    }
+
+    .owl-next {
+        font-size: 50px !important;
+
+    }
+
+    /* 貓頭鷹 */
+    /* 課程推薦 */
+    .course-text {
+        font-size: 14px;
+    }
+
+    .course-8 {
+        max-width: 64%;
+    }
+
+    /* 課程推薦 */
+    /* 字卡 */
+
+
+    .card-txt {
+        padding: 14px 20px;
+        width: 80%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: -82%;
+        visibility: hidden;
+        background-color: white;
+        z-index: 2;
+        font-size: 14px;
+        border: 3px solid rgb(243, 243, 241);
+        border-radius: 12px;
+    }
+
+    .card-txt h3 {
+        font-size: 14px;
+    }
+
+    .card-txt p {
+        font-size: 12px;
+    }
+
+    .card-txt-btn {
+        position: relative;
+        bottom: -60px;
+        left: 0;
+    }
+
+    .card-txt-btn button {
+        border-color: #00bea4;
+        color: #00bea4;
+    }
+
+    .item:hover .card-txt {
+        visibility: visible;
+    }
+
+
+
+    .card-txt:hover {
+        visibility: visible;
+    }
+
+    /* 字卡 */
+    /* 哥哥卡片 */
+    .card-h4 {
+        font-size: 15px;
+
+    }
+
+    .card-h4-wrap {
+        width: 100%;
+        height: 40px;
+    }
+
+    .backgroundTape {
+        font-size: 14px;
+        width: 50%;
+        height: 25px;
+        line-height: 25px;
+        right: -15%;
+        top: 20px;
+        transform: rotate(45deg);
+    }
+
+    .bg-hahow-dark-orange {
+        background: #00bea4;
+    }
+
+    .card:hover img {
+        transform: scale(1.2);
+    }
+
+    .backgroundBookmark {
+        background-color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        bottom: -50%;
+        left: 5%;
+        transition: 0.5s;
+        line-height: 2.5;
+    }
+
+    .backgroundBookmark:hover {
+        background-color: #fa8b00;
+
+    }
+
+    .backgroundBookmark:hover i {
+        color: white;
+    }
+
+    .hahow-orange {
+        color: #fa8b00;
+    }
+
+    .card:hover .backgroundBookmark {
+        bottom: 53%;
+    }
+
+    .fa-bookmark {
+        transform: scale(1.2);
+    }
+
+    .card-RM {
+        color: #00bea4;
+    }
+
+    .card-divide {
+        height: 2px;
+        margin: 16px 0px;
+        background-color: rgb(243, 243, 241);
+    }
+
+    .card-logo {
+        background-image: url(圖片/太陽.jpg);
+        width: 72px;
+        height: 72px;
+        flex: 0 0 auto;
+    }
+
+    .card-Explan {
+        max-width: 70%;
+        max-height: 55px;
+        color: rgba(0, 0, 0, 0.65);
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .card-content {
+        display: flex;
+    }
+
+    /* 哥哥卡片 */
+    
+    /* 影片 */
+   
+    
+    .content h4 {
+        font-size: 8px;
+    }
+
+    .content a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    .fa-star {
+        color: rgb(255, 177, 21);
+    }
+    .video-carousel{
+        background-color: rgb(243, 243, 241);
+    }
+    .content {
+        width: 636px;
+        color: rgb(245, 126, 16);
+    }
+    .item-video {
+        border-radius: 15px;
+        background-color: white;
+    }
+
+    /* 影片  */
+
+    @media screen and (max-width:992px) {
+
+        /* 頁尾 */
+        .footer-block {
+            order: 2;
+        }
+
+        .footer-last-block {
+            order: 1;
+        }
+
+        #footer-space {
+            width: 290px;
+        }
+
+        /* 頁尾 */
+        #ug-pic {
+            display: none;
+            width: 270px;
+            height: 244;
+        }
+
+        /* 第一塊 */
+        .search-3 {
+            max-width: 100%;
+        }
+
+        .search-content {
+            text-align: center;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-a-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 第一塊 */
+        /* 延伸閱讀 */
+        .reading-8 {
+            max-width: 100%;
+        }
+
+        /* 延伸閱讀 */
+        /* 第一塊輪盤 */
+
+
+        .item>img {
+            height: 200px;
+        }
+
+        /* 第一塊輪盤 */
+        /* 好學生評論 */
+        .comment {
+            height: 100%;
+        }
+
+
+        .comment-bot-img {
+            bottom: 10px;
+        }
+
+        .comment-a {
+            bottom: 0px;
+        }
+
+        /* 好學生評論 */
+        /* 課程精選 */
+        .item:hover .card-txt {
+            visibility: hidden;
+        }
+
+        .card-txt:hover {
+            visibility: hidden;
+        }
+
+        .card:hover .backgroundBookmark {
+            bottom: 63%;
+        }
+
+        /* 課程精選 */
+
+    }
+</style>
 
 <body>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <div class="nav-log-wrap">
+            <a href="#"><img id="Homepage-logo" src="https://hahow.in/static/media/logo-black.59fdbe30.svg" alt=""></a>
+            <a href="#"><img id="Recruit-logo" src="https://hahow.in/static/images/joinus/2018hiring.svg" alt=""></a>
+        </div>
 
-<div class="papa">
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 下拉選單有2層 -->
+        <div class="collapse navbar-collapse  grow-0" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-th-large"></i>
+                        探索課程
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#!" data-toggle="dropdown">
+                                C#
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    Posts
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Groups
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Projects
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Files
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Subscribers
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#!" data-toggle="dropdown">
+                                CSS
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    Posts
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Groups
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Projects
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Files
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Subscribers
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#!" data-toggle="dropdown">
+                                Javascript
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    Posts
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Groups
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Projects
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Files
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Subscribers
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#!" data-toggle="dropdown">
+                                Mvc
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    Posts
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Groups
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Projects
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Files
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Subscribers
+                                </a>
+                            </div>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </ul>
+                </li>
+                <!-- 沒有下拉選單 -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-pencil-alt"></i>我要開課</a>
+                </li>
+            </ul>
+            <!-- 搜尋列 -->
+            <form class="form-inline my-2 my-lg-0 ">
+                <i class="fas fa-search px-2"></i>
+                <input class="form-control mr-sm-2" type="search" placeholder="課程搜尋" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        <!-- 移動距離就創一個空的div -->
+        <!-- <div id="nav-space"></div> -->
+        <!-- <div id="nav-space"></div> -->
+
+        <div class="collapse navbar-collapse  grow-0" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">我的課程</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-bell"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div id="user-menu"><img src="me.jpg" alt="" id="user-logo"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 導覽列 -->
 
 
 
+  <img src="https://picsum.photos/1300/400/?random1" class="w-100">
+  
+
+    
+
+    <!-- 底部 -->
+    <div class="container-fuild footer">
+        <div class="row justify-content-center m-0">
+            <div class="col-lg-2 footer-block p-0">
+                <h3 class="footer-h3">關於</h3>
+                <ul>
+                    <li><a href="#" class="footer-content">關於我們</a></li>
+                    <li><a href="#" class="footer-content">加入Hahow</a></li>
+                    <li><a href="#" class="footer-content">使用者條款</a></li>
+                    <li><a href="#" class="footer-content">服務契約</a></li>
+                    <li><a href="#" class="footer-content">隱私權政策</a></li>
+                    <li><a href="#" class="footer-content">功能更新</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 footer-block p-0">
+                <h3 class="footer-h3">幫助</h3>
+                <ul>
+                    <li><a href="#" class="footer-content">企業學習方案</a></li>
+                    <li><a href="#" class="footer-content">異業合作洽談</a></li>
+                    <li><a href="#" class="footer-content">常見問題</a></li>
+                    <li><a href="#" class="footer-content">課程許願池</a></li>
+                    <li><a href="#" class="footer-content">兌換課程</a></li>
+                    <li><a href="#" class="footer-content">線上課程禮物卡</a></li>
+                    <li><a href="#" class="footer-content">填課程問卷拿優惠</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 footer-block p-0">
+                <h3 class="footer-h3">追蹤動態</h3>
+                <ul>
+                    <li><a href="#" class="footer-content">Facebook</a></li>
+                    <li><a href="#" class="footer-content">Instagram</a></li>
+                    <li><a href="#" class="footer-content">LINE</a></li>
+                    <li><a href="#" class="footer-content">YouTube</a></li>
+                    <li><a href="#" class="footer-content">Blog</a></li>
+
+                </ul>
+            </div>
+            <div class="col-lg-2 footer-block footer-last-block p-0">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle footer-btn" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>輸入地點</span>
+                        <!-- <span id="footer-space"></span> -->
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item btn-item-first" href="#">輸入地點</a>
+                        <a class="dropdown-item" href="#">TW&nbsp;台灣 &nbsp;新台幣(&nbsp;TWD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">HK&nbsp;香港 &nbsp;港幣幣(&nbsp;HKD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">MY&nbsp;馬來西亞 &nbsp;林吉特(&nbsp;MYR&nbsp;)</a>
+                        <a class="dropdown-item" href="#">US&nbsp;美國 &nbsp;美元(&nbsp;USD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">JP&nbsp;日本 &nbsp;日圓(&nbsp;JPY&nbsp;)</a>
+                        <a class="dropdown-item" href="#">CN&nbsp;中國 &nbsp;人民幣(&nbsp;CNY&nbsp;)</a>
+                        <a class="dropdown-item" href="#">MO&nbsp;澳門 &nbsp;澳門幣(&nbsp;MOP&nbsp;)</a>
+                        <a class="dropdown-item" href="#">SG&nbsp;新加坡 &nbsp;新幣(&nbsp;SGD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">AU&nbsp;澳洲 &nbsp;澳幣(&nbsp;AUD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">CU&nbsp;加拿大 &nbsp;加幣(&nbsp;CAD&nbsp;)</a>
+                    </div>
+                </div>
+                <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle footer-btn" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>語言選擇</span>
+                        <!-- <span id="footer-space"></span> -->
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">繁體中文</a>
+                        <a class="dropdown-item" href="#">簡體中文</a>
+                    </div>
+                    <span class="pb-3 pt-2 footer-content">Hahow 好學校 © All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+    <script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 
 
+    <script>
+        //navbar
+        var Dropdowns = function () {
+            var t = $(".dropup, .dropright, .dropdown, .dropleft")
+                , e = $(".dropdown-menu")
+                , r = $(".dropdown-menu .dropdown-menu");
+            $(".dropdown-menu .dropdown-toggle").on("click", function () {
+                var a;
+                return (a = $(this)).closest(t).siblings(t).find(e).removeClass("show"),
+                    a.next(r).toggleClass("show"),
+                    !1
+            }),
+                t.on("hide.bs.dropdown", function () {
+                    var a, t;
+                    a = $(this),
+                        (t = a.find(r)).length && t.removeClass("show")
+                })
+        }()
+        //navbar
+        //輪盤
+        var owl = $('.auto-carousel');
 
+        owl.owlCarousel({
+            items: 3,/*顯示張數*/
+            loop: true,//環形
+            margin: 20,
+            nav: true,
+            autoplay: true,/*自動撥放true false */
+            autoplayTimeout: 1000,//自動播放超時
+            autoplayHoverPause: true,//自動播放懸停暫停
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                }
 
+            }
+        });
+        //輪盤
+        // 影片
+        
+        $('.video-carousel').owlCarousel({
+            items: 3,
+            merge: true,
+            loop: true,
+            margin: 10,
+            video: true,
+            lazyLoad: true,
+            center: true,
+            autoWidth: true,
+            nav: true,
+        })
 
+        $('.owl-prev').click(function (event) {
+            event.currentTarget.click();
+            event.currentTarget.click();
+            stopVideo();
+            console.log('aaaa')
+        })
+        // Go to the previous item
+        $('.owl-next').click(function () {
+            event.currentTarget.click();
+            event.currentTarget.click();
+            stopVideo();
+            // With optional speed parameter
+            // Parameters has to be in square bracket '[]'
+            console.log('bbbb')
+        })
+        $('.owl-dot').click(function (event) {
+            event.currentTarget.click();
+            stopVideo();
+            console.log('cccc')
+        })
+        function stopVideo() {
+            console.warn("123")
+            jQuery("iframe").each(function () {
+                jQuery(this)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '')
+                console.warn("123")
+            });
+            document.querySelector('.center>.item-video>iframe').contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '')
+        }
+        // 影片
 
-
-
-
-
+    </script>
 </body>
 
 </html>
