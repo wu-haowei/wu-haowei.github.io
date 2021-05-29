@@ -660,10 +660,10 @@
             margin-left: 265px;
         } */
 
-        .navbar-dark,
+        /* .navbar-dark,
         .footer-homeinformation {
             margin-left: 265px;
-        }
+        } */
 
         .all_Menu_information {
             position: fixed;
@@ -1724,9 +1724,9 @@
             <!-- 手機頁首 -->
             <div class="Phone_all_nav">
                 <h1>Kobo 樂天</h1>
-                <nav class="navbar navbar-dark bg-dark ">
+                <nav class="navbar navbar-dark bg-dark " id="HB_A">
                     <div class="container-fluid ">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="HB"
                             data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -2166,7 +2166,7 @@
         </div>
 
     </header>
-    <div class="footer-homeinformation">
+    <div class="footer-homeinformation" id="HB_B">
 
         <div class="homeinformation">
             <!-- ------------------------------------------------首頁資料-------------------------------------------------------------- -->
@@ -3285,7 +3285,7 @@
         </footer>
     </div>
 
- 
+
 
 
 
@@ -3319,25 +3319,33 @@
         });
 
 
+        var i = 0;
 
-                // .collapsed {
-        //             margin-left: -265px;
-        //         }
+        let hb = document.getElementById('HB')
+        hb.addEventListener('click', function (e) {
 
-        //         .navbar-toggler {
-        //             margin-left: 265px;
-        //         } */
+            let hb_a = document.getElementById('HB_A')
+            let hb_b = document.getElementById('HB_B')
+            if (i % 2 == 0) {
 
-        //         .navbar-dark,
-        //         .footer-homeinformation {
-        //             margin-left: 265px;
-        //         }
+                hb_a.setAttribute('style', 'margin-left: 265px')
+                hb_b.setAttribute('style', 'margin-left: 265px')
+            }
+            else{
+                hb_a.setAttribute('style', 'margin-left: 0')
+                hb_b.setAttribute('style', 'margin-left: 0')
+            }
+            i++
+            console.log(e)
+        });
+
+
 
 
 
     </script>
 
- 
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
