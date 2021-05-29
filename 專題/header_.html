@@ -1927,11 +1927,11 @@
                     </div>
 
 
-                    <div class="Phone_header_img_text">
+                    <!-- <div class="Phone_header_img_text"> -->
                         <!-- 預設資料********************************************代移除 -->
 
                         <!-- 預設資料********************************************代移除 -->
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -3330,15 +3330,15 @@
             let hb_b = document.getElementById('HB_B')
             let left_menu = document.querySelector('.all_Menu_information')
             if (i % 2 == 0) {
-                hb_a.setAttribute('style', 'margin-left: 265px')
-                hb_b.setAttribute('style', 'margin-left: 265px')                
-                left_menu.style.display = 'block'
+                hb_a.setAttribute('style', 'margin-left: 265px;overflow:hidden')
+                hb_b.setAttribute('style', 'margin-left: 265px;overflow:hidden')                
+                // left_menu.style.display = 'block'
 
             }
             else {
                 hb_a.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
                 hb_b.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
-                left_menu.style.display = 'none'
+                // left_menu.style.display = 'none'
 
             }
             i++
