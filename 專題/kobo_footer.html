@@ -662,14 +662,6 @@
             display: block;
         }
 
-
-
-        /* 
-        .navbar-dark,
-        #footer-homeinformation {
-            margin-left: 265px;
-        } */
-
         .all_Menu_information {
             position: fixed;
             margin-top: 0;
@@ -678,7 +670,7 @@
     }
 
     /* ipad */
-    @media only screen and (min-width:881px) {
+    @media only screen and (min-width:882px) {
 
         .Tablet-in-header,
         .Tablet-in-footer {
@@ -3338,8 +3330,8 @@
 
         navbartogglerid.addEventListener('click', function (e) {
             if (Hamburger_Pressdown % 2 == 0) {
-                navbarid.setAttribute('style', 'margin-left: 265px;transition: margin-left 0s')
-                footerhomeinformation.setAttribute('style', 'margin-left: 265px;transition: margin-left 0s')
+                navbarid.setAttribute('style', 'margin-left: 265px;transition: margin-left 0.8s')
+                footerhomeinformation.setAttribute('style', 'margin-left: 265px;transition: margin-left 0.8s')
                 allMenuinformation.style.display = 'block'
 
             }
@@ -3347,7 +3339,6 @@
                 navbarid.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
                 footerhomeinformation.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
                 allMenuinformation.style.display = 'none'
-
             }
             Hamburger_Pressdown++;
             console.log(navbarid.style)
@@ -3357,7 +3348,7 @@
             console.log(i);
         });
 
-        var x = window.matchMedia("(min-width: 881px)");
+        var x = window.matchMedia("(min-width: 882px)");
         myFunction(x) // Call listener function at run time
         x.addListener(myFunction)
 
@@ -3366,7 +3357,7 @@
                 navbarid.style.marginLeft = '0';
                 footerhomeinformation.style.marginLeft = '0';
                 allMenuinformation.style.display = 'none';
-                // i = 0;
+                // Hamburger_Pressdown = 0;
 
             }
             // else{
