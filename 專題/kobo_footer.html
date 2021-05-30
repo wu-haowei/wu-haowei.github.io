@@ -151,6 +151,7 @@
         padding: 7px 16px;
         transform: rotate(-90deg);
         -webkit-transform: rotate(-90deg);
+        z-index: 2;
     }
 
     .Tablet-in-header .Tablet-header-feedback a {
@@ -1739,11 +1740,11 @@
                                     class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                    <div class="Phone_header_search_input">
+                    <form class="Phone_header_search_input">
                         <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
                             aria-label="Recipient's username with two button addons">
                         <button class="icon"><i class="fa fa-search"></i></button>
-                    </div>
+                    </form>
 
                 </nav>
                 <div class="Phone_header_nav_img">
@@ -1971,20 +1972,15 @@
                         <!-- 搜尋列 -->
                         <!-- 右邊 願望清單 購物車 帳戶 -->
                         <div class="Tablet-header-logo-search">
-                            <!-- <h1>
-                                <p class="Tablet-header-logo-h1">Kobo 樂天</p>
-                            </h1> -->
                             <a href="#">
                                 <img src="https://akimages.kobobooks.com/images/misc/Navigation/Top/rakuten-kobo-landscape.png"
                                     alt="kobo樂天Logo">
                             </a>
-
-
-                            <div class="Tablet-header-search-input">
+                            <form class="Tablet-header-search-input">
                                 <input type="text" class="form-control" placeholder="依標題、作者、系列或 ISBN 搜尋"
                                     aria-label="Recipient's username with two button addons">
                                 <button class="icon"><i class="fa fa-search"></i></button>
-                            </div>
+                            </form>
                         </div>
                         <div class="Tablet-my-wish-list-shopping-cart-my-account">
                             <div class="Tablet-my-wish-list-shopping-cart">
@@ -2942,11 +2938,13 @@
 
                     <div class="payment-method">
                         <span>付款方式</span>
-                        <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/Visa.png" alt="Visa">
+                        <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/Visa.png"
+                            alt="Visa">
                         <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/MasterCard.png"
                             alt="MasterCard">
                         <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/JCB.png" alt="JCB">
-                        <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/Kobo.png" alt="Kobo">
+                        <img src="https://kbstatic1-a.akamaihd.net/1.0.0.925/Images/payment-methods/Kobo.png"
+                            alt="Kobo">
                     </div>
                     <div class="Change-country-privacy-policy">
                         <div class="Change-country">
