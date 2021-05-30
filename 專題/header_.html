@@ -29,6 +29,7 @@
     .footer-homeinformation {
         background-color: #ffffff;
         position: relative;
+        z-index: -1;
         /* overflow: hidden; */
     }
 
@@ -3335,13 +3336,13 @@
         hb.addEventListener('click', function (e) {
             if (i % 2 == 0) {
                 left_menu.style.display = 'block'
-                hb_a.setAttribute('style', 'margin-left: 265px;transition: margin-left 1s;')
-                hb_b.setAttribute('style', 'margin-left: 265px;transition: margin-left 1s;')
+                hb_a.setAttribute('style', 'margin-left: 265px;transition: margin-left 0s;')
+                hb_b.setAttribute('style', 'margin-left: 265px;transition: margin-left 0s')
 
             }
             else {
-                hb_a.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
-                hb_b.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
+                hb_a.setAttribute('style', 'margin-left: 0;transition: margin-left 1s;')
+                hb_b.setAttribute('style', 'margin-left: 0;transition: margin-left 1s; z-index: 0')
                 left_menu.style.display = 'none'
 
             }
@@ -3361,7 +3362,7 @@
             if (x.matches) { // If media query matches
                 hb_a.style.marginLeft = '0';
                 hb_b.style.marginLeft = '0';
-                // left_menu.style.display = 'none';
+                left_menu.style.display = 'none';
                 // i = 0;
 
             }
