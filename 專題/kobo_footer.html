@@ -28,8 +28,8 @@
     /* -----text */
     .footer-homeinformation {
         background-color: #ffffff;
-        position: relative;
-        z-index: -1;
+        /* position: relative; */
+        /* z-index: -1; */
         /* overflow: hidden; */
     }
 
@@ -344,7 +344,7 @@
         min-width: 500px;
         height: 335px;
         left: 0px;
-        top: 62px;
+        top: 61px;
     }
 
     .Tablet-in-header .Tablet-outer-nav ul>section,
@@ -673,6 +673,7 @@
         .all_Menu_information {
             position: fixed;
             margin-top: 0;
+            z-index: 999;
         }
     }
 
@@ -3341,8 +3342,8 @@
 
             }
             else {
-                hb_a.setAttribute('style', 'margin-left: 0;transition: margin-left 1s;')
-                hb_b.setAttribute('style', 'margin-left: 0;transition: margin-left 1s; z-index: 0')
+                hb_a.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
+                hb_b.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
                 left_menu.style.display = 'none'
 
             }
