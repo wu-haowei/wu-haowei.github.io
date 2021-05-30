@@ -26,6 +26,16 @@
 */
 
     /* -----text */
+    .footer-homeinformation {
+        background-color: #ffffff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .homeinformation {
+        /* overflow:visible; */
+
+    }
 
     /* -----text */
 
@@ -651,16 +661,10 @@
             display: block;
         }
 
+
+
         /* 
-        .collapsed {
-            margin-left: -265px;
-        }
-
-        .navbar-toggler {
-            margin-left: 265px;
-        } */
-
-        /* .navbar-dark,
+        .navbar-dark,
         .footer-homeinformation {
             margin-left: 265px;
         } */
@@ -1490,7 +1494,7 @@
             background-size: 100% 99%;
             display: flex;
             flex-wrap: wrap;
-            margin: 0 auto auto auto;
+            margin: 98px auto auto auto;
         }
 
         /* 第一個區塊的大圖片箱子   */
@@ -1928,9 +1932,9 @@
 
 
                     <!-- <div class="Phone_header_img_text"> -->
-                        <!-- 預設資料********************************************代移除 -->
+                    <!-- 預設資料********************************************代移除 -->
 
-                        <!-- 預設資料********************************************代移除 -->
+                    <!-- 預設資料********************************************代移除 -->
                     <!-- </div> -->
                 </div>
             </div>
@@ -3324,15 +3328,15 @@
         var i = 0;
 
         let hb = document.getElementById('HB')
-        hb.addEventListener('click', function (e) {
+        let hb_a = document.getElementById('HB_A')
+        let hb_b = document.getElementById('HB_B')
+        let left_menu = document.querySelector('.all_Menu_information')
 
-            let hb_a = document.getElementById('HB_A')
-            let hb_b = document.getElementById('HB_B')
-            let left_menu = document.querySelector('.all_Menu_information')
+        hb.addEventListener('click', function (e) {
             if (i % 2 == 0) {
-                hb_a.setAttribute('style', 'margin-left: 265px;overflow:hidden')
-                hb_b.setAttribute('style', 'margin-left: 265px;overflow:hidden')                
                 left_menu.style.display = 'block'
+                hb_a.setAttribute('style', 'margin-left: 265px;transition: margin-left 1s;')
+                hb_b.setAttribute('style', 'margin-left: 265px;transition: margin-left 1s;')
 
             }
             else {
@@ -3342,11 +3346,31 @@
 
             }
             i++
+            console.log(hb_a.style)
+            console.log(hb_b.style)
+
             console.log(e)
+            console.log(i);
         });
 
+        var x = window.matchMedia("(min-width: 881px)");
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction)
 
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                hb_a.style.marginLeft = '0';
+                hb_b.style.marginLeft = '0';
+                // left_menu.style.display = 'none';
+                // i = 0;
 
+            }
+            // else{
+            //     left_menu.style.display = 'block'
+
+            // }
+            console.log(i);
+        }
 
 
     </script>
