@@ -26,7 +26,7 @@
 */
 
     /* -----text */
-    .footer-homeinformation {
+    #footer-homeinformation {
         background-color: #ffffff;
         /* position: relative; */
         /* z-index: -1; */
@@ -34,7 +34,7 @@
     }
 
     .homeinformation {
-   /* margin-top: 98px; */
+        /* margin-top: 98px; */
 
     }
 
@@ -666,7 +666,7 @@
 
         /* 
         .navbar-dark,
-        .footer-homeinformation {
+        #footer-homeinformation {
             margin-left: 265px;
         } */
 
@@ -1730,9 +1730,9 @@
             <!-- 手機頁首 -->
             <div class="Phone_all_nav">
                 <h1>Kobo 樂天</h1>
-                <nav class="navbar navbar-dark bg-dark " id="HB_A">
+                <nav class="navbar navbar-dark bg-dark " id="navbar-id">
                     <div class="container-fluid ">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="HB"
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="navbar-toggler-id"
                             data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -2172,7 +2172,7 @@
         </div>
 
     </header>
-    <div class="footer-homeinformation" id="HB_B">
+    <div id="footer-homeinformation">
 
         <div class="homeinformation">
             <!-- ------------------------------------------------首頁資料-------------------------------------------------------------- -->
@@ -2819,7 +2819,7 @@
                     </div>
                 </div>
 
-                
+
             </div>
             <div class="home-page-ad container-xl">
                 <!-- 1140 -->
@@ -3329,29 +3329,29 @@
         });
 
 
-        var i = 0;
+        var Hamburger_Pressdown = 0;
 
-        let hb = document.getElementById('HB')
-        let hb_a = document.getElementById('HB_A')
-        let hb_b = document.getElementById('HB_B')
-        let left_menu = document.querySelector('.all_Menu_information')
+        let navbartogglerid = document.getElementById('navbar-toggler-id')
+        let navbarid = document.getElementById('navbar-id')
+        let footerhomeinformation = document.getElementById('footer-homeinformation')
+        let allMenuinformation = document.querySelector('.all_Menu_information')
 
-        hb.addEventListener('click', function (e) {
-            if (i % 2 == 0) {
-                left_menu.style.display = 'block'
-                hb_a.setAttribute('style', 'margin-left: 265px;transition: margin-left 0s')
-                hb_b.setAttribute('style', 'margin-left: 265px;transition: margin-left 0s')
+        navbartogglerid.addEventListener('click', function (e) {
+            if (Hamburger_Pressdown % 2 == 0) {
+                navbarid.setAttribute('style', 'margin-left: 265px;transition: margin-left 0s')
+                footerhomeinformation.setAttribute('style', 'margin-left: 265px;transition: margin-left 0s')
+                allMenuinformation.style.display = 'block'
 
             }
             else {
-                hb_a.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
-                hb_b.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
-                left_menu.style.display = 'none'
+                navbarid.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
+                footerhomeinformation.setAttribute('style', 'margin-left: 0;transition: margin-left 1s')
+                allMenuinformation.style.display = 'none'
 
             }
-            i++
-            console.log(hb_a.style)
-            console.log(hb_b.style)
+            Hamburger_Pressdown++;
+            console.log(navbarid.style)
+            console.log(footerhomeinformation.style)
 
             console.log(e)
             console.log(i);
@@ -3363,9 +3363,9 @@
 
         function myFunction(x) {
             if (x.matches) { // If media query matches
-                hb_a.style.marginLeft = '0';
-                hb_b.style.marginLeft = '0';
-                left_menu.style.display = 'none';
+                navbarid.style.marginLeft = '0';
+                footerhomeinformation.style.marginLeft = '0';
+                allMenuinformation.style.display = 'none';
                 // i = 0;
 
             }
@@ -3373,7 +3373,8 @@
             //     left_menu.style.display = 'block'
 
             // }
-            console.log(i);
+            console.log(x);
+            console.log(Hamburger_Pressdown);
         }
 
 
