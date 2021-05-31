@@ -319,7 +319,7 @@
             background-color: #ededed;
             margin-bottom: 40px;
             margin-top: 40px;
-            padding: 20px 20px 0;
+            padding: 20px 20px;
         }
 
         .Product-main-page .kobo-widget .region .carousel-badge-container>span {
@@ -550,7 +550,7 @@
             display: flex;
             align-items: flex-end;
         }
-        
+
         .owl-carousel .item img {
             /* width: 50%; */
             margin: auto;
@@ -715,6 +715,10 @@
                                         <p>並蟬聯至今（滿一年了啦，但不知道什麼時候會日薄西山）。</p>
                                         <p>之前為航空公司培訓機師，公司倒閉後從商，經營小生意。</p>
                                     </div>
+                                    <button type="button" class="toggle-button-hitbox" aria-controls="synopsis"
+                                        aria-expanded="false" id="AAA">
+                                        <span class="toggle-button">展開簡介</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -1101,6 +1105,24 @@
                 }
             }
         });
+
+        var i = 0;
+        let bnt = document.getElementById('AAA')
+        let bookcontentintroduction = document.querySelector('.book-content-introduction')
+        let togglebutton = document.querySelector('.toggle-button')
+        bnt.addEventListener('click', function (e) {
+            if (i % 2 == 0) {
+                bookcontentintroduction.setAttribute('style', 'max-height:none;overflow: auto')
+                togglebutton.innerHTML = "關閉簡介";
+            }
+            else {
+                bookcontentintroduction.setAttribute('style', 'max-height:288px;overflow: hidden')
+                togglebutton.innerHTML = "摺疊簡介";
+
+            }
+            i++;
+
+        })
 
     </script>
 
