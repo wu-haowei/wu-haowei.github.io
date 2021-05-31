@@ -562,8 +562,17 @@
 
         .unfold-shutdown {
             position: absolute;
-            bottom: 0;
+            bottom: -2.4rem;
             right: 15rem;
+        }
+
+        .unfold-shutdown button {
+            border: none;
+            background-color: transparent;
+            padding: 20px;
+        }
+        .unfold-shutdown button:hover i {
+            color: red;
         }
     </style>
 </head>
@@ -729,7 +738,7 @@
                                         <div class="unfold-shutdown">
                                             <button type="button" class="toggle-button-hitbox" aria-controls="synopsis"
                                                 aria-expanded="false" id="AAA">
-                                                <span class="toggle-button">展開簡介</span>
+                                                <i class="fa fa-arrow-down toggle-button fa-2x" aria-hidden="true"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -1127,13 +1136,16 @@
         bnt.addEventListener('click', function (e) {
             if (i % 2 == 0) {
                 bookcontentintroduction.setAttribute('style', 'max-height:none;overflow: auto')
-                togglebutton.innerHTML = "關閉簡介";
+                togglebutton.setAttribute('style', 'transform: rotateX(180deg)')
+                // togglebutton.innerHTML = "關閉簡介";
             }
             else {
                 bookcontentintroduction.setAttribute('style', 'max-height:288px;overflow: hidden')
-                togglebutton.innerHTML = "摺疊簡介";
+                // togglebutton.innerHTML = "摺疊簡介";
+                togglebutton.setAttribute('style', 'transform: rotateX(360deg)')
+
             }
-            i--;
+            i++;
 
         })
 
