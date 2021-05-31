@@ -363,7 +363,7 @@
             margin-top: 10px;
         }
 
-        .Product-main-page .owl-carousel .book-details-container>span:nth-last-child(2) {
+        .Product-main-page .owl-carousel .book-details-container>span:last-child {
             display: block;
 
         }
@@ -521,15 +521,33 @@
         .ellipsis {
             overflow: hidden;
             /* white-space: nowrap; */
-            text-overflow: ellipsis;/* 超過限制時會自動顯示”…”的刪節號 */
+            text-overflow: ellipsis;
+            /* 超過限制時會自動顯示”…”的刪節號 */
             display: -webkit-box;
-            -webkit-line-clamp: 1;/* 行數 */
-            -webkit-box-orient: vertical;/* 垂直的 */
-            white-space: normal; /* 文本不进行换行 */
+            -webkit-line-clamp: 1;
+            /* 行數 */
+            -webkit-box-orient: vertical;
+            /* 垂直的 */
+            white-space: normal;
+            /* 文本不进行换行 */
         }
-        .owl-carousel .item a{
+
+        .owl-carousel .item a {
             color: black;
+        }
+
+        .owl-carousel .item .star-carousel {
+
+            display: inline-block;
+        }
+
+        .owl-carousel .item:hover a {
+
             text-decoration: none;
+        }
+        .owl-stage{
+            display: flex;
+            align-items: flex-end;
         }
     </style>
 </head>
@@ -733,78 +751,162 @@
                 <div class="owl-carousel">
                     <div class="item">
                         <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/e31fc393-0860-4ea3-93c2-7cd0ad8cacc5/140/215/60/False/PCQ6iQ2dRTizKJR-11I-JA.jpg"
+                                src="https://kbimages1-a.akamaihd.net/4dd6f6f6-db5f-4bad-86c4-4ecd8da50858/140/215/60/False/c3WfvraLxjC7q318ec8-ZQ.jpg"
                                 alt="">
                             <div class="book-details-container">
-                                <span class="ellipsis">一九八四</span>
-                                <span class="ellipsis">由 賽門‧西奈克(Simon Sinek)</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
+                                <span class="ellipsis">萬物的價值：經濟體系的革命時代，重新定義市場、價值、生產者與獲利者</span>
+                                <span class="ellipsis">
+                                    瑪里亞娜‧馬祖卡托</span>
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
                                 <span>NT$250 </span>
                             </div>
                         </a>
                     </div>
                     <div class="item">
                         <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/7d8a17a5-14a5-4687-af60-235eda95cf4f/140/215/60/False/I18v7H67AzWTYfCZqfFtnw.jpg"
+                                src="https://kbimages1-a.akamaihd.net/35007b7c-73a4-404e-bac2-cc3864df44c0/140/215/60/False/bIHzEFfMwzCtyPzEGnN1gg.jpg"
                                 alt="">
                             <div class="book-details-container">
-                                <span class="ellipsis">一九八四</span>
-                                <span class="ellipsis">由 賽門‧西奈克(Simon Sinek)</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
+                                <span class="ellipsis">萬物的價值：經濟體系的革命時代，重新定義市場、價值、生產者與獲利者</span>
+                                <span class="ellipsis">
+                                    瑪里亞娜‧馬祖卡托</span>
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
                                 <span>NT$250 </span>
                             </div>
                         </a>
                     </div>
                     <div class="item">
                         <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/d7b5ea5d-e90d-48ff-861f-8affd2c49a5a/140/215/60/False/EISPAcCFqTOpsoDIDLfBmw.jpg"
+                                src="https://kbimages1-a.akamaihd.net/cfed2860-591a-45d0-8d33-a77bd8107030/140/215/60/False/DT6Aaws3jzmv6Gn87ohl9w.jpg"
                                 alt="">
                             <div class="book-details-container">
                                 <span class="ellipsis">
                                     政治秩序的起源（上卷）：從史前到法國大革命（全新修訂校對版）</span>
                                 <span class="ellipsis">
                                     法蘭西斯‧福山</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
                                 <span>NT$250 </span>
                             </div>
                         </a>
                     </div>
                     <div class="item">
                         <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/4e3dd185-8210-4568-8dac-e2f4d37354ab/140/215/60/False/Mvl_6V26ZD2yu61gNeZrsQ.jpg"
+                                src="https://kbimages1-a.akamaihd.net/a126ed44-e63b-4172-87bf-f75bad348cbe/140/215/60/False/CWDQmKyJGTqj_nIbi1LlKQ.jpg"
+                                alt="">
+                            <div class="book-details-container">
+                                <span class="ellipsis">萬物的價值：經濟體系的革命時代，重新定義市場、價值、生產者與獲利者</span>
+                                <span class="ellipsis">
+                                    瑪里亞娜‧馬祖卡托</span>
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
+                                <span>NT$250 </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#"> <img
+                                src="https://kbimages1-a.akamaihd.net/af012000-f143-40ae-9230-536e38bee63a/140/215/60/False/SOVnnV0HqjyEgZZVBntmBw.jpg"
                                 alt="">
                             <div class="book-details-container">
                                 <span class="ellipsis">一九八四</span>
                                 <span class="ellipsis">由 賽門‧西奈克(Simon Sinek)</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
+                                <span>NT$250 </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#"> <img
+                                src="https://kbimages1-a.akamaihd.net/666761aa-b28f-4882-b7bb-cc0e4925be78/140/215/60/False/a8dnqNnSJjep9sJLVIkwFw.jpg"
+                                alt="">
+                            <div class="book-details-container">
+                                <span class="ellipsis">萬物的價值：經濟體系的革命時代，重新定義市場、價值、生產者與獲利者</span>
+                                <span class="ellipsis">
+                                    瑪里亞娜‧馬祖卡托</span>
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
+                                <span>NT$250 </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#"> <img
+                                src="https://kbimages1-a.akamaihd.net/0907c95d-e7aa-4c58-95ba-5edb09b9509a/140/215/60/False/68scyw747jKFBoodl3-p5Q.jpg"
+                                alt="">
+                            <div class="book-details-container">
+                                <span class="ellipsis">
+                                    重新丈量世界：二十一世紀數位時代知識論</span>
+                                <span class="ellipsis">
+                                    傑默爾．洪特(Jamer Hunt)</span>
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
+                                <span>NT$250 </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#"> <img
+                                src="https://kbimages1-a.akamaihd.net/5331b1f9-88e8-456e-b62d-284866b4499d/140/215/60/False/9UYLZvzp_Tmw_XP_lcUe8w.jpg"
+                                alt="">
+                            <div class="book-details-container">
+                                <span class="ellipsis">
+                                    世界經濟10000年：從石器時代到貿易戰爭，我們的經濟是如何成形？</span>
+                                <span class="ellipsis">
+                                    菲利浦‧科根</span>
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
                                 <span>NT$250 </span>
                             </div>
                         </a>
@@ -814,120 +916,39 @@
                                 src="https://kbimages1-a.akamaihd.net/96deb626-ce47-4a94-9aea-430df4551ae6/140/215/60/False/sjRXy_OJ2ju_ofx4ndNQOg.jpg"
                                 alt="">
                             <div class="book-details-container">
-                                <span class="ellipsis">一九八四</span>
-                                <span class="ellipsis">由 賽門‧西奈克(Simon Sinek)</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
-                                <span>NT$250 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/60e7e3dc-a05c-4a57-a1d7-418dd118c949/140/215/60/False/thgm3CVVGjWHhVg_9IrTIQ.jpg"
-                                alt="">
-                            <div class="book-details-container">
-                                <span class="ellipsis">萬物的價值：經濟體系的革命時代，重新定義市場、價值、生產者與獲利者</span>
-                                <span class="ellipsis">
-                                    瑪里亞娜‧馬祖卡托</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
-                                <span>NT$250 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/ef7194d7-b674-4f93-b6e5-213512a71f3c/140/215/60/False/ii5lOAK1Oz21M7tB17Nr_A.jpg"
-                                alt="">
-                            <div class="book-details-container">
-                                <span class="ellipsis">
-                                    重新丈量世界：二十一世紀數位時代知識論</span>
-                                <span class="ellipsis">
-                                    傑默爾．洪特(Jamer Hunt)</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
-                                <span>NT$250 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/0394b1cd-b630-4009-b57c-f6a2548806fc/140/215/60/False/0IQ2Dm2tPzupWKNwE2sE2A.jpg"
-                                alt="">
-                            <div class="book-details-container">
-                                <span class="ellipsis">
-                                    世界經濟10000年：從石器時代到貿易戰爭，我們的經濟是如何成形？</span>
-                                <span class="ellipsis">
-                                    菲利浦‧科根</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
-                                <span>NT$250 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/90dce721-96f8-4b4a-81a7-9261d26d0237/140/215/60/False/YZTsuBm4Kz2_hDa0LOrdhA.jpg"
-                                alt="">
-                            <div class="book-details-container">
                                 <span class="ellipsis">
                                     所謂的知識分子：那些爆紅的時代人物，與他們內心的惡魔（上、下冊不分售）</span>
                                 <span class="ellipsis">
                                     保羅．約翰遜</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
                                 <span>NT$250 </span>
                             </div>
                         </a>
                     </div>
                     <div class="item">
                         <a href="#"> <img
-                                src="https://kbimages1-a.akamaihd.net/e31fc393-0860-4ea3-93c2-7cd0ad8cacc5/140/215/60/False/PCQ6iQ2dRTizKJR-11I-JA.jpg"
+                                src="https://kbimages1-a.akamaihd.net/56cb3393-b6aa-4f00-8e88-7a5a024e1f36/140/215/60/False/7UBlYKC_MDayFx0lOoWmPQ.jpg"
                                 alt="">
                             <div class="book-details-container">
                                 <span class="ellipsis">
                                     影子戰爭：從資訊戰到尖端衛星武器競賽，二十一世紀戰爭的隱形戰線</span>
                                 <span class="ellipsis">
                                     吉姆．修托（Jim Sciutto）</span>
-                                <!-- <div class="star-carousel"> -->
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>(99)</span>
-                                <!-- </div> -->
+                                <div class="star-carousel">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <!-- <span>(99)</span> -->
                                 <span>NT$250 </span>
                             </div>
                         </a>
