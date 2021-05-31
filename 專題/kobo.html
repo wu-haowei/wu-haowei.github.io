@@ -183,6 +183,7 @@
             visibility: visible;
             max-height: 288px;
             overflow: hidden;
+            position: relative;
         }
 
         /* ------------------------------------------- */
@@ -552,9 +553,14 @@
         }
 
         .owl-carousel .item img {
-            /* width: 50%; */
             margin: auto;
             height: 100%;
+        }
+
+        .unfold-shutdown {
+            position: absolute;
+            bottom: 0;
+            right: 15rem;
         }
     </style>
 </head>
@@ -714,11 +720,15 @@
                                         <p>數週內成為台灣Podcast各平台總排行榜第一名，</p>
                                         <p>並蟬聯至今（滿一年了啦，但不知道什麼時候會日薄西山）。</p>
                                         <p>之前為航空公司培訓機師，公司倒閉後從商，經營小生意。</p>
+
+
+                                        <div class="unfold-shutdown">
+                                            <button type="button" class="toggle-button-hitbox" aria-controls="synopsis"
+                                                aria-expanded="false" id="AAA">
+                                                <span class="toggle-button">展開簡介</span>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <button type="button" class="toggle-button-hitbox" aria-controls="synopsis"
-                                        aria-expanded="false" id="AAA">
-                                        <span class="toggle-button">展開簡介</span>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -1118,9 +1128,8 @@
             else {
                 bookcontentintroduction.setAttribute('style', 'max-height:288px;overflow: hidden')
                 togglebutton.innerHTML = "摺疊簡介";
-
             }
-            i++;
+            i--;
 
         })
 
