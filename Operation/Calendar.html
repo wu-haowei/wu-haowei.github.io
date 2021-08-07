@@ -287,7 +287,7 @@
                                     $('#inputModal').modal('show');//開啟視窗
                                     document.getElementById('date').value =
                                         `${new Date(year, month, 1).getUTCFullYear()}-${new Date(year, month + 1, 1).getMonth()}-${target.childNodes[0].data}`;
-                                    document.getElementById('inputModalLabel').innerText = `${year}-${month + 1}-${target.childNodes[0].data}`;
+                                    // document.getElementById('inputModalLabel').innerText = `${year}-${month + 1}-${target.childNodes[0].data}`;
                                     if (document.querySelector('#TimeInput').value == "") {
                                         document.querySelector('#TimeInput').value = document.querySelector('#today_Minutes-Seconds').innerText
                                     }
