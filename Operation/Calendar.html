@@ -120,7 +120,7 @@
         </table>
         <button type="button" class="btn DeleteAll" onclick="DeleteAllTodoItem()"><i class="fa fa-trash-o fa-4x"
                 aria-hidden="true"></i></button>
-        <button type="button" class="btn" onclick="today_button()">今天</button>
+        <!-- <button type="button" class="btn" onclick="today_button()">今天</button> -->
 
         <!-- Modal Add -->
         <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel"
@@ -224,10 +224,10 @@
             function Init() {
                 let tbody = document.getElementsByTagName('tbody')[0];
                 tbody.innerHTML = ''
-                let mmomth = new Date(year, month, 1).getMonth() + 1;       //讓月份都維持雙位數
+                let mmomth = new Date(year, month, 1).getMonth()+1;   
                 let padStartmomth = mmomth.toString().padStart(2, '0');
                 //padStart() 會將用給定用於填充的字串，以重複的方式，插入到目標字串的起頭(左側)，直到目標字串到達指定長度。
-                let New_time = `${new Date(year, month, 1).getUTCFullYear()} 年 ${padStartmomth} 月`
+                let New_time = `${new Date(year, month+1, 1).getUTCFullYear()} 年 ${padStartmomth} 月`
                 document.getElementById('year-month').innerHTML = New_time;
                 //0星期日，1星期一，2星期二,3星期三，4星期四，5星期五,6星期六
                 let firstDay = new Date(year, month, 1).getDay();//這個月第一天星期幾
@@ -244,7 +244,7 @@
                         if (row == 0 && col < firstDay) {
                             if (td.innerText == "") {
                                 td.innerText = "上個月"
-                                console.log(td.innerText == "".length)
+                                // console.log(td.innerText == "".length)
                             }
                             //上個月
                         }
@@ -297,7 +297,7 @@
                                 //下個月
                                 if (td.innerText == "") {
                                     td.innerText = "下個月"
-                                    console.log(td.innerText == "".length)
+                                    // console.log(td.innerText == "".length)
                                 }
                             }
                             day++;
@@ -384,7 +384,7 @@
                 av[clickItem].TimeInput = document.getElementById('TimeInput').value
                 localStorage.setItem(date.value,JSON.stringify(av))   
                 location.reload()//更新
-                console.log(av)
+                // console.log(av)
             }
         </script>
 
