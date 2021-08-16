@@ -5,11 +5,11 @@
 #### (新增 / 修改 / 刪除)
 ![圖片](READMEimg/Calendar.jpg "我只是圖片")
 
-## 用水量查詢地圖 [作品連結](https://wu-haowei.github.io/Operation/google_map.html "用水量查詢地圖 作品")
+## 各地用水量查詢 [作品連結](https://wu-haowei.github.io/Operation/google_map.html "用水量查詢地圖 作品")
 #### 模擬資料庫，去做商品規格查詢,JavaScript動態生成資料使用Fetch取得各區域的經緯度、用水量資料，並配合JSON資料的處理，最後再使用Google Map API，將資料標記在各區域的地點當中
 ![圖片](READMEimg/google_api.jpg "我只是圖片")
 
-## APPLE [作品連結](https://wu-haowei.github.io/Operation/APPLE.html "APPLE作品")
+## 商品規格查詢 [作品連結](https://wu-haowei.github.io/Operation/APPLE.html "規格查詢作品")
 ![圖片](READMEimg/Apple.jpg "我只是圖片")
 #### 模擬資料庫，做商品規格查詢，搭配JavaScript動態生成資料
 
