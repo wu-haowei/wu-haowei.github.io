@@ -259,7 +259,7 @@
                                     let todoList = JSON.parse(localStorage.getItem(`${year}-${month + 1}-${day}`));
                                     todoList.forEach((item, index) => {
                                         let li = document.createElement('li');
-                                        li.innerText = item.TimeInput+"\t"+item.title;
+                                        li.innerText = item.title;
                                         li.setAttribute('index', index)//給每筆資料index
                                         ul.appendChild(li)
                                     });
