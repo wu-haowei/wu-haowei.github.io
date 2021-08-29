@@ -25,8 +25,8 @@
             padding: 0;
         }
 
-        #year,EEEWEWEWE
-        #city,
+        #year,
+        EEEWEWEWE #city,
         #msg {
             width: 70%;
             font-size: 18px;
@@ -49,11 +49,12 @@
             justify-content: center;
             align-items: center;
             position: absolute;
-            bottom:  50%;
+            bottom: 50%;
             left: 0px;
-            top:0;
+            top: 0;
             z-index: 99;
         }
+
         /* .drop_down:hover{
 
             left: 0px;
@@ -71,7 +72,8 @@
             font-size: 20px;
             justify-content: space-around;
         }
-        span{
+
+        span {
             color: #fff;
         }
     </style>
@@ -111,7 +113,7 @@
         const citySelect = document.getElementById('city');
         // let map;
         const image =
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";//自訂座標img
         const coordinate = { lat: 25.103787119504712, lng: 121.54863395412481 };//台北故宮
         // let range = 9.2;
         let city, water, map, resultData;
@@ -120,19 +122,19 @@
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
                 center: coordinate,
-                zoom: 15//初始值
+                zoom: 15//初始值放圍
             });
 
 
             //************************************************//讀取位置
             if (navigator.geolocation) {//地理位置定位
-                navigator.geolocation.getCurrentPosition(function (position) {//方法用來獲取設備當前的位置
-                    console.log(position);
+                navigator.geolocation.getCurrentPosition(function (position) {//Geolocation.getCurrentPosition方法用來獲取設備當前的位置
+                    // console.log(position);
                     let pos = {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
-                    let marker = new google.maps.Marker({
+                    let marker = new google.maps.Marker({//設定當前位置標記
                         center: pos,
                         icon: image,
                         map: map
@@ -158,14 +160,17 @@
         let Array2 = []; //存取第二個陣列水的資料
         function MapResource() {//資料寫入
             fetch(url_1)
-                .then(response => response.text())
+                // console.log(url_1)
+                .then(response => response.text())//把資料轉成text格式變成純字串 or JSON格式
                 .then(cityResult => {
                     Array1 = JSON.parse(cityResult);
+                    // console.log(Array1)
                     fetch(url_2)
                         .then(response => response.text())
                         .then(waterResult => {
                             water = JSON.parse(waterResult);
                             Array2 = water.TaiwanWaterExchangingData.StatisticofWaterResourcesClass.StatisticofWaterUsageClass.TheConsumptionOfWater;
+                            // console.log(Array2);
                             MarkAction();
                         });
                 });
@@ -176,6 +181,7 @@
             year.length = "";
             let Per_year = new Set();
             let result_Per_year = Array2.filter(item => !Per_year.has(item.Year) ? Per_year.add(item.Year) : false);
+            //has() 方法對一個指定值元素在 Set 物件中的存在與否回傳一個布林值。
             result_Per_year = result_Per_year.filter(y => y.Year != "麟洛鄉")
             Per_year_Ans = result_Per_year;
             result_Per_year.forEach((item, index) => {
@@ -220,7 +226,7 @@
                 let result_Per_city = Array2.filter(item => !Per_city.has(item.County) ? Per_city.add(item.County) : false);
                 result_Per_city = result_Per_city.filter(f => f.County != null)
                 Per_city_Ans = result_Per_city
-                console.log(Per_city_Ans);
+                // console.log(Per_city_Ans);
                 result_Per_city.forEach((item, index) => {
                     let option1 = document.createElement('option');
                     option1.value = item.County;
@@ -288,6 +294,7 @@
                     // console.warn(infowindow)
                     // 丟到空陣列裡
                     infos.push(infowindow);
+                    
                     marker.addListener("click", () => {
                         infos.forEach((item) => {
                             item.close();
@@ -295,7 +302,7 @@
                         infowindow.open(map, marker);
                     });
                     markers.push(marker)
-                    console.log(markers.length)
+                    // console.log(markers.length)
                 }, 300 * index)
             });
             initMap_a();
@@ -315,10 +322,10 @@
             });
             map.setZoom(9.2)//設定值
 
-            console.log(resultData[1].City)
-            console.log(resultData[1].Lat)
-            console.log(resultData[1].Lng)
-            console.log(resultData)
+            // console.log(resultData[1].City)
+            // console.log(resultData[1].Lat)
+            // console.log(resultData[1].Lng)
+            // console.log(resultData)
         }
 
 
