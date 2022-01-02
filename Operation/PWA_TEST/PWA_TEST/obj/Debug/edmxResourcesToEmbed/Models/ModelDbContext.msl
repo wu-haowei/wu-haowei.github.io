@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PWAModelStoreContainer" CdmEntityContainer="ModelDbContext">
+    <EntitySetMapping Name="PWA_Table">
+      <EntityTypeMapping TypeName="PWAModel.PWA_Table">
+        <MappingFragment StoreEntitySet="PWA_Table">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="endpoint" ColumnName="endpoint" />
+          <ScalarProperty Name="p256dh" ColumnName="p256dh" />
+          <ScalarProperty Name="auth" ColumnName="auth" />
+          <ScalarProperty Name="Isdelete" ColumnName="Isdelete" />
+          <ScalarProperty Name="Cancel" ColumnName="Cancel" />
+          <ScalarProperty Name="Create" ColumnName="Create" />
+          <ScalarProperty Name="Update" ColumnName="Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

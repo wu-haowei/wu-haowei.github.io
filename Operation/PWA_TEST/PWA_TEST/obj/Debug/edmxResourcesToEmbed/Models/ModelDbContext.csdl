@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PWAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PWA_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="endpoint" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="p256dh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="auth" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Isdelete" Type="Boolean" />
+    <Property Name="Cancel" Type="Int32" />
+    <Property Name="Create" Type="DateTime" Precision="3" />
+    <Property Name="Update" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="ModelDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PWA_Table" EntityType="Self.PWA_Table" />
+  </EntityContainer>
+</Schema>

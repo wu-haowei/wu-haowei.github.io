@@ -1,0 +1,15 @@
+﻿{
+    "name": "名稱", //APP名稱
+    "short_name": "BlazorSample",
+    "start_url": "https://localhost:44374/", //專案URL
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#03173d",
+    "icons": [ //圖示
+        {
+            "src": "icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}

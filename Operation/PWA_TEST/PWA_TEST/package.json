@@ -1,0 +1,17 @@
+{
+    "name": "pwa",
+    "version": "1.0.0",
+    "description": "pwa_description",
+    "main": "push.js",
+    "scripts": {
+        "start": "http-server -c-1",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "generate-sw": "workbox inject:manifest",
+        "web-push": "web-push",
+        "push": "ts-node ./push.js"
+    },
+    "type": "module",
+    "dependencies": {
+        "node-fetch": "^3.1.0"
+    }
+}

@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Hamastar.Common.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="Hamastar_Common_tw_com_hamastar_ss_SmsWebService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://ss.hamastar.com.tw/smswebservice.asmx</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>
