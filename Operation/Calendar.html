@@ -199,24 +199,24 @@
                 var hh = today.getHours();
                 var mm = today.getMinutes();
                 var ss = today.getSeconds();
-                mm = checkTime(mm);
-                ss = checkTime(ss);
+                mm =  mm.toString().padStart(2, '0');
+                ss =  ss.toString().padStart(2, '0');
                 setTimeout(startTime, 500);
                 document.getElementById('today_Minutes-Seconds').innerHTML = hh + ":" + mm + ":" + ss
             }
             let right_mmomth = today.getMonth() + 1;
-            let right_now_mmomth = checkTime(right_mmomth)
+            let right_now_mmomth = right_mmomth.toString().padStart(2, '0')
             let right_mday = today.getDate()
-            let right_now_mday = checkTime(right_mday)
+            let right_now_mday = right_mday.toString().padStart(2, '0')
             document.getElementById('today_year-month').innerHTML =
                 today.getFullYear() + " 年 " + right_now_mmomth + " 月 " + right_now_mday + " 日"
             // 分/秒數不足兩位數補0
-            function checkTime(x) {
-                if (x < 10) {
-                    x = "0" + x;
-                }
-                return x;
-            }
+            // function checkTime(x) {
+            //     if (x < 10) {
+            //         x = "0" + x;
+            //     }
+            //     return x;
+            // }
             //------動態時間------
 
 
@@ -232,14 +232,15 @@
                 let firstDay = new Date(year, month, 1).getDay();
                 //0星期日，1星期一，2星期二,3星期三，4星期四，5星期五,6星期六
                 let dayOfMonth = new Date(year, month + 1, 0).getDate();//這個月幾天
-                let superiordaydayOfMonth = new Date(year, month, 0).getDate();//這個月幾天
+                let superiordaydayOfMonth = new Date(year, month, 0).getDate();//上個月幾天
                 let Down_Day = new Date(year, month, 0).getDay();
                 let day = 1;
-                let superiorday = superiordaydayOfMonth - (firstDay - 1);
+                let superiorday = superiordaydayOfMonth - (firstDay - 1);//上個月天數-(這個月第一天星期幾-1)
                 // console.log(superiorday)
                 let Downday = 1;
 
-                let rows = Math.ceil((firstDay + dayOfMonth) / 7)//Math.ceil()函式會回傳大於等於所給數字的最小整數。
+                let rows = Math.ceil((firstDay + dayOfMonth) / 7)
+                //Math.ceil()無條件進位至整數。這個月第一天星期幾+這個月幾天/7
                 for (let row = 0; row < rows; row++) {//列的迴圈
                     let tr = document.createElement('tr');
                     for (let col = 0; col < 7; col++) { //一周的迴圈
@@ -275,14 +276,16 @@
                                     // console.log(e)
                                     if (e.target.localName == 'li' || e.target.localName == 'ul') {//點到li或ul
                                         clickItem = e.target.getAttributeNode('index').value;
+                                        console.warn(clickItem);
                                         document.getElementById('todo-title').value = e.target.innerText;
                                         target = e.target.offsetParent;
                                         //ffsetParent 是一个只读属性，返回一个指向最近的（指包含层级上的最近）
                                         //包含该元素的定位元素或者最近的 table,td,th,body元素
-                                        let a = JSON.parse(localStorage.getItem(`${year}-${month + 1}-${target.childNodes[0].data}`))
-                                        console.log(a)
-                                        document.querySelector('#todo-content').value = a[clickItem].description
-                                        document.querySelector('#TimeInput').value = a[clickItem].TimeInput
+                                        let localStoragekey = JSON.parse(localStorage.getItem(`${year}-${month + 1}-${target.childNodes[0].data}`))
+                                        console.log(`${year}-${month + 1}-${target.childNodes[0].data}`)
+                                        console.log(localStoragekey[clickItem])
+                                        document.querySelector('#todo-content').value = localStoragekey[clickItem].description
+                                        document.querySelector('#TimeInput').value = localStoragekey[clickItem].TimeInput
                                     } else {
                                         clickItem = '';
                                         target = e.target;
@@ -388,6 +391,7 @@
                     return;
                 }
                 let datevalue = JSON.parse(localStorage.getItem(date.value))
+                console.log(datevalue)
                 datevalue[clickItem].title = document.getElementById('todo-title').value
                 datevalue[clickItem].description = document.getElementById('todo-content').value
                 datevalue[clickItem].TimeInput = document.getElementById('TimeInput').value

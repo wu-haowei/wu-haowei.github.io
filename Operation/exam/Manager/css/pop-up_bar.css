@@ -1,0 +1,80 @@
+﻿@charset "UTF-8";
+/* 
+	請注意！本 sass 所做設定為其他scss檔案基礎。
+	本 scss 僅做基礎功能的引入，除非有其他系統規範的異動，否則請避免任何變更。
+*/
+/* 
+	請注意！本 scss 所做設定皆全域可見。
+	本 sass 僅做基礎框架、格線的引入，請避免在此直接寫入樣式。
+	若需要對全域樣式設定，請撰寫在 bace_layout.scss。
+*/
+/* line 3, ../Sass/_bace_layout.scss */
+.bar_root {
+  padding-top: 50px;
+}
+/* line 6, ../Sass/_bace_layout.scss */
+.bar_root > .inner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index:9;
+}
+
+.bar_root > .inner > .content {
+    position: relative;
+}
+.bar_root > .inner > .content > .info {
+    position: absolute;
+}
+
+.bar_root > .inner > .content > .info > p {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+/* line 13, ../Sass/_bace_layout.scss */
+.bar_root ul {
+  padding: 0;
+  margin: 0;
+  border-top: solid 1px #e4e4e4;
+  background-color: #f4f4f4;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+  list-style: none;
+  text-align: right;
+}
+/* line 23, ../Sass/_bace_layout.scss */
+.bar_root ul li {
+  display: inline-block;
+  border-left: solid 1px #e4e4e4;
+}
+/* line 43, ../Sass/_bace_layout.scss */
+.bar_root ul input, .bar_root ul a {
+  cursor: pointer;
+  color: #515151;
+  border: none;
+  font-weight: bold;
+  font-size: 12pt;
+  font-family: inherit;
+  padding: 15px 20px;
+}
+/* line 52, ../Sass/_bace_layout.scss */
+.bar_root ul input:hover, .bar_root ul a:hover {
+  color: #287ade;
+}
+/* line 57, ../Sass/_bace_layout.scss */
+.bar_root ul input {
+  background-color: transparent;
+}
+/* line 68, ../Sass/_bace_layout.scss */
+.bar_root ul input:hover {
+  outline: none;
+}
+/* line 73, ../Sass/_bace_layout.scss */
+.bar_root ul a {
+  display: block;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=pop-up_bar.css.map */

@@ -1,0 +1,180 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MP.master.cs" Inherits="MasterPage_MP" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>人民陳情（含1999案件）單一窗口</title>
+    <link href="/Scripts/JSCal2-1.9/src/css/win2k/calendar-win2k-1.css" rel="stylesheet" type="text/css" />
+    <link href="/css/introjs.min.css" rel="stylesheet" />
+    <link href="/css/sweetalert.css" rel="stylesheet" />
+    <link href="/Scripts/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="/css/index.css?20170613" rel="stylesheet" />
+    <link href="/Scripts/jquery-impromptu.css" rel="stylesheet" />
+    <link href="/css/jquery-impromptu.css" rel="stylesheet" />
+    <link href="/Scripts/air-datepicker-master/datepicker.min.css" rel="stylesheet" />
+
+    <script src="/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="/Scripts/sweetalert.min.js"></script>
+    <script src="/Scripts/JSCal2-1.9/src/js/jquery.dynDateTimeMinGo.js" type="text/javascript"></script>
+    <script src="/Scripts/JSCal2-1.9/src/js/lang/calendar-big5.js" type="text/javascript"></script>
+    <script src="/Scripts/intro.min.js"></script>
+    <script src="/Scripts/blockUI/jquery.blockUI.js"></script>
+    <script src="/Scripts/fancybox/jquery.fancybox.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="/Scripts/SuperfishMenu/hoverIntent.js"></script>
+    <script type="text/javascript" src="/Scripts/SuperfishMenu/superfish.min.js"></script>
+    <script src="/Scripts/jquery-impromptu.js"></script>
+    <script type="text/javascript" src="/Scripts/air-datepicker-master/datepicker.min.js"></script>
+    <script type="text/javascript" src="/Scripts/air-datepicker-master/i18n/datepicker.zh.js"></script>
+    <script type="text/javascript" src="/Scripts/JUtil.js"></script>
+    <script src="/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="/signalr/hubs"></script>
+
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('ul.sf-menu').superfish({
+                animation: { opacity: 'show', height: 'show' },  // fade-in and slide-down animation
+                delay: 100
+            });
+
+            //自動將網頁中地址連到GoogleMap
+            $("map").each(function (i) { if ($(this).html() != "") $(this).append("<a target='_blank' href='http://maps.google.com/maps?q=" + encodeURIComponent($(this).html()) + "'><img src='/images/Icons/map.png' border='0' alt='map' /></a>"); });
+
+
+            ////建立與Server端的Hub的物件，注意Hub的開頭字母一定要為小寫
+            //var onlineHub = $.connection.siteHub;
+
+            ////將連線打開
+            //$.connection.hub.start().done(function () {
+            //    onlineHub.server.userConnected(location.href, navigator.userAgent);//呼叫server
+            //});
+
+
+            ////讓server呼叫(抓取資料)
+            //onlineHub.client.getList = function (userList) {
+
+            //    //內容自由發揮
+            //    var HasObj = $('#onlineuser');
+            //    if (!HasObj.length)
+            //        return;
+            //    $("#onlineuser").html("");
+            //    $("#onlineuser").html("線上人數:" + userList.length + "人");
+            //}
+
+            ////讓server呼叫(移除離開人員) 
+            //onlineHub.client.onUserDisconnected = function (ct) {
+            //    $("#onlineuser").html("");
+            //    $("#onlineuser").html("線上人數:" + ct + "人");
+            //}
+        });
+
+
+        var spantime = <%=SessionCenter.LoginOutTime %>;
+        function getString(dt) {
+            return dt.getFullYear() + "年" + (dt.getMonth()) + "月" + dt.getDate() + "日" + dt.getHours() + "时" + dt.getMinutes() + "分" + dt.getSeconds() + "秒";
+        }
+        function cal() {
+            spantime--;
+            var d = Math.floor(spantime / (24 * 3600));  //天
+            var h = Math.floor((spantime % (24 * 3600)) / 3600);  //時
+            var m = Math.floor((spantime % 3600) / (60));  //分
+            var s = Math.floor(spantime % 60);  //秒
+            if (h > 0)
+                str = h + ":" + m + ":" + s;
+            else
+                str = m + ":" + s;
+            document.getElementById("pad").innerHTML = str;  //前台顯示畫面
+
+            if (str == "0:0")  //0分0秒時導向登入頁
+                window.location = '/Login.aspx';
+        }
+        window.onload = function () {
+            setInterval(cal, 1000);
+        }
+        $(document).ready(function () {
+            $("#Button1").click(function () {
+                spantime = <%=SessionCenter.LoginOutTime %>;
+            })
+        });
+    </script>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="wrapper">
+            <div class="header">
+                <div class="topbar">
+
+                    <h1 class="toplogo"><a href="/default.aspx"></a></h1>
+                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                    <div class="toptool">
+                        <ul>
+                            <li class="time-counter">系統預計 
+                                <span id="pad"></span>登出 
+                                <a id="Button1" class="reset-time" title="重新計時" href="#">重設</a>
+
+                            </li>
+                            <li>
+                                <asp:LinkButton runat="server" ID="lkbtnDocument" class="guide-book" UseSubmitBehavior="false" Text="操作手冊" Title="操作手冊" OnClick="lkbtnDocument_Click"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton runat="server" ID="lkbtnLogout" class="logout-btn" UseSubmitBehavior="false" Text="登出" Title="登出" OnClick="lkbtnLogout_Click"></asp:LinkButton>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main_menu">
+                    <!--選單開始 -->
+                    <ul class='sf-menu sf-vertical' id='Prodmenu'>
+                        <li>
+                            <asp:DropDownList
+                                ID="ddlAgent" runat="server" AutoPostBack="true"
+                                OnSelectedIndexChanged="ddlAgent_SelectedIndexChanged">
+                            </asp:DropDownList>
+                        </li>
+                        <asp:Literal ID="litMenu" runat="server"></asp:Literal>
+
+
+                    </ul>
+                    <!--選單結束 -->
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_middle ">
+                    <div class="breadcrumb" style="text-align: right">
+                        <asp:Literal ID="litNav" runat="server" EnableViewState="False"> </asp:Literal>
+                    </div>
+                    <div class="case-title">
+                        <asp:Literal ID="litNav_Title" runat="server" EnableViewState="False"> </asp:Literal>
+                    </div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="footer_bg">
+                <div class="footer">
+                    <!--//--下方資訊---//-->
+                    <div class="footer_info">
+                        螢幕解析度建議：1024x768以上 瀏覽器建議使用：Chrome、Firefox、IE10.0以上版本
+                    </div>
+                    <div class="footer_link" style="display: none">
+                        <div id="onlineuser"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <%= StackExchange.Profiling.MiniProfiler.RenderIncludes() %>
+</body>
+</html>

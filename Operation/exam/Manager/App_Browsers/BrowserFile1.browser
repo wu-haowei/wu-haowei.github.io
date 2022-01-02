@@ -1,0 +1,38 @@
+﻿<!--
+您可以在 <windir>\Microsoft.NET\Framework\<ver>\CONFIG\Browsers 找到現有的瀏覽器定義
+-->
+<browsers>
+    <browser id="NewBrowser" parentID="Mozilla">
+        <identification>
+            <userAgent match="Unique User Agent Regular Expression" />
+        </identification>
+
+        <capture>
+            <userAgent match="NewBrowser (?'version'\d+\.\d+)" />
+        </capture>
+
+        <capabilities>
+            <capability name="browser" value="My New Browser" />
+            <capability name="version" value="${version}" />
+        </capabilities>
+    </browser>
+
+    <browser refID="Mozilla">
+        <capabilities>
+            <capability name="xml" value="true" />
+        </capabilities>
+      <controlAdapters>
+        <adapter controlType="System.Web.UI.WebControls.Menu" adapterType="" />
+      </controlAdapters>
+    </browser>
+
+   <browser id="GoogleChrome" parentID="Chrome">
+    <identification>
+      <userAgent match="Chrome/(?'version'\d+\.\d+)" />
+    </identification>
+    <capabilities>
+      <capability name="browser" value="Googlebot" />
+      <capability name="supportsMaintainScrollPositionOnPostback" value="true" />
+    </capabilities>
+  </browser>
+</browsers>
